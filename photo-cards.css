@@ -7,3 +7,5 @@
 .photo-open:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.photo-credit a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
 body:has(.photo-dialog[open]){overflow:hidden}
+
+.poland-tag{display:inline-block;border:1px solid #5c9973;padding:3px 6px;font:11px/1.5 "Manrope",sans-serif;color:#c6ead3;background:#254135;overflow-wrap:anywhere}.photo-dialog #photoRegion{margin:0 0 14px}.photo-dialog #photoRegion:empty{display:none}

@@ -9,3 +9,9 @@ test('Every European species has a local licensed photo with matching taxonomic 
   if(m.provider==='iNaturalist'){assert.equal(m.qualityGrade,'research');assert.equal(m.communityTaxonId,m.taxonId);assert.ok(['cc0','cc-by','cc-by-sa'].includes(m.licenseCode));const name=m.identificationName||m.taxonName;assert.ok(name===n.latin||(m.identificationRank==='subspecies'&&name.startsWith(n.latin+' ')));assert.ok(!photoIds.has(m.photoId),'Duplicate photo '+m.photoId);photoIds.add(m.photoId);}
  }
 });
+
+test('Poland tags match national A/C records; historical and Europe-only species stay outside',()=>{
+ const r={window:{}};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../data-regions.js'),'utf8'),r);const data=r.window.BIRD_REGIONS.poland,poland=data.species;const source=JSON.parse(fs.readFileSync(path.join(__dirname,'../sources/poland-passerines-kf-20260601.json')));const national=new Map(source.records.map(x=>[x.latin,x]));const expected=nodes.filter(x=>x.rank==='species'&&['A','C'].includes(national.get(x.latin)?.category));assert.equal(Object.keys(poland).length,expected.length);assert.equal(expected.length,184);assert.equal(Object.values(poland).filter(x=>!x.rare).length,108);
+ for(const n of expected){assert.equal(poland[n.id].latin,n.latin);assert.equal(poland[n.id].status,national.get(n.latin).status);assert.equal(poland[n.id].rare,/[Zz]/.test(national.get(n.latin).status));}
+ assert.ok(poland.Parus_major);assert.ok(poland.Cyanistes_cyanus.rare);assert.ok(!poland.Cyanistes_teneriffae);assert.ok(!poland.Myiarchus_crinitus);assert.ok(!poland.Petronia_petronia);assert.deepEqual(Array.from(data.outsideCurrentTree),['Emberiza bruniceps']);
+});

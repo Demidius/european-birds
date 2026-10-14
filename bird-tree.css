@@ -14,3 +14,6 @@ h1{overflow-wrap:anywhere;font-size:clamp(44px,5vw,65px)}h1 i{display:block;marg
 /* Keep Russian species names as readable as the branch names. */
 .species-node .species-name{font:500 27px/1.25 var(--ui);color:var(--ink);min-width:250px}.species-node .species-latin{font:italic 12px/1.5 'Manrope',sans-serif;color:var(--muted);min-width:0}.species-node .vagrant-tag{font:9px/1.5 'Manrope',sans-serif;vertical-align:middle}
 @media(max-width:760px){.species-node .species-name{font:500 28px/1.2 var(--ui);min-width:0;display:block}.species-node .species-latin{font:italic 12px/1.5 'Manrope',sans-serif;margin-top:5px;display:block}}
+
+/* Geographic filter: keep the controls readable at narrow widths. */
+.region-filters{display:flex;flex-direction:column;gap:4px;flex:none}.poland-filter{display:flex;align-items:center;gap:8px;min-height:45px;font-size:12px;color:var(--ink);cursor:pointer}.poland-filter input{accent-color:var(--green);width:18px;height:18px;flex:none}.region-hint{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:750px}@media(max-width:760px){.region-filters{width:100%}.poland-filter{font-size:13px}}

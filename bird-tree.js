@@ -3,12 +3,13 @@
 const data=window.PASSERINE_TREE,root=document.getElementById('familyTree');if(!data||!root)return;
 const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ё/g,'е').trim();
+const poland=window.BIRD_REGIONS?.poland?.species||{};
 const openStates=new Map();let current=null,query='',frame=0;
 function walk(n,fn){fn(n);(n.children||[]).forEach(c=>walk(c,fn));}
 function count(n){const c={family:0,genus:0,species:0};if(n)walk(n,x=>{if(x.rank in c)c[x.rank]++});return c;}
 function word(n,forms){const a=n%10,b=n%100;return b>=11&&b<=14?forms[2]:a===1?forms[0]:a>=2&&a<=4?forms[1]:forms[2];}
 function summaryCount(n){const c=count(n);return n.rank==='genus'?c.species+' '+word(c.species,['вид','вида','видов']):n.rank==='family'?c.genus+' '+word(c.genus,['род','рода','родов'])+' · '+c.species+' '+word(c.species,['вид','вида','видов']):c.family+' '+word(c.family,['семейство','семейства','семейств']);}
-function filtered(n,parentMatch=false){if(n.rank==='species'&&!$('includeVagrants').checked&&n.vagrant)return null;const match=parentMatch||!query||norm([n.ru,n.latin,n.en].join(' ')).includes(query);if(n.rank==='species')return match?n:null;const children=n.children.map(c=>filtered(c,match&&!!query)).filter(Boolean);return children.length?{...n,children}:null;}
+function filtered(n,parentMatch=false){if(n.rank==='species'){const regional=poland[n.id],local=$('onlyPoland').checked;if(local&&!regional)return null;if(!$('includeVagrants').checked&&(local?regional.rare:n.vagrant))return null;}const match=parentMatch||!query||norm([n.ru,n.latin,n.en].join(' ')).includes(query);if(n.rank==='species')return match?n:null;const children=n.children.map(c=>filtered(c,match&&!!query)).filter(Boolean);return children.length?{...n,children}:null;}
 function label(n){const kinds={order:'ОТРЯД',group:'ГРУППА',family:'СЕМЕЙСТВО',genus:'РОД'};return '<span class="taxon-label"><span class="taxon-kind">'+kinds[n.rank]+'</span><strong>'+esc(n.ru&&n.ru!==n.latin?n.ru:n.latin)+'</strong>'+(n.ru&&n.ru!==n.latin?'<em>'+esc(n.latin)+'</em>':'')+'</span><span class="taxon-count">'+summaryCount(n)+'</span>';}
 function nodeHTML(n){if(n.rank==='species')return '<li class="taxon species-node" data-rank="species" data-node="'+esc(n.id)+'">'+window.BirdPhotoCards.render(n)+'</li>';
  const open=query?true:openStates.has(n.id)?openStates.get(n.id):n.rank==='order'||n.rank==='group';return '<li class="taxon '+n.rank+'-node" data-rank="'+n.rank+'" data-node="'+esc(n.id)+'"><details data-node="'+esc(n.id)+'" data-rank="'+n.rank+'"'+(open?' open':'')+'><summary>'+label(n)+'</summary><ul class="taxon-children '+(n.rank==='family'||n.rank==='genus'?'membership':'lineage')+'">'+n.children.map(nodeHTML).join('')+'</ul></details></li>';}
@@ -17,7 +18,7 @@ function queueDepth(){if(!frame)frame=requestAnimationFrame(updateDepth);}
 function render(){query=norm($('treeSearch').value);current=filtered(data.root);root.innerHTML=current?'<ul class="taxon-top">'+nodeHTML(current)+'</ul>':'<p class="tree-empty">Ничего не найдено. Попробуй другое название.</p>';const c=count(current);$('treeCounts').textContent=c.family+' '+word(c.family,['семейство','семейства','семейств'])+' · '+c.genus+' '+word(c.genus,['род','рода','родов'])+' · '+c.species+' '+word(c.species,['вид','вида','видов']);queueDepth();}
 function depth(level){root.querySelectorAll('details').forEach(d=>{d.open=level==='species'||(level==='genera'&&d.dataset.rank!=='genus')||(level==='families'&&!['family','genus'].includes(d.dataset.rank));if(!query)openStates.set(d.dataset.node,d.open);});if(frame)cancelAnimationFrame(frame);updateDepth();}
 $('showFamilies').addEventListener('click',()=>depth('families'));$('showGenera').addEventListener('click',()=>depth('genera'));$('showSpecies').addEventListener('click',()=>depth('species'));$('collapseTree').addEventListener('click',()=>depth('closed'));
-$('treeSearch').addEventListener('input',render);$('includeVagrants').addEventListener('change',render);
+$('treeSearch').addEventListener('input',render);$('includeVagrants').addEventListener('change',render);$('onlyPoland').addEventListener('change',render);
 root.addEventListener('toggle',e=>{if(!e.target.matches('details[data-node]')||!e.target.isConnected)return;if(!query)openStates.set(e.target.dataset.node,e.target.open);queueDepth();},true);
 render();
 })();
