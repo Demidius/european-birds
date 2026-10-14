@@ -9,3 +9,7 @@
 body:has(.photo-dialog[open]){overflow:hidden}
 
 .poland-tag{display:inline-block;border:1px solid #5c9973;padding:3px 6px;font:11px/1.5 "Manrope",sans-serif;color:#c6ead3;background:#254135;overflow-wrap:anywhere}.photo-dialog #photoRegion{margin:0 0 14px}.photo-dialog #photoRegion:empty{display:none}
+
+.poland-tag.season-passage{background:#203c49;border-color:#548b9e;color:#c6e8f5}.poland-tag.season-winter{background:#2c354b;border-color:#7f94b6;color:#d5e3fa}.photo-card-tags .poland-tag{max-width:100%}
+
+.photo-season-sources{font:11px/1.6 "Manrope",sans-serif;color:var(--muted);margin-top:12px}.photo-season-sources:empty{display:none}.photo-season-sources a{text-decoration:underline}.photo-dialog-top{position:sticky;top:0;background:#1b272c;z-index:1}

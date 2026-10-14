@@ -15,3 +15,9 @@ test('Poland tags match national A/C records; historical and Europe-only species
  for(const n of expected){assert.equal(poland[n.id].latin,n.latin);assert.equal(poland[n.id].status,national.get(n.latin).status);assert.equal(poland[n.id].rare,/[Zz]/.test(national.get(n.latin).status));}
  assert.ok(poland.Parus_major);assert.ok(poland.Cyanistes_cyanus.rare);assert.ok(!poland.Cyanistes_teneriffae);assert.ok(!poland.Myiarchus_crinitus);assert.ok(!poland.Petronia_petronia);assert.deepEqual(Array.from(data.outsideCurrentTree),['Emberiza bruniceps']);
 });
+
+test('Three Poland seasons have independent evidence and preserve true overlaps',()=>{
+ const r={window:{}};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../data-regions.js'),'utf8'),r);const d=r.window.BIRD_REGIONS.poland,m=d.species;assert.deepEqual(JSON.parse(JSON.stringify(d.seasonCounts)),{breeding:101,passage:95,winter:56});
+ for(const x of Object.values(m)){for(const k of ['breeding','passage','winter']){assert.ok([true,false,null].includes(x.seasons[k]));if(x.seasons[k]===true)assert.match(x.evidence[k].url,/^https:\/\//);}const current=x.status.replace(/\([^)]*\)/g,'').trim().split(/\s+/);assert.equal(x.seasons.breeding,current.some(k=>k==='L'||k==='l'));}
+ assert.deepEqual(JSON.parse(JSON.stringify(m.Parus_major.seasons)),{breeding:true,passage:true,winter:true});assert.equal(m.Pica_pica.seasons.passage,null);assert.equal(m.Pica_pica.seasons.winter,true);assert.equal(m.Oriolus_oriolus.seasons.winter,null);assert.equal(m.Oriolus_oriolus.seasons.passage,true);assert.equal(m.Bombycilla_garrulus.seasons.breeding,false);assert.equal(m.Bombycilla_garrulus.seasons.winter,true);assert.equal(m.Lanius_minor.seasons.breeding,true);assert.equal(m.Phylloscopus_bonelli.seasons.breeding,false);assert.equal(m.Perisoreus_infaustus.seasons.winter,null);
+});

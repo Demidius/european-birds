@@ -1,0 +1,2644 @@
+{
+  "checkedAt": "2026-10-14",
+  "scope": "Positive seasonal evidence for species already in the current Poland selection; null means not established here, not absent.",
+  "records": {
+    "Vireo olivaceus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Oriolus oriolus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/wilga",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Lanius excubitor": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/srokosz",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/srokosz",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Lanius borealis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Lanius minor": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/dzierzba_czarnoczelna",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Lanius senator": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Lanius isabellinus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Lanius collurio": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/g%C4%85siorek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Lanius phoenicuroides": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Pyrrhocorax graculus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Perisoreus infaustus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Garrulus glandarius": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/s%C3%B3jka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/s%C3%B3jka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Pica pica": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/sroka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Nucifraga caryocatactes": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/orzech%C3%B3wka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Coloeus monedula": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kawka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/kawka",
+          "basis": "Description explicitly mentions birds present in Poland in winter"
+        }
+      }
+    },
+    "Corvus frugilegus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/gawron",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/gawron",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Corvus corax": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/kruk",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Corvus corone": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/wrona",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/wrona",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Remiz pendulinus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/remiz",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Cyanistes caeruleus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/modraszka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/modraszka",
+          "basis": "Description explicitly mentions birds present in Poland in winter"
+        }
+      }
+    },
+    "Cyanistes cyanus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Parus major": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/bogatka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.ptop.org.pl/images/stories/wydawnictwa/PTAKI_w_Miescie.pdf",
+          "basis": "Polish species chapter explicitly describes spring/autumn coastal migration"
+        }
+      }
+    },
+    "Periparus ater": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/sosn%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/sosn%C3%B3wka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Lophophanes cristatus": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/czubatka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Poecile palustris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/sikora_uboga",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Poecile montanus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/czarnog%C5%82%C3%B3wka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Panurus biarmicus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/w%C4%85satka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Lullula arborea": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/lerka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Alauda leucoptera": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Alauda arvensis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/skowronek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Galerida cristata": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/dzierlatka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Eremophila alpestris": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/g%C3%B3rniczek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/g%C3%B3rniczek",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Calandrella brachydactyla": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Melanocorypha bimaculata": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Melanocorypha yeltoniensis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Melanocorypha calandra": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Hippolais icterina": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/zaganiacz",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Hippolais polyglotta": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Iduna rama": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Iduna caligata": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Iduna pallida": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Acrocephalus schoenobaenus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/rokitniczka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Acrocephalus paludicola": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/wodniczka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Acrocephalus melanopogon": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Acrocephalus agricola": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Acrocephalus dumetorum": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/zaro%C5%9Bl%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Acrocephalus palustris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%82oz%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Acrocephalus scirpaceus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/trzcinniczek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Acrocephalus arundinaceus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/trzciniak",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Helopsaltes certhiola": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Locustella fluviatilis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/strumieni%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Locustella luscinioides": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Locustella naevia": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwierszczak",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Riparia riparia": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/brzeg%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Hirundo rustica": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/dym%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Delichon urbicum": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/okn%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Cecropis rufula": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Aegithalos caudatus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/raniuszek",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Cettia cetti": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus sibilatrix": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwistunka_le%C5%9Bna",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus bonelli": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus inornatus": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwistunka_%C5%BC%C3%B3%C5%82tawa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus humei": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus proregulus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus schwarzi": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus fuscatus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phylloscopus trochilus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/piecuszek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus ibericus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwistunka_iberyjska",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus collybita": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pierwiosnek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus trochiloides": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/w%C3%B3jcik",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phylloscopus borealis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Sylvia borin": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/gaj%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Sylvia atricapilla": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kapturka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://otop.org.pl/zimowe-ptakoliczenie/wyniki/wyniki-2013/",
+          "basis": "OTOP reports wintering birds in Polish cities"
+        }
+      },
+      "notes": [
+        "Зимовка отдельных особей, главным образом при мягких зимах; не вся популяция."
+      ]
+    },
+    "Curruca nisoria": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/jarz%C4%99batka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Curruca curruca": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pieg%C5%BCa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Curruca mystacea": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Curruca communis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/cierni%C3%B3wka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Curruca melanocephala": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Curruca iberiae": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Curruca cantillans": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Bombycilla garrulus": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/jemio%C5%82uszka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/jemio%C5%82uszka",
+          "basis": "Account describes staying in Poland from autumn through spring"
+        }
+      }
+    },
+    "Regulus regulus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/mysikr%C3%B3lik",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/mysikr%C3%B3lik",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Regulus ignicapilla": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/zniczek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/zniczek",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Tichodroma muraria": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pomurnik",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Sitta europaea": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/kowalik",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Certhia familiaris": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pe%C5%82zacz_le%C5%9Bny",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Certhia brachydactyla": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pe%C5%82zacz_ogrodowy",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Troglodytes troglodytes": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/strzy%C5%BCyk",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.iop.krakow.pl/pobierz-publikacje,1787",
+          "basis": "Wintering population documented in Polish field research"
+        }
+      }
+    },
+    "Sturnus unicolor": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Sturnus vulgaris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/szpak",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/szpak",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Pastor roseus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Cinclus cinclus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pluszcz",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pluszcz",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Zoothera aurea": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Geokichla sibirica": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Turdus viscivorus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/paszkot",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/paszkot",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Turdus philomelos": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bpiewak",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Turdus iliacus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/dro%C5%BAdzik",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/dro%C5%BAdzik",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Turdus merula": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kos",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/kos",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Turdus pilaris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kwiczo%C5%82",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/kwiczo%C5%82",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Turdus torquatus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/drozd_obro%C5%BCny",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Turdus naumanni": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Turdus eunomus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Turdus ruficollis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Turdus atrogularis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Turdus obscurus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Muscicapa striata": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/mucho%C5%82%C3%B3wka_szara",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Erithacus rubecula": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/rudzik",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/rudzik",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Luscinia megarhynchos": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/s%C5%82owik_rdzawy",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Luscinia luscinia": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/s%C5%82owik_szary",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Luscinia svecica": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/podr%C3%B3%C5%BCniczek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Larvivora sibilans": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Ficedula parva": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/mucho%C5%82%C3%B3wka_ma%C5%82a",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Ficedula albicollis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/mucho%C5%82%C3%B3wka_bia%C5%82oszyja",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Ficedula hypoleuca": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/mucho%C5%82%C3%B3wka_%C5%BCa%C5%82obna",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Tarsiger cyanurus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Phoenicurus ochruros": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kopciuszek",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Phoenicurus phoenicurus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pleszka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Monticola saxatilis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Saxicola rubetra": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pokl%C4%85skwa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Saxicola maurus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Saxicola rubicola": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kl%C4%85skawka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Oenanthe deserti": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Oenanthe hispanica": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Oenanthe pleschanka": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Oenanthe oenanthe": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/bia%C5%82orzytka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Oenanthe isabellina": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Oenanthe leucopyga": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Prunella collaris": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/p%C5%82ochacz_halny",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Prunella atrogularis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Prunella modularis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pokrzywnica",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pokrzywnica",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Prunella montanella": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Montifringilla nivalis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Passer montanus": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/mazurek",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Passer domesticus": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/wr%C3%B3bel",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Motacilla cinerea": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pliszka_g%C3%B3rska",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/pliszka_g%C3%B3rska",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Motacilla flava": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pliszka_%C5%BC%C3%B3%C5%82ta",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Motacilla citreola": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pliszka_cytrynowa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Motacilla tschutschensis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Motacilla alba": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/pliszka_siwa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Anthus godlewskii": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Anthus campestris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_polny",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Anthus richardi": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Anthus trivialis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_drzewny",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Anthus hodgsoni": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Anthus cervinus": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_rdzawogard%C5%82y",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Anthus pratensis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_%C5%82%C4%85kowy",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Anthus japonicus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Anthus petrosus": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_nadmorski",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/%C5%9Bwiergotek_nadmorski",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Anthus spinoletta": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/siwerniak",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/siwerniak",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Fringilla montifringilla": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/jer",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/jer",
+          "basis": "Description explicitly mentions birds present in Poland in winter"
+        }
+      }
+    },
+    "Fringilla coelebs": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/zi%C4%99ba",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.iop.krakow.pl/pobierz-publikacje,1787",
+          "basis": "Wintering population documented in Polish field research"
+        }
+      }
+    },
+    "Coccothraustes coccothraustes": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/grubodzi%C3%B3b",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/grubodzi%C3%B3b",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Carpodacus erythrinus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/dziwonia",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Pinicola enucleator": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Pyrrhula pyrrhula": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/gil",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/gil",
+          "basis": "Description explicitly mentions birds present in Poland in winter"
+        }
+      }
+    },
+    "Bucanetes githagineus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Chloris chloris": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/dzwoniec",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        },
+        "passage": {
+          "url": "https://www.researchgate.net/publication/329519446_Miedzysezonowa_powtarzalnosc_dynamiki_jesiennej_migracji_wroblowych_Passeriformes_nad_Jeziorem_Rakutowskim_Inter-seasonal_repeatability_of_autumn_migration_dynamics_of_passerines_at_the_Rakutowskie_La",
+          "basis": "Table 1: migrant or partially migratory populations in a Polish autumn migration study"
+        }
+      }
+    },
+    "Linaria flavirostris": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/rzepo%C5%82uch",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/rzepo%C5%82uch",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Linaria cannabina": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/makol%C4%85gwa",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/makol%C4%85gwa",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Acanthis flammea": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/czeczotka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/czeczotka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Loxia leucoptera": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Loxia pytyopsittacus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Loxia curvirostra": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/krzy%C5%BCodzi%C3%B3b_%C5%9Bwierkowy",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Carduelis citrinella": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Carduelis carduelis": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/szczygie%C5%82",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/szczygie%C5%82",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Serinus serinus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/kulczyk",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Spinus spinus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/czy%C5%BC",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Plectrophenax nivalis": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/%C5%9Bniegu%C5%82a",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/%C5%9Bniegu%C5%82a",
+          "basis": "Account describes staying in Poland from autumn through spring"
+        }
+      }
+    },
+    "Calcarius lapponicus": {
+      "seasons": {
+        "breeding": false,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "passage": {
+          "url": "https://www.ptaki.info/po%C5%9Bwierka",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/po%C5%9Bwierka",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Emberiza schoeniclus": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/potrzos",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/potrzos",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      },
+      "notes": [
+        "Зимуют лишь некоторые особи; численность зависит от региона и зимы."
+      ]
+    },
+    "Emberiza chrysophrys": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza aureola": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza pusilla": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza rustica": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza spodocephala": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza melanocephala": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza calandra": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/potrzeszcz",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Emberiza cia": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza hortulana": {
+      "seasons": {
+        "breeding": true,
+        "passage": true,
+        "winter": null
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "passage": {
+          "url": "https://www.ptaki.info/ortolan",
+          "basis": "Polish species account describes seasonal movements or spring/autumn migration"
+        }
+      }
+    },
+    "Emberiza cirlus": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza leucocephalos": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Emberiza citrinella": {
+      "seasons": {
+        "breeding": true,
+        "passage": null,
+        "winter": true
+      },
+      "evidence": {
+        "breeding": {
+          "url": "https://komisjafaunistyczna.pl/lista/",
+          "basis": "Current breeding status L/l in the 2026 national checklist"
+        },
+        "winter": {
+          "url": "https://www.ptaki.info/trznadel",
+          "basis": "Local residency or winter presence explicitly described in the Polish account"
+        }
+      }
+    },
+    "Junco hyemalis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    },
+    "Passerculus sandwichensis": {
+      "seasons": {
+        "breeding": false,
+        "passage": null,
+        "winter": null
+      },
+      "evidence": {}
+    }
+  }
+}

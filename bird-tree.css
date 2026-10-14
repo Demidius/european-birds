@@ -17,3 +17,6 @@ h1{overflow-wrap:anywhere;font-size:clamp(44px,5vw,65px)}h1 i{display:block;marg
 
 /* Geographic filter: keep the controls readable at narrow widths. */
 .region-filters{display:flex;flex-direction:column;gap:4px;flex:none}.poland-filter{display:flex;align-items:center;gap:8px;min-height:45px;font-size:12px;color:var(--ink);cursor:pointer}.poland-filter input{accent-color:var(--green);width:18px;height:18px;flex:none}.region-hint{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:750px}@media(max-width:760px){.region-filters{width:100%}.poland-filter{font-size:13px}}
+
+/* Independent, overlapping Poland season filters. */
+.poland-seasons{border:1px solid #3d5149;padding:12px 14px;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:8px 24px}.poland-seasons legend{padding:0 6px;color:var(--green);font:500 24px/1.2 var(--ui)}.poland-seasons label{display:flex;align-items:center;gap:9px;min-height:44px;font-size:13px;color:var(--ink);cursor:pointer}.poland-seasons input{width:18px;height:18px;flex:none;accent-color:var(--green)}#europeVagrantFilter[hidden]{display:none}@media(max-width:760px){.poland-seasons{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:10px 12px}.poland-seasons label{font-size:14px}.poland-seasons legend{font-size:27px}}
