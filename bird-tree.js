@@ -1,17 +1,23 @@
 (()=>{
 'use strict';
-const data=window.PARIDAE_TREE,root=document.getElementById('familyTree');
-if(!data||!root)return;
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const genera=new Map(data.genera.map(g=>[g.latin,g]));
-function genus(name){const g=genera.get(name);return '<li class="phylo-genus" data-genus="'+esc(name)+'"><details open><summary><span class="genus-name">'+esc(name)+'</span><span class="genus-count">'+g.species.length+' '+(g.species.length===1?'вид':g.species.length<5?'вида':'видов')+'</span></summary><ul class="species-list">'+g.species.map(s=>'<li data-species="'+esc(s.latin)+'"><span class="species-latin">'+esc(s.latin)+'</span><span class="species-name">'+esc(s.ru||s.en)+'</span></li>').join('')+'</ul></details></li>';}
-function branch(node){if(typeof node==='string')return genus(node);return '<li class="phylo-branch"><span class="ancestor-dot" aria-hidden="true"></span><span class="sr-only">Общий предок следующих ветвей</span><ul class="phylo-children">'+node.map(branch).join('')+'</ul></li>';}
-root.innerHTML='<div class="family-root"><span class="root-dot" aria-hidden="true"></span><div><strong>'+esc(data.family.ru)+'</strong><span>'+esc(data.family.latin)+'</span></div></div><ul class="phylo-top">'+data.topology.map(branch).join('')+'</ul>';
-const details=()=>Array.from(root.querySelectorAll('.phylo-genus>details'));
-function syncDepth(){const list=details(),allClosed=list.every(d=>!d.open),allOpen=list.every(d=>d.open);document.getElementById('showGenera').setAttribute('aria-pressed',String(allClosed));document.getElementById('showSpecies').setAttribute('aria-pressed',String(allOpen));}
-function depth(open){details().forEach(d=>d.open=open);syncDepth();}
-document.getElementById('showGenera').addEventListener('click',()=>depth(false));
-document.getElementById('showSpecies').addEventListener('click',()=>depth(true));
-root.addEventListener('toggle',syncDepth,true);
-syncDepth();
+const data=window.PASSERINE_TREE,root=document.getElementById('familyTree');if(!data||!root)return;
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ё/g,'е').trim();
+const openStates=new Map();let current=null,query='',frame=0;
+function walk(n,fn){fn(n);(n.children||[]).forEach(c=>walk(c,fn));}
+function count(n){const c={family:0,genus:0,species:0};if(n)walk(n,x=>{if(x.rank in c)c[x.rank]++});return c;}
+function word(n,forms){const a=n%10,b=n%100;return b>=11&&b<=14?forms[2]:a===1?forms[0]:a>=2&&a<=4?forms[1]:forms[2];}
+function summaryCount(n){const c=count(n);return n.rank==='genus'?c.species+' '+word(c.species,['вид','вида','видов']):n.rank==='family'?c.genus+' '+word(c.genus,['род','рода','родов'])+' · '+c.species+' '+word(c.species,['вид','вида','видов']):c.family+' '+word(c.family,['семейство','семейства','семейств']);}
+function filtered(n,parentMatch=false){if(n.rank==='species'&&!$('includeVagrants').checked&&n.vagrant)return null;const match=parentMatch||!query||norm([n.ru,n.latin,n.en].join(' ')).includes(query);if(n.rank==='species')return match?n:null;const children=n.children.map(c=>filtered(c,match&&!!query)).filter(Boolean);return children.length?{...n,children}:null;}
+function label(n){const kinds={order:'ОТРЯД',group:'ГРУППА',family:'СЕМЕЙСТВО',genus:'РОД'};return '<span class="taxon-label"><span class="taxon-kind">'+kinds[n.rank]+'</span><strong>'+esc(n.ru&&n.ru!==n.latin?n.ru:n.latin)+'</strong>'+(n.ru&&n.ru!==n.latin?'<em>'+esc(n.latin)+'</em>':'')+'</span><span class="taxon-count">'+summaryCount(n)+'</span>';}
+function nodeHTML(n){if(n.rank==='species')return '<li class="taxon species-node" data-rank="species" data-node="'+esc(n.id)+'"><span class="species-name">'+esc(n.ru||n.en)+(n.vagrant?' <small class="vagrant-tag">залётный</small>':'')+(n.introduced?' <small class="vagrant-tag">интродуцирован</small>':'')+'</span><span class="species-latin">'+esc(n.latin)+'</span></li>';
+ const open=query?true:openStates.has(n.id)?openStates.get(n.id):n.rank==='order'||n.rank==='group';return '<li class="taxon '+n.rank+'-node" data-rank="'+n.rank+'" data-node="'+esc(n.id)+'"><details data-node="'+esc(n.id)+'" data-rank="'+n.rank+'"'+(open?' open':'')+'><summary>'+label(n)+'</summary><ul class="taxon-children '+(n.rank==='family'||n.rank==='genus'?'membership':'lineage')+'">'+n.children.map(nodeHTML).join('')+'</ul></details></li>';}
+function updateDepth(){frame=0;const ds=Array.from(root.querySelectorAll('details'));if(!ds.length){['showFamilies','showGenera','showSpecies'].forEach(id=>$(id).setAttribute('aria-pressed','false'));return;}const families=ds.filter(d=>d.dataset.rank==='family'),genera=ds.filter(d=>d.dataset.rank==='genus'),groups=ds.filter(d=>d.dataset.rank==='group'||d.dataset.rank==='order'),allParents=groups.every(d=>d.open),familiesOpen=families.every(d=>d.open),generaOpen=genera.every(d=>d.open);$('showFamilies').setAttribute('aria-pressed',String(allParents&&families.every(d=>!d.open)));$('showGenera').setAttribute('aria-pressed',String(allParents&&familiesOpen&&genera.every(d=>!d.open)));$('showSpecies').setAttribute('aria-pressed',String(allParents&&familiesOpen&&generaOpen));}
+function queueDepth(){if(!frame)frame=requestAnimationFrame(updateDepth);}
+function render(){query=norm($('treeSearch').value);current=filtered(data.root);root.innerHTML=current?'<ul class="taxon-top">'+nodeHTML(current)+'</ul>':'<p class="tree-empty">Ничего не найдено. Попробуй другое название.</p>';const c=count(current);$('treeCounts').textContent=c.family+' '+word(c.family,['семейство','семейства','семейств'])+' · '+c.genus+' '+word(c.genus,['род','рода','родов'])+' · '+c.species+' '+word(c.species,['вид','вида','видов']);queueDepth();}
+function depth(level){root.querySelectorAll('details').forEach(d=>{d.open=level==='species'||(level==='genera'&&d.dataset.rank!=='genus')||(level==='families'&&!['family','genus'].includes(d.dataset.rank));if(!query)openStates.set(d.dataset.node,d.open);});if(frame)cancelAnimationFrame(frame);updateDepth();}
+$('showFamilies').addEventListener('click',()=>depth('families'));$('showGenera').addEventListener('click',()=>depth('genera'));$('showSpecies').addEventListener('click',()=>depth('species'));$('collapseTree').addEventListener('click',()=>depth('closed'));
+$('treeSearch').addEventListener('input',render);$('includeVagrants').addEventListener('change',render);
+root.addEventListener('toggle',e=>{if(!e.target.matches('details[data-node]')||!e.target.isConnected)return;if(!query)openStates.set(e.target.dataset.node,e.target.open);queueDepth();},true);
+render();
 })();

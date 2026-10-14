@@ -1,8 +1,8 @@
 {
   "name": "european-birds",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "Name-only phylogenetic board for all genera and species of Paridae",
+  "description": "Expandable name-only tree of European Passeriformes",
   "scripts": {
     "test": "node --test tests/phylogeny.test.cjs",
     "test:browser": "node tests/phylogeny-browser.cjs"
