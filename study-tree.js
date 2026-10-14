@@ -34,9 +34,9 @@ function showQuestion(){stopAudio();const q=quiz,b=q.queue[q.index],ctx=q.contex
  const media=ctx.mode==='photo'?b.photos:ctx.mode==='audio'?b.audio:[];q.media=media.length?media[Math.floor(Math.random()*media.length)]:null;
  $('treeQuizMedia').innerHTML=ctx.mode==='photo'?'<img src="'+esc(q.media.src)+'" alt="Птица для определения">':ctx.mode==='audio'?'<div class="audio-question"><div class="audio-mark" aria-hidden="true">▂▅▇▃▆</div><audio controls preload="none" src="'+esc(q.media.src)+'" aria-label="Голос птицы для определения"></audio><p>Послушай запись, затем выбери вид.</p></div>':'';
  $('treeQuizResult').innerHTML='';$('nextTreeQuiz').hidden=true;$('nextTreeQuiz').textContent='Следующая птица';
- const options=C.shuffle([b,...C.shuffle(birds.filter(x=>x.id!==b.id)).slice(0,3)]);
+ const options=C.answerChoices(b,window.BIRD_DATA,ctx.mode==='names'?ctx.language:'ru');
  $('treeQuizChoices').innerHTML=options.map(x=>'<button data-tree-answer="'+x.id+'">'+esc(ctx.mode==='names'?x[ctx.language]:x.ru)+'</button>').join('');
- const fail=()=>{if(quiz!==q||q.answered)return;q.blocked=true;$('treeQuizChoices').querySelectorAll('button').forEach(e=>e.disabled=true);$('treeQuizResult').innerHTML='<p>Материал не загрузился. Пропусти вопрос без изменения уровня.</p>';$('nextTreeQuiz').hidden=false;$('nextTreeQuiz').textContent='Пропустить';};
+ const fail=()=>{if(quiz!==q||q.queue[q.index]!==b||q.answered)return;q.blocked=true;$('treeQuizChoices').querySelectorAll('button').forEach(e=>e.disabled=true);$('treeQuizResult').innerHTML='<p>Материал не загрузился. Пропусти вопрос без изменения уровня.</p>';$('nextTreeQuiz').hidden=false;$('nextTreeQuiz').textContent='Пропустить';};
  $('treeQuizMedia').querySelector('img')?.addEventListener('error',fail,{once:true});$('treeQuizMedia').querySelector('audio')?.addEventListener('error',fail,{once:true});
  $('treeQuizChoices').querySelector('button')?.focus();
 }

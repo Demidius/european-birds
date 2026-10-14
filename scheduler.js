@@ -14,6 +14,12 @@ function schedule(previous,rating,now=Date.now()){
 function normalizeAnswer(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ё/g,'е').replace(/ł/g,'l').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
 function due(s,now=Date.now()){return s&&s.reps>0&&s.due<=now;}
 function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+// Sample unique labels before shuffling all six positions, including the correct answer.
+function answerChoices(correct,birds,field='ru',count=6,rand=Math.random){
+ const seenIds=new Set([correct.id]),seenLabels=new Set([normalizeAnswer(correct[field])]),others=[];
+ for(const b of shuffle(birds,rand)){const label=normalizeAnswer(b[field]);if(!label||seenIds.has(b.id)||seenLabels.has(label))continue;seenIds.add(b.id);seenLabels.add(label);others.push(b);if(others.length===count-1)break;}
+ return shuffle([correct,...others],rand);
+}
 function queue(birds,states,key,kind,now=Date.now(),limit=20){let a=birds.filter(b=>kind==='new'?!states[key(b)]||states[key(b)].reps===0:due(states[key(b)],now));if(kind==='new')a=shuffle(a);else a.sort((a,b)=>states[key(a)].due-states[key(b)].due);return a.slice(0,limit);}
-const api={DAY,initial,clean,schedule,normalizeAnswer,due,shuffle,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
+const api={DAY,initial,clean,schedule,normalizeAnswer,due,shuffle,answerChoices,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

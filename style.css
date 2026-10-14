@@ -12,3 +12,13 @@
 @media(max-width:760px){.action>span:last-child{font-size:clamp(24px,6.5vw,29px)}}
 @media(max-width:360px){.action>span:last-child{font-size:22px}}
 @media(max-width:760px){h1{font-size:44px}}@media(max-width:360px){h1{font-size:38px}}
+
+/* Six choices in both study cards and branch quizzes. */
+.answer-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.answer-choices button{font:600 28px/1.2 var(--ui);min-height:64px;padding:12px;text-align:left;overflow-wrap:anywhere}
+.answer-choices button.latin{font-style:italic}
+.answer-choices button:hover:not(:disabled){border-color:var(--gold)}
+.answer-choices button:disabled{opacity:1}
+.answer-choices button.correct{background:#31483d;border-color:var(--green);color:#ddf4e2}
+.answer-choices button.wrong{background:#493036;border-color:#d59c94;color:#ffd8d2}
+@media(max-width:420px){.answer-choices{grid-template-columns:minmax(0,1fr)}.answer-choices button{min-height:52px}}
