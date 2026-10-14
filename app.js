@@ -25,7 +25,7 @@ function render(){const pool=eligible(),done=pool.filter(b=>state(b).level===10)
  $('progressBar').innerHTML=meta.map(([s,,color])=>'<span style="width:'+(pool.length?counts[s]/pool.length*100:0)+'%;background:var(--'+color+')"></span>').join('');$('progressBar').setAttribute('aria-label',meta.map(([s,l])=>l+': '+counts[s]).join(', '));
  $('legend').innerHTML=meta.map(([s,l,color])=>'<span><i class="dot" style="background:var(--'+color+')"></i>'+l+' '+counts[s]+'</span>').join('');
  $('modeNote').textContent=mode==='photo'?'Одна фотография. Сможешь назвать вид?':mode==='audio'?'Сначала послушай. Фотография и название появятся после ответа.':'Русское название -> вспомни '+({en:'английское',latin:'латинское',pl:'польское'}[language])+'.';
- renderCatalog();showNotice();
+ renderCatalog();showNotice();window.dispatchEvent(new CustomEvent('birdatlas:render'));
 }
 function renderCatalog(){const q=C.normalizeAnswer($('search').value),sf=$('statusFilter').value;
  const visible=eligible().filter(b=>(!q||C.normalizeAnswer([b.ru,b.en,b.latin,b.pl].join(' ')).includes(q))&&(sf==='all'||sf===status(state(b))));
@@ -91,5 +91,18 @@ $('infoDialog').addEventListener('click',e=>{if(e.target.closest('#register'))do
 $('infoDialog').addEventListener('change',e=>{if(e.target.id==='progressFile')importProgress(e.target.files[0]);});
 document.addEventListener('keydown',e=>{if(!session||!$('cardDialog').open||e.target.matches('input,textarea,select'))return;if(e.code==='Space'&&!session.revealed){e.preventDefault();reveal();}if(session.revealed&&['1','2','3','4'].includes(e.key)){e.preventDefault();rate(['again','hard','good','easy'][Number(e.key)-1]);}});
 window.addEventListener('online',syncPending);window.addEventListener('pagehide',stopAudio);
+// Shared progress API for the phylogenetic board; no second progress store.
+window.BirdAtlas={
+ context:()=>({uid,mode,language,own:own()}),
+ state:id=>C.clean(states[key(BIRDS.find(b=>b.id===id))]),
+ available:id=>available(BIRDS.find(b=>b.id===id)),
+ detail:id=>detail(BIRDS.find(b=>b.id===id)),
+ grade:(id,correct,context)=>{
+  if(!own()||context.uid!==uid||context.mode!==mode||context.language!==language)return null;
+  const b=BIRDS.find(b=>b.id===id);if(!b||!available(b))return null;
+  const k=key(b),next=C.schedule(states[k],correct?'good':'again');
+  saveState(k,next);render();return next.level;
+ }
+};
 states=cleanMap(read('progress:guest',{}));renderGroups();renderProfiles();render();initCloud();
 })();
