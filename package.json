@@ -1,13 +1,11 @@
 {
   "name": "european-birds",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Static European bird flashcards with separate photo, audio and name progress",
+  "description": "Name-only phylogenetic board for all genera and species of Paridae",
   "scripts": {
-    "test": "node --test tests/scheduler.test.cjs",
-    "test:accounts": "node tests/accounts.cjs",
-    "test:browser": "node tests/browser.cjs",
-    "test:tree": "node tests/tree-browser.cjs"
+    "test": "node --test tests/phylogeny.test.cjs",
+    "test:browser": "node tests/phylogeny-browser.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0",
