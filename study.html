@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css?v=20261015-2">
 <script defer src="scheduler.js?v=20261015-2"></script><script defer src="data-birds.js?v=20261014-1"></script>
 <link rel="stylesheet" href="study-tree.css?v=20261015-1">
-<script defer src="firebase-config.js"></script><script defer src="app.js?v=20261015-2"></script><script defer src="study-tree.js?v=20261015-2"></script>
+<script defer src="firebase-config.js"></script><script defer src="app.js?v=20261015-3"></script><script defer src="study-tree.js?v=20261015-3"></script>
 </head>
 <body>
 <header class="site-header"><a class="brand" href="./" aria-label="Птицы Европы, главная"><span class="brand-icon" aria-hidden="true">◈</span><span><strong>Птицы Европы</strong><small>BIRD ATLAS · УЧИСЬ УЗНАВАТЬ</small></span></a><div class="header-links"><a href="./">Дерево птиц</a><a href="https://demidius.github.io/english-skill-tree/">Английский ↗</a><button id="accountBtn" class="quiet">Войти</button></div></header>
@@ -19,7 +19,7 @@
 <section class="study-hub" aria-label="Занятия и прогресс">
 <div class="study-panel"><div class="section-line"><h2>Как будем узнавать?</h2><button class="info quiet" id="helpBtn" aria-label="Как работает повторение">?</button></div>
 <div class="mode-switch" role="group" aria-label="Тип карточек"><button data-mode="photo" aria-pressed="true">Фото</button><button data-mode="audio" aria-pressed="false">Голоса</button><button data-mode="names" aria-pressed="false">Названия</button></div>
-<div class="language-row" id="languageRow" hidden><label for="language">Вспомнить название на</label><select id="language"><option value="latin">латыни</option><option value="en">английском</option><option value="pl">польском</option></select></div>
+<div class="language-row" id="languageRow"><label for="language">Язык ответов в тестах</label><select id="language"><option value="ru">русский</option><option value="en">английский</option><option value="latin">латынь</option><option value="pl">польский</option></select></div>
 <p class="mode-note" id="modeNote">Одна фотография. Сможешь назвать вид?</p>
 <div class="study-actions"><button class="action primary" id="reviewBtn"><span class="action-kicker">ПОРА ВСПОМНИТЬ</span><strong id="dueCount">0</strong><span>Повторить <b aria-hidden="true">↗</b></span></button><button class="action secondary" id="learnBtn"><span class="action-kicker">НОВЫЕ ЗНАКОМСТВА</span><strong id="newCount">38</strong><span>Изучать <b aria-hidden="true">↗</b></span></button></div></div>
 <aside class="progress-panel"><p class="eyebrow">ТВОЯ КОЛЛЕКЦИЯ</p><h2 id="progressTitle">Узнаю по фото</h2><div class="progress-total"><strong id="masteredCount">0</strong><span id="totalCount">/ 38 видов</span></div><div class="progress-bar" id="progressBar" role="img" aria-label="Прогресс по видам"></div><div class="legend" id="legend"></div><label class="profile-label" for="profileSelect">Прогресс ученика</label><select id="profileSelect"><option value="guest">Гость (это устройство)</option></select><button id="backToMe" class="quiet" hidden>Вернуться к себе</button></aside>
