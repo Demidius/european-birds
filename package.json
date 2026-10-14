@@ -1,8 +1,8 @@
 {
   "name": "european-birds",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
-  "description": "Expandable name-only tree of European Passeriformes",
+  "description": "Expandable European Passeriformes tree with licensed photo cards",
   "scripts": {
     "test": "node --test tests/phylogeny.test.cjs",
     "test:browser": "node tests/phylogeny-browser.cjs"
