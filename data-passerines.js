@@ -1,5 +1,6 @@
 // European occurrence: Avibase / Birds Canada, checked 2026-10-14.
 // Taxonomy and scientific/English names: AviList v2025b, CC BY 4.0.
+// Polish names: Avibase, with Komisja Faunistyczna names preferred for national records.
 // Major lineages: Oliveros et al. (2019); nested taxonomic membership is unresolved.
 window.PASSERINE_TREE = {
   "root": {
@@ -32,6 +33,7 @@ window.PASSERINE_TREE = {
                     "latin": "Myiarchus crinitus",
                     "ru": "Хохлатый миарх",
                     "en": "Great Crested Flycatcher",
+                    "pl": "Muchołap czubaty",
                     "vagrant": true,
                     "introduced": false
                   }
@@ -49,6 +51,7 @@ window.PASSERINE_TREE = {
                     "latin": "Tyrannus savana",
                     "ru": "Вилохвостый тиранн",
                     "en": "Fork-tailed Flycatcher",
+                    "pl": "Tyran widłosterny",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -58,6 +61,7 @@ window.PASSERINE_TREE = {
                     "latin": "Tyrannus tyrannus",
                     "ru": "Восточный тиранн",
                     "en": "Eastern Kingbird",
+                    "pl": "Tyran północny",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -67,6 +71,7 @@ window.PASSERINE_TREE = {
                     "latin": "Tyrannus verticalis",
                     "ru": "Западный тиранн",
                     "en": "Western Kingbird",
+                    "pl": "Tyran zachodni",
                     "vagrant": true,
                     "introduced": false
                   }
@@ -84,6 +89,7 @@ window.PASSERINE_TREE = {
                     "latin": "Sayornis phoebe",
                     "ru": "Светлобрюхий фиби",
                     "en": "Eastern Phoebe",
+                    "pl": "Fibik oliwkowy",
                     "vagrant": true,
                     "introduced": false
                   }
@@ -101,6 +107,7 @@ window.PASSERINE_TREE = {
                     "latin": "Empidonax virescens",
                     "ru": "Восточный мухолов",
                     "en": "Acadian Flycatcher",
+                    "pl": "Empidonka oliwkowa",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -110,6 +117,7 @@ window.PASSERINE_TREE = {
                     "latin": "Empidonax alnorum",
                     "ru": "Лесной мухолов",
                     "en": "Alder Flycatcher",
+                    "pl": "Empidonka olchowa",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -119,6 +127,7 @@ window.PASSERINE_TREE = {
                     "latin": "Empidonax traillii",
                     "ru": "Ивовый мухолов",
                     "en": "Willow Flycatcher",
+                    "pl": "Empidonka mała",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -128,6 +137,7 @@ window.PASSERINE_TREE = {
                     "latin": "Empidonax flaviventris",
                     "ru": "Желтобрюхий мухолов",
                     "en": "Yellow-bellied Flycatcher",
+                    "pl": "Empidonka żółtobrzucha",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -137,6 +147,7 @@ window.PASSERINE_TREE = {
                     "latin": "Empidonax minimus",
                     "ru": "Малый мухолов",
                     "en": "Least Flycatcher",
+                    "pl": "Empidonka siwa",
                     "vagrant": true,
                     "introduced": false
                   }
@@ -154,6 +165,7 @@ window.PASSERINE_TREE = {
                     "latin": "Contopus cooperi",
                     "ru": "Оливковобокий пиви",
                     "en": "Olive-sided Flycatcher",
+                    "pl": "Piwik północny",
                     "vagrant": true,
                     "introduced": false
                   },
@@ -163,6 +175,7 @@ window.PASSERINE_TREE = {
                     "latin": "Contopus virens",
                     "ru": "Восточный пиви",
                     "en": "Eastern Wood Pewee",
+                    "pl": "Piwik leśny",
                     "vagrant": true,
                     "introduced": false
                   }
@@ -202,6 +215,7 @@ window.PASSERINE_TREE = {
                         "latin": "Vireo philadelphicus",
                         "ru": "Лимонный виреон",
                         "en": "Philadelphia Vireo",
+                        "pl": "Wireonek cytrynowy",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -211,6 +225,7 @@ window.PASSERINE_TREE = {
                         "latin": "Vireo olivaceus",
                         "ru": "Красноглазый виреон",
                         "en": "Red-eyed Vireo",
+                        "pl": "Wireonek czerwonooki",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -220,6 +235,7 @@ window.PASSERINE_TREE = {
                         "latin": "Vireo flavifrons",
                         "ru": "Желтогорлый виреон",
                         "en": "Yellow-throated Vireo",
+                        "pl": "Wireonek żółtogardły",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -229,6 +245,7 @@ window.PASSERINE_TREE = {
                         "latin": "Vireo solitarius",
                         "ru": "Сероголовый виреон",
                         "en": "Blue-headed Vireo",
+                        "pl": "Wireonek siwy",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -238,6 +255,7 @@ window.PASSERINE_TREE = {
                         "latin": "Vireo griseus",
                         "ru": "Белоглазый виреон",
                         "en": "White-eyed Vireo",
+                        "pl": "Wireonek białooki",
                         "vagrant": true,
                         "introduced": false
                       }
@@ -263,6 +281,7 @@ window.PASSERINE_TREE = {
                         "latin": "Oriolus kundoo",
                         "ru": "Индийская иволга",
                         "en": "Indian Golden Oriole",
+                        "pl": "Wilga złotoplama",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -272,6 +291,7 @@ window.PASSERINE_TREE = {
                         "latin": "Oriolus oriolus",
                         "ru": "Обыкновенная иволга",
                         "en": "Eurasian Golden Oriole",
+                        "pl": "Wilga",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -297,6 +317,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius excubitor",
                         "ru": "Серый сорокопут",
                         "en": "Great Grey Shrike",
+                        "pl": "Srokosz",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -306,6 +327,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius meridionalis",
                         "ru": "Пиренейский сорокопут",
                         "en": "Iberian Grey Shrike",
+                        "pl": "Dzierzba śródziemnomorska",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -315,6 +337,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius borealis",
                         "ru": "Северный сорокопут",
                         "en": "Northern Shrike",
+                        "pl": "Srokosz północny",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -324,6 +347,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius nubicus",
                         "ru": "Маскированный сорокопут",
                         "en": "Masked Shrike",
+                        "pl": "Dzierzba białoczelna",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -333,6 +357,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius minor",
                         "ru": "Чернолобый сорокопут",
                         "en": "Lesser Grey Shrike",
+                        "pl": "Dzierzba czarnoczelna",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -342,6 +367,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius senator",
                         "ru": "Красноголовый сорокопут",
                         "en": "Woodchat Shrike",
+                        "pl": "Dzierzba rudogłowa",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -351,6 +377,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius isabellinus",
                         "ru": "Рыжехвостый жулан",
                         "en": "Isabelline Shrike",
+                        "pl": "Dzierzba pustynna",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -360,6 +387,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius collurio",
                         "ru": "Обыкновенный жулан",
                         "en": "Red-backed Shrike",
+                        "pl": "Gąsiorek",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -369,6 +397,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius phoenicuroides",
                         "ru": "Туркестанский жулан",
                         "en": "Red-tailed Shrike",
+                        "pl": "Dzierzba rdzawosterna",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -378,6 +407,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius schach",
                         "ru": "Длиннохвостый сорокопут",
                         "en": "Long-tailed Shrike",
+                        "pl": "Dzierzba zmienna",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -387,6 +417,7 @@ window.PASSERINE_TREE = {
                         "latin": "Lanius cristatus",
                         "ru": "Сибирский жулан",
                         "en": "Brown Shrike",
+                        "pl": "Dzierzba brązowa",
                         "vagrant": true,
                         "introduced": false
                       }
@@ -412,6 +443,7 @@ window.PASSERINE_TREE = {
                         "latin": "Pyrrhocorax graculus",
                         "ru": "Альпийская галка",
                         "en": "Alpine Chough",
+                        "pl": "Wieszczek",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -421,6 +453,7 @@ window.PASSERINE_TREE = {
                         "latin": "Pyrrhocorax pyrrhocorax",
                         "ru": "Клушица",
                         "en": "Red-billed Chough",
+                        "pl": "Wrończyk",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -438,6 +471,7 @@ window.PASSERINE_TREE = {
                         "latin": "Cyanopica cooki",
                         "ru": "Иберийская сорока",
                         "en": "Iberian Magpie",
+                        "pl": "Sójka iberyjska",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -455,6 +489,7 @@ window.PASSERINE_TREE = {
                         "latin": "Perisoreus infaustus",
                         "ru": "Кукша",
                         "en": "Siberian Jay",
+                        "pl": "Sójka syberyjska",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -472,6 +507,7 @@ window.PASSERINE_TREE = {
                         "latin": "Garrulus glandarius",
                         "ru": "Сойка",
                         "en": "Eurasian Jay",
+                        "pl": "Sójka",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -489,6 +525,7 @@ window.PASSERINE_TREE = {
                         "latin": "Pica pica",
                         "ru": "Сорока",
                         "en": "Eurasian Magpie",
+                        "pl": "Sroka",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -506,6 +543,7 @@ window.PASSERINE_TREE = {
                         "latin": "Nucifraga caryocatactes",
                         "ru": "Кедровка",
                         "en": "Northern Nutcracker",
+                        "pl": "Orzechówka",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -523,6 +561,7 @@ window.PASSERINE_TREE = {
                         "latin": "Coloeus dauuricus",
                         "ru": "Даурская галка",
                         "en": "Daurian Jackdaw",
+                        "pl": "Kawka srokata",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -532,6 +571,7 @@ window.PASSERINE_TREE = {
                         "latin": "Coloeus monedula",
                         "ru": "Галка",
                         "en": "Western Jackdaw",
+                        "pl": "Kawka",
                         "vagrant": false,
                         "introduced": false
                       }
@@ -549,6 +589,7 @@ window.PASSERINE_TREE = {
                         "latin": "Corvus frugilegus",
                         "ru": "Грач",
                         "en": "Rook",
+                        "pl": "Gawron",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -558,6 +599,7 @@ window.PASSERINE_TREE = {
                         "latin": "Corvus rhipidurus",
                         "ru": "Короткохвостый ворон",
                         "en": "Fan-tailed Raven",
+                        "pl": "Kruk kusy",
                         "vagrant": true,
                         "introduced": false
                       },
@@ -567,6 +609,7 @@ window.PASSERINE_TREE = {
                         "latin": "Corvus corax",
                         "ru": "Ворон",
                         "en": "Northern Raven",
+                        "pl": "Kruk",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -576,6 +619,7 @@ window.PASSERINE_TREE = {
                         "latin": "Corvus corone",
                         "ru": "Carrion Crow",
                         "en": "Carrion Crow",
+                        "pl": "Wrona",
                         "vagrant": false,
                         "introduced": false
                       },
@@ -585,6 +629,7 @@ window.PASSERINE_TREE = {
                         "latin": "Corvus splendens",
                         "ru": "Домовая ворона",
                         "en": "House Crow",
+                        "pl": "Wrona orientalna",
                         "vagrant": false,
                         "introduced": true
                       }
@@ -624,6 +669,7 @@ window.PASSERINE_TREE = {
                             "latin": "Remiz pendulinus",
                             "ru": "Обыкновенный ремез",
                             "en": "Eurasian Penduline Tit",
+                            "pl": "Remiz",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -649,6 +695,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cyanistes teneriffae",
                             "ru": "Африканская лазоревка",
                             "en": "African Blue Tit",
+                            "pl": "Modraszka kanaryjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -658,6 +705,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cyanistes cyanus",
                             "ru": "Белая лазоревка",
                             "en": "Azure Tit",
+                            "pl": "Sikora lazurowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -667,6 +715,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cyanistes caeruleus",
                             "ru": "Лазоревка",
                             "en": "Eurasian Blue Tit",
+                            "pl": "Modraszka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -684,6 +733,7 @@ window.PASSERINE_TREE = {
                             "latin": "Parus major",
                             "ru": "Большая синица",
                             "en": "Great Tit",
+                            "pl": "Bogatka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -701,6 +751,7 @@ window.PASSERINE_TREE = {
                             "latin": "Periparus ater",
                             "ru": "Московка",
                             "en": "Coal Tit",
+                            "pl": "Sosnówka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -718,6 +769,7 @@ window.PASSERINE_TREE = {
                             "latin": "Lophophanes cristatus",
                             "ru": "Хохлатая синица",
                             "en": "Crested Tit",
+                            "pl": "Czubatka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -735,6 +787,7 @@ window.PASSERINE_TREE = {
                             "latin": "Poecile lugubris",
                             "ru": "Средиземноморская гаичка",
                             "en": "Sombre Tit",
+                            "pl": "Sikora żałobna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -744,6 +797,7 @@ window.PASSERINE_TREE = {
                             "latin": "Poecile palustris",
                             "ru": "Черноголовая гаичка",
                             "en": "Marsh Tit",
+                            "pl": "Sikora uboga",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -753,6 +807,7 @@ window.PASSERINE_TREE = {
                             "latin": "Poecile montanus",
                             "ru": "Пухляк",
                             "en": "Willow Tit",
+                            "pl": "Czarnogłówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -762,6 +817,7 @@ window.PASSERINE_TREE = {
                             "latin": "Poecile cinctus",
                             "ru": "Сероголовая гаичка",
                             "en": "Grey-headed Chickadee",
+                            "pl": "Sikora północna",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -787,6 +843,7 @@ window.PASSERINE_TREE = {
                             "latin": "Panurus biarmicus",
                             "ru": "Усатая синица",
                             "en": "Bearded Reedling",
+                            "pl": "Wąsatka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -812,6 +869,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alaemon alaudipes",
                             "ru": "Большой удодовый жаворонок",
                             "en": "Greater Hoopoe-Lark",
+                            "pl": "Skowron pustynny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -829,6 +887,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ramphocoris clotbey",
                             "ru": "Толстоклювый жаворонок",
                             "en": "Thick-billed Lark",
+                            "pl": "Skowroniak",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -846,6 +905,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ammomanes cinctura",
                             "ru": "Вьюрковый жаворонок",
                             "en": "Bar-tailed Lark",
+                            "pl": "Skowronik rudawy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -855,6 +915,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ammomanes deserti",
                             "ru": "Пустынный жаворонок",
                             "en": "Desert Lark",
+                            "pl": "Skowronik piaskowy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -872,6 +933,7 @@ window.PASSERINE_TREE = {
                             "latin": "Lullula arborea",
                             "ru": "Лесной жаворонок",
                             "en": "Woodlark",
+                            "pl": "Lerka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -889,6 +951,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alauda leucoptera",
                             "ru": "Белокрылый жаворонок",
                             "en": "White-winged Lark",
+                            "pl": "Skowronek białoskrzydły",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -898,6 +961,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alauda gulgula",
                             "ru": "Индийский жаворонок",
                             "en": "Oriental Skylark",
+                            "pl": "Skowronek orientalny",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -907,6 +971,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alauda arvensis",
                             "ru": "Полевой жаворонок",
                             "en": "Eurasian Skylark",
+                            "pl": "Skowronek",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -924,6 +989,7 @@ window.PASSERINE_TREE = {
                             "latin": "Galerida theklae",
                             "ru": "Короткопалый хохлатый жаворонок",
                             "en": "Thekla's Lark",
+                            "pl": "Dzierlatka iberyjska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -933,6 +999,7 @@ window.PASSERINE_TREE = {
                             "latin": "Galerida cristata",
                             "ru": "Хохлатый жаворонок",
                             "en": "Crested Lark",
+                            "pl": "Dzierlatka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -950,6 +1017,7 @@ window.PASSERINE_TREE = {
                             "latin": "Eremophila bilopha",
                             "ru": "Сахарский жаворонок",
                             "en": "Temminck's Lark",
+                            "pl": "Górniczek mały",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -959,6 +1027,7 @@ window.PASSERINE_TREE = {
                             "latin": "Eremophila alpestris",
                             "ru": "Рогатый жаворонок",
                             "en": "Horned Lark",
+                            "pl": "Górniczek",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -976,6 +1045,7 @@ window.PASSERINE_TREE = {
                             "latin": "Calandrella brachydactyla",
                             "ru": "Малый жаворонок",
                             "en": "Greater Short-toed Lark",
+                            "pl": "Skowrończyk krótkopalcowy",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -993,6 +1063,7 @@ window.PASSERINE_TREE = {
                             "latin": "Melanocorypha bimaculata",
                             "ru": "Двупятнистый жаворонок",
                             "en": "Bimaculated Lark",
+                            "pl": "Kalandra dwuplamista",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1002,6 +1073,7 @@ window.PASSERINE_TREE = {
                             "latin": "Melanocorypha yeltoniensis",
                             "ru": "Чёрный жаворонок",
                             "en": "Black Lark",
+                            "pl": "Kalandra czarna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1011,6 +1083,7 @@ window.PASSERINE_TREE = {
                             "latin": "Melanocorypha calandra",
                             "ru": "Степной жаворонок",
                             "en": "Calandra Lark",
+                            "pl": "Kalandra szara",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1028,6 +1101,7 @@ window.PASSERINE_TREE = {
                             "latin": "Chersophilus duponti",
                             "ru": "Средиземноморский жаворонок",
                             "en": "Dupont's Lark",
+                            "pl": "Skowrończyk sierpodzioby",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1045,6 +1119,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alaudala cheleensis",
                             "ru": "Солончаковый жаворонок",
                             "en": "Asian Short-toed Lark",
+                            "pl": "Skowrończyk mongolski",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1054,6 +1129,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alaudala rufescens",
                             "ru": "Серый жаворонок",
                             "en": "Mediterranean Short-toed Lark",
+                            "pl": "Skowrończyk mały",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1063,6 +1139,7 @@ window.PASSERINE_TREE = {
                             "latin": "Alaudala heinei",
                             "ru": "Туркестанский серый жаворонок",
                             "en": "Turkestan Short-toed Lark",
+                            "pl": "Skowrończyk kaspijski",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1088,6 +1165,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cisticola juncidis",
                             "ru": "Золотистая цистикола",
                             "en": "Zitting Cisticola",
+                            "pl": "Chwastówka (zwyczajna)",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1113,6 +1191,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hippolais icterina",
                             "ru": "Зелёная пересмешка",
                             "en": "Icterine Warbler",
+                            "pl": "Zaganiacz",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1122,6 +1201,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hippolais polyglotta",
                             "ru": "Многоголосая пересмешка",
                             "en": "Melodious Warbler",
+                            "pl": "Zaganiacz szczebiotliwy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1131,6 +1211,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hippolais languida",
                             "ru": "Пустынная пересмешка",
                             "en": "Upcher's Warbler",
+                            "pl": "Zaganiacz pustynny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1140,6 +1221,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hippolais olivetorum",
                             "ru": "Средиземноморская пересмешка",
                             "en": "Olive-tree Warbler",
+                            "pl": "Zaganiacz oliwny",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1157,6 +1239,7 @@ window.PASSERINE_TREE = {
                             "latin": "Arundinax aedon",
                             "ru": "Толстоклювая камышевка",
                             "en": "Thick-billed Warbler",
+                            "pl": "Zaganiacz grubodzioby",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1174,6 +1257,7 @@ window.PASSERINE_TREE = {
                             "latin": "Iduna caligata",
                             "ru": "Северная бормотушка",
                             "en": "Booted Warbler",
+                            "pl": "Zaganiacz mały",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1183,6 +1267,7 @@ window.PASSERINE_TREE = {
                             "latin": "Iduna rama",
                             "ru": "Южная бормотушка",
                             "en": "Sykes's Warbler",
+                            "pl": "Zaganiacz afgański",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1192,6 +1277,7 @@ window.PASSERINE_TREE = {
                             "latin": "Iduna pallida",
                             "ru": "Бледная пересмешка",
                             "en": "Eastern Olivaceous Warbler",
+                            "pl": "Zaganiacz blady",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1201,6 +1287,7 @@ window.PASSERINE_TREE = {
                             "latin": "Iduna opaca",
                             "ru": "Буланая бормотушка",
                             "en": "Western Olivaceous Warbler",
+                            "pl": "Zaganiacz płowy",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1218,6 +1305,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus schoenobaenus",
                             "ru": "Камышевка-барсучок",
                             "en": "Sedge Warbler",
+                            "pl": "Rokitniczka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1227,6 +1315,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus paludicola",
                             "ru": "Вертлявая камышевка",
                             "en": "Aquatic Warbler",
+                            "pl": "Wodniczka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1236,6 +1325,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus melanopogon",
                             "ru": "Тонкоклювая камышевка",
                             "en": "Moustached Warbler",
+                            "pl": "Tamaryszka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1245,6 +1335,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus agricola",
                             "ru": "Индийская камышевка",
                             "en": "Paddyfield Warbler",
+                            "pl": "Trzcinniczek kaspijski",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1254,6 +1345,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus dumetorum",
                             "ru": "Садовая камышевка",
                             "en": "Blyth's Reed Warbler",
+                            "pl": "Zaroślówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1263,6 +1355,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus palustris",
                             "ru": "Болотная камышевка",
                             "en": "Marsh Warbler",
+                            "pl": "Łozówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1272,6 +1365,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus scirpaceus",
                             "ru": "Тростниковая камышевка",
                             "en": "Common Reed Warbler",
+                            "pl": "Trzcinniczek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1281,6 +1375,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus arundinaceus",
                             "ru": "Дроздовидная камышевка",
                             "en": "Great Reed Warbler",
+                            "pl": "Trzciniak",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1290,6 +1385,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acrocephalus stentoreus",
                             "ru": "Южная дроздовидная камышевка",
                             "en": "Clamorous Reed Warbler",
+                            "pl": "Trzciniak głośny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1315,6 +1411,7 @@ window.PASSERINE_TREE = {
                             "latin": "Helopsaltes fasciolatus",
                             "ru": "Таежный сверчок",
                             "en": "Gray's Grasshopper Warbler",
+                            "pl": "Świerszczak tajgowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1324,6 +1421,7 @@ window.PASSERINE_TREE = {
                             "latin": "Helopsaltes certhiola",
                             "ru": "Певчий сверчок",
                             "en": "Pallas's Grasshopper Warbler",
+                            "pl": "Świerszczak melodyjny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1341,6 +1439,7 @@ window.PASSERINE_TREE = {
                             "latin": "Locustella lanceolata",
                             "ru": "Пятнистый сверчок",
                             "en": "Lanceolated Warbler",
+                            "pl": "Świerszczak nakrapiany",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1350,6 +1449,7 @@ window.PASSERINE_TREE = {
                             "latin": "Locustella fluviatilis",
                             "ru": "Речной сверчок",
                             "en": "River Warbler",
+                            "pl": "Strumieniówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1359,6 +1459,7 @@ window.PASSERINE_TREE = {
                             "latin": "Locustella luscinioides",
                             "ru": "Соловьиный сверчок",
                             "en": "Savi's Warbler",
+                            "pl": "Brzęczka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1368,6 +1469,7 @@ window.PASSERINE_TREE = {
                             "latin": "Locustella naevia",
                             "ru": "Обыкновенный сверчок",
                             "en": "Common Grasshopper Warbler",
+                            "pl": "Świerszczak",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1393,6 +1495,7 @@ window.PASSERINE_TREE = {
                             "latin": "Riparia riparia",
                             "ru": "Береговушка",
                             "en": "Sand Martin",
+                            "pl": "Brzegówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1402,6 +1505,7 @@ window.PASSERINE_TREE = {
                             "latin": "Riparia diluta",
                             "ru": "Бледная береговушка",
                             "en": "Pale Martin",
+                            "pl": "Brzegówka azjatycka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1411,6 +1515,7 @@ window.PASSERINE_TREE = {
                             "latin": "Riparia paludicola",
                             "ru": "Малая ласточка",
                             "en": "Brown-throated Martin",
+                            "pl": "Brzegówka mała",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1428,6 +1533,7 @@ window.PASSERINE_TREE = {
                             "latin": "Tachycineta bicolor",
                             "ru": "Древесная ласточка",
                             "en": "Tree Swallow",
+                            "pl": "Nadobniczka drzewna",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1445,6 +1551,7 @@ window.PASSERINE_TREE = {
                             "latin": "Progne subis",
                             "ru": "Большая ласточка",
                             "en": "Purple Martin",
+                            "pl": "Jaskółczak modry",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1462,6 +1569,7 @@ window.PASSERINE_TREE = {
                             "latin": "Stelgidopteryx serripennis",
                             "ru": "Североамериканская ласточка",
                             "en": "Northern Rough-winged Swallow",
+                            "pl": "Wodówka północna",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1479,6 +1587,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ptyonoprogne rupestris",
                             "ru": "Скальная ласточка",
                             "en": "Eurasian Crag Martin",
+                            "pl": "Jaskółka skalna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1488,6 +1597,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ptyonoprogne obsoleta",
                             "ru": "Пустынная скалистая ласточка",
                             "en": "Pale Crag Martin",
+                            "pl": "Jaskółka płowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1505,6 +1615,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hirundo rustica",
                             "ru": "Деревенская ласточка",
                             "en": "Barn Swallow",
+                            "pl": "Dymówka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1522,6 +1633,7 @@ window.PASSERINE_TREE = {
                             "latin": "Delichon urbicum",
                             "ru": "Воронок",
                             "en": "Western House Martin",
+                            "pl": "Oknówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1531,6 +1643,7 @@ window.PASSERINE_TREE = {
                             "latin": "Delichon lagopodum",
                             "ru": "Сибирский воронок",
                             "en": "Siberian House Martin",
+                            "pl": "Oknówka syberyjska",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1548,6 +1661,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cecropis semirufa",
                             "ru": "Рыжегрудая ласточка",
                             "en": "Red-breasted Swallow",
+                            "pl": "Jaskółka rdzawobrzucha",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1557,6 +1671,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cecropis rufula",
                             "ru": "Рыжепоясничная ласточка",
                             "en": "European Red-rumped Swallow",
+                            "pl": "Jaskółka śródziemnomorska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1566,6 +1681,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cecropis daurica",
                             "ru": "Рыжепоясничная ласточка",
                             "en": "Eastern Red-rumped Swallow",
+                            "pl": "Jaskółka rudawa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1583,6 +1699,7 @@ window.PASSERINE_TREE = {
                             "latin": "Petrochelidon pyrrhonota",
                             "ru": "Белолобая ласточка",
                             "en": "American Cliff Swallow",
+                            "pl": "Jaskółka rdzawoszyja",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1608,6 +1725,7 @@ window.PASSERINE_TREE = {
                             "latin": "Aegithalos caudatus",
                             "ru": "Ополовник",
                             "en": "Long-tailed Tit",
+                            "pl": "Raniuszek",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1633,6 +1751,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cettia cetti",
                             "ru": "Соловьиная широкохвостка",
                             "en": "Cetti's Warbler",
+                            "pl": "Wierzbówka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1658,6 +1777,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus sibilatrix",
                             "ru": "Пеночка-трещотка",
                             "en": "Wood Warbler",
+                            "pl": "Świstunka leśna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1667,6 +1787,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus bonelli",
                             "ru": "Светлобрюхая пеночка",
                             "en": "Western Bonelli's Warbler",
+                            "pl": "Świstunka górska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1676,6 +1797,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus orientalis",
                             "ru": "Белобрюхая пеночка",
                             "en": "Eastern Bonelli's Warbler",
+                            "pl": "Świstunka złotorzytna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1685,6 +1807,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus inornatus",
                             "ru": "Пеночка-зарничка",
                             "en": "Yellow-browed Warbler",
+                            "pl": "Świstunka żółtawa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1694,6 +1817,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus humei",
                             "ru": "Тусклая пеночка",
                             "en": "Hume's Leaf Warbler",
+                            "pl": "Świstunka ałtajska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1703,6 +1827,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus subviridis",
                             "ru": "Пеночка гималайская",
                             "en": "Brooks's Leaf Warbler",
+                            "pl": "Świstunka żółtozielona",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1712,6 +1837,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus proregulus",
                             "ru": "Корольковая пеночка",
                             "en": "Pallas's Leaf Warbler",
+                            "pl": "Świstunka złotawa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1721,6 +1847,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus schwarzi",
                             "ru": "Толстоклювая пеночка",
                             "en": "Radde's Warbler",
+                            "pl": "Świstunka grubodzioba",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1730,6 +1857,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus griseolus",
                             "ru": "Индийская пеночка",
                             "en": "Sulphur-bellied Warbler",
+                            "pl": "Świstunka żółtobrzucha",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1739,6 +1867,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus fuscatus",
                             "ru": "Бурая пеночка",
                             "en": "Dusky Warbler",
+                            "pl": "Świstunka brunatna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1748,6 +1877,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus neglectus",
                             "ru": "Иранская пеночка",
                             "en": "Plain Leaf Warbler",
+                            "pl": "Świstunka afgańska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1757,6 +1887,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus trochilus",
                             "ru": "Пеночка-весничка",
                             "en": "Willow Warbler",
+                            "pl": "Piecuszek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1766,6 +1897,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus sindianus",
                             "ru": "Горная теньковка",
                             "en": "Mountain Chiffchaff",
+                            "pl": "Świstunka szarawa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1775,6 +1907,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus canariensis",
                             "ru": "Канарская теньковка",
                             "en": "Canary Islands Chiffchaff",
+                            "pl": "Świstunka kanaryjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1784,6 +1917,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus ibericus",
                             "ru": "Иберийская теньковка",
                             "en": "Iberian Chiffchaff",
+                            "pl": "Świstunka iberyjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1793,6 +1927,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus collybita",
                             "ru": "Пеночка-теньковка",
                             "en": "Common Chiffchaff",
+                            "pl": "Pierwiosnek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1802,6 +1937,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus coronatus",
                             "ru": "Светлоголовая пеночка",
                             "en": "Eastern Crowned Warbler",
+                            "pl": "Świstunka oliwkowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1811,6 +1947,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus umbrovirens",
                             "ru": "Коричневатая пеночка",
                             "en": "Brown Woodland Warbler",
+                            "pl": "Świstunka ciemna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1820,6 +1957,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus nitidus",
                             "ru": "Желтобрюхая пеночка",
                             "en": "Green Warbler",
+                            "pl": "Świstunka kaukaska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1829,6 +1967,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus plumbeitarsus",
                             "ru": "Двухполосая пеночка",
                             "en": "Two-barred Warbler",
+                            "pl": "Świstunka amurska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1838,6 +1977,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus trochiloides",
                             "ru": "Зелёная пеночка",
                             "en": "Greenish Warbler",
+                            "pl": "Wójcik",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1847,6 +1987,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus magnirostris",
                             "ru": "Большеклювая пеночка",
                             "en": "Large-billed Leaf Warbler",
+                            "pl": "Świstunka wielkodzioba",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1856,6 +1997,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus tenellipes",
                             "ru": "Бледноногая пеночка",
                             "en": "Pale-legged Leaf Warbler",
+                            "pl": "Świstunka brązowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -1865,6 +2007,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus borealis",
                             "ru": "Пеночка-таловка",
                             "en": "Arctic Warbler",
+                            "pl": "Świstunka północna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1874,6 +2017,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phylloscopus examinandus",
                             "ru": "Камчатская таловка",
                             "en": "Kamchatka Leaf Warbler",
+                            "pl": "Świstunka kamczacka",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -1899,6 +2043,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pycnonotus leucotis",
                             "ru": "Белоухий бюльбюль",
                             "en": "White-eared Bulbul",
+                            "pl": "Bilbil białouchy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1908,6 +2053,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pycnonotus barbatus",
                             "ru": "Темнолицый бюльбюль",
                             "en": "Common Bulbul",
+                            "pl": "Bilbil ogrodowy",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1933,6 +2079,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sylvia borin",
                             "ru": "Садовая славка",
                             "en": "Garden Warbler",
+                            "pl": "Gajówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1942,6 +2089,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sylvia atricapilla",
                             "ru": "Черноголовая славка",
                             "en": "Eurasian Blackcap",
+                            "pl": "Kapturka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -1959,6 +2107,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca nisoria",
                             "ru": "Ястребиная славка",
                             "en": "Barred Warbler",
+                            "pl": "Jarzębatka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1968,6 +2117,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca curruca",
                             "ru": "Славка-завирушка",
                             "en": "Lesser Whitethroat",
+                            "pl": "Piegża",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1977,6 +2127,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca hortensis",
                             "ru": "Певчая славка",
                             "en": "Western Orphean Warbler",
+                            "pl": "Lutniczka zachodnia",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1986,6 +2137,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca crassirostris",
                             "ru": "Восточноорфейская славка",
                             "en": "Eastern Orphean Warbler",
+                            "pl": "Lutniczka wschodnia",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -1995,6 +2147,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca nana",
                             "ru": "Пустынная славка",
                             "en": "Asian Desert Warbler",
+                            "pl": "Pokrzewka pustynna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2004,6 +2157,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca deserti",
                             "ru": "Сахарская славка",
                             "en": "African Desert Warbler",
+                            "pl": "Pokrzewka saharyjska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2013,6 +2167,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca deserticola",
                             "ru": "Атласская славка",
                             "en": "Tristram's Warbler",
+                            "pl": "Pokrzewka algierska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2022,6 +2177,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca mystacea",
                             "ru": "Белоусая славка",
                             "en": "Menetries's Warbler",
+                            "pl": "Pokrzewka kaspijska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2031,6 +2187,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca communis",
                             "ru": "Серая славка",
                             "en": "Common Whitethroat",
+                            "pl": "Cierniówka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2040,6 +2197,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca conspicillata",
                             "ru": "Очковая славка",
                             "en": "Spectacled Warbler",
+                            "pl": "Pokrzewka okularowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2049,6 +2207,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca sarda",
                             "ru": "Сардинская славка",
                             "en": "Marmora's Warbler",
+                            "pl": "Pokrzewka czarniawa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2058,6 +2217,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca balearica",
                             "ru": "Балеарская славка",
                             "en": "Balearic Warbler",
+                            "pl": "Pokrzewka balearska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2067,6 +2227,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca undata",
                             "ru": "Провансальская славка",
                             "en": "Dartford Warbler",
+                            "pl": "Pokrzewka kasztanowata",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2076,6 +2237,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca ruppeli",
                             "ru": "Славка Рюппеля",
                             "en": "Rüppell's Warbler",
+                            "pl": "Pokrzewka czarnogardła",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2085,6 +2247,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca melanothorax",
                             "ru": "Кипрская славка",
                             "en": "Cyprus Warbler",
+                            "pl": "Pokrzewka cypryjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2094,6 +2257,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca melanocephala",
                             "ru": "Средиземноморская славка",
                             "en": "Sardinian Warbler",
+                            "pl": "Pokrzewka aksamitna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2103,6 +2267,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca subalpina",
                             "ru": "Субальпийская славка",
                             "en": "Moltoni's Warbler",
+                            "pl": "Pokrzewka różowobrzucha",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2112,6 +2277,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca iberiae",
                             "ru": "Африканская рыжегрудая славка",
                             "en": "Western Subalpine Warbler",
+                            "pl": "Pokrzewka iberyjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2121,6 +2287,7 @@ window.PASSERINE_TREE = {
                             "latin": "Curruca cantillans",
                             "ru": "Рыжегрудая славка",
                             "en": "Eastern Subalpine Warbler",
+                            "pl": "Pokrzewka wąsata",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2146,6 +2313,7 @@ window.PASSERINE_TREE = {
                             "latin": "Suthora alphonsiana",
                             "ru": "Серогорлая сутора",
                             "en": "Ashy-throated Parrotbill",
+                            "pl": "Ogoniatka rdzawogłowa",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -2171,6 +2339,7 @@ window.PASSERINE_TREE = {
                             "latin": "Leiothrix lutea",
                             "ru": "Красноклювый лиотрикс, пекинский соловей",
                             "en": "Red-billed Leiothrix",
+                            "pl": "Pekińczyk czerwonodzioby",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -2204,6 +2373,7 @@ window.PASSERINE_TREE = {
                             "latin": "Corthylio calendula",
                             "ru": "Рубиноголовый королёк",
                             "en": "Ruby-crowned Kinglet",
+                            "pl": "Ogniczek",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2221,6 +2391,7 @@ window.PASSERINE_TREE = {
                             "latin": "Regulus madeirensis",
                             "ru": "Мадейрский королёк",
                             "en": "Madeira Firecrest",
+                            "pl": "Zniczek maderski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2230,6 +2401,7 @@ window.PASSERINE_TREE = {
                             "latin": "Regulus ignicapilla",
                             "ru": "Красноголовый королёк",
                             "en": "Common Firecrest",
+                            "pl": "Zniczek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2239,6 +2411,7 @@ window.PASSERINE_TREE = {
                             "latin": "Regulus regulus",
                             "ru": "Желтоголовый королёк",
                             "en": "Goldcrest",
+                            "pl": "Mysikrólik",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2264,6 +2437,7 @@ window.PASSERINE_TREE = {
                             "latin": "Bombycilla cedrorum",
                             "ru": "Кедровый свиристель",
                             "en": "Cedar Waxwing",
+                            "pl": "Jemiołuszka cedrowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2273,6 +2447,7 @@ window.PASSERINE_TREE = {
                             "latin": "Bombycilla garrulus",
                             "ru": "Свиристель",
                             "en": "Bohemian Waxwing",
+                            "pl": "Jemiołuszka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2298,6 +2473,7 @@ window.PASSERINE_TREE = {
                             "latin": "Tichodroma muraria",
                             "ru": "Стенолаз",
                             "en": "Wallcreeper",
+                            "pl": "Pomurnik",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2323,6 +2499,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sitta krueperi",
                             "ru": "Черноголовый поползень",
                             "en": "Krüper's Nuthatch",
+                            "pl": "Kowalik turecki",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2332,6 +2509,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sitta canadensis",
                             "ru": "Канадский поползень",
                             "en": "Red-breasted Nuthatch",
+                            "pl": "Kowalik czarnogłowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2341,6 +2519,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sitta whiteheadi",
                             "ru": "Корсиканский поползень",
                             "en": "Corsican Nuthatch",
+                            "pl": "Kowalik korsykański",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2350,6 +2529,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sitta neumayer",
                             "ru": "Малый скальный поползень",
                             "en": "Western Rock Nuthatch",
+                            "pl": "Kowalik skalny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2359,6 +2539,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sitta europaea",
                             "ru": "Поползень",
                             "en": "Eurasian Nuthatch",
+                            "pl": "Kowalik",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2384,6 +2565,7 @@ window.PASSERINE_TREE = {
                             "latin": "Certhia familiaris",
                             "ru": "Обыкновенная пищуха",
                             "en": "Eurasian Treecreeper",
+                            "pl": "Pełzacz leśny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2393,6 +2575,7 @@ window.PASSERINE_TREE = {
                             "latin": "Certhia brachydactyla",
                             "ru": "Короткопалая пищуха",
                             "en": "Short-toed Treecreeper",
+                            "pl": "Pełzacz ogrodowy",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2418,6 +2601,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cistothorus palustris",
                             "ru": "Болотный крапивник",
                             "en": "Marsh Wren",
+                            "pl": "Strzyżyk błotny",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2435,6 +2619,7 @@ window.PASSERINE_TREE = {
                             "latin": "Troglodytes troglodytes",
                             "ru": "Крапивник",
                             "en": "Eurasian Wren",
+                            "pl": "Strzyżyk",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2460,6 +2645,7 @@ window.PASSERINE_TREE = {
                             "latin": "Dumetella carolinensis",
                             "ru": "Кошачий пересмешник",
                             "en": "Grey Catbird",
+                            "pl": "Przedrzeźniacz ciemny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2477,6 +2663,7 @@ window.PASSERINE_TREE = {
                             "latin": "Toxostoma rufum",
                             "ru": "Рыжий пересмешник",
                             "en": "Brown Thrasher",
+                            "pl": "Przedrzeźniacz rudy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2494,6 +2681,7 @@ window.PASSERINE_TREE = {
                             "latin": "Mimus polyglottos",
                             "ru": "Многоголосый пересмешинк",
                             "en": "Northern Mockingbird",
+                            "pl": "Przedrzeźniacz północny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2519,6 +2707,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sturnus unicolor",
                             "ru": "Одноцветный скворец",
                             "en": "Spotless Starling",
+                            "pl": "Szpak jednobarwny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2528,6 +2717,7 @@ window.PASSERINE_TREE = {
                             "latin": "Sturnus vulgaris",
                             "ru": "Обыкновенный скворец",
                             "en": "Common Starling",
+                            "pl": "Szpak",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2545,6 +2735,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pastor roseus",
                             "ru": "Розовый скворец",
                             "en": "Rosy Starling",
+                            "pl": "Pasterz",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2562,6 +2753,7 @@ window.PASSERINE_TREE = {
                             "latin": "Agropsar sturninus",
                             "ru": "Малый скворец",
                             "en": "Daurian Starling",
+                            "pl": "Szpak mandżurski",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2579,6 +2771,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acridotheres cristatellus",
                             "ru": "Хохлатая майна",
                             "en": "Crested Myna",
+                            "pl": "Majna czubata",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -2604,6 +2797,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cinclus cinclus",
                             "ru": "Оляпка",
                             "en": "White-throated Dipper",
+                            "pl": "Pluszcz",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2629,6 +2823,7 @@ window.PASSERINE_TREE = {
                             "latin": "Zoothera aurea",
                             "ru": "Пёстрый дрозд",
                             "en": "White's Thrush",
+                            "pl": "Drozdoń tajgowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2638,6 +2833,7 @@ window.PASSERINE_TREE = {
                             "latin": "Zoothera dauma",
                             "ru": "Чешуйчатый дрозд",
                             "en": "Scaly Thrush",
+                            "pl": "Drozdoń pstry",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2655,6 +2851,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ixoreus naevius",
                             "ru": "Разноголосый дрозд",
                             "en": "Varied Thrush",
+                            "pl": "Rudodrozd",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2672,6 +2869,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hylocichla mustelina",
                             "ru": "Лесной дрозд",
                             "en": "Wood Thrush",
+                            "pl": "Drozdek rudy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2689,6 +2887,7 @@ window.PASSERINE_TREE = {
                             "latin": "Catharus ustulatus",
                             "ru": "Дрозд Свэнсона",
                             "en": "Swainson's Thrush",
+                            "pl": "Drozdek okularowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2698,6 +2897,7 @@ window.PASSERINE_TREE = {
                             "latin": "Catharus fuscescens",
                             "ru": "Бурый соловьиный дрозд",
                             "en": "Veery",
+                            "pl": "Drozdek brunatny",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2707,6 +2907,7 @@ window.PASSERINE_TREE = {
                             "latin": "Catharus minimus",
                             "ru": "Малый дрозд",
                             "en": "Grey-cheeked Thrush",
+                            "pl": "Drozdek szarolicy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2716,6 +2917,7 @@ window.PASSERINE_TREE = {
                             "latin": "Catharus guttatus",
                             "ru": "Дрозд-отшельник",
                             "en": "Hermit Thrush",
+                            "pl": "Drozdek samotny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2733,6 +2935,7 @@ window.PASSERINE_TREE = {
                             "latin": "Geokichla sibirica",
                             "ru": "Сибирский дрозд",
                             "en": "Siberian Thrush",
+                            "pl": "Drozdaczek ciemny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2750,6 +2953,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus viscivorus",
                             "ru": "Деряба",
                             "en": "Mistle Thrush",
+                            "pl": "Paszkot",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2759,6 +2963,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus philomelos",
                             "ru": "Певчий дрозд",
                             "en": "Song Thrush",
+                            "pl": "Śpiewak",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2768,6 +2973,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus iliacus",
                             "ru": "Белобровик",
                             "en": "Redwing",
+                            "pl": "Droździk",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2777,6 +2983,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus merula",
                             "ru": "Чёрный дрозд",
                             "en": "Common Blackbird",
+                            "pl": "Kos",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2786,6 +2993,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus pilaris",
                             "ru": "Рябинник",
                             "en": "Fieldfare",
+                            "pl": "Kwiczoł",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2795,6 +3003,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus torquatus",
                             "ru": "Белозобый дрозд",
                             "en": "Ring Ouzel",
+                            "pl": "Drozd obrożny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2804,6 +3013,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus ruficollis",
                             "ru": "Краснозобый дрозд",
                             "en": "Red-throated Thrush",
+                            "pl": "Drozd rdzawogardły",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2813,6 +3023,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus atrogularis",
                             "ru": "Чернозобый дрозд",
                             "en": "Black-throated Thrush",
+                            "pl": "Drozd czarnogardły",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2822,6 +3033,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus naumanni",
                             "ru": "Дрозд Науманна",
                             "en": "Naumann's Thrush",
+                            "pl": "Drozd rdzawy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2831,6 +3043,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus eunomus",
                             "ru": "Бурый дрозд",
                             "en": "Dusky Thrush",
+                            "pl": "Drozd rdzawoskrzydły",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2840,6 +3053,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus unicolor",
                             "ru": "Одноцветный дрозд",
                             "en": "Tickell's Thrush",
+                            "pl": "Drozd śniady",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2849,6 +3063,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus obscurus",
                             "ru": "Оливковый дрозд",
                             "en": "Eyebrowed Thrush",
+                            "pl": "Drozd oliwkowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2858,6 +3073,7 @@ window.PASSERINE_TREE = {
                             "latin": "Turdus migratorius",
                             "ru": "Странствующий дрозд",
                             "en": "American Robin",
+                            "pl": "Drozd wędrowny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -2883,6 +3099,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cercotrichas galactotes",
                             "ru": "Тугайный соловей",
                             "en": "Rufous-tailed Scrub Robin",
+                            "pl": "Drozdówka rdzawa",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2900,6 +3117,7 @@ window.PASSERINE_TREE = {
                             "latin": "Muscicapa sibirica",
                             "ru": "Сибирская мухоловка",
                             "en": "Dark-sided Flycatcher",
+                            "pl": "Muchołówka śniada",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2909,6 +3127,7 @@ window.PASSERINE_TREE = {
                             "latin": "Muscicapa dauurica",
                             "ru": "Ширококлювая мухоловка",
                             "en": "Asian Brown Flycatcher",
+                            "pl": "Muchołówka brunatna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -2918,6 +3137,7 @@ window.PASSERINE_TREE = {
                             "latin": "Muscicapa striata",
                             "ru": "Серая мухоловка",
                             "en": "Spotted Flycatcher",
+                            "pl": "Muchołówka szara",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2935,6 +3155,7 @@ window.PASSERINE_TREE = {
                             "latin": "Erithacus rubecula",
                             "ru": "Зарянка",
                             "en": "European Robin",
+                            "pl": "Rudzik",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2952,6 +3173,7 @@ window.PASSERINE_TREE = {
                             "latin": "Irania gutturalis",
                             "ru": "Соловей-белошейка",
                             "en": "White-throated Robin",
+                            "pl": "Iranka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -2969,6 +3191,7 @@ window.PASSERINE_TREE = {
                             "latin": "Luscinia luscinia",
                             "ru": "Обыкновенный соловей",
                             "en": "Thrush Nightingale",
+                            "pl": "Słowik szary",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2978,6 +3201,7 @@ window.PASSERINE_TREE = {
                             "latin": "Luscinia megarhynchos",
                             "ru": "Южный соловей",
                             "en": "Common Nightingale",
+                            "pl": "Słowik rdzawy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -2987,6 +3211,7 @@ window.PASSERINE_TREE = {
                             "latin": "Luscinia svecica",
                             "ru": "Варакушка",
                             "en": "Bluethroat",
+                            "pl": "Podróżniczek",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3004,6 +3229,7 @@ window.PASSERINE_TREE = {
                             "latin": "Calliope calliope",
                             "ru": "Соловей-красношейка",
                             "en": "Siberian Rubythroat",
+                            "pl": "Słowiczek rubinowy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3021,6 +3247,7 @@ window.PASSERINE_TREE = {
                             "latin": "Larvivora cyane",
                             "ru": "Синий соловей",
                             "en": "Siberian Blue Robin",
+                            "pl": "Słowik modry",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3030,6 +3257,7 @@ window.PASSERINE_TREE = {
                             "latin": "Larvivora sibilans",
                             "ru": "Соловей-свистун",
                             "en": "Rufous-tailed Robin",
+                            "pl": "Słowik syberyjski",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3047,6 +3275,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula parva",
                             "ru": "Малая мухоловка",
                             "en": "Red-breasted Flycatcher",
+                            "pl": "Muchołówka mała",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3056,6 +3285,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula albicilla",
                             "ru": "Восточная малая мухоловка",
                             "en": "Taiga Flycatcher",
+                            "pl": "Muchołówka rdzawogardła",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3065,6 +3295,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula speculigera",
                             "ru": "Атласская мухоловка",
                             "en": "Atlas Pied Flycatcher",
+                            "pl": "Muchołówka atlasowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3074,6 +3305,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula semitorquata",
                             "ru": "Полуошейниковая мухоловка",
                             "en": "Semicollared Flycatcher",
+                            "pl": "Muchołówka półobrożna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3083,6 +3315,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula albicollis",
                             "ru": "Мухоловка-белошейка",
                             "en": "Collared Flycatcher",
+                            "pl": "Muchołówka białoszyja",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3092,6 +3325,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ficedula hypoleuca",
                             "ru": "Мухоловка-пеструшка",
                             "en": "European Pied Flycatcher",
+                            "pl": "Muchołówka żałobna",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3109,6 +3343,7 @@ window.PASSERINE_TREE = {
                             "latin": "Tarsiger cyanurus",
                             "ru": "Синехвостка",
                             "en": "Red-flanked Bluetail",
+                            "pl": "Modraczek",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3126,6 +3361,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus erythronotus",
                             "ru": "Красноспинная горихвостка",
                             "en": "Eversmann's Redstart",
+                            "pl": "Pleszka ałtajska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3135,6 +3371,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus fuliginosus",
                             "ru": "Сизая горихвостка",
                             "en": "Plumbeous Water Redstart",
+                            "pl": "Pleszka śniada",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3144,6 +3381,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus erythrogastrus",
                             "ru": "Краснобрюхая горихвостка",
                             "en": "Güldenstädt's Redstart",
+                            "pl": "Pleszka kaukaska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3153,6 +3391,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus ochruros",
                             "ru": "Черная горихвостка",
                             "en": "Black Redstart",
+                            "pl": "Kopciuszek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3162,6 +3401,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus moussieri",
                             "ru": "Белобровая горихвостка",
                             "en": "Moussier's Redstart",
+                            "pl": "Pleszka algierska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3171,6 +3411,7 @@ window.PASSERINE_TREE = {
                             "latin": "Phoenicurus phoenicurus",
                             "ru": "Обыкновенная горихвостка",
                             "en": "Common Redstart",
+                            "pl": "Pleszka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3188,6 +3429,7 @@ window.PASSERINE_TREE = {
                             "latin": "Monticola saxatilis",
                             "ru": "Пёстрый каменный дрозд",
                             "en": "Common Rock Thrush",
+                            "pl": "Nagórnik",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3197,6 +3439,7 @@ window.PASSERINE_TREE = {
                             "latin": "Monticola solitarius",
                             "ru": "Синий каменный дрозд",
                             "en": "Blue Rock Thrush",
+                            "pl": "Modrak śródziemnomorski",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3214,6 +3457,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola rubetra",
                             "ru": "Луговой чекан",
                             "en": "Whinchat",
+                            "pl": "Pokląskwa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3223,6 +3467,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola caprata",
                             "ru": "Черный чекан",
                             "en": "Pied Bush Chat",
+                            "pl": "Kląskawka czarna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3232,6 +3477,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola maurus",
                             "ru": "Сибирский черноголовый чекан",
                             "en": "Siberian Stonechat",
+                            "pl": "Kląskawka syberyjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3241,6 +3487,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola torquatus",
                             "ru": "Африканский черноголовый чекан",
                             "en": "African Stonechat",
+                            "pl": "Kląskawka afrykańska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3250,6 +3497,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola dacotiae",
                             "ru": "Канарский чекан",
                             "en": "Canary Islands Stonechat",
+                            "pl": "Kląskawka kanaryjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3259,6 +3507,7 @@ window.PASSERINE_TREE = {
                             "latin": "Saxicola rubicola",
                             "ru": "Черноголовый чекан",
                             "en": "European Stonechat",
+                            "pl": "Kląskawka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3276,6 +3525,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe deserti",
                             "ru": "Пустынная каменка",
                             "en": "Desert Wheatear",
+                            "pl": "Białorzytka pustynna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3285,6 +3535,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe hispanica",
                             "ru": "Испанская каменка",
                             "en": "Western Black-eared Wheatear",
+                            "pl": "Białorzytka rdzawa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3294,6 +3545,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe pleschanka",
                             "ru": "Каменка-плешанка",
                             "en": "Pied Wheatear",
+                            "pl": "Białorzytka pstra",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3303,6 +3555,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe melanoleuca",
                             "ru": "Черноухая каменка",
                             "en": "Eastern Black-eared Wheatear",
+                            "pl": "Białorzytka maskowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3312,6 +3565,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe cypriaca",
                             "ru": "Кипрская каменка",
                             "en": "Cyprus Wheatear",
+                            "pl": "Białorzytka cypryjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3321,6 +3575,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe seebohmi",
                             "ru": "Atlas Wheatear",
                             "en": "Atlas Wheatear",
+                            "pl": "Białorzytka czarnogardła",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3330,6 +3585,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe oenanthe",
                             "ru": "Каменка",
                             "en": "Northern Wheatear",
+                            "pl": "Białorzytka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3339,6 +3595,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe isabellina",
                             "ru": "Каменка-плясунья",
                             "en": "Isabelline Wheatear",
+                            "pl": "Białorzytka płowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3348,6 +3605,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe moesta",
                             "ru": "Рыжепоясничная каменка",
                             "en": "Red-rumped Wheatear",
+                            "pl": "Rudorzytka",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3357,6 +3615,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe picata",
                             "ru": "Черная каменка",
                             "en": "Variable Wheatear",
+                            "pl": "Białorzytka zmienna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3366,6 +3625,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe finschii",
                             "ru": "Черношейная каменка",
                             "en": "Finsch's Wheatear",
+                            "pl": "Białorzytka białogrzbieta",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3375,6 +3635,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe xanthoprymna",
                             "ru": "Курдистанская каменка",
                             "en": "Kurdish Wheatear",
+                            "pl": "Złotorzytka rdzawosterna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3384,6 +3645,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe leucura",
                             "ru": "Белохвостая каменка",
                             "en": "Black Wheatear",
+                            "pl": "Białorzytka żałobna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3393,6 +3655,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oenanthe leucopyga",
                             "ru": "Белопоясная каменка",
                             "en": "White-crowned Wheatear",
+                            "pl": "Białorzytka saharyjska",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3426,6 +3689,7 @@ window.PASSERINE_TREE = {
                             "latin": "Petronia petronia",
                             "ru": "Каменный воробей",
                             "en": "Rock Sparrow",
+                            "pl": "Wróbel skalny",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3443,6 +3707,7 @@ window.PASSERINE_TREE = {
                             "latin": "Montifringilla nivalis",
                             "ru": "Снежный вьюрок",
                             "en": "White-winged Snowfinch",
+                            "pl": "Śnieżka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3460,6 +3725,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carpospiza brachydactyla",
                             "ru": "Короткопалый воробей",
                             "en": "Pale Rockfinch",
+                            "pl": "Wróbel krótkopalcowy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3477,6 +3743,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passer montanus",
                             "ru": "Полевой воробей",
                             "en": "Eurasian Tree Sparrow",
+                            "pl": "Mazurek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3486,6 +3753,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passer moabiticus",
                             "ru": "Мессопотамский воробей",
                             "en": "Dead Sea Sparrow",
+                            "pl": "Wróbel palestyński",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3495,6 +3763,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passer hispaniolensis",
                             "ru": "Черногрудый воробей",
                             "en": "Spanish Sparrow",
+                            "pl": "Wróbel śródziemnomorski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3504,6 +3773,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passer italiae",
                             "ru": "Итальянский воробей",
                             "en": "Italian Sparrow",
+                            "pl": "Wróbel apeniński",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3513,6 +3783,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passer domesticus",
                             "ru": "Домовый воробей",
                             "en": "House Sparrow",
+                            "pl": "Wróbel",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3538,6 +3809,7 @@ window.PASSERINE_TREE = {
                             "latin": "Prunella collaris",
                             "ru": "Альпийская завирушка",
                             "en": "Alpine Accentor",
+                            "pl": "Płochacz halny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3547,6 +3819,7 @@ window.PASSERINE_TREE = {
                             "latin": "Prunella atrogularis",
                             "ru": "Черногорлая завирушка",
                             "en": "Black-throated Accentor",
+                            "pl": "Płochacz czarnogardły",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3556,6 +3829,7 @@ window.PASSERINE_TREE = {
                             "latin": "Prunella ocularis",
                             "ru": "Пёстрая завирушка",
                             "en": "Radde's Accentor",
+                            "pl": "Plochacz pstry",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3565,6 +3839,7 @@ window.PASSERINE_TREE = {
                             "latin": "Prunella modularis",
                             "ru": "Лесная завирушка",
                             "en": "Dunnock",
+                            "pl": "Pokrzywnica",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3574,6 +3849,7 @@ window.PASSERINE_TREE = {
                             "latin": "Prunella montanella",
                             "ru": "Сибирская завирушка",
                             "en": "Siberian Accentor",
+                            "pl": "Płochacz syberyjski",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -3599,6 +3875,7 @@ window.PASSERINE_TREE = {
                             "latin": "Ploceus melanocephalus",
                             "ru": "Черноголовый ткач",
                             "en": "Black-headed Weaver",
+                            "pl": "Wikłacz czarnogłowy",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3616,6 +3893,7 @@ window.PASSERINE_TREE = {
                             "latin": "Euplectes afer",
                             "ru": "Золотистый ткачик",
                             "en": "Yellow-crowned Bishop",
+                            "pl": "Wikłacz słoneczny",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3641,6 +3919,7 @@ window.PASSERINE_TREE = {
                             "latin": "Euodice malabarica",
                             "ru": "Малабарская амадина",
                             "en": "Indian Silverbill",
+                            "pl": "Srebrnodziobek indyjski",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3658,6 +3937,7 @@ window.PASSERINE_TREE = {
                             "latin": "Lonchura punctulata",
                             "ru": "Чешуйчатая муния",
                             "en": "Scaly-breasted Munia",
+                            "pl": "Mniszka muszkatowa",
                             "vagrant": false,
                             "introduced": true
                           },
@@ -3667,6 +3947,7 @@ window.PASSERINE_TREE = {
                             "latin": "Lonchura malacca",
                             "ru": "Трёхцветная муния",
                             "en": "Tricolored Munia",
+                            "pl": "Mniszka kapturowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3676,6 +3957,7 @@ window.PASSERINE_TREE = {
                             "latin": "Lonchura atricapilla",
                             "ru": "Черноголовая муния",
                             "en": "Chestnut Munia",
+                            "pl": "Mniszka czarnogłowa",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3693,6 +3975,7 @@ window.PASSERINE_TREE = {
                             "latin": "Estrilda melpoda",
                             "ru": "Оранжевощёкий астрильд",
                             "en": "Orange-cheeked Waxbill",
+                            "pl": "Astryld złotolicy",
                             "vagrant": false,
                             "introduced": true
                           },
@@ -3702,6 +3985,7 @@ window.PASSERINE_TREE = {
                             "latin": "Estrilda astrild",
                             "ru": "Волнистый астрильд",
                             "en": "Common Waxbill",
+                            "pl": "Astryld falisty",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3719,6 +4003,7 @@ window.PASSERINE_TREE = {
                             "latin": "Amandava amandava",
                             "ru": "Тигровый астрильд",
                             "en": "Red Avadavat",
+                            "pl": "Bengalik czerwony",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -3744,6 +4029,7 @@ window.PASSERINE_TREE = {
                             "latin": "Motacilla cinerea",
                             "ru": "Горная трясогузка",
                             "en": "Grey Wagtail",
+                            "pl": "Pliszka górska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3753,6 +4039,7 @@ window.PASSERINE_TREE = {
                             "latin": "Motacilla flava",
                             "ru": "Жёлтая трясогузка",
                             "en": "Western Yellow Wagtail",
+                            "pl": "Pliszka żółta",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3762,6 +4049,7 @@ window.PASSERINE_TREE = {
                             "latin": "Motacilla citreola",
                             "ru": "Желтоголовая трясогузка",
                             "en": "Citrine Wagtail",
+                            "pl": "Pliszka cytrynowa",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3771,6 +4059,7 @@ window.PASSERINE_TREE = {
                             "latin": "Motacilla tschutschensis",
                             "ru": "Берингийская жёлтая трясогузка",
                             "en": "Eastern Yellow Wagtail",
+                            "pl": "Pliszka syberyjska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3780,6 +4069,7 @@ window.PASSERINE_TREE = {
                             "latin": "Motacilla alba",
                             "ru": "Белая трясогузка",
                             "en": "White Wagtail",
+                            "pl": "Pliszka siwa",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3797,6 +4087,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus godlewskii",
                             "ru": "Забайкальский конёк",
                             "en": "Blyth's Pipit",
+                            "pl": "Świergotek stepowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3806,6 +4097,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus campestris",
                             "ru": "Полевой конёк",
                             "en": "Tawny Pipit",
+                            "pl": "Świergotek polny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3815,6 +4107,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus berthelotii",
                             "ru": "Канарский конёк",
                             "en": "Berthelot's Pipit",
+                            "pl": "Świergotek kanaryjski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3824,6 +4117,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus similis",
                             "ru": "Длинноклювый конёк",
                             "en": "Long-billed Pipit",
+                            "pl": "Świergotek długodzioby",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3833,6 +4127,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus richardi",
                             "ru": "Степной конёк",
                             "en": "Richard's Pipit",
+                            "pl": "Świergotek szponiasty",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3842,6 +4137,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus rufulus",
                             "ru": "Рисовой конёк",
                             "en": "Paddyfield Pipit",
+                            "pl": "Świergotek rdzawy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3851,6 +4147,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus gustavi",
                             "ru": "Сибирский конёк",
                             "en": "Pechora Pipit",
+                            "pl": "Świergotek tundrowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3860,6 +4157,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus trivialis",
                             "ru": "Лесной конёк",
                             "en": "Tree Pipit",
+                            "pl": "Świergotek drzewny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3869,6 +4167,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus hodgsoni",
                             "ru": "Пятнистый конёк",
                             "en": "Olive-backed Pipit",
+                            "pl": "Świergotek tajgowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3878,6 +4177,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus cervinus",
                             "ru": "Краснозобый конёк",
                             "en": "Red-throated Pipit",
+                            "pl": "Świergotek rdzawogardły",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3887,6 +4187,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus japonicus",
                             "ru": "Гольцовый конёк",
                             "en": "Siberian Pipit",
+                            "pl": "Świergotek syberyjski",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3896,6 +4197,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus rubescens",
                             "ru": "Гольцовый конёк",
                             "en": "American Pipit",
+                            "pl": "Świergotek bagienny",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3905,6 +4207,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus pratensis",
                             "ru": "Луговой конёк",
                             "en": "Meadow Pipit",
+                            "pl": "Świergotek łąkowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3914,6 +4217,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus petrosus",
                             "ru": "Скальный конёк",
                             "en": "European Rock Pipit",
+                            "pl": "Świergotek nadmorski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3923,6 +4227,7 @@ window.PASSERINE_TREE = {
                             "latin": "Anthus spinoletta",
                             "ru": "Горный конёк",
                             "en": "Water Pipit",
+                            "pl": "Siwerniak",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -3948,6 +4253,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla montifringilla",
                             "ru": "Вьюрок",
                             "en": "Brambling",
+                            "pl": "Jer",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3957,6 +4263,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla teydea",
                             "ru": "Голубой зяблик",
                             "en": "Tenerife Blue Chaffinch",
+                            "pl": "Zięba modra",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3966,6 +4273,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla polatzeki",
                             "ru": "Канарский зяблик",
                             "en": "Gran Canaria Blue Chaffinch",
+                            "pl": "Zięba czarnoczelna",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3975,6 +4283,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla spodiogenys",
                             "ru": "African Chaffinch",
                             "en": "African Chaffinch",
+                            "pl": "Zięba zielonogrzbieta",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -3984,6 +4293,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla coelebs",
                             "ru": "Зяблик",
                             "en": "Eurasian Chaffinch",
+                            "pl": "Zięba",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -3993,6 +4303,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla moreletti",
                             "ru": "Azores Chaffinch",
                             "en": "Azores Chaffinch",
+                            "pl": "Zięba atlantycka",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4002,6 +4313,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla maderensis",
                             "ru": "Madeira Chaffinch",
                             "en": "Madeira Chaffinch",
+                            "pl": "Zięba maderska",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4011,6 +4323,7 @@ window.PASSERINE_TREE = {
                             "latin": "Fringilla canariensis",
                             "ru": "Canary Islands Chaffinch",
                             "en": "Canary Islands Chaffinch",
+                            "pl": "Zięba modrogrzbieta",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4028,6 +4341,7 @@ window.PASSERINE_TREE = {
                             "latin": "Hesperiphona vespertina",
                             "ru": "Вечерний дубонос",
                             "en": "Evening Grosbeak",
+                            "pl": "Grubodziób białoskrzydły",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4045,6 +4359,7 @@ window.PASSERINE_TREE = {
                             "latin": "Coccothraustes coccothraustes",
                             "ru": "Обыкновенный дубонос",
                             "en": "Hawfinch",
+                            "pl": "Grubodziób",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4062,6 +4377,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carpodacus erythrinus",
                             "ru": "Обыкновенная чечевица",
                             "en": "Common Rosefinch",
+                            "pl": "Dziwonia",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4071,6 +4387,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carpodacus rubicilla",
                             "ru": "Большая чечевица",
                             "en": "Great Rosefinch",
+                            "pl": "Dziwonia duża",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4080,6 +4397,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carpodacus roseus",
                             "ru": "Сибирская чечевица",
                             "en": "Pallas's Rosefinch",
+                            "pl": "Dziwonia syberyjska",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4097,6 +4415,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pinicola enucleator",
                             "ru": "Щур",
                             "en": "Pine Grosbeak",
+                            "pl": "Łuskowiec",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4114,6 +4433,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pyrrhula murina",
                             "ru": "Азорский снегирь",
                             "en": "Azores Bullfinch",
+                            "pl": "Gil azorski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4123,6 +4443,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pyrrhula pyrrhula",
                             "ru": "Обыкновенный снегирь",
                             "en": "Eurasian Bullfinch",
+                            "pl": "Gil",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4140,6 +4461,7 @@ window.PASSERINE_TREE = {
                             "latin": "Bucanetes mongolicus",
                             "ru": "Монгольский пустынный вьюрок",
                             "en": "Mongolian Finch",
+                            "pl": "Gilak mongolski",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4149,6 +4471,7 @@ window.PASSERINE_TREE = {
                             "latin": "Bucanetes githagineus",
                             "ru": "Толстоклювый пустынный вьюрок",
                             "en": "Trumpeter Finch",
+                            "pl": "Gilak pustynny",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4166,6 +4489,7 @@ window.PASSERINE_TREE = {
                             "latin": "Leucosticte tephrocotis",
                             "ru": "Американский вьюрок",
                             "en": "Grey-crowned Rosy Finch",
+                            "pl": "Góralka siwogłowa",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4183,6 +4507,7 @@ window.PASSERINE_TREE = {
                             "latin": "Haemorhous mexicanus",
                             "ru": "Мексиканская чечевица",
                             "en": "House Finch",
+                            "pl": "Dziwuszka ogrodowa",
                             "vagrant": false,
                             "introduced": true
                           }
@@ -4200,6 +4525,7 @@ window.PASSERINE_TREE = {
                             "latin": "Rhodospiza obsoleta",
                             "ru": "Буланый вьюрок",
                             "en": "Desert Finch",
+                            "pl": "Czarnodziobek",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4217,6 +4543,7 @@ window.PASSERINE_TREE = {
                             "latin": "Chloris chloris",
                             "ru": "Обыкновенная зеленушка",
                             "en": "European Greenfinch",
+                            "pl": "Dzwoniec",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4234,6 +4561,7 @@ window.PASSERINE_TREE = {
                             "latin": "Linaria flavirostris",
                             "ru": "Горная чечётка",
                             "en": "Twite",
+                            "pl": "Rzepołuch",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4243,6 +4571,7 @@ window.PASSERINE_TREE = {
                             "latin": "Linaria cannabina",
                             "ru": "Коноплянка",
                             "en": "Common Linnet",
+                            "pl": "Makolągwa",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4260,6 +4589,7 @@ window.PASSERINE_TREE = {
                             "latin": "Acanthis flammea",
                             "ru": "Чечётка",
                             "en": "Redpoll",
+                            "pl": "Czeczotka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4277,6 +4607,7 @@ window.PASSERINE_TREE = {
                             "latin": "Loxia leucoptera",
                             "ru": "Белокрылый клёст",
                             "en": "Two-barred Crossbill",
+                            "pl": "Krzyżodziób modrzewiowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4286,6 +4617,7 @@ window.PASSERINE_TREE = {
                             "latin": "Loxia pytyopsittacus",
                             "ru": "Клёст-сосновик",
                             "en": "Parrot Crossbill",
+                            "pl": "Krzyżodziób sosnowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4295,6 +4627,7 @@ window.PASSERINE_TREE = {
                             "latin": "Loxia scotica",
                             "ru": "Шотландский клёст",
                             "en": "Scottish Crossbill",
+                            "pl": "Krzyżodziób szkocki",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4304,6 +4637,7 @@ window.PASSERINE_TREE = {
                             "latin": "Loxia curvirostra",
                             "ru": "Клёст-еловик",
                             "en": "Red Crossbill",
+                            "pl": "Krzyżodziób świerkowy",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4321,6 +4655,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carduelis citrinella",
                             "ru": "Лимонный вьюрок",
                             "en": "Citril Finch",
+                            "pl": "Osetnik",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4330,6 +4665,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carduelis corsicana",
                             "ru": "Корсиканский вьюрок",
                             "en": "Corsican Finch",
+                            "pl": "Osetnik korsykański",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4339,6 +4675,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carduelis caniceps",
                             "ru": "Седоголовый щегол",
                             "en": "Grey-crowned Goldfinch",
+                            "pl": "Szczygieł szarogłowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4348,6 +4685,7 @@ window.PASSERINE_TREE = {
                             "latin": "Carduelis carduelis",
                             "ru": "Щегол",
                             "en": "European Goldfinch",
+                            "pl": "Szczygieł",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4365,6 +4703,7 @@ window.PASSERINE_TREE = {
                             "latin": "Serinus canaria",
                             "ru": "Канарский вьюрок, дикая канарейка",
                             "en": "Atlantic Canary",
+                            "pl": "Kanarek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4374,6 +4713,7 @@ window.PASSERINE_TREE = {
                             "latin": "Serinus serinus",
                             "ru": "Европейский вьюрок",
                             "en": "European Serin",
+                            "pl": "Kulczyk",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4383,6 +4723,7 @@ window.PASSERINE_TREE = {
                             "latin": "Serinus pusillus",
                             "ru": "Красношапочный вьюрок",
                             "en": "Red-fronted Serin",
+                            "pl": "Kulczyk królewski",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4400,6 +4741,7 @@ window.PASSERINE_TREE = {
                             "latin": "Spinus spinus",
                             "ru": "Чиж",
                             "en": "Eurasian Siskin",
+                            "pl": "Czyż",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4409,6 +4751,7 @@ window.PASSERINE_TREE = {
                             "latin": "Spinus pinus",
                             "ru": "Сосновый чиж",
                             "en": "Pine Siskin",
+                            "pl": "Czyż sosnowy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4434,6 +4777,7 @@ window.PASSERINE_TREE = {
                             "latin": "Plectrophenax nivalis",
                             "ru": "Пуночка",
                             "en": "Snow Bunting",
+                            "pl": "Śnieguła",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4451,6 +4795,7 @@ window.PASSERINE_TREE = {
                             "latin": "Calcarius lapponicus",
                             "ru": "Лапландский подорожник",
                             "en": "Lapland Longspur",
+                            "pl": "Poświerka",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4476,6 +4821,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza sahari",
                             "ru": "Домовая овсянка",
                             "en": "House Bunting",
+                            "pl": "Trznadel saharyjski",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4485,6 +4831,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza striolata",
                             "ru": "Пёстрая овсянка",
                             "en": "Striolated Bunting",
+                            "pl": "Trznadel smużkowany",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4494,6 +4841,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza pallasi",
                             "ru": "Полярная овсянка",
                             "en": "Pallas's Reed Bunting",
+                            "pl": "Potrzos popielaty",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4503,6 +4851,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza schoeniclus",
                             "ru": "Тростниковая овсянка",
                             "en": "Common Reed Bunting",
+                            "pl": "Potrzos",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4512,6 +4861,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza chrysophrys",
                             "ru": "Желтобровая овсянка",
                             "en": "Yellow-browed Bunting",
+                            "pl": "Trznadel złotobrewy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4521,6 +4871,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza rutila",
                             "ru": "Рыжая овсянка",
                             "en": "Chestnut Bunting",
+                            "pl": "Trznadel rudy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4530,6 +4881,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza aureola",
                             "ru": "Дубровник",
                             "en": "Yellow-breasted Bunting",
+                            "pl": "Trznadel złotawy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4539,6 +4891,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza pusilla",
                             "ru": "Овсянка-крошка",
                             "en": "Little Bunting",
+                            "pl": "Trznadelek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4548,6 +4901,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza rustica",
                             "ru": "Овсянка-ремез",
                             "en": "Rustic Bunting",
+                            "pl": "Trznadel czubaty",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4557,6 +4911,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza spodocephala",
                             "ru": "Седоголовая овсянка",
                             "en": "Black-faced Bunting",
+                            "pl": "Trznadel szarogłowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4566,6 +4921,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza melanocephala",
                             "ru": "Черноголовая овсянка",
                             "en": "Black-headed Bunting",
+                            "pl": "Trznadel czarnogłowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4575,6 +4931,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza calandra",
                             "ru": "Просянка",
                             "en": "Corn Bunting",
+                            "pl": "Potrzeszcz",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4584,6 +4941,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza fucata",
                             "ru": "Ошейниковая овсянка",
                             "en": "Chestnut-eared Bunting",
+                            "pl": "Trznadel rdzawouchy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4593,6 +4951,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza cia",
                             "ru": "Горная овсянка",
                             "en": "Rock Bunting",
+                            "pl": "Głuszek",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4602,6 +4961,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza buchanani",
                             "ru": "Скалистая овсянка",
                             "en": "Grey-necked Bunting",
+                            "pl": "Trznadel skalny",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4611,6 +4971,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza cineracea",
                             "ru": "Серая овсянка",
                             "en": "Cinereous Bunting",
+                            "pl": "Trznadel popielaty",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4620,6 +4981,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza hortulana",
                             "ru": "Садовая овсянка",
                             "en": "Ortolan Bunting",
+                            "pl": "Ortolan",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4629,6 +4991,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza caesia",
                             "ru": "Овсянка Крешмара",
                             "en": "Cretzschmar's Bunting",
+                            "pl": "Trznadel modrogłowy",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4638,6 +5001,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza cirlus",
                             "ru": "Огородная овсянка",
                             "en": "Cirl Bunting",
+                            "pl": "Cierlik",
                             "vagrant": false,
                             "introduced": false
                           },
@@ -4647,6 +5011,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza leucocephalos",
                             "ru": "Белошапочная овсянка",
                             "en": "Pine Bunting",
+                            "pl": "Trznadel białogłowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4656,6 +5021,7 @@ window.PASSERINE_TREE = {
                             "latin": "Emberiza citrinella",
                             "ru": "Обыкновенная овсянка",
                             "en": "Yellowhammer",
+                            "pl": "Trznadel",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4681,6 +5047,7 @@ window.PASSERINE_TREE = {
                             "latin": "Chondestes grammacus",
                             "ru": "Прерийная овсянка",
                             "en": "Lark Sparrow",
+                            "pl": "Trawiarczyk",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4698,6 +5065,7 @@ window.PASSERINE_TREE = {
                             "latin": "Spizelloides arborea",
                             "ru": "Воробьиная овсянка",
                             "en": "American Tree Sparrow",
+                            "pl": "Pasówka rdzawołbista",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4715,6 +5083,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passerella iliaca",
                             "ru": "Пестрогрудая овсянка",
                             "en": "Fox Sparrow",
+                            "pl": "Pasówka rudosterna",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4732,6 +5101,7 @@ window.PASSERINE_TREE = {
                             "latin": "Junco hyemalis",
                             "ru": "Серый юнко",
                             "en": "Dark-eyed Junco",
+                            "pl": "Junko",
                             "vagrant": false,
                             "introduced": false
                           }
@@ -4749,6 +5119,7 @@ window.PASSERINE_TREE = {
                             "latin": "Zonotrichia albicollis",
                             "ru": "Белогорлая зонотрихия",
                             "en": "White-throated Sparrow",
+                            "pl": "Pasówka białogardła",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4758,6 +5129,7 @@ window.PASSERINE_TREE = {
                             "latin": "Zonotrichia leucophrys",
                             "ru": "Белобровая овсянка",
                             "en": "White-crowned Sparrow",
+                            "pl": "Pasówka białobrewa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4775,6 +5147,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passerculus sandwichensis",
                             "ru": "Саванная овсянка",
                             "en": "Savannah Sparrow",
+                            "pl": "Bagiennik żółtobrewy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4792,6 +5165,7 @@ window.PASSERINE_TREE = {
                             "latin": "Melospiza melodia",
                             "ru": "Певчая овсянка",
                             "en": "Song Sparrow",
+                            "pl": "Szarobrewka śpiewna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -4801,6 +5175,7 @@ window.PASSERINE_TREE = {
                             "latin": "Melospiza lincolnii",
                             "ru": "Еловая овсянка",
                             "en": "Lincoln's Sparrow",
+                            "pl": "Szarobrewka płowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4818,6 +5193,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pipilo erythrophthalmus",
                             "ru": "Красноглазый тохи",
                             "en": "Eastern Towhee",
+                            "pl": "Pipil rudoboczny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4843,6 +5219,7 @@ window.PASSERINE_TREE = {
                             "latin": "Icteria virens",
                             "ru": "Иктерия",
                             "en": "Yellow-breasted Chat",
+                            "pl": "Słowikówka",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4860,6 +5237,7 @@ window.PASSERINE_TREE = {
                             "latin": "Xanthocephalus xanthocephalus",
                             "ru": "Желтоголовый трупиал",
                             "en": "Yellow-headed Blackbird",
+                            "pl": "Żółtogłowiec",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4877,6 +5255,7 @@ window.PASSERINE_TREE = {
                             "latin": "Dolichonyx oryzivorus",
                             "ru": "Боболинк",
                             "en": "Bobolink",
+                            "pl": "Ryżojad",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4894,6 +5273,7 @@ window.PASSERINE_TREE = {
                             "latin": "Icterus galbula",
                             "ru": "Балтиморский трупиал",
                             "en": "Baltimore Oriole",
+                            "pl": "Kacyk północny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4911,6 +5291,7 @@ window.PASSERINE_TREE = {
                             "latin": "Agelaius phoeniceus",
                             "ru": "Красноплечий трупиал",
                             "en": "Red-winged Blackbird",
+                            "pl": "Epoletnik krasnoskrzydły",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4928,6 +5309,7 @@ window.PASSERINE_TREE = {
                             "latin": "Molothrus ater",
                             "ru": "Коровий трупиал, буроголовый желтушник",
                             "en": "Brown-headed Cowbird",
+                            "pl": "Starzyk brunatnogłowy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4945,6 +5327,7 @@ window.PASSERINE_TREE = {
                             "latin": "Euphagus carolinus",
                             "ru": "Ржавчатый трупиал",
                             "en": "Rusty Blackbird",
+                            "pl": "Kacykarzyk karoliński",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4962,6 +5345,7 @@ window.PASSERINE_TREE = {
                             "latin": "Quiscalus quiscula",
                             "ru": "Пурпурный гракл",
                             "en": "Common Grackle",
+                            "pl": "Wilgowron mniejszy",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -4987,6 +5371,7 @@ window.PASSERINE_TREE = {
                             "latin": "Seiurus aurocapilla",
                             "ru": "Дроздовый певун",
                             "en": "Ovenbird",
+                            "pl": "Lasówka złotogłowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5004,6 +5389,7 @@ window.PASSERINE_TREE = {
                             "latin": "Parkesia noveboracensis",
                             "ru": "Речной певун",
                             "en": "Northern Waterthrush",
+                            "pl": "Lasówka nadwodna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5013,6 +5399,7 @@ window.PASSERINE_TREE = {
                             "latin": "Parkesia motacilla",
                             "ru": "Трясогузковый певун",
                             "en": "Louisiana Waterthrush",
+                            "pl": "Lasówka potokowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5030,6 +5417,7 @@ window.PASSERINE_TREE = {
                             "latin": "Mniotilta varia",
                             "ru": "Пищуховая древесница",
                             "en": "Black-and-white Warbler",
+                            "pl": "Pstroszka",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5047,6 +5435,7 @@ window.PASSERINE_TREE = {
                             "latin": "Protonotaria citrea",
                             "ru": "Лимонная червеедка",
                             "en": "Prothonotary Warbler",
+                            "pl": "Bursztynka",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5064,6 +5453,7 @@ window.PASSERINE_TREE = {
                             "latin": "Vermivora chrysoptera",
                             "ru": "Желтокрылая червеедка",
                             "en": "Golden-winged Warbler",
+                            "pl": "Lasówka złotoskrzydła",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5073,6 +5463,7 @@ window.PASSERINE_TREE = {
                             "latin": "Vermivora cyanoptera",
                             "ru": "Голубокрылая червеедка",
                             "en": "Blue-winged Warbler",
+                            "pl": "Lasówka niebieskoskrzydła",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5090,6 +5481,7 @@ window.PASSERINE_TREE = {
                             "latin": "Leiothlypis peregrina",
                             "ru": "Пеночковая древесница",
                             "en": "Tennessee Warbler",
+                            "pl": "Lasówka oliwkowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5099,6 +5491,7 @@ window.PASSERINE_TREE = {
                             "latin": "Leiothlypis celata",
                             "ru": "Рыжешапочная древесница",
                             "en": "Orange-crowned Warbler",
+                            "pl": "Lasówka zielonkawa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5108,6 +5501,7 @@ window.PASSERINE_TREE = {
                             "latin": "Leiothlypis ruficapilla",
                             "ru": "Красношапочная древесница",
                             "en": "Nashville Warbler",
+                            "pl": "Lasówka rudogłowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5125,6 +5519,7 @@ window.PASSERINE_TREE = {
                             "latin": "Oporornis agilis",
                             "ru": "Очковая хвойница",
                             "en": "Connecticut Warbler",
+                            "pl": "Cytrynka obrączkowa",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5142,6 +5537,7 @@ window.PASSERINE_TREE = {
                             "latin": "Geothlypis philadelphia",
                             "ru": "Черногорлая хвойница",
                             "en": "Mourning Warbler",
+                            "pl": "Cytrynka czarnopierśna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5151,6 +5547,7 @@ window.PASSERINE_TREE = {
                             "latin": "Geothlypis trichas",
                             "ru": "Северная желтогрудка",
                             "en": "Common Yellowthroat",
+                            "pl": "Cytrynka czarnolica",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5168,6 +5565,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga ruticilla",
                             "ru": "Горихвостковая древесница",
                             "en": "American Redstart",
+                            "pl": "Lasówka szkarłatna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5177,6 +5575,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga citrina",
                             "ru": "Капюшоновая древесница",
                             "en": "Hooded Warbler",
+                            "pl": "Lasówka żółtoczelna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5186,6 +5585,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga caerulescens",
                             "ru": "Синеспинная древесница",
                             "en": "Black-throated Blue Warbler",
+                            "pl": "Lasówka granatowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5195,6 +5595,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga cerulea",
                             "ru": "Голубоватая древесница",
                             "en": "Cerulean Warbler",
+                            "pl": "Lasówka niebieska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5204,6 +5605,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga americana",
                             "ru": "Очковая древесница",
                             "en": "Northern Parula",
+                            "pl": "Lasówka obrożna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5213,6 +5615,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga magnolia",
                             "ru": "Магнолиевая древесница",
                             "en": "Magnolia Warbler",
+                            "pl": "Lasówka magnoliowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5222,6 +5625,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga fusca",
                             "ru": "Еловая древесница",
                             "en": "Blackburnian Warbler",
+                            "pl": "Lasówka rudogardła",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5231,6 +5635,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga striata",
                             "ru": "Пестрогрудая древесница",
                             "en": "Blackpoll Warbler",
+                            "pl": "Lasówka czarnogłowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5240,6 +5645,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga castanea",
                             "ru": "Каштановая древесница",
                             "en": "Bay-breasted Warbler",
+                            "pl": "Lasówka kasztanowata",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5249,6 +5655,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga pensylvanica",
                             "ru": "Рыжебокая древесница",
                             "en": "Chestnut-sided Warbler",
+                            "pl": "Lasówka rdzawoboczna",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5258,6 +5665,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga aestiva",
                             "ru": "Жёлтый лесной певун",
                             "en": "American Yellow Warbler",
+                            "pl": "Lasówka zbroczona",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5267,6 +5675,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga tigrina",
                             "ru": "Тигровая древесница",
                             "en": "Cape May Warbler",
+                            "pl": "Lasówka rdzawolica",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5276,6 +5685,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga palmarum",
                             "ru": "Пальмовая древесница",
                             "en": "Palm Warbler",
+                            "pl": "Lasówka kasztanowogłowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5285,6 +5695,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga coronata",
                             "ru": "Миртовый певун",
                             "en": "Yellow-rumped Warbler",
+                            "pl": "Lasówka pstra",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5294,6 +5705,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga dominica",
                             "ru": "Желтогорлая древесница",
                             "en": "Yellow-throated Warbler",
+                            "pl": "Lasówka szarogrzbieta",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5303,6 +5715,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga pinus",
                             "ru": "Сосновая древесница",
                             "en": "Pine Warbler",
+                            "pl": "Lasówka sosnowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5312,6 +5725,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga discolor",
                             "ru": "Прерийная древесница",
                             "en": "Prairie Warbler",
+                            "pl": "Lasówka czarnowąsa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5321,6 +5735,7 @@ window.PASSERINE_TREE = {
                             "latin": "Setophaga virens",
                             "ru": "Зелёная древесница",
                             "en": "Black-throated Green Warbler",
+                            "pl": "Lasówka czarnogardła",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5338,6 +5753,7 @@ window.PASSERINE_TREE = {
                             "latin": "Myiothlypis signata",
                             "ru": "Бледноногий певун",
                             "en": "Pale-legged Warbler",
+                            "pl": "Koronówka jasnonoga",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5355,6 +5771,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cardellina canadensis",
                             "ru": "Канадская вильсония",
                             "en": "Canada Warbler",
+                            "pl": "Wilsonka kanadyjska",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5364,6 +5781,7 @@ window.PASSERINE_TREE = {
                             "latin": "Cardellina pusilla",
                             "ru": "Малая вильсония",
                             "en": "Wilson's Warbler",
+                            "pl": "Wilsonka mała",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5389,6 +5807,7 @@ window.PASSERINE_TREE = {
                             "latin": "Pheucticus ludovicianus",
                             "ru": "Розовогрудый толстонос",
                             "en": "Rose-breasted Grosbeak",
+                            "pl": "Łuszcz strojny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5406,6 +5825,7 @@ window.PASSERINE_TREE = {
                             "latin": "Spiza americana",
                             "ru": "Овсянковый кардинальчик",
                             "en": "Dickcissel",
+                            "pl": "Łuszczyk czarnogardły",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5423,6 +5843,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passerina cyanea",
                             "ru": "Индиговый колорин",
                             "en": "Indigo Bunting",
+                            "pl": "Łuszczyk indygowy",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5432,6 +5853,7 @@ window.PASSERINE_TREE = {
                             "latin": "Passerina caerulea",
                             "ru": "Толстоклювый колорин",
                             "en": "Blue Grosbeak",
+                            "pl": "Łuszczyk błękitny",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5449,6 +5871,7 @@ window.PASSERINE_TREE = {
                             "latin": "Piranga rubra",
                             "ru": "Алая пиранга",
                             "en": "Summer Tanager",
+                            "pl": "Piranga pąsowa",
                             "vagrant": true,
                             "introduced": false
                           },
@@ -5458,6 +5881,7 @@ window.PASSERINE_TREE = {
                             "latin": "Piranga olivacea",
                             "ru": "Чернокрылая пиранга",
                             "en": "Scarlet Tanager",
+                            "pl": "Piranga szkarłatna",
                             "vagrant": true,
                             "introduced": false
                           }
@@ -5508,6 +5932,14 @@ window.PASSERINE_TREE = {
     {
       "title": "Oliveros et al., 2019: major passerine lineages",
       "url": "https://doi.org/10.1073/pnas.1813206116"
+    },
+    {
+      "title": "Polish names: Avibase / Birds Canada",
+      "url": "https://avibase.bsc-eoc.org/checklist.jsp?region=eur&list=avilist&lang=PL&format=1"
+    },
+    {
+      "title": "Polish names: Komisja Faunistyczna, national list 2026-06-01",
+      "url": "https://komisjafaunistyczna.pl/lista/"
     }
   ]
 };

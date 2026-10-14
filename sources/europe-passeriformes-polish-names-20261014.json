@@ -1,0 +1,2125 @@
+{
+  "checkedAt": "2026-10-14",
+  "sources": [
+    "https://avibase.bsc-eoc.org/checklist.jsp?region=eur&list=avilist&lang=PL&format=1",
+    "https://komisjafaunistyczna.pl/lista/"
+  ],
+  "method": "Matched by scientific name and Avibase ID; current national Polish names preferred where available. Capitalized initial letter for display. Country presence is separate from the name.",
+  "records": [
+    {
+      "latin": "Myiarchus crinitus",
+      "pl": "Muchołap czubaty",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=8D6D5F2BEA07A0CF"
+    },
+    {
+      "latin": "Tyrannus savana",
+      "pl": "Tyran widłosterny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A2510EF44C67DD52"
+    },
+    {
+      "latin": "Tyrannus tyrannus",
+      "pl": "Tyran północny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=082D833CF61D6360"
+    },
+    {
+      "latin": "Tyrannus verticalis",
+      "pl": "Tyran zachodni",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2281F1C77260C0AB"
+    },
+    {
+      "latin": "Sayornis phoebe",
+      "pl": "Fibik oliwkowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=62CA2AF81AF5B68D"
+    },
+    {
+      "latin": "Empidonax virescens",
+      "pl": "Empidonka oliwkowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2778A3F42BBFEBD5"
+    },
+    {
+      "latin": "Empidonax alnorum",
+      "pl": "Empidonka olchowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=338088120A17D3EA"
+    },
+    {
+      "latin": "Empidonax traillii",
+      "pl": "Empidonka mała",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5BC4E0EFAB129B9D"
+    },
+    {
+      "latin": "Empidonax flaviventris",
+      "pl": "Empidonka żółtobrzucha",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7B0669CBD8FC7A17"
+    },
+    {
+      "latin": "Empidonax minimus",
+      "pl": "Empidonka siwa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F5837054F30BA49D"
+    },
+    {
+      "latin": "Contopus cooperi",
+      "pl": "Piwik północny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=951C150C10C1B0BA"
+    },
+    {
+      "latin": "Contopus virens",
+      "pl": "Piwik leśny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9891BF73279CAB69"
+    },
+    {
+      "latin": "Vireo philadelphicus",
+      "pl": "Wireonek cytrynowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=447A1BA516A43F9A"
+    },
+    {
+      "latin": "Vireo olivaceus",
+      "pl": "Wireonek czerwonooki",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Vireo flavifrons",
+      "pl": "Wireonek żółtogardły",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F8DDF6A6429E64D0"
+    },
+    {
+      "latin": "Vireo solitarius",
+      "pl": "Wireonek siwy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=95DB0943652956D1"
+    },
+    {
+      "latin": "Vireo griseus",
+      "pl": "Wireonek białooki",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D97F93CC29E30108"
+    },
+    {
+      "latin": "Oriolus kundoo",
+      "pl": "Wilga złotoplama",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4C263A0E9863761B"
+    },
+    {
+      "latin": "Oriolus oriolus",
+      "pl": "Wilga",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius excubitor",
+      "pl": "Srokosz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius meridionalis",
+      "pl": "Dzierzba śródziemnomorska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=EDE09959B80DFDAB"
+    },
+    {
+      "latin": "Lanius borealis",
+      "pl": "Srokosz północny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius nubicus",
+      "pl": "Dzierzba białoczelna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E90CC64A3A32FE26"
+    },
+    {
+      "latin": "Lanius minor",
+      "pl": "Dzierzba czarnoczelna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius senator",
+      "pl": "Dzierzba rudogłowa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius isabellinus",
+      "pl": "Dzierzba pustynna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius collurio",
+      "pl": "Gąsiorek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius phoenicuroides",
+      "pl": "Dzierzba rdzawosterna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lanius schach",
+      "pl": "Dzierzba zmienna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=69FC190BC179A4FD"
+    },
+    {
+      "latin": "Lanius cristatus",
+      "pl": "Dzierzba brązowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E4968582E577D9D1"
+    },
+    {
+      "latin": "Pyrrhocorax graculus",
+      "pl": "Wieszczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Pyrrhocorax pyrrhocorax",
+      "pl": "Wrończyk",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=18D2C42A9AD30CD8"
+    },
+    {
+      "latin": "Cyanopica cooki",
+      "pl": "Sójka iberyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D30A8AE1FDA18C0A"
+    },
+    {
+      "latin": "Perisoreus infaustus",
+      "pl": "Sójka syberyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Garrulus glandarius",
+      "pl": "Sójka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Pica pica",
+      "pl": "Sroka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Nucifraga caryocatactes",
+      "pl": "Orzechówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Coloeus dauuricus",
+      "pl": "Kawka srokata",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9F784AB11E547808"
+    },
+    {
+      "latin": "Coloeus monedula",
+      "pl": "Kawka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Corvus frugilegus",
+      "pl": "Gawron",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Corvus rhipidurus",
+      "pl": "Kruk kusy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=32C216E28E856C3E"
+    },
+    {
+      "latin": "Corvus corax",
+      "pl": "Kruk",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Corvus corone",
+      "pl": "Wrona",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Corvus splendens",
+      "pl": "Wrona orientalna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3986890399CA4859"
+    },
+    {
+      "latin": "Remiz pendulinus",
+      "pl": "Remiz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Cyanistes teneriffae",
+      "pl": "Modraszka kanaryjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BE2B80F474DA5F64"
+    },
+    {
+      "latin": "Cyanistes cyanus",
+      "pl": "Sikora lazurowa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Cyanistes caeruleus",
+      "pl": "Modraszka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Parus major",
+      "pl": "Bogatka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Periparus ater",
+      "pl": "Sosnówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Lophophanes cristatus",
+      "pl": "Czubatka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Poecile lugubris",
+      "pl": "Sikora żałobna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CEC34DA4D6E4A0F1"
+    },
+    {
+      "latin": "Poecile palustris",
+      "pl": "Sikora uboga",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Poecile montanus",
+      "pl": "Czarnogłówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Poecile cinctus",
+      "pl": "Sikora północna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=67504FA2052E4CBB"
+    },
+    {
+      "latin": "Panurus biarmicus",
+      "pl": "Wąsatka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Alaemon alaudipes",
+      "pl": "Skowron pustynny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3E4513D9B079B399"
+    },
+    {
+      "latin": "Ramphocoris clotbey",
+      "pl": "Skowroniak",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9ADB6BA5B67E1B65"
+    },
+    {
+      "latin": "Ammomanes cinctura",
+      "pl": "Skowronik rudawy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=20A0844D8FB86C1F"
+    },
+    {
+      "latin": "Ammomanes deserti",
+      "pl": "Skowronik piaskowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A977348D32FB435E"
+    },
+    {
+      "latin": "Lullula arborea",
+      "pl": "Lerka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Alauda leucoptera",
+      "pl": "Skowronek białoskrzydły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Alauda gulgula",
+      "pl": "Skowronek orientalny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E988F1D549A6773D"
+    },
+    {
+      "latin": "Alauda arvensis",
+      "pl": "Skowronek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Galerida theklae",
+      "pl": "Dzierlatka iberyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5351025CD2FE0285"
+    },
+    {
+      "latin": "Galerida cristata",
+      "pl": "Dzierlatka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Eremophila bilopha",
+      "pl": "Górniczek mały",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=89FCE277BC4898DD"
+    },
+    {
+      "latin": "Eremophila alpestris",
+      "pl": "Górniczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Calandrella brachydactyla",
+      "pl": "Skowrończyk krótkopalcowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Melanocorypha bimaculata",
+      "pl": "Kalandra dwuplamista",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Melanocorypha yeltoniensis",
+      "pl": "Kalandra czarna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Melanocorypha calandra",
+      "pl": "Kalandra szara",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Chersophilus duponti",
+      "pl": "Skowrończyk sierpodzioby",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=504B02182C6C63A9"
+    },
+    {
+      "latin": "Alaudala cheleensis",
+      "pl": "Skowrończyk mongolski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=399A4A3E8DAF2FC5"
+    },
+    {
+      "latin": "Alaudala rufescens",
+      "pl": "Skowrończyk mały",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FE1FE1852275CE88"
+    },
+    {
+      "latin": "Alaudala heinei",
+      "pl": "Skowrończyk kaspijski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=238EC109773091F5"
+    },
+    {
+      "latin": "Cisticola juncidis",
+      "pl": "Chwastówka (zwyczajna)",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=AEE2063F66AE0C70"
+    },
+    {
+      "latin": "Hippolais icterina",
+      "pl": "Zaganiacz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Hippolais polyglotta",
+      "pl": "Zaganiacz szczebiotliwy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Hippolais languida",
+      "pl": "Zaganiacz pustynny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B10AD127C9D4DD7C"
+    },
+    {
+      "latin": "Hippolais olivetorum",
+      "pl": "Zaganiacz oliwny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=791DED180041E350"
+    },
+    {
+      "latin": "Arundinax aedon",
+      "pl": "Zaganiacz grubodzioby",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=213C212A93364C7C"
+    },
+    {
+      "latin": "Iduna caligata",
+      "pl": "Zaganiacz mały",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Iduna rama",
+      "pl": "Zaganiacz afgański",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Iduna pallida",
+      "pl": "Zaganiacz blady",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Iduna opaca",
+      "pl": "Zaganiacz płowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A7275096DD6A3692"
+    },
+    {
+      "latin": "Acrocephalus schoenobaenus",
+      "pl": "Rokitniczka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus paludicola",
+      "pl": "Wodniczka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus melanopogon",
+      "pl": "Tamaryszka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus agricola",
+      "pl": "Trzcinniczek kaspijski",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus dumetorum",
+      "pl": "Zaroślówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus palustris",
+      "pl": "Łozówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus scirpaceus",
+      "pl": "Trzcinniczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus arundinaceus",
+      "pl": "Trzciniak",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acrocephalus stentoreus",
+      "pl": "Trzciniak głośny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D793DF5AB3748CB7"
+    },
+    {
+      "latin": "Helopsaltes fasciolatus",
+      "pl": "Świerszczak tajgowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2F6F30EF4B9E4AD8"
+    },
+    {
+      "latin": "Helopsaltes certhiola",
+      "pl": "Świerszczak melodyjny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Locustella lanceolata",
+      "pl": "Świerszczak nakrapiany",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=10A37318BC10CA74"
+    },
+    {
+      "latin": "Locustella fluviatilis",
+      "pl": "Strumieniówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Locustella luscinioides",
+      "pl": "Brzęczka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Locustella naevia",
+      "pl": "Świerszczak",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Riparia riparia",
+      "pl": "Brzegówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Riparia diluta",
+      "pl": "Brzegówka azjatycka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A9A9E1D123B94E0A"
+    },
+    {
+      "latin": "Riparia paludicola",
+      "pl": "Brzegówka mała",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D285448987FF545B"
+    },
+    {
+      "latin": "Tachycineta bicolor",
+      "pl": "Nadobniczka drzewna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BBA2F9DF60AE60BF"
+    },
+    {
+      "latin": "Progne subis",
+      "pl": "Jaskółczak modry",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=ACB9D1C6AB7F3371"
+    },
+    {
+      "latin": "Stelgidopteryx serripennis",
+      "pl": "Wodówka północna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2C1981BBDAF51B2D"
+    },
+    {
+      "latin": "Ptyonoprogne rupestris",
+      "pl": "Jaskółka skalna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6F2AF9D09463566F"
+    },
+    {
+      "latin": "Ptyonoprogne obsoleta",
+      "pl": "Jaskółka płowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A97BDA8427A0F38E"
+    },
+    {
+      "latin": "Hirundo rustica",
+      "pl": "Dymówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Delichon urbicum",
+      "pl": "Oknówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Delichon lagopodum",
+      "pl": "Oknówka syberyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=535F7C54E6F11913"
+    },
+    {
+      "latin": "Cecropis semirufa",
+      "pl": "Jaskółka rdzawobrzucha",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=958F4A5E90FEB8C7"
+    },
+    {
+      "latin": "Cecropis rufula",
+      "pl": "Jaskółka śródziemnomorska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Cecropis daurica",
+      "pl": "Jaskółka rudawa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6FE118C653CD4745"
+    },
+    {
+      "latin": "Petrochelidon pyrrhonota",
+      "pl": "Jaskółka rdzawoszyja",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F5C181CA4478FD86"
+    },
+    {
+      "latin": "Aegithalos caudatus",
+      "pl": "Raniuszek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Cettia cetti",
+      "pl": "Wierzbówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus sibilatrix",
+      "pl": "Świstunka leśna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus bonelli",
+      "pl": "Świstunka górska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus orientalis",
+      "pl": "Świstunka złotorzytna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=666F9FC9350991FD"
+    },
+    {
+      "latin": "Phylloscopus inornatus",
+      "pl": "Świstunka żółtawa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus humei",
+      "pl": "Świstunka ałtajska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus subviridis",
+      "pl": "Świstunka żółtozielona",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3827F740FED968FE"
+    },
+    {
+      "latin": "Phylloscopus proregulus",
+      "pl": "Świstunka złotawa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus schwarzi",
+      "pl": "Świstunka grubodzioba",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus griseolus",
+      "pl": "Świstunka żółtobrzucha",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=37DD095F45E0F5CA"
+    },
+    {
+      "latin": "Phylloscopus fuscatus",
+      "pl": "Świstunka brunatna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus neglectus",
+      "pl": "Świstunka afgańska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=116192F7702A4406"
+    },
+    {
+      "latin": "Phylloscopus trochilus",
+      "pl": "Piecuszek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus sindianus",
+      "pl": "Świstunka szarawa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F05BA180726CE63C"
+    },
+    {
+      "latin": "Phylloscopus canariensis",
+      "pl": "Świstunka kanaryjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=AAD3006808AA5297"
+    },
+    {
+      "latin": "Phylloscopus ibericus",
+      "pl": "Świstunka iberyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus collybita",
+      "pl": "Pierwiosnek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus coronatus",
+      "pl": "Świstunka oliwkowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2D272F5A53B5B83E"
+    },
+    {
+      "latin": "Phylloscopus umbrovirens",
+      "pl": "Świstunka ciemna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E22B84950977F4D9"
+    },
+    {
+      "latin": "Phylloscopus nitidus",
+      "pl": "Świstunka kaukaska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3542C46BC98FB367"
+    },
+    {
+      "latin": "Phylloscopus plumbeitarsus",
+      "pl": "Świstunka amurska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=38C788AE632E48DF"
+    },
+    {
+      "latin": "Phylloscopus trochiloides",
+      "pl": "Wójcik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus magnirostris",
+      "pl": "Świstunka wielkodzioba",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C31573A5FBB80F9B"
+    },
+    {
+      "latin": "Phylloscopus tenellipes",
+      "pl": "Świstunka brązowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D0FA238555FF712A"
+    },
+    {
+      "latin": "Phylloscopus borealis",
+      "pl": "Świstunka północna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phylloscopus examinandus",
+      "pl": "Świstunka kamczacka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CF4677084B16825C"
+    },
+    {
+      "latin": "Pycnonotus leucotis",
+      "pl": "Bilbil białouchy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4A85D701A5FE8012"
+    },
+    {
+      "latin": "Pycnonotus barbatus",
+      "pl": "Bilbil ogrodowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6ABDB63537227774"
+    },
+    {
+      "latin": "Sylvia borin",
+      "pl": "Gajówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Sylvia atricapilla",
+      "pl": "Kapturka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca nisoria",
+      "pl": "Jarzębatka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca curruca",
+      "pl": "Piegża",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca hortensis",
+      "pl": "Lutniczka zachodnia",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=95E7E0E5E3481A63"
+    },
+    {
+      "latin": "Curruca crassirostris",
+      "pl": "Lutniczka wschodnia",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=37015E6154731355"
+    },
+    {
+      "latin": "Curruca nana",
+      "pl": "Pokrzewka pustynna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=58F3D3E544D9755B"
+    },
+    {
+      "latin": "Curruca deserti",
+      "pl": "Pokrzewka saharyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D5AEADF4CD597872"
+    },
+    {
+      "latin": "Curruca deserticola",
+      "pl": "Pokrzewka algierska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D1EF44026464C88E"
+    },
+    {
+      "latin": "Curruca mystacea",
+      "pl": "Pokrzewka kaspijska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca communis",
+      "pl": "Cierniówka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca conspicillata",
+      "pl": "Pokrzewka okularowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BFECF5F8F49E2869"
+    },
+    {
+      "latin": "Curruca sarda",
+      "pl": "Pokrzewka czarniawa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6E1206E4FC70EB9E"
+    },
+    {
+      "latin": "Curruca balearica",
+      "pl": "Pokrzewka balearska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=586FA3176E425F8A"
+    },
+    {
+      "latin": "Curruca undata",
+      "pl": "Pokrzewka kasztanowata",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=85629EF4042C9DBB"
+    },
+    {
+      "latin": "Curruca ruppeli",
+      "pl": "Pokrzewka czarnogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A1B09A861B190E01"
+    },
+    {
+      "latin": "Curruca melanothorax",
+      "pl": "Pokrzewka cypryjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=94E23F513701617A"
+    },
+    {
+      "latin": "Curruca melanocephala",
+      "pl": "Pokrzewka aksamitna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca subalpina",
+      "pl": "Pokrzewka różowobrzucha",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3FC15B0694A20507"
+    },
+    {
+      "latin": "Curruca iberiae",
+      "pl": "Pokrzewka iberyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Curruca cantillans",
+      "pl": "Pokrzewka wąsata",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Suthora alphonsiana",
+      "pl": "Ogoniatka rdzawogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A6246EF8E1B6A7DC"
+    },
+    {
+      "latin": "Leiothrix lutea",
+      "pl": "Pekińczyk czerwonodzioby",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E147E79ECC57E8C2"
+    },
+    {
+      "latin": "Bombycilla cedrorum",
+      "pl": "Jemiołuszka cedrowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9437D635FF4E2607"
+    },
+    {
+      "latin": "Bombycilla garrulus",
+      "pl": "Jemiołuszka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Corthylio calendula",
+      "pl": "Ogniczek",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B60B1166CE5DDFA7"
+    },
+    {
+      "latin": "Regulus madeirensis",
+      "pl": "Zniczek maderski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C92557B890A9AF38"
+    },
+    {
+      "latin": "Regulus ignicapilla",
+      "pl": "Zniczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Regulus regulus",
+      "pl": "Mysikrólik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Tichodroma muraria",
+      "pl": "Pomurnik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Sitta krueperi",
+      "pl": "Kowalik turecki",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E29D7FB9381BFD3D"
+    },
+    {
+      "latin": "Sitta canadensis",
+      "pl": "Kowalik czarnogłowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=0716A71C439DC09E"
+    },
+    {
+      "latin": "Sitta whiteheadi",
+      "pl": "Kowalik korsykański",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7FD1FB234C8DD443"
+    },
+    {
+      "latin": "Sitta neumayer",
+      "pl": "Kowalik skalny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C37C527F47D94D1E"
+    },
+    {
+      "latin": "Sitta europaea",
+      "pl": "Kowalik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Certhia familiaris",
+      "pl": "Pełzacz leśny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Certhia brachydactyla",
+      "pl": "Pełzacz ogrodowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Cistothorus palustris",
+      "pl": "Strzyżyk błotny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=787E05366752B844"
+    },
+    {
+      "latin": "Troglodytes troglodytes",
+      "pl": "Strzyżyk",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Dumetella carolinensis",
+      "pl": "Przedrzeźniacz ciemny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=95B77F083F49835F"
+    },
+    {
+      "latin": "Toxostoma rufum",
+      "pl": "Przedrzeźniacz rudy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C8F9F2D013E9D057"
+    },
+    {
+      "latin": "Mimus polyglottos",
+      "pl": "Przedrzeźniacz północny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7EFF698DC564CF69"
+    },
+    {
+      "latin": "Sturnus unicolor",
+      "pl": "Szpak jednobarwny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Sturnus vulgaris",
+      "pl": "Szpak",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Pastor roseus",
+      "pl": "Pasterz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Agropsar sturninus",
+      "pl": "Szpak mandżurski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2FC5C3978171719C"
+    },
+    {
+      "latin": "Acridotheres cristatellus",
+      "pl": "Majna czubata",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=65BCBB64435BB4A5"
+    },
+    {
+      "latin": "Cinclus cinclus",
+      "pl": "Pluszcz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Zoothera aurea",
+      "pl": "Drozdoń tajgowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Zoothera dauma",
+      "pl": "Drozdoń pstry",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F58200CE40A4720C"
+    },
+    {
+      "latin": "Ixoreus naevius",
+      "pl": "Rudodrozd",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=583128734B0F566A"
+    },
+    {
+      "latin": "Hylocichla mustelina",
+      "pl": "Drozdek rudy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=8E1D9327B8DAFD54"
+    },
+    {
+      "latin": "Catharus ustulatus",
+      "pl": "Drozdek okularowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E53FC25C090A6AD8"
+    },
+    {
+      "latin": "Catharus fuscescens",
+      "pl": "Drozdek brunatny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=0B8F4EE60AFF4B25"
+    },
+    {
+      "latin": "Catharus minimus",
+      "pl": "Drozdek szarolicy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B904BB227C07317E"
+    },
+    {
+      "latin": "Catharus guttatus",
+      "pl": "Drozdek samotny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B01E8BD42E1785F2"
+    },
+    {
+      "latin": "Geokichla sibirica",
+      "pl": "Drozdaczek ciemny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus viscivorus",
+      "pl": "Paszkot",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus philomelos",
+      "pl": "Śpiewak",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus iliacus",
+      "pl": "Droździk",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus merula",
+      "pl": "Kos",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus pilaris",
+      "pl": "Kwiczoł",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus torquatus",
+      "pl": "Drozd obrożny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus ruficollis",
+      "pl": "Drozd rdzawogardły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus atrogularis",
+      "pl": "Drozd czarnogardły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus naumanni",
+      "pl": "Drozd rdzawy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus eunomus",
+      "pl": "Drozd rdzawoskrzydły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus unicolor",
+      "pl": "Drozd śniady",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F4692C3B28EF7A78"
+    },
+    {
+      "latin": "Turdus obscurus",
+      "pl": "Drozd oliwkowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Turdus migratorius",
+      "pl": "Drozd wędrowny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D77E4B418D581FB2"
+    },
+    {
+      "latin": "Cercotrichas galactotes",
+      "pl": "Drozdówka rdzawa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B68BD0D25647A5D2"
+    },
+    {
+      "latin": "Muscicapa sibirica",
+      "pl": "Muchołówka śniada",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BCB683C21DCFC71C"
+    },
+    {
+      "latin": "Muscicapa dauurica",
+      "pl": "Muchołówka brunatna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=585D0B1ACD00B47F"
+    },
+    {
+      "latin": "Muscicapa striata",
+      "pl": "Muchołówka szara",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Erithacus rubecula",
+      "pl": "Rudzik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Irania gutturalis",
+      "pl": "Iranka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=73BD4B293448BBD5"
+    },
+    {
+      "latin": "Luscinia luscinia",
+      "pl": "Słowik szary",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Luscinia megarhynchos",
+      "pl": "Słowik rdzawy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Luscinia svecica",
+      "pl": "Podróżniczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Calliope calliope",
+      "pl": "Słowiczek rubinowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=786B0F98D1EE4C54"
+    },
+    {
+      "latin": "Larvivora cyane",
+      "pl": "Słowik modry",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A8AA7E198F39BFB4"
+    },
+    {
+      "latin": "Larvivora sibilans",
+      "pl": "Słowik syberyjski",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Ficedula parva",
+      "pl": "Muchołówka mała",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Ficedula albicilla",
+      "pl": "Muchołówka rdzawogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=99985173A619C8F2"
+    },
+    {
+      "latin": "Ficedula speculigera",
+      "pl": "Muchołówka atlasowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CD1B215680AA1E68"
+    },
+    {
+      "latin": "Ficedula semitorquata",
+      "pl": "Muchołówka półobrożna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BE56C141DDCFDA2E"
+    },
+    {
+      "latin": "Ficedula albicollis",
+      "pl": "Muchołówka białoszyja",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Ficedula hypoleuca",
+      "pl": "Muchołówka żałobna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Tarsiger cyanurus",
+      "pl": "Modraczek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phoenicurus erythronotus",
+      "pl": "Pleszka ałtajska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=03E448A1E6FA7895"
+    },
+    {
+      "latin": "Phoenicurus fuliginosus",
+      "pl": "Pleszka śniada",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1850B440B1436E49"
+    },
+    {
+      "latin": "Phoenicurus erythrogastrus",
+      "pl": "Pleszka kaukaska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3B01E1715D1738E2"
+    },
+    {
+      "latin": "Phoenicurus ochruros",
+      "pl": "Kopciuszek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Phoenicurus moussieri",
+      "pl": "Pleszka algierska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7A8D10C08494138B"
+    },
+    {
+      "latin": "Phoenicurus phoenicurus",
+      "pl": "Pleszka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Monticola saxatilis",
+      "pl": "Nagórnik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Monticola solitarius",
+      "pl": "Modrak śródziemnomorski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=41D76F4B19ACB4BD"
+    },
+    {
+      "latin": "Saxicola rubetra",
+      "pl": "Pokląskwa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Saxicola caprata",
+      "pl": "Kląskawka czarna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A64A1FA22261FA10"
+    },
+    {
+      "latin": "Saxicola maurus",
+      "pl": "Kląskawka syberyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Saxicola torquatus",
+      "pl": "Kląskawka afrykańska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CF2E967489666AEA"
+    },
+    {
+      "latin": "Saxicola dacotiae",
+      "pl": "Kląskawka kanaryjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FEA56E91BF4AA5B3"
+    },
+    {
+      "latin": "Saxicola rubicola",
+      "pl": "Kląskawka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe deserti",
+      "pl": "Białorzytka pustynna",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe hispanica",
+      "pl": "Białorzytka rdzawa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe pleschanka",
+      "pl": "Białorzytka pstra",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe melanoleuca",
+      "pl": "Białorzytka maskowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=DF26171F72EF3655"
+    },
+    {
+      "latin": "Oenanthe cypriaca",
+      "pl": "Białorzytka cypryjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A3148129CFD0450B"
+    },
+    {
+      "latin": "Oenanthe seebohmi",
+      "pl": "Białorzytka czarnogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3983013B8ABF7894"
+    },
+    {
+      "latin": "Oenanthe oenanthe",
+      "pl": "Białorzytka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe isabellina",
+      "pl": "Białorzytka płowa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Oenanthe moesta",
+      "pl": "Rudorzytka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A9ADB78D5D6B570C"
+    },
+    {
+      "latin": "Oenanthe picata",
+      "pl": "Białorzytka zmienna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F0CB79C0AA81DF96"
+    },
+    {
+      "latin": "Oenanthe finschii",
+      "pl": "Białorzytka białogrzbieta",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3A712A25A08E7F15"
+    },
+    {
+      "latin": "Oenanthe xanthoprymna",
+      "pl": "Złotorzytka rdzawosterna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FB7193205A928668"
+    },
+    {
+      "latin": "Oenanthe leucura",
+      "pl": "Białorzytka żałobna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1C98EA2F8CD4DD15"
+    },
+    {
+      "latin": "Oenanthe leucopyga",
+      "pl": "Białorzytka saharyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Ploceus melanocephalus",
+      "pl": "Wikłacz czarnogłowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=19D053B3A2A59558"
+    },
+    {
+      "latin": "Euplectes afer",
+      "pl": "Wikłacz słoneczny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4A58452BCE614FD1"
+    },
+    {
+      "latin": "Euodice malabarica",
+      "pl": "Srebrnodziobek indyjski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C03E353AFBA1FB74"
+    },
+    {
+      "latin": "Lonchura punctulata",
+      "pl": "Mniszka muszkatowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6D4F72B157D99627"
+    },
+    {
+      "latin": "Lonchura malacca",
+      "pl": "Mniszka kapturowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=937B5409A423667F"
+    },
+    {
+      "latin": "Lonchura atricapilla",
+      "pl": "Mniszka czarnogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5634598A9E52C2B1"
+    },
+    {
+      "latin": "Estrilda melpoda",
+      "pl": "Astryld złotolicy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1E79A7D7AEE67569"
+    },
+    {
+      "latin": "Estrilda astrild",
+      "pl": "Astryld falisty",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=61CB98C064F82462"
+    },
+    {
+      "latin": "Amandava amandava",
+      "pl": "Bengalik czerwony",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F30FC757798C8A9B"
+    },
+    {
+      "latin": "Prunella collaris",
+      "pl": "Płochacz halny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Prunella atrogularis",
+      "pl": "Płochacz czarnogardły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Prunella ocularis",
+      "pl": "Plochacz pstry",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1518EDFA6B806B2A"
+    },
+    {
+      "latin": "Prunella modularis",
+      "pl": "Pokrzywnica",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Prunella montanella",
+      "pl": "Płochacz syberyjski",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Petronia petronia",
+      "pl": "Wróbel skalny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Montifringilla nivalis",
+      "pl": "Śnieżka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Carpospiza brachydactyla",
+      "pl": "Wróbel krótkopalcowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B1A5B22C2BFBE48E"
+    },
+    {
+      "latin": "Passer montanus",
+      "pl": "Mazurek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Passer moabiticus",
+      "pl": "Wróbel palestyński",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7D19D9ED74569128"
+    },
+    {
+      "latin": "Passer hispaniolensis",
+      "pl": "Wróbel śródziemnomorski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5A8E09A18B86D140"
+    },
+    {
+      "latin": "Passer italiae",
+      "pl": "Wróbel apeniński",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3718C3F9FDA2A7FB"
+    },
+    {
+      "latin": "Passer domesticus",
+      "pl": "Wróbel",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Motacilla cinerea",
+      "pl": "Pliszka górska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Motacilla flava",
+      "pl": "Pliszka żółta",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Motacilla citreola",
+      "pl": "Pliszka cytrynowa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Motacilla tschutschensis",
+      "pl": "Pliszka syberyjska",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Motacilla alba",
+      "pl": "Pliszka siwa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus godlewskii",
+      "pl": "Świergotek stepowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus campestris",
+      "pl": "Świergotek polny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus berthelotii",
+      "pl": "Świergotek kanaryjski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B17CFF22C9337460"
+    },
+    {
+      "latin": "Anthus similis",
+      "pl": "Świergotek długodzioby",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=ECFF22D2B80C55EA"
+    },
+    {
+      "latin": "Anthus richardi",
+      "pl": "Świergotek szponiasty",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus rufulus",
+      "pl": "Świergotek rdzawy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=57A0C80B2C7FBDE1"
+    },
+    {
+      "latin": "Anthus gustavi",
+      "pl": "Świergotek tundrowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9DC4CC5470034A96"
+    },
+    {
+      "latin": "Anthus trivialis",
+      "pl": "Świergotek drzewny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus hodgsoni",
+      "pl": "Świergotek tajgowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus cervinus",
+      "pl": "Świergotek rdzawogardły",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus japonicus",
+      "pl": "Świergotek syberyjski",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus rubescens",
+      "pl": "Świergotek bagienny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CDA2E56B1B283EA8"
+    },
+    {
+      "latin": "Anthus pratensis",
+      "pl": "Świergotek łąkowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus petrosus",
+      "pl": "Świergotek nadmorski",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Anthus spinoletta",
+      "pl": "Siwerniak",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Fringilla montifringilla",
+      "pl": "Jer",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Fringilla teydea",
+      "pl": "Zięba modra",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A338CC4FA326FEDD"
+    },
+    {
+      "latin": "Fringilla polatzeki",
+      "pl": "Zięba czarnoczelna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=EE6907BB113051A8"
+    },
+    {
+      "latin": "Fringilla spodiogenys",
+      "pl": "Zięba zielonogrzbieta",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9C8662BB33F5BDD7"
+    },
+    {
+      "latin": "Fringilla coelebs",
+      "pl": "Zięba",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Fringilla moreletti",
+      "pl": "Zięba atlantycka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D77B121C501DC1AA"
+    },
+    {
+      "latin": "Fringilla maderensis",
+      "pl": "Zięba maderska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3F80A0BC87F395E3"
+    },
+    {
+      "latin": "Fringilla canariensis",
+      "pl": "Zięba modrogrzbieta",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1E2D705D602D557E"
+    },
+    {
+      "latin": "Hesperiphona vespertina",
+      "pl": "Grubodziób białoskrzydły",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C6B5497C9DB6796A"
+    },
+    {
+      "latin": "Coccothraustes coccothraustes",
+      "pl": "Grubodziób",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Carpodacus erythrinus",
+      "pl": "Dziwonia",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Carpodacus rubicilla",
+      "pl": "Dziwonia duża",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7621E1A6BFDF4D92"
+    },
+    {
+      "latin": "Carpodacus roseus",
+      "pl": "Dziwonia syberyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=68DF5AB792401570"
+    },
+    {
+      "latin": "Pinicola enucleator",
+      "pl": "Łuskowiec",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Pyrrhula murina",
+      "pl": "Gil azorski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=0788A895005C5D94"
+    },
+    {
+      "latin": "Pyrrhula pyrrhula",
+      "pl": "Gil",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Bucanetes mongolicus",
+      "pl": "Gilak mongolski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B8FE90ACDA36B34C"
+    },
+    {
+      "latin": "Bucanetes githagineus",
+      "pl": "Gilak pustynny",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Leucosticte tephrocotis",
+      "pl": "Góralka siwogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=029491CD61458A5A"
+    },
+    {
+      "latin": "Haemorhous mexicanus",
+      "pl": "Dziwuszka ogrodowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=89431E9F1CEDC995"
+    },
+    {
+      "latin": "Rhodospiza obsoleta",
+      "pl": "Czarnodziobek",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FA26991188EAE8EC"
+    },
+    {
+      "latin": "Chloris chloris",
+      "pl": "Dzwoniec",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Linaria flavirostris",
+      "pl": "Rzepołuch",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Linaria cannabina",
+      "pl": "Makolągwa",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Acanthis flammea",
+      "pl": "Czeczotka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Loxia leucoptera",
+      "pl": "Krzyżodziób modrzewiowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Loxia pytyopsittacus",
+      "pl": "Krzyżodziób sosnowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Loxia scotica",
+      "pl": "Krzyżodziób szkocki",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=74FCC44D26021731"
+    },
+    {
+      "latin": "Loxia curvirostra",
+      "pl": "Krzyżodziób świerkowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Carduelis citrinella",
+      "pl": "Osetnik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Carduelis corsicana",
+      "pl": "Osetnik korsykański",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E2BF60CFE904A2E6"
+    },
+    {
+      "latin": "Carduelis caniceps",
+      "pl": "Szczygieł szarogłowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9BDBCD7F018CB026"
+    },
+    {
+      "latin": "Carduelis carduelis",
+      "pl": "Szczygieł",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Serinus canaria",
+      "pl": "Kanarek",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=191B68BCE6E4154B"
+    },
+    {
+      "latin": "Serinus serinus",
+      "pl": "Kulczyk",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Serinus pusillus",
+      "pl": "Kulczyk królewski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FB1C44D5E600E5ED"
+    },
+    {
+      "latin": "Spinus spinus",
+      "pl": "Czyż",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Spinus pinus",
+      "pl": "Czyż sosnowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B48335B1DF4EF710"
+    },
+    {
+      "latin": "Plectrophenax nivalis",
+      "pl": "Śnieguła",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Calcarius lapponicus",
+      "pl": "Poświerka",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza sahari",
+      "pl": "Trznadel saharyjski",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C7C1A6EBE2F2E916"
+    },
+    {
+      "latin": "Emberiza striolata",
+      "pl": "Trznadel smużkowany",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CDF4A1064841FF43"
+    },
+    {
+      "latin": "Emberiza pallasi",
+      "pl": "Potrzos popielaty",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C6D6D547670FE661"
+    },
+    {
+      "latin": "Emberiza schoeniclus",
+      "pl": "Potrzos",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza chrysophrys",
+      "pl": "Trznadel złotobrewy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza rutila",
+      "pl": "Trznadel rudy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=ACDCF3CC14945335"
+    },
+    {
+      "latin": "Emberiza aureola",
+      "pl": "Trznadel złotawy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza pusilla",
+      "pl": "Trznadelek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza rustica",
+      "pl": "Trznadel czubaty",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza spodocephala",
+      "pl": "Trznadel szarogłowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza melanocephala",
+      "pl": "Trznadel czarnogłowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza calandra",
+      "pl": "Potrzeszcz",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza fucata",
+      "pl": "Trznadel rdzawouchy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=465C35EFDEEDEFDC"
+    },
+    {
+      "latin": "Emberiza cia",
+      "pl": "Głuszek",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza buchanani",
+      "pl": "Trznadel skalny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CF70007E92F2A30B"
+    },
+    {
+      "latin": "Emberiza cineracea",
+      "pl": "Trznadel popielaty",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7C5AC3003495A54C"
+    },
+    {
+      "latin": "Emberiza hortulana",
+      "pl": "Ortolan",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza caesia",
+      "pl": "Trznadel modrogłowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A7F3E6AE9A1929F9"
+    },
+    {
+      "latin": "Emberiza cirlus",
+      "pl": "Cierlik",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza leucocephalos",
+      "pl": "Trznadel białogłowy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Emberiza citrinella",
+      "pl": "Trznadel",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Chondestes grammacus",
+      "pl": "Trawiarczyk",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=78509A5D6015C509"
+    },
+    {
+      "latin": "Spizelloides arborea",
+      "pl": "Pasówka rdzawołbista",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=2A86F9C93636CDA3"
+    },
+    {
+      "latin": "Passerella iliaca",
+      "pl": "Pasówka rudosterna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3A7B1F59DE8F597D"
+    },
+    {
+      "latin": "Junco hyemalis",
+      "pl": "Junko",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Zonotrichia albicollis",
+      "pl": "Pasówka białogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=39BD9FF20A9613C4"
+    },
+    {
+      "latin": "Zonotrichia leucophrys",
+      "pl": "Pasówka białobrewa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=8601A4678CABA542"
+    },
+    {
+      "latin": "Passerculus sandwichensis",
+      "pl": "Bagiennik żółtobrewy",
+      "source": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "latin": "Melospiza melodia",
+      "pl": "Szarobrewka śpiewna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A5F09E0521019564"
+    },
+    {
+      "latin": "Melospiza lincolnii",
+      "pl": "Szarobrewka płowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=AF49F8903B6DC7A5"
+    },
+    {
+      "latin": "Pipilo erythrophthalmus",
+      "pl": "Pipil rudoboczny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6090278A61F63C13"
+    },
+    {
+      "latin": "Icteria virens",
+      "pl": "Słowikówka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=734C73A933F3108B"
+    },
+    {
+      "latin": "Xanthocephalus xanthocephalus",
+      "pl": "Żółtogłowiec",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=3E2D0C9BADB782DB"
+    },
+    {
+      "latin": "Dolichonyx oryzivorus",
+      "pl": "Ryżojad",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F845062FC976B85B"
+    },
+    {
+      "latin": "Icterus galbula",
+      "pl": "Kacyk północny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5110842FA06DD11C"
+    },
+    {
+      "latin": "Agelaius phoeniceus",
+      "pl": "Epoletnik krasnoskrzydły",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=C86D078E641FCE6D"
+    },
+    {
+      "latin": "Molothrus ater",
+      "pl": "Starzyk brunatnogłowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1E1AB415D083AAD4"
+    },
+    {
+      "latin": "Euphagus carolinus",
+      "pl": "Kacykarzyk karoliński",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=5F77FED530C9B69D"
+    },
+    {
+      "latin": "Quiscalus quiscula",
+      "pl": "Wilgowron mniejszy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=8BBB3255C6B7EE91"
+    },
+    {
+      "latin": "Seiurus aurocapilla",
+      "pl": "Lasówka złotogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=CEA5B6AA48218C8A"
+    },
+    {
+      "latin": "Parkesia noveboracensis",
+      "pl": "Lasówka nadwodna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=709AF716468341F7"
+    },
+    {
+      "latin": "Parkesia motacilla",
+      "pl": "Lasówka potokowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7AB0F3A4A62BD4BF"
+    },
+    {
+      "latin": "Mniotilta varia",
+      "pl": "Pstroszka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4D207AF69A79DDCF"
+    },
+    {
+      "latin": "Protonotaria citrea",
+      "pl": "Bursztynka",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4D08EE7E80D2E275"
+    },
+    {
+      "latin": "Vermivora chrysoptera",
+      "pl": "Lasówka złotoskrzydła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=83F326C81E3F2955"
+    },
+    {
+      "latin": "Vermivora cyanoptera",
+      "pl": "Lasówka niebieskoskrzydła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B617FE7DF96090DD"
+    },
+    {
+      "latin": "Leiothlypis peregrina",
+      "pl": "Lasówka oliwkowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D204A9309E8CCC3A"
+    },
+    {
+      "latin": "Leiothlypis celata",
+      "pl": "Lasówka zielonkawa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=FFF6108042E63910"
+    },
+    {
+      "latin": "Leiothlypis ruficapilla",
+      "pl": "Lasówka rudogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=183E5F909449A603"
+    },
+    {
+      "latin": "Oporornis agilis",
+      "pl": "Cytrynka obrączkowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=0B23929DF27B0963"
+    },
+    {
+      "latin": "Geothlypis philadelphia",
+      "pl": "Cytrynka czarnopierśna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1A0096F2F929CEA2"
+    },
+    {
+      "latin": "Geothlypis trichas",
+      "pl": "Cytrynka czarnolica",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BA4C8A02839564AC"
+    },
+    {
+      "latin": "Setophaga ruticilla",
+      "pl": "Lasówka szkarłatna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BED38F505F0B8509"
+    },
+    {
+      "latin": "Setophaga citrina",
+      "pl": "Lasówka żółtoczelna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=15EB30007E1908FD"
+    },
+    {
+      "latin": "Setophaga caerulescens",
+      "pl": "Lasówka granatowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=67B455A71B1C2506"
+    },
+    {
+      "latin": "Setophaga cerulea",
+      "pl": "Lasówka niebieska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=D00EC2C974F1B880"
+    },
+    {
+      "latin": "Setophaga americana",
+      "pl": "Lasówka obrożna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=41062654293EB4E1"
+    },
+    {
+      "latin": "Setophaga magnolia",
+      "pl": "Lasówka magnoliowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1E82CE1ECC54F928"
+    },
+    {
+      "latin": "Setophaga fusca",
+      "pl": "Lasówka rudogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4168AF09C7BCB40B"
+    },
+    {
+      "latin": "Setophaga striata",
+      "pl": "Lasówka czarnogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=544A5E6BC69CEAAC"
+    },
+    {
+      "latin": "Setophaga castanea",
+      "pl": "Lasówka kasztanowata",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=10C601D3BCC5A85C"
+    },
+    {
+      "latin": "Setophaga pensylvanica",
+      "pl": "Lasówka rdzawoboczna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7AB1229BD3F33F46"
+    },
+    {
+      "latin": "Setophaga aestiva",
+      "pl": "Lasówka zbroczona",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=B64C749B211015EF"
+    },
+    {
+      "latin": "Setophaga tigrina",
+      "pl": "Lasówka rdzawolica",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=DB20CB6B0A720B90"
+    },
+    {
+      "latin": "Setophaga palmarum",
+      "pl": "Lasówka kasztanowogłowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4AAEF54973E5453C"
+    },
+    {
+      "latin": "Setophaga coronata",
+      "pl": "Lasówka pstra",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BC5A949807108302"
+    },
+    {
+      "latin": "Setophaga dominica",
+      "pl": "Lasówka szarogrzbieta",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=136451CF6F7A49BA"
+    },
+    {
+      "latin": "Setophaga pinus",
+      "pl": "Lasówka sosnowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=6283E61EEF174882"
+    },
+    {
+      "latin": "Setophaga discolor",
+      "pl": "Lasówka czarnowąsa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=E36325FA08B46EEF"
+    },
+    {
+      "latin": "Setophaga virens",
+      "pl": "Lasówka czarnogardła",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=9FFEDE99DC82DD92"
+    },
+    {
+      "latin": "Myiothlypis signata",
+      "pl": "Koronówka jasnonoga",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=BBD736B24D12F548"
+    },
+    {
+      "latin": "Cardellina canadensis",
+      "pl": "Wilsonka kanadyjska",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=F2D675AFB11EEEFF"
+    },
+    {
+      "latin": "Cardellina pusilla",
+      "pl": "Wilsonka mała",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=1F09CCCCBD97B861"
+    },
+    {
+      "latin": "Pheucticus ludovicianus",
+      "pl": "Łuszcz strojny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=7C2FCB13BAA660EE"
+    },
+    {
+      "latin": "Spiza americana",
+      "pl": "Łuszczyk czarnogardły",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=592E58CE67D092DA"
+    },
+    {
+      "latin": "Passerina cyanea",
+      "pl": "Łuszczyk indygowy",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=043F337AA25E7D97"
+    },
+    {
+      "latin": "Passerina caerulea",
+      "pl": "Łuszczyk błękitny",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=A7A75EA1A9A57185"
+    },
+    {
+      "latin": "Piranga rubra",
+      "pl": "Piranga pąsowa",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=891798D9EFFE1F8D"
+    },
+    {
+      "latin": "Piranga olivacea",
+      "pl": "Piranga szkarłatna",
+      "source": "https://avibase.bsc-eoc.org/species.jsp?lang=PL&avibaseid=4210163221C2E458"
+    }
+  ]
+}

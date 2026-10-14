@@ -45,3 +45,37 @@ body { font-size: 16px; }
 @media (max-width: 360px) {
   .photo-navigation { flex-direction: column; }
 }
+
+/* Three language rows below the Russian name, shared by cards and the dialog. */
+.bird-names {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  font: 15px/1.6 'Manrope', sans-serif;
+  color: var(--ink);
+}
+.bird-name-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.bird-name-label { font-size: 14px; color: var(--muted); }
+.bird-name-row > [lang] { min-width: 0; overflow-wrap: anywhere; }
+.bird-names .species-latin {
+  margin: 0;
+  font: italic 15px/1.6 'Manrope', sans-serif;
+  color: var(--ink);
+}
+.photo-names { margin: 12px 0 18px; font-size: 17px; }
+.photo-names .photo-english, .photo-names .photo-latin,
+.photo-names .photo-polish {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--ink);
+}
+@media (max-width: 760px) {
+  .photo-names { font-size: 16px; }
+}
