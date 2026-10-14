@@ -1,0 +1,1 @@
+{"name":"european-birds","version":"0.1.0","private":true,"description":"Static European bird flashcards with separate photo, audio and name progress","scripts":{"test":"node --test tests/scheduler.test.cjs","test:accounts":"node tests/accounts.cjs","test:browser":"node tests/browser.cjs"},"devDependencies":{"jsdom":"26.1.0","playwright":"1.62.1"}}
