@@ -3,26 +3,28 @@ function fixture(progress){const dom=new JSDOM(fs.readFileSync(path.join(__dirna
 if(progress)w.localStorage.setItem('europeanBirds:v1:progress:guest',JSON.stringify(progress));
 w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
 for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','app.js','study-tree.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
-return {w,d:w.document,close:()=>w.close()};}
+const d=w.document,go=id=>d.querySelector('[data-tree-go="'+id+'"]').click(),total=()=>Number(d.querySelector('.drill-total').textContent.split(' ')[0]),find=q=>{const s=d.getElementById('treeSearch');s.value=q;s.dispatchEvent(new w.Event('input'));};
+return {w,d,go,total,find,close:()=>w.close()};}
 test('All taxonomy species share learning cards; filters, languages, branch tests and progress work',()=>{
-const {w,d,close}=fixture();try{
-assert.equal(d.querySelectorAll('.rank-family').length,51);assert.equal(d.querySelectorAll('.rank-genus').length,168);
+const {w,d,go,total,find,close}=fixture();try{
+const ranks={};(function r(n){ranks[n.rank]=(ranks[n.rank]||0)+1;(n.children||[]).forEach(r)})(w.STUDY_TREE);assert.equal(ranks.family,51);assert.equal(ranks.genus,168);
+assert.equal(d.querySelectorAll('details.study-branch').length,0,'no nested frames');assert.ok(d.querySelector('.drill-row[data-tree-go="Passeriformes"]'));
 const ids=[];function walk(n){if(n.rank==='species')ids.push(n.birdId);(n.children||[]).forEach(walk)}walk(w.PASSERINE_TREE.root);
 assert.equal(new Set(ids).size,423);assert.ok(ids.every(id=>w.BIRD_DATA.some(b=>b.id===id)));
-assert.equal(d.querySelectorAll('.tree-species').length,w.BIRD_DATA.length);assert.equal(w.BIRD_DATA.length,435);
-for(const lang of ['ru','en','la','pl'])assert.equal(d.querySelectorAll('.tree-names [lang='+lang+']').length,435);
+assert.equal(total(),w.BIRD_DATA.length);assert.equal(w.BIRD_DATA.length,435);
+find('a');const shown=d.querySelectorAll('.drill-species').length;for(const lang of ['ru','la','pl'])assert.equal(d.querySelectorAll('.drill-species [lang='+lang+']').length,shown);find('');
 const search=d.getElementById('treeSearch');search.value='Paridae';search.dispatchEvent(new w.Event('input'));
-assert.equal(d.querySelectorAll('.tree-species').length,10);assert.equal(d.getElementById('newCount').textContent,'10');
+assert.equal(d.querySelectorAll('.drill-species').length,10);assert.equal(d.getElementById('newCount').textContent,'10');
 d.getElementById('language').value='pl';d.getElementById('language').dispatchEvent(new w.Event('change'));
 const answer=w.BIRD_DATA.find(b=>b.id===ids.find(id=>d.querySelector('[data-tree-species="'+id+'"]')));
-d.querySelector('[data-test-branch="Paridae"]').click();assert.equal(d.getElementById('treeQuiz').open,true);assert.equal(d.querySelectorAll('[data-tree-answer]').length,6);
+d.querySelector('.drill-branch-test').click();assert.equal(d.getElementById('treeQuiz').open,true);assert.equal(d.querySelectorAll('[data-tree-answer]').length,6);
 const q=d.querySelector('#treeQuizMedia img'),current=w.BIRD_DATA.find(b=>b.photos.some(p=>p.src===q.getAttribute('src')));
 assert.ok(current);assert.ok(d.getElementById('treeQuizCount').textContent.endsWith('/ 10'));
-const correct=d.querySelector('[data-tree-answer="'+current.id+'"]');assert.equal(correct.textContent,current.pl);correct.click();assert.equal(w.BirdAtlas.state(current.id).level,1);assert.equal(d.querySelector('[data-tree-species="'+current.id+'"] .tree-level strong').textContent,'1 / 10');assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,current.id);correct.click();assert.equal(w.BirdAtlas.state(current.id).reps,1);
+const correct=d.querySelector('[data-tree-answer="'+current.id+'"]');assert.equal(correct.textContent,current.pl);correct.click();assert.equal(w.BirdAtlas.state(current.id).level,1);assert.equal(d.querySelectorAll('[data-tree-species="'+current.id+'"] .drill-meter i.filled').length,1);assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,current.id);correct.click();assert.equal(w.BirdAtlas.state(current.id).reps,1);
 d.getElementById('closeTreeQuiz').click();search.value='';search.dispatchEvent(new w.Event('input'));
-d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=d.querySelectorAll('.tree-species').length;assert.ok(polandCount>100&&polandCount<423);
-d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').dispatchEvent(new w.Event('change'));assert.ok(d.querySelectorAll('.tree-species').length<polandCount);
-search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.tree-species').length,0);assert.equal(d.getElementById('learnBtn').disabled,true);
+d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=total();assert.ok(polandCount>100&&polandCount<423);
+d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').dispatchEvent(new w.Event('change'));assert.ok(total()<polandCount);
+search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.drill-species').length,0);assert.ok(d.querySelector('.drill-empty'));assert.equal(d.getElementById('learnBtn').disabled,true);
 }finally{close()}});
 
 test('Latin names have Russian readings; wrong options disappear after a wrong answer',()=>{
@@ -33,20 +35,20 @@ assert.equal(w.BirdStudy.latinReading('Cyanistes caeruleus'),'Цианистес
 assert.equal(w.BirdStudy.latinReading('Parus major'),'Парус майор');
 for(const b of w.BIRD_DATA)assert.doesNotMatch(w.BirdStudy.latinReading(b.latin),/[a-z]/i);
 d.querySelector('[data-mode="names"]').click();d.getElementById('language').value='latin';d.getElementById('language').dispatchEvent(new w.Event('change'));
-d.querySelector('[data-tree-test="great-tit"]').click();
+const s2=d.getElementById('treeSearch');s2.value='Parus major';s2.dispatchEvent(new w.Event('input'));d.querySelector('[data-tree-test="great-tit"]').click();
 assert.equal(d.querySelector('[data-tree-answer="great-tit"]').textContent,'Parus major (Парус майор)');
 d.querySelector('[data-tree-answer]:not([data-tree-answer="great-tit"])').click();
 assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);
 assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,'great-tit');
 assert.match(d.getElementById('treeQuizResult').textContent,/Parus major \(Парус майор\)/);
-d.getElementById('closeTreeQuiz').click();d.getElementById('learnBtn').click();
+d.getElementById('closeTreeQuiz').click();s2.value='';s2.dispatchEvent(new w.Event('input'));d.getElementById('learnBtn').click();
 assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
 d.querySelector('[data-answer]').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,1);
 d.getElementById('nextCard').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
 }finally{close()}});
 
 test('Audit regressions: canonical names, aliases, Poland filters, taxonomy and saved crow progress',()=>{
-const {w,d,close}=fixture({'Corvus_corone__photo':{level:4,reps:5,updatedAt:200},'hooded-crow__photo':{level:2,reps:2,updatedAt:100}});try{
+const {w,d,go,find,close}=fixture({'Corvus_corone__photo':{level:4,reps:5,updatedAt:200},'hooded-crow__photo':{level:2,reps:2,updatedAt:100}});try{
 const birds=w.BIRD_DATA;
 assert.equal(birds.length,435);assert.equal(birds.filter(b=>b.latin==='Corvus corone').length,1);assert.equal(birds.some(b=>b.latin==='Corvus cornix'),false);
 assert.equal(w.BirdAtlas.state('hooded-crow').level,4);
@@ -55,12 +57,12 @@ assert.equal(new Set(birds.map(b=>b.ru)).size,birds.length,'Russian answer label
 assert.ok(birds.filter(b=>b.group==='forest').length<50);
 const search=d.getElementById('treeSearch');
 for(const [query,latin]of [['Буроголовая','Poecile montanus'],['Обыкновенная лазоревка','Cyanistes caeruleus'],['Drozd śpiewak','Turdus philomelos'],['Common Chaffinch','Fringilla coelebs'],['Corvus cornix','Corvus corone']]){
-search.value=query;search.dispatchEvent(new w.Event('input'));const b=birds.find(b=>b.latin===latin);assert.equal(d.querySelectorAll('.tree-species').length,1,query);assert.ok(d.querySelector('[data-tree-species="'+b.id+'"]'),query);
+search.value=query;search.dispatchEvent(new w.Event('input'));const b=birds.find(b=>b.latin===latin);assert.equal(d.querySelectorAll('.drill-species').length,1,query);assert.ok(d.querySelector('[data-tree-species="'+b.id+'"]'),query);
 }
-search.value='';search.dispatchEvent(new w.Event('input'));d.getElementById('includeVagrants').checked=false;d.getElementById('includeVagrants').dispatchEvent(new w.Event('change'));assert.ok(d.querySelector('[data-tree-species="Ficedula_parva"]'));
+search.value='';search.dispatchEvent(new w.Event('input'));d.getElementById('includeVagrants').checked=false;d.getElementById('includeVagrants').dispatchEvent(new w.Event('change'));find('Ficedula parva');assert.ok(d.querySelector('[data-tree-species="Ficedula_parva"]'));find('');
 d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));
-for(const latin of ['Corvus corone','Anas platyrhynchos','Columba palumbus','Ardea cinerea']){const b=birds.find(b=>b.latin===latin);assert.ok(d.querySelector('[data-tree-species="'+b.id+'"]'),latin);}
-assert.ok(d.querySelector('[data-branch="Corvidae"] [data-tree-species="hooded-crow"]'));
-assert.ok(d.querySelector('[data-branch="Anseriformes"] [data-branch="Anatidae"] [data-branch="Anas"]'));
-assert.equal(d.querySelector('[data-branch="Remiz"] .branch-count').textContent,'1 вид');
+for(const latin of ['Corvus corone','Anas platyrhynchos','Columba palumbus','Ardea cinerea']){const b=birds.find(b=>b.latin===latin);find(latin);assert.ok(d.querySelector('[data-tree-species="'+b.id+'"]'),latin);}find('');
+go('Passeriformes');assert.equal(d.querySelector('[data-tree-go="Remizidae"] .drill-count').textContent,'1 вид');go('Corvidae');assert.ok(d.querySelector('[data-tree-species="hooded-crow"]'));assert.match(d.querySelector('.drill-crumbs').textContent,/Воробьинообразные.*Врановые/);
+go('Aves');go('Anseriformes');assert.match(d.querySelector('.drill-only').textContent,/Утиные/);assert.ok([...d.querySelectorAll('.drill-section')].some(e=>/Anas/.test(e.textContent)));assert.ok(d.querySelector('[data-tree-species]'));
+assert.equal(d.querySelector('[data-tree-back]').disabled,false);go('Aves');assert.equal(d.querySelector('[data-tree-back]').disabled,true);assert.ok(d.querySelector('.drill-row[data-tree-go="Anseriformes"]'));
 }finally{close()}});
