@@ -1,5 +1,7 @@
 /* Species board: columns of bird groups, family dividers, genus cards (like the English topic board). */
 @media(max-width:560px){.board-views .view-more{display:none}}
+/* The board spans the whole screen width, outside the centred page column. */
+.species-board{width:var(--page-w,100vw);margin-left:calc((100% - var(--page-w,100vw))/2);border-left:0;border-right:0}
 .sb-stats{margin:4px 0 14px}
 .sb-stat{margin:0 0 8px;font-size:13px;color:var(--muted)}.sb-stat b{color:var(--ink);font-size:16px}
 .sb-total{display:flex;height:8px;background:var(--none);overflow:hidden}

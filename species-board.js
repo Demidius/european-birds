@@ -108,6 +108,9 @@ root.addEventListener('click',e=>{
 let sx=0,sy=0,st=0,track=false;
 root.addEventListener('touchstart',e=>{if(!phone()||e.touches.length!==1||!e.target.closest('.sb-grid'))return;track=true;sx=e.touches[0].clientX;sy=e.touches[0].clientY;st=Date.now();},{passive:true});
 root.addEventListener('touchend',e=>{if(!track)return;track=false;const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Date.now()-st<700&&Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.8)step(dx<0?1:-1);},{passive:true});
+// Full-width board: the page width without the scrollbar.
+const pageWidth=()=>document.documentElement.style.setProperty('--page-w',document.documentElement.clientWidth+'px');
+pageWidth();window.addEventListener('resize',pageWidth);
 window.addEventListener('birdatlas:render',render);
 window.addEventListener('birdatlas:view',e=>{if(e.detail==='board'&&dirty)render();});
 if(T.view==='board')render();
