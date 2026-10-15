@@ -133,6 +133,7 @@ try{
  for(const width of [320,390,760,1440]){
   await page.setViewportSize({width,height:844});await page.locator('#boardView').click();assert.equal(await page.locator('#speciesBoard').isVisible(),true);assert.equal(await page.locator('#treeBoard').isHidden(),true);
   await page.evaluate(()=>document.fonts.ready);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+1,'Board overflow at '+width);
+  const sb=await page.locator('#speciesBoard').boundingBox(),cw=await page.evaluate(()=>document.documentElement.clientWidth);assert.ok(Math.abs(sb.x)<=1&&Math.abs(sb.width-cw)<=1,'board spans the screen at '+width+': '+sb.x+' '+sb.width);
   const cols=await page.locator('.sb-col').evaluateAll(c=>c.filter(x=>x.getBoundingClientRect().height>0).map(x=>Math.round(x.getBoundingClientRect().top)));
   if(width<=760){assert.equal(cols.length,1,'one group per screen at '+width);const before=await page.locator('.sb-col.on h3').innerText();await page.locator('.sb-col.on [data-sb-step="1"]').click();assert.notEqual(await page.locator('.sb-col.on h3').innerText(),before);await page.locator('.sb-col.on [data-sb-step="-1"]').click();}
   else{assert.ok(cols.length>=2&&new Set(cols).size===1,'groups stand side by side at '+width);assert.ok(await page.locator('.sb-scroll').evaluate(e=>e.scrollWidth>e.clientWidth),'columns scroll sideways at '+width);}
