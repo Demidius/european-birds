@@ -50,4 +50,3 @@
 @media(max-width:360px){.drill-thumb{width:54px;height:54px}.drill-test{padding:6px 8px;font-size:20px}}
 .drill-only{margin:14px 0 0;color:var(--muted);font-size:13px}.drill-only strong{color:var(--ink)}.drill-only em{color:var(--gold)}
 .drill-section>span:last-child{flex:none;white-space:nowrap}
-.tree-depth{display:none}

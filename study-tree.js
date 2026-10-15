@@ -4,7 +4,6 @@ const A=window.BirdAtlas,C=window.BirdStudy,$=id=>document.getElementById(id);
 if(!A||!$('treeBoard'))return;
 const birds=window.BIRD_DATA;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-if(!document.querySelector('link[href^="study-tree-drill.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='study-tree-drill.css?v=20261015-8';document.head.append(l);}
 const taxonomy=window.STUDY_TREE,branches=new Map(),parents=new Map(),nodes=new Map();
 (function index(n,p){nodes.set(n.id,n);if(p)parents.set(n.id,p.id);(n.children||[]).forEach(c=>index(c,n));})(taxonomy);
 let currentId=taxonomy.id;
@@ -58,7 +57,8 @@ function drillHTML(){
  const title=q?'Найдено':nameOf(n),latin=!q&&n.ru&&n.ru!==n.latin?n.latin:'';
  return '<nav class="drill-bar" aria-label="Путь по дереву"><button class="drill-back" data-tree-back aria-label="Назад"'+(!q&&!parents.has(n.id)?' disabled':'')+'>‹</button><div class="drill-crumbs">'+crumbs+'</div></nav><div class="drill-hero"><div><h3>'+esc(title)+'</h3>'+(latin?'<em>'+esc(C.latinLabel(latin))+'</em>':'')+'<span class="drill-total">'+ids.length+' '+C.word(ids.length)+'</span></div><button class="drill-branch-test" data-test-branch="'+esc(n.id)+'"'+(!ctx.own||!usable.length?' disabled':'')+'>Тест по ветке</button></div>'+screenHTML(n);
 }
-function go(id){currentId=id;history.pushState({...(history.state||{}),tree:id,depth:(history.state?.depth||0)+1},'');render();const bar=$('treeBoard').querySelector('.drill-bar');if(bar&&bar.getBoundingClientRect().top<0)bar.scrollIntoView({block:'start'});const c=$('treeBoard').querySelector('.drill-crumbs');if(c)c.scrollLeft=c.scrollWidth;}
+function reveal(){const t=$('treeBoard').querySelector('.unified-tree');if(t&&t.getBoundingClientRect().top<0)t.scrollIntoView({block:'start'});const c=$('treeBoard').querySelector('.drill-crumbs');if(c)c.scrollLeft=c.scrollWidth;}
+function go(id){currentId=id;history.pushState({...(history.state||{}),tree:id,depth:(history.state?.depth||0)+1},'');render();reveal();}
 function render(){const ctx=A.context(),pool=birds.filter(b=>(!filteredIds||filteredIds.includes(b.id))&&A.available(b.id)),learned=pool.filter(b=>A.state(b.id).level===10).length;
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
  $('treeBoard').innerHTML='<div class="tree-heading"><div><p class="eyebrow">ЕДИНАЯ ДОСКА · ДЕРЕВО И ТЕСТЫ</p><h2 id="treeTitle">Дерево птиц</h2><p class="tree-subtitle">Выбери отряд, затем семейство. Нажми на птицу, чтобы открыть карточку.</p></div><button id="testTitBranch" class="tree-test-button"'+(!ctx.own||!pool.length?' disabled':'')+'>Проверить выборку <span>'+pool.length+' '+C.word(pool.length)+'</span></button></div><div class="tree-toolbar"><span>'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span><span>Выучено '+learned+' / '+pool.length+'</span><span class="tree-score-rule">Верно +1 · Ошибка -2</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Для дополнительных отрядов состав неполный.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p><p>Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p></details>';
@@ -95,7 +95,7 @@ document.addEventListener('click',e=>{if(e.target.closest('#treeView'))setView('
 dialog.addEventListener('cancel',()=>{stopAudio();quiz=null;});window.addEventListener('birdatlas:render',render);window.addEventListener('pagehide',stopAudio);
 
 history.replaceState({...(history.state||{}),tree:currentId},'');
-window.addEventListener('popstate',e=>{const id=e.state?.tree;if(id&&nodes.has(id)){currentId=id;render();}});
+window.addEventListener('popstate',e=>{const id=e.state?.tree;if(id&&nodes.has(id)){currentId=id;render();reveal();}});
 for(const id of ['treeSearch','onlyPoland','includeVagrants','polandBreeding','polandPassage','polandWinter'])$(id).addEventListener(id==='treeSearch'?'input':'change',()=>{
  if(id==='onlyPoland'&&!$(id).checked)['polandBreeding','polandPassage','polandWinter'].forEach(k=>$(k).checked=false);
  if(id.startsWith('poland')&&$(id).checked)$('onlyPoland').checked=true;
