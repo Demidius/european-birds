@@ -15,22 +15,22 @@ function own(){return uid==='guest'?!me:!!me&&uid===me.uid;}
 function available(b,m=mode){return m==='names'||(m==='photo'?b.photos.length:b.audio.length)>0;}
 function eligible(){return BIRDS.filter(b=>available(b)&&(!treeScope||treeScope.has(b.id))&&(group==='all'||b.group===group));}
 function state(b){return states[key(b)]||C.initial();}
-function status(s){return s.reps===0?'new':s.level>=10?'mastered':s.level>=5?'review':'learning';}
+const status=C.status;
 function notice(text,error=false){$('notice').textContent=text;$('notice').classList.toggle('error',error);}
 function showNotice(){if(!own()){notice('Ты смотришь чужой прогресс. Изменять его нельзя.');return;}if(!me){notice('Гость: прогресс сохраняется на этом устройстве.');return;}notice(cloudState||'Прогресс сохранён в аккаунте.');}
 function setMode(next){if(session)finishSession(false);mode=next;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));render();}
-function render(){const pool=eligible(),done=pool.filter(b=>state(b).level===10).length,due=pool.filter(b=>C.due(state(b))).length,newN=pool.filter(b=>state(b).reps===0).length;
+function render(){const pool=eligible(),counts=C.progress(pool.map(state)),done=counts.mastered,due=pool.filter(b=>C.due(state(b))).length,newN=counts.new;
  $('speciesCount').textContent=BIRDS.length;$('dueCount').textContent=due;$('newCount').textContent=newN;$('masteredCount').textContent=done;$('totalCount').textContent='/ '+pool.length+' '+C.word(pool.length);
  $('reviewBtn').disabled=!own()||due===0;$('learnBtn').disabled=!own()||newN===0;
  const labels={photo:'Узнаю по фото',audio:'Узнаю по голосу',names:'Помню названия'};$('progressTitle').textContent=labels[mode];
- const counts={new:0,learning:0,review:0,mastered:0};pool.forEach(b=>counts[status(state(b))]++);const meta=[['new','Новые','none'],['learning','Изучаю','learn'],['review','Повторяю','review'],['mastered','Выучено','master']];
+ const meta=[['new','Новые','none'],['learning','Изучаю','learn'],['review','Повторяю','review'],['mastered','Выучено','master']];
  $('progressBar').innerHTML=meta.map(([s,,color])=>'<span style="width:'+(pool.length?counts[s]/pool.length*100:0)+'%;background:var(--'+color+')"></span>').join('');$('progressBar').setAttribute('aria-label',meta.map(([s,l])=>l+': '+counts[s]).join(', '));
  $('legend').innerHTML=meta.map(([s,l,color])=>'<span><i class="dot" style="background:var(--'+color+')"></i>'+l+' '+counts[s]+'</span>').join('');
  $('modeNote').textContent=mode==='photo'?'Посмотри на фото и вспомни вид, затем открой ответ и оцени себя.':mode==='audio'?'Послушай голос и вспомни вид, затем открой ответ и оцени себя.':language==='ru'?'Латинское название -> вспомни русское и остальные названия.':'Русское название -> вспомни '+({en:'английское',latin:'латинское',pl:'польское'}[language])+' и остальные названия.';
  renderCatalog();showNotice();window.dispatchEvent(new CustomEvent('birdatlas:render'));
 }
-function renderCatalog(){const q=C.normalizeAnswer($('search').value),sf=$('statusFilter').value;
- const visible=eligible().filter(b=>(!q||C.normalizeAnswer(C.searchNames(b)).includes(q))&&(sf==='all'||sf===status(state(b))));
+function renderCatalog(){const sf=$('statusFilter').value;
+ const visible=eligible().filter(b=>sf==='all'||sf===status(state(b)));
  $('resultCount').textContent=visible.length+' из '+eligible().length+' '+C.word(eligible().length)+(mode==='audio'?' с проверенными записями':'');$('empty').hidden=visible.length>0;
  $('birdGrid').innerHTML=visible.map(b=>{const s=state(b),p=b.photos[0];return '<button class="bird-tile" data-bird="'+b.id+'" aria-label="'+esc(b.ru)+': карточка вида"><span class="tile-img'+(!p?' placeholder':'')+'">'+(p?'<img src="'+esc(p.src)+'" alt="'+esc(b.ru)+'" loading="lazy" decoding="async">':'Фото скоро')+(b.audio.length?'<span class="voice-badge">Есть голос</span>':'')+'</span><span class="tile-body"><strong>'+esc(b.ru)+'</strong><em>'+esc(C.latinLabel(b.latin))+'</em><span class="tile-progress"><span>'+({new:'Новое знакомство',learning:'Изучаю',review:'Повторяю',mastered:'Выучено'}[status(s)])+'</span><span>'+s.level+' / 10</span></span><span class="mini-bar"><span style="width:'+(s.level*10)+'%"></span></span></span></button>';}).join('');
 }
@@ -135,7 +135,7 @@ function loadScript(src){return new Promise((resolve,reject)=>{const s=document.
 async function initCloud(){if(new URLSearchParams(location.search).get('offline')==='1')return;try{for(const p of ['app','auth','firestore'])await loadScript('https://www.gstatic.com/firebasejs/10.14.1/firebase-'+p+'-compat.js');firebase.initializeApp(window.BIRD_FIREBASE_CONFIG);db=firebase.firestore();auth=firebase.auth();auth.onAuthStateChanged(user=>{me=user;unsubProfiles?.();unsubProfiles=null;if(!user){profiles=[];selectProfile('guest');return;}profiles=[{id:user.uid,name:user.displayName||(user.email||'').split('@')[0]}];selectProfile(user.uid);unsubProfiles=db.collection('profiles').onSnapshot(q=>{profiles=q.docs.map(d=>({id:d.id,name:String(d.data().name||'Ученик')}));if(!profiles.some(p=>p.id===me?.uid))profiles.unshift({id:user.uid,name:(user.email||'').split('@')[0]});profiles.sort((a,b)=>a.id===user.uid?-1:b.id===user.uid?1:a.name.localeCompare(b.name));renderProfiles();},()=>renderProfiles());});}catch{notice('Вход сейчас недоступен. Занимайся без регистрации: прогресс сохраняется здесь.');}}
 // Events are delegated so card re-rendering does not duplicate listeners.
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
-$('language').addEventListener('change',()=>{language=$('language').value;write('settings',{...read('settings',{}),testLanguage:language});render();});$('groups').addEventListener('click',e=>{const b=e.target.closest('[data-group]');if(b){group=b.dataset.group;renderGroups();render();}});$('search').addEventListener('input',renderCatalog);$('statusFilter').addEventListener('change',renderCatalog);$('birdGrid').addEventListener('click',e=>{const b=e.target.closest('[data-bird]');if(b)detail(BIRDS.find(x=>x.id===b.dataset.bird));});
+$('language').addEventListener('change',()=>{language=$('language').value;write('settings',{...read('settings',{}),testLanguage:language});render();});$('groups').addEventListener('click',e=>{const b=e.target.closest('[data-group]');if(b){group=b.dataset.group;renderGroups();render();}});$('statusFilter').addEventListener('change',renderCatalog);$('birdGrid').addEventListener('click',e=>{const b=e.target.closest('[data-bird]');if(b)detail(BIRDS.find(x=>x.id===b.dataset.bird));});
 $('reviewBtn').addEventListener('click',()=>start('due'));$('learnBtn').addEventListener('click',()=>start('new'));
 $('cardDialog').addEventListener('click',e=>{const a=e.target.closest('[data-act],[data-grade]');if(!a||a.disabled||!session)return;if(a.dataset.grade){grade(a.dataset.grade);return;}
  const act=a.dataset.act;if(act==='flip')flip();else if(act==='undo')undo();else if(act==='skip')skip();else if(act==='kopen'){session.kbox=true;renderCard();}else if(act==='kcancel'){session.kbox=false;renderCard();}else if(act==='knext'){session.kdone=null;renderCard();}else if(act==='wend'){session.wait=[];renderDone();}else if(act==='close')finishSession();});
@@ -158,6 +158,7 @@ window.BirdAtlas={
  context:()=>({uid,mode,language,own:own()}),
  setScope:ids=>{treeScope=ids?new Set(ids):null;render();},
  state:id=>C.clean(states[key(BIRDS.find(b=>b.id===id))]),
+ summary:ids=>C.progress(ids.map(id=>BIRDS.find(b=>b.id===id)).filter(b=>b&&available(b)).map(state)),
  available:id=>available(BIRDS.find(b=>b.id===id)),
  detail:id=>detail(BIRDS.find(b=>b.id===id)),
  study:(ids,title)=>study(ids,title)

@@ -15,6 +15,7 @@ assert.ok(count>100,'Expected a substantial collection of checked recordings');
 });
 test('Species detail and answer panels show biology, while audio tests use the checked shared recordings',()=>{
 const dom=new JSDOM(read('study.html'),{url:'https://example.org/?offline=1',runScripts:'outside-only'}),w=dom.window,d=w.document;
+w.localStorage.setItem('europeanBirds:filters',JSON.stringify({typicalPoland:false,onlyPoland:false}));
 w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
 try{
 for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js'])w.eval(read(f));

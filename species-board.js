@@ -6,7 +6,7 @@ const A=window.BirdAtlas,C=window.BirdStudy,T=window.BirdTree,$=id=>document.get
 if(!A||!C||!T||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const birds=new Map(window.BIRD_DATA.map(b=>[b.id,b])),taxonomy=window.STUDY_TREE;
-const POLAND=()=>window.BIRD_REGIONS?.poland?.species||{};
+const {leaves,isTypical}=window.BirdTaxonomy;
 const COLORS=['#7b5f8f','#3f6f8a','#3f7a5c','#8a6a35','#8a4f45','#4f6470','#5d6b3a'];
 const COL_KEY='europeanBirds:boardColumn',STATUS=[['all','Все'],['new','Не начато'],['learning','Изучаю'],['review','Повторяю'],['mastered','Выучено']];
 const TONE_LABEL={new:'не начато',learning:'изучаю',review:'повторяю',mastered:'выучено'};
@@ -30,15 +30,10 @@ let filter='all',dirty=true,active=(()=>{try{return localStorage.getItem(COL_KEY
 const open=new Set();
 
 function index(tree){const m=new Map();(function walk(n){if(!n)return;m.set(n.id,n);(n.children||[]).forEach(walk);})(tree);return m;}
-function leaves(n){return n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);}
-function tone(s){return s.reps===0?'new':s.level===10?'mastered':s.level>=5?'review':'learning';}
+const tone=C.status;
 // Progress counts only species that can be studied in the current mode (photo/voice/names).
-function summary(ids){const usable=ids.filter(id=>A.available(id)),st=usable.map(id=>A.state(id));
- const learned=st.filter(s=>s.level===10).length,review=st.filter(s=>s.level>=5&&s.level<10).length,learning=st.filter(s=>s.reps>0&&s.level<5).length;
- const pct=usable.length?Math.round(st.reduce((a,s)=>a+s.level,0)/(10*usable.length)*100):0;
- const status=!usable.length||st.every(s=>s.reps===0)?'new':learned===usable.length?'mastered':st.every(s=>s.level>=5)?'review':'learning';
- return {n:usable.length,learned,review,learning,pct,status};}
-function regular(ids){const P=POLAND();return ids.filter(id=>{const r=P[birds.get(id)?.treeId||id];return r&&!r.rare;}).length;}
+const summary=A.summary;
+function regular(ids){return ids.filter(id=>isTypical(birds.get(id))).length;}
 
 function columnFamilies(col,idx){
  if(col.orders)return col.orders.map(o=>idx.get(o)).filter(Boolean).flatMap(o=>(o.children||[]).filter(f=>f.rank==='family').map(f=>({f,order:o})));
@@ -53,7 +48,7 @@ function genusCard(g,fam){
    '<span class="sb-t"><em lang="la">'+esc(g.latin)+'</em><span class="sb-chev" aria-hidden="true">›</span></span><span class="sb-g">'+esc(gloss)+'</span></button>'+
    '<button class="sb-test" data-sb-study="'+esc(g.id)+'"'+(!ctx.own||!sum.n?' disabled':'')+' aria-label="Учить род '+esc(g.latin)+'">Учить</button></div>'+
   '<span class="sb-bar" aria-hidden="true">'+bar+'</span>'+
-  '<span class="sb-foot"><span class="sb-chip">'+TONE_LABEL[sum.status]+'</span>'+(pl?'<span class="sb-pl" title="Регулярно встречаются в Польше">PL '+pl+'</span>':'')+'<span class="sb-n">'+sum.learned+'/'+sum.n+' · '+sum.pct+'%</span></span>'+
+  '<span class="sb-foot"><span class="sb-chip">'+TONE_LABEL[sum.status]+'</span>'+(pl?'<span class="sb-pl" title="Регулярно встречаются в Польше">PL '+pl+'</span>':'')+'<span class="sb-n">'+sum.mastered+'/'+sum.n+' · '+sum.pct+'%</span></span>'+
   (isOpen?'<div class="sb-species">'+ids.map(id=>T.speciesRow(id)).join('')+'</div>':'')+
  '</article>';
 }
@@ -71,8 +66,8 @@ function render(){
  const all=cols.flatMap(c=>c.ids),total=summary(all),langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];
  const seg=(n,cls)=>total.n?'<span class="'+cls+'" style="width:'+(n/total.n*100)+'%"></span>':'';
  let h='<div class="tree-heading"><div><p class="eyebrow">ДОСКА ВИДОВ · ГРУППЫ, СЕМЕЙСТВА, РОДЫ</p><h2 id="boardTitle">Доска видов</h2><p class="tree-subtitle">Колонка — группа, внутри семейства и роды. Нажми на род, чтобы увидеть виды.</p></div></div>'+
-  '<div class="tree-toolbar"><span>'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span><span>Выучено '+total.learned+' / '+total.n+'</span><span class="tree-score-rule">Снова · Трудно · Хорошо · Легко</span></div>'+
-  '<div class="sb-stats"><p class="sb-stat">выучено <b>'+total.learned+'</b> из '+total.n+' видов · повторяю '+total.review+' · изучаю '+total.learning+'</p><div class="sb-total" aria-hidden="true">'+seg(total.learned,'mastered')+seg(total.review,'review')+seg(total.learning,'learning')+'</div>'+
+  '<div class="tree-toolbar"><span>'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span><span>Выучено '+total.mastered+' / '+total.n+'</span><span class="tree-score-rule">Снова · Трудно · Хорошо · Легко</span></div>'+
+  '<div class="sb-stats"><p class="sb-stat">выучено <b>'+total.mastered+'</b> из '+total.n+' видов · повторяю '+total.review+' · изучаю '+total.learning+'</p><div class="sb-total" aria-hidden="true">'+seg(total.mastered,'mastered')+seg(total.review,'review')+seg(total.learning,'learning')+'</div>'+
   '<p class="sb-legend"><span><i class="new"></i>новое</span><span><i class="learning"></i>изучаю (1–4)</span><span><i class="review"></i>повторяю (5–9)</span><span><i class="mastered"></i>выучено (10)</span></p></div>'+
   '<div class="sb-filter" role="group" aria-label="Фильтр родов"><span>Род</span>'+STATUS.map(([k,t])=>'<button class="sb-f" data-sb-filter="'+k+'" aria-pressed="'+(filter===k)+'">'+t+'</button>').join('')+'</div>';
  if(!cols.length){root.innerHTML=h+'<p class="drill-empty">Птицы не найдены. Измени фильтры.</p>';return;}
@@ -81,7 +76,7 @@ function render(){
    return '<section class="sb-col'+(c.id===active?' on':'')+'" data-sb-column="'+esc(c.id)+'" aria-label="'+esc(c.ru)+'"><header class="sb-head" style="--c:'+c.color+'">'+
     '<div class="sb-mnav"><button class="sb-arrow" data-sb-step="-1" aria-label="Предыдущая группа">‹</button><span>'+(i+1)+' / '+cols.length+'</span><button class="sb-arrow" data-sb-step="1" aria-label="Следующая группа">›</button></div>'+
     '<h3>'+esc(c.ru)+'</h3>'+(c.latin?'<em lang="la">'+esc(c.latin)+'</em>':'<em>'+esc(c.info)+'</em>')+
-    '<p>'+s.learned+' / '+s.n+' видов · '+s.pct+'%</p><span class="sb-pb"><span style="width:'+s.pct+'%"></span></span></header>'+
+    '<p>'+s.mastered+' / '+s.n+' видов · '+s.pct+'%</p><span class="sb-pb"><span style="width:'+s.pct+'%"></span></span></header>'+
     '<div class="sb-body">'+c.fams.map(familyBlock).join('')+'</div></section>';}).join('')+'</div></div>'+
   '<details class="tree-explanation"><summary>Как пользоваться доской</summary><p>Доска устроена как доска тем в English Skill Tree: колонка — группа, серые разделители — семейства, карточки — роды. Полоска на карточке — виды рода, по сегменту на вид: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено. Штриховка — для вида нет фото или записи в этом режиме.</p><p>Нажми на род, чтобы раскрыть его виды. «Учить» на роде или семействе запускает карточки Anki из этих видов: сначала те, что пора повторить, потом новые. Прогресс общий с деревом и каталогом. Поиск и фильтры Польши выше действуют и на доску.</p><p>PL — сколько видов рода регулярно встречается в Польше. На телефоне группы листаются стрелками ‹ › или свайпом.</p></details>';
  root.innerHTML=h;

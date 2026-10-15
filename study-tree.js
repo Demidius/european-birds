@@ -8,35 +8,45 @@ const taxonomy=window.STUDY_TREE,branches=new Map(),parents=new Map(),nodes=new 
 (function index(n,p){nodes.set(n.id,n);if(p)parents.set(n.id,p.id);(n.children||[]).forEach(c=>index(c,n));})(taxonomy);
 let currentId=taxonomy.id;
 let filteredTree=taxonomy,filteredIds=null;
-function leaves(n){return n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);}
+const {leaves,isTypical}=window.BirdTaxonomy;
 
 // Search and filters (markup in study.html / index.html).
-const SEASONS=['polandBreeding','polandPassage','polandWinter'],FILTER_IDS=['onlyPoland','includeVagrants',...SEASONS];
-const FILTER_LABELS={onlyPoland:'Только Польша',polandBreeding:'Гнездятся',polandPassage:'Пролётом',polandWinter:'Зимуют'};
-function prune(n,parentMatch=false){
- const q=C.normalizeAnswer($('treeSearch').value),match=parentMatch||!q||C.normalizeAnswer(C.searchNames(n)).includes(q);
+const SEASONS=['polandBreeding','polandPassage','polandWinter'],FILTER_IDS=['typicalPoland','onlyPoland','includeVagrants',...SEASONS],FILTER_KEY='europeanBirds:filters';
+const FILTER_LABELS={typicalPoland:'Типичные для Польши',onlyPoland:'Только Польша',polandBreeding:'Гнездятся',polandPassage:'Пролётом',polandWinter:'Зимуют'};
+function restoreFilters(){
+ let saved;try{saved=JSON.parse(localStorage.getItem(FILTER_KEY));}catch(e){}
+ if(saved&&typeof saved==='object')FILTER_IDS.forEach(id=>{if(typeof saved[id]==='boolean')$(id).checked=saved[id];});
+ if($('typicalPoland').checked||SEASONS.some(id=>$(id).checked))$('onlyPoland').checked=true;
+}
+function saveFilters(){try{localStorage.setItem(FILTER_KEY,JSON.stringify(Object.fromEntries(FILTER_IDS.map(id=>[id,$(id).checked]))));}catch(e){}}
+function prune(n,filters,parentMatch=false){
+ const {q,local,typical,seasons,includeVagrants}=filters,match=parentMatch||!q||C.normalizeAnswer(C.searchNames(n)).includes(q);
  if(n.rank==='species'){
-  const region=window.BIRD_REGIONS?.poland?.species?.[n.id],local=$('onlyPoland').checked;
-  const seasons=['breeding','passage','winter'].filter((k,i)=>$(SEASONS[i]).checked);
+  const region=window.BirdTaxonomy.region(n);
+  if(typical&&!isTypical(n))return null;
   if(local&&(!region||(seasons.length&&!seasons.some(k=>region.seasons?.[k]))))return null;
-  if(!local&&!$('includeVagrants').checked&&n.vagrant)return null;
+  if(!local&&!includeVagrants&&n.vagrant)return null;
   return match?n:null;
  }
- const children=(n.children||[]).map(c=>prune(c,match&&!!q)).filter(Boolean);return children.length?{...n,children}:null;
+ const children=(n.children||[]).map(c=>prune(c,filters,match&&!!q)).filter(Boolean);return children.length?{...n,children}:null;
 }
-function activeFilters(){const local=$('onlyPoland').checked,on=[];if(local)on.push(FILTER_LABELS.onlyPoland);SEASONS.forEach(id=>{if($(id).checked)on.push(FILTER_LABELS[id]);});if(!local&&!$('includeVagrants').checked)on.push('Без редких залётов');return on;}
+function activeFilters(){const local=$('onlyPoland').checked,on=[];if($('typicalPoland').checked)on.push(FILTER_LABELS.typicalPoland);else if(local)on.push(FILTER_LABELS.onlyPoland);SEASONS.forEach(id=>{if($(id).checked)on.push(FILTER_LABELS[id]);});if(!local&&!$('includeVagrants').checked)on.push('Без редких залётов');return on;}
 function syncFilters(){
  const on=activeFilters(),count=$('filterCount'),summary=$('filterSummary'),panel=$('filterPanel');
  // Vagrants only matter outside Poland: inside, the national list decides.
  $('includeVagrants').disabled=$('onlyPoland').checked;
  if(count){count.hidden=!on.length;count.textContent=on.length||'';}
- if(summary){summary.hidden=!on.length||(panel&&!panel.hidden);summary.innerHTML=on.length?'<span>'+on.map(esc).join(' · ')+'</span><button type="button" data-filter-reset>Сбросить</button>':'';}
+ const extra=on.filter(label=>label!==FILTER_LABELS.typicalPoland);
+ if(summary){summary.hidden=!extra.length||(panel&&!panel.hidden);summary.innerHTML=extra.length?'<span>'+extra.map(esc).join(' · ')+'</span><button type="button" data-filter-reset>Сбросить</button>':'';}
 }
-function applyFilters(){filteredTree=prune(taxonomy);filteredIds=filteredTree?leaves(filteredTree):[];syncFilters();A.setScope(filteredIds);}
+function applyFilters(){
+ const filters={q:C.normalizeAnswer($('treeSearch').value),local:$('onlyPoland').checked,typical:$('typicalPoland').checked,includeVagrants:$('includeVagrants').checked,seasons:['breeding','passage','winter'].filter((k,i)=>$(SEASONS[i]).checked)};
+ filteredTree=prune(taxonomy,filters);filteredIds=filteredTree?leaves(filteredTree):[];syncFilters();A.setScope(filteredIds);
+}
 
 let view='tree';
-function label(s){return s.reps===0?'Новое знакомство':s.level===10?'Выучено':s.level>=5?'Повторяю':'Изучаю';}
-function tone(s){return s.reps===0?'new':s.level===10?'mastered':s.level>=5?'review':'learning';}
+const label=s=>({new:'Новое знакомство',mastered:'Выучено',review:'Повторяю',learning:'Изучаю'}[C.status(s)]);
+const tone=C.status;
 const nameOf=n=>n.ru&&n.ru!==n.latin?n.ru:n.latin;
 const POLAND=()=>window.BIRD_REGIONS?.poland?.species||{};
 // The Latin name stays gold; its Russian reading is quieter so the name itself is easy to scan.
@@ -47,11 +57,10 @@ const THUMBS=true;
 const thumbOf=src=>THUMBS&&/^assets\/(photos|bird-photos)\/[^/]+\.(jpe?g|png|webp)$/i.test(src||'')?src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'):src;
 function photoHTML(photo){if(!photo)return '<span>нет фото</span>';const t=thumbOf(photo.src);return '<img src="'+esc(t)+'"'+(t!==photo.src?' data-full="'+esc(photo.src)+'" onerror="this.onerror=null;this.src=this.dataset.full"':'')+' alt="" width="80" height="80" loading="lazy" decoding="async">';}
 // Progress of a branch: only species that can be studied in the current mode count.
-function summary(ids){const st=ids.filter(id=>A.available(id)).map(id=>A.state(id));
- return {n:st.length,mastered:st.filter(s=>s.level===10).length,review:st.filter(s=>s.level>=5&&s.level<10).length,learning:st.filter(s=>s.reps>0&&s.level<5).length};}
+const summary=A.summary;
 function progressHTML(sum){if(!sum.n||!(sum.mastered+sum.review+sum.learning))return '';const seg=(k,cls)=>sum[k]?'<i class="'+cls+'" style="width:'+(sum[k]/sum.n*100).toFixed(2)+'%"></i>':'';
  return '<span class="drill-prog" role="img" aria-label="Выучено '+sum.mastered+' из '+sum.n+', повторяю '+sum.review+', изучаю '+sum.learning+'">'+seg('mastered','mastered')+seg('review','review')+seg('learning','learning')+'</span>';}
-function status(sum){return !(sum.mastered+sum.review+sum.learning)?'new':sum.mastered===sum.n?'mastered':sum.mastered+sum.review===sum.n?'review':'learning';}
+const status=sum=>sum.status;
 function statsText(sum){return [['mastered','выучено'],['review','повторяю'],['learning','изучаю']].filter(([k])=>sum[k]).map(([k,t])=>' · '+t+' '+sum[k]).join('');}
 // A branch is shown with a clear photo of a familiar bird: the study collection's own photos first,
 // then species that breed in Poland, then regular visitors.
@@ -119,13 +128,14 @@ window.addEventListener('birdatlas:render',render);
 history.replaceState({...(history.state||{}),tree:currentId},'');
 window.addEventListener('popstate',e=>{const id=e.state?.tree;if(id&&nodes.has(id)){currentId=id;render();reveal();}});
 for(const id of ['treeSearch',...FILTER_IDS])$(id).addEventListener(id==='treeSearch'?'input':'change',()=>{
- if(id==='onlyPoland'&&!$(id).checked)SEASONS.forEach(k=>$(k).checked=false);
+ if(id==='onlyPoland'&&!$(id).checked)['typicalPoland',...SEASONS].forEach(k=>$(k).checked=false);
+ if(id==='typicalPoland'&&$(id).checked)$('onlyPoland').checked=true;
  if(id.startsWith('poland')&&$(id).checked)$('onlyPoland').checked=true;
- applyFilters();
+ saveFilters();applyFilters();
 });
 document.addEventListener('click',e=>{
  const toggle=e.target.closest('#filterToggle');if(toggle){const panel=$('filterPanel'),open=panel.hidden;panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));syncFilters();anchorOffset();}
- if(e.target.closest('[data-filter-reset]')){FILTER_IDS.forEach(id=>$(id).checked=id==='includeVagrants');applyFilters();}
+ if(e.target.closest('[data-filter-reset]')){FILTER_IDS.forEach(id=>$(id).checked=id==='includeVagrants');saveFilters();applyFilters();}
  const branch=e.target.closest('[data-test-branch]');if(branch){e.preventDefault();const n=nodes.get(branch.dataset.testBranch);A.study(branches.get(branch.dataset.testBranch),n&&n.id!==taxonomy.id?nameOf(n):$('treeSearch').value.trim()?'Найдено':'Все птицы');}
  const to=e.target.closest('[data-tree-go]');if(to&&!to.hasAttribute('aria-current')){const id=to.dataset.treeGo;if($('treeSearch').value){$('treeSearch').value='';applyFilters();}go(id);}
  if(e.target.closest('[data-tree-clear]')){$('treeSearch').value='';applyFilters();}
@@ -135,5 +145,5 @@ window.addEventListener('resize',anchorOffset);
 document.addEventListener('scroll',e=>{if(e.target.classList?.contains('drill-crumbs'))fade(e.target);},true);
 // The browser may scroll to #treeBoard before the board is drawn; settle on the final position once.
 window.addEventListener('load',()=>{anchorOffset();if(location.hash==='#treeBoard'&&!$('treeBoard').hidden)$('treeBoard').scrollIntoView({block:'start'});});
-applyFilters();setView((()=>{try{return localStorage.getItem(VIEW_KEY);}catch(e){return null;}})()||'tree');
+restoreFilters();applyFilters();setView((()=>{try{return localStorage.getItem(VIEW_KEY);}catch(e){return null;}})()||'tree');
 })();

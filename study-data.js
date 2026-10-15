@@ -42,4 +42,7 @@
  }
  window.STUDY_TREE={id:'Aves',rank:'class',ru:'Птицы Европы',latin:'Aves',children:[window.PASSERINE_TREE.root,...orders.values()]};
  window.BIRD_ID_ALIASES={Corvus_corone:'hooded-crow'};
+ const region=n=>regions[n.treeId||n.id];
+ const leaves=n=>n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);
+ window.BirdTaxonomy={leaves,region,isTypical:n=>region(n)?.rare===false};
 })();

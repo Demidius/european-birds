@@ -1,10 +1,39 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{JSDOM}=require('jsdom');
-function fixture(progress){const dom=new JSDOM(fs.readFileSync(path.join(__dirname,'../study.html'),'utf8'),{url:'https://example.org/?offline=1',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window;
+function fixture(progress,filters={typicalPoland:false,onlyPoland:false}){const dom=new JSDOM(fs.readFileSync(path.join(__dirname,'../study.html'),'utf8'),{url:'https://example.org/?offline=1',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window;
 if(progress)w.localStorage.setItem('europeanBirds:v1:progress:guest',JSON.stringify(progress));
+if(filters)w.localStorage.setItem('europeanBirds:filters',JSON.stringify(filters));
 w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
 for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','app.js','study-tree.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
 const d=w.document,go=id=>d.querySelector('[data-tree-go="'+id+'"]').click(),total=()=>Number(d.querySelector('.drill-total').textContent.split(' ')[0]),find=q=>{const s=d.getElementById('treeSearch');s.value=q;s.dispatchEvent(new w.Event('input'));};
 return {w,d,go,total,find,close:()=>w.close()};}
+test('Typical Polish species are the default scope for every view and learning; filters survive reload',()=>{
+ const {w,d,total,find,close}=fixture(undefined,null);let saved;
+ try{
+  const typical=w.BIRD_DATA.filter(w.BirdTaxonomy.isTypical),ids=typical.map(b=>b.id);
+  assert.equal(typical.length,120);assert.equal(total(),120);
+  assert.equal(d.getElementById('filterSummary').hidden,true,'the visible quick filter is not repeated');
+  assert.equal(d.getElementById('newCount').textContent,'120');assert.equal(d.querySelectorAll('.bird-tile').length,120);
+  assert.deepEqual([...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort(),[...ids].sort());
+  assert.ok(ids.includes('great-tit'));assert.ok(ids.includes('mallard'));assert.ok(!typical.some(b=>b.latin==='Vireo olivaceus'));
+  w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));d.getElementById('boardView').click();
+  assert.equal(d.querySelectorAll('.sb-bar i').length,120);
+  const change=id=>d.getElementById(id).dispatchEvent(new w.Event('change'));
+  d.getElementById('polandWinter').checked=true;change('polandWinter');
+  const winter=typical.filter(b=>w.BirdTaxonomy.region(b).seasons.winter);
+  assert.equal(total(),winter.length);assert.equal(d.querySelectorAll('.sb-bar i').length,winter.length);
+  assert.equal(d.querySelectorAll('.bird-tile').length,winter.length);
+  find('Paridae');assert.equal(d.querySelectorAll('.bird-tile').length,w.BirdTaxonomy.leaves(w.BirdTree.filtered()).length);
+  find('');d.getElementById('polandWinter').checked=false;change('polandWinter');
+  const original=w.BirdStudy.shuffle;w.BirdStudy.shuffle=pool=>{assert.ok(pool.every(b=>ids.includes(b.id)));return pool;};
+  d.getElementById('learnBtn').click();assert.equal(d.getElementById('cardDialog').open,true);d.getElementById('closeCard').click();w.BirdStudy.shuffle=original;
+  d.getElementById('typicalPoland').checked=false;change('typicalPoland');assert.equal(total(),196,'all national records remain available');
+  saved=JSON.parse(w.localStorage.getItem('europeanBirds:filters'));
+  d.getElementById('onlyPoland').checked=false;change('onlyPoland');assert.equal(total(),435);
+  d.getElementById('typicalPoland').checked=true;change('typicalPoland');assert.equal(total(),120);
+  d.querySelector('[data-mode="audio"]').click();assert.equal(d.getElementById('newCount').textContent,String(typical.filter(b=>b.audio.length).length));
+ }finally{close();}
+ const restored=fixture(undefined,saved);try{assert.equal(restored.total(),196);assert.equal(restored.d.getElementById('typicalPoland').checked,false);}finally{restored.close();}
+});
 test('All taxonomy species share learning cards; filters, languages, branch tests and progress work',()=>{
 const {w,d,go,total,find,close}=fixture();try{
 const ranks={};(function r(n){ranks[n.rank]=(ranks[n.rank]||0)+1;(n.children||[]).forEach(r)})(w.STUDY_TREE);assert.equal(ranks.family,51);assert.equal(ranks.genus,168);
