@@ -17,9 +17,29 @@ const answer=w.BIRD_DATA.find(b=>b.id===ids.find(id=>d.querySelector('[data-tree
 d.querySelector('[data-test-branch="Paridae"]').click();assert.equal(d.getElementById('treeQuiz').open,true);assert.equal(d.querySelectorAll('[data-tree-answer]').length,6);
 const q=d.querySelector('#treeQuizMedia img'),current=w.BIRD_DATA.find(b=>b.photos.some(p=>p.src===q.getAttribute('src')));
 assert.ok(current);assert.ok(d.getElementById('treeQuizCount').textContent.endsWith('/ 10'));
-const correct=d.querySelector('[data-tree-answer="'+current.id+'"]');assert.equal(correct.textContent,current.pl);correct.click();assert.equal(w.BirdAtlas.state(current.id).level,1);assert.equal(d.querySelector('[data-tree-species="'+current.id+'"] .tree-level strong').textContent,'1 / 10');correct.click();assert.equal(w.BirdAtlas.state(current.id).reps,1);
+const correct=d.querySelector('[data-tree-answer="'+current.id+'"]');assert.equal(correct.textContent,current.pl);correct.click();assert.equal(w.BirdAtlas.state(current.id).level,1);assert.equal(d.querySelector('[data-tree-species="'+current.id+'"] .tree-level strong').textContent,'1 / 10');assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,current.id);correct.click();assert.equal(w.BirdAtlas.state(current.id).reps,1);
 d.getElementById('closeTreeQuiz').click();search.value='';search.dispatchEvent(new w.Event('input'));
 d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=d.querySelectorAll('.tree-species').length;assert.ok(polandCount>100&&polandCount<423);
 d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').dispatchEvent(new w.Event('change'));assert.ok(d.querySelectorAll('.tree-species').length<polandCount);
 search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.tree-species').length,0);assert.equal(d.getElementById('learnBtn').disabled,true);
+}finally{close()}});
+
+test('Latin names have Russian readings; wrong options disappear after a wrong answer',()=>{
+const {w,d,close}=fixture();try{
+assert.equal(w.BirdStudy.latinLabel('Pyrrhula pyrrhula'),'Pyrrhula pyrrhula (Пиррула пиррула)');
+assert.equal(w.BirdStudy.latinReading('Phylloscopus collybita'),'Филлоскопус коллибита');
+assert.equal(w.BirdStudy.latinReading('Cyanistes caeruleus'),'Цианистес церулеус');
+assert.equal(w.BirdStudy.latinReading('Parus major'),'Парус майор');
+for(const b of w.BIRD_DATA)assert.doesNotMatch(w.BirdStudy.latinReading(b.latin),/[a-z]/i);
+d.querySelector('[data-mode="names"]').click();d.getElementById('language').value='latin';d.getElementById('language').dispatchEvent(new w.Event('change'));
+d.querySelector('[data-tree-test="great-tit"]').click();
+assert.equal(d.querySelector('[data-tree-answer="great-tit"]').textContent,'Parus major (Парус майор)');
+d.querySelector('[data-tree-answer]:not([data-tree-answer="great-tit"])').click();
+assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);
+assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,'great-tit');
+assert.match(d.getElementById('treeQuizResult').textContent,/Parus major \(Парус майор\)/);
+d.getElementById('closeTreeQuiz').click();d.getElementById('learnBtn').click();
+assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
+d.querySelector('[data-answer]').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,1);
+d.getElementById('nextCard').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
 }finally{close()}});

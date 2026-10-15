@@ -27,7 +27,7 @@ test('Photo, audio and three name modes score once, preserve progress on skip, a
  for(const [mode,language] of [['photo','ru'],['audio','ru'],['names','latin'],['names','en'],['names','pl']]){
   const f=fixture(),$=f.$;f.modeButtons.find(b=>b.dataset.mode===mode).click();if(mode==='names'){$('language').value=language;$('language').fire('change');}$('learnBtn').click();
   const q=f.last(),key=q.correct.id+'__'+(mode==='names'?'names-'+language:mode),buttons=$('answerChoices').children;
-  assert.equal(buttons.length,6);assert.ok(buttons.every(b=>b.textContent===q.options.find(x=>x.id===b.dataset.answer)[mode==='names'?language:'ru']));
+  assert.equal(buttons.length,6);assert.ok(buttons.every(b=>b.textContent===(mode==='names'&&language==='latin'?C.latinLabel(q.options.find(x=>x.id===b.dataset.answer).latin):q.options.find(x=>x.id===b.dataset.answer)[mode==='names'?language:'ru'])));
   const correct=buttons.find(b=>b.dataset.answer===q.correct.id);correct.click();
   assert.equal(f.progress()[key].level,1);assert.equal(f.progress()[key].reps,1);assert.ok(buttons.every(b=>b.disabled));assert.ok(correct.classes.has('correct'));
   correct.fire('click');assert.equal(f.progress()[key].reps,1,'Duplicate event does not save twice');
@@ -38,3 +38,4 @@ test('Photo, audio and three name modes score once, preserve progress on skip, a
   assert.equal($('sessionDone').hidden,false);assert.ok($('answerChoices').hidden);assert.ok($('nextCard').hidden);
  }
 });
+

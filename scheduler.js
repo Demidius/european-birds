@@ -12,6 +12,23 @@ function schedule(previous,rating,now=Date.now()){
  return s;
 }
 function normalizeAnswer(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ё/g,'е').replace(/ł/g,'l').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
+// Approximate Russian reading of scientific Latin, without inferred stress.
+// Uses the continental convention common in Russian biology teaching.
+function latinReading(value){
+ const letters={a:'а',b:'б',c:'к',d:'д',e:'е',f:'ф',g:'г',h:'г',i:'и',j:'й',k:'к',l:'л',m:'м',n:'н',o:'о',p:'п',q:'к',r:'р',s:'с',t:'т',u:'у',v:'в',w:'в',x:'кс',y:'и',z:'з'};
+ return String(value||'').replace(/[A-Za-zÀ-ž]+/g,word=>{
+  let t=word.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  t=t.replace(/caerule/g,'церуле').replace(/coele/g,'целе')
+   .replace(/ch/g,'х').replace(/ph/g,'ф').replace(/th/g,'т').replace(/rh/g,'р').replace(/qu/g,'кв')
+   .replace(/c(?=ae|oe|[eiy])/g,'ц').replace(/^(ae|oe)/,'э').replace(/ae|oe/g,'е')
+   .replace(/([aeiouy])s(?=[aeiouy])/g,'$1з')
+   .replace(/(^|[aeiouy])i(?=[aeou])/g,'$1й')
+   .replace(/(^|[^stx])ti(?=[aeou])/g,'$1ци');
+  t=t.replace(/[a-z]/g,c=>letters[c]||c);
+  return /^[A-Z]/.test(word)?t.charAt(0).toUpperCase()+t.slice(1):t;
+ });
+}
+function latinLabel(value){return value?value+' ('+latinReading(value)+')':'';}
 function due(s,now=Date.now()){return s&&s.reps>0&&s.due<=now;}
 function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 // Sample unique labels before shuffling all six positions, including the correct answer.
@@ -21,5 +38,6 @@ function answerChoices(correct,birds,field='ru',count=6,rand=Math.random){
  return shuffle([correct,...others],rand);
 }
 function queue(birds,states,key,kind,now=Date.now(),limit=20){let a=birds.filter(b=>kind==='new'?!states[key(b)]||states[key(b)].reps===0:due(states[key(b)],now));if(kind==='new')a=shuffle(a);else a.sort((a,b)=>states[key(a)].due-states[key(b)].due);return a.slice(0,limit);}
-const api={DAY,initial,clean,schedule,normalizeAnswer,due,shuffle,answerChoices,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
+const api={DAY,initial,clean,schedule,normalizeAnswer,latinReading,latinLabel,due,shuffle,answerChoices,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
+

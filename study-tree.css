@@ -36,3 +36,6 @@
 .study-branch>summary .branch-count{display:block;margin:4px 0 0;font-size:12px}
 .study-branch>summary>.branch-test{flex:0 0 auto;margin:0;padding:8px 12px;min-height:42px;font:600 24px/1.1 var(--ui)}
 @media(max-width:760px){.study-branch>summary>.branch-test{padding:8px;font-size:23px}.study-branch>summary>.branch-label strong{font-size:25px}}
+
+.tree-quiz-choices button[hidden],.answer-choices button[hidden]{display:none}
+.tree-quiz-choices:has(button.correct),.answer-choices:has(button.correct){grid-template-columns:minmax(0,1fr)}
