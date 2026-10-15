@@ -41,6 +41,18 @@ root={'id':'Passeriformes','rank':'order','latin':'Passeriformes','ru':'Воро
 def walk(n):
  yield n
  for c in n.get('children',[]):yield from walk(c)
+# Apply reviewed corrections after importing raw regional names/statuses.
+correction_path=Path(__file__).resolve().parents[1]/'tree-corrections.json'
+if correction_path.exists():
+ corrections=json.loads(correction_path.read_text())
+ for n in walk(root):
+  if n['rank']=='species':
+   if n['latin'] in corrections['ruNames']:
+    n['aliases']=[n['ru']]
+    n['ru']=corrections['ruNames'][n['latin']]
+   if n['latin'] in corrections['vagrantOverrides']:n['vagrant']=corrections['vagrantOverrides'][n['latin']]
+  if n['rank']=='group' and n['latin'] in corrections['groupNames']:n['ru']=corrections['groupNames'][n['latin']]
+  if n['rank']=='genus' and n['latin'] in corrections['genusNames']:n['ru']=corrections['genusNames'][n['latin']]
 nodes=list(walk(root));assert {n['latin'] for n in nodes if n['rank']=='family'}==set(families)
 counts={rank:sum(n['rank']==rank for n in nodes) for rank in ['family','genus','species']}
 assert counts=={'family':43,'genus':157,'species':423}

@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-15",
+  "ruNames": {
+    "Corvus corone": "Ворона",
+    "Oenanthe seebohmi": "Атласская каменка",
+    "Fringilla spodiogenys": "Североафриканский зяблик",
+    "Fringilla moreletti": "Азорский зяблик",
+    "Fringilla maderensis": "Мадейрский зяблик",
+    "Fringilla canariensis": "Канарский зяблик",
+    "Cecropis rufula": "Средиземноморская рыжепоясничная ласточка",
+    "Cecropis daurica": "Восточная рыжепоясничная ласточка",
+    "Anthus japonicus": "Сибирский гольцовый конёк",
+    "Anthus rubescens": "Американский гольцовый конёк",
+    "Fringilla polatzeki": "Гран-канарский голубой зяблик"
+  },
+  "vagrantOverrides": {
+    "Ficedula parva": false
+  },
+  "groupNames": {
+    "Corvides": "Враноподобные",
+    "Passerides": "Воробьеподобные",
+    "Sylviida": "Славкоподобные",
+    "Muscicapida": "Мухоловкоподобные",
+    "Passerida": "Воробьиная клада"
+  },
+  "genusNames": {
+    "Corvus": "Вороны",
+    "Coloeus": "Галки",
+    "Cyanistes": "Лазоревки",
+    "Parus": "Большие синицы",
+    "Periparus": "Московки",
+    "Poecile": "Гаички",
+    "Lophophanes": "Хохлатые синицы",
+    "Aegithalos": "Длиннохвостые синицы",
+    "Sitta": "Поползни",
+    "Certhia": "Пищухи",
+    "Phylloscopus": "Пеночки",
+    "Ficedula": "Мухоловки-пеструшки",
+    "Muscicapa": "Серые мухоловки",
+    "Fringilla": "Зяблики",
+    "Anthus": "Коньки",
+    "Motacilla": "Трясогузки",
+    "Oenanthe": "Каменки",
+    "Saxicola": "Чеканы",
+    "Turdus": "Дрозды",
+    "Remiz": "Ремезы",
+    "Passer": "Воробьи",
+    "Pyrrhula": "Снегири",
+    "Carduelis": "Щеглы",
+    "Alauda": "Полевые жаворонки"
+  },
+  "sources": [
+    "https://www.avilist.org/checklist/v2025b/",
+    "https://komisjafaunistyczna.pl/lista/",
+    "https://avibase.bsc-eoc.org/species.jsp?avibaseid=3983013B8ABF7894",
+    "https://www.sciencedirect.com/science/article/pii/S1055790321002244"
+  ],
+  "note": "Russian labels for recently split chaffinches and paired swallow/pipit species are descriptive Russian labels, not a claim of universally standardized Russian nomenclature. Original labels remain search aliases."
+}

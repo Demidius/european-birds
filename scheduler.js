@@ -14,6 +14,8 @@ function schedule(previous,rating,now=Date.now()){
 function normalizeAnswer(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ё/g,'е').replace(/ł/g,'l').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
 // Approximate Russian reading of scientific Latin, without inferred stress.
 // Uses the continental convention common in Russian biology teaching.
+function word(n,forms=['вид','вида','видов']){const a=n%10,b=n%100;return b>=11&&b<=14?forms[2]:a===1?forms[0]:a>=2&&a<=4?forms[1]:forms[2];}
+function searchNames(b){return [b.ru,b.en,b.latin,b.pl,...(Array.isArray(b.aliases)?b.aliases:Object.values(b.aliases||{}).flat())].filter(Boolean).join(' ');}
 function latinReading(value){
  const letters={a:'а',b:'б',c:'к',d:'д',e:'е',f:'ф',g:'г',h:'г',i:'и',j:'й',k:'к',l:'л',m:'м',n:'н',o:'о',p:'п',q:'к',r:'р',s:'с',t:'т',u:'у',v:'в',w:'в',x:'кс',y:'и',z:'з'};
  return String(value||'').replace(/[A-Za-zÀ-ž]+/g,word=>{
@@ -38,6 +40,6 @@ function answerChoices(correct,birds,field='ru',count=6,rand=Math.random){
  return shuffle([correct,...others],rand);
 }
 function queue(birds,states,key,kind,now=Date.now(),limit=20){let a=birds.filter(b=>kind==='new'?!states[key(b)]||states[key(b)].reps===0:due(states[key(b)],now));if(kind==='new')a=shuffle(a);else a.sort((a,b)=>states[key(a)].due-states[key(b)].due);return a.slice(0,limit);}
-const api={DAY,initial,clean,schedule,normalizeAnswer,latinReading,latinLabel,due,shuffle,answerChoices,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
+const api={DAY,initial,clean,schedule,normalizeAnswer,word,searchNames,latinReading,latinLabel,due,shuffle,answerChoices,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
 

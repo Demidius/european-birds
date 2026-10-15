@@ -39,3 +39,15 @@
 
 .tree-quiz-choices button[hidden],.answer-choices button[hidden]{display:none}
 .tree-quiz-choices:has(button.correct),.answer-choices:has(button.correct){grid-template-columns:minmax(0,1fr)}
+
+/* Bound the horizontal cost of deep taxonomic nesting on small screens. */
+@media(max-width:760px){
+ .tree-board{padding:14px 8px}.branch-content{margin-left:0;padding:0 0 8px 6px;border-left-width:1px}
+ .study-branch{border:0;border-top:1px solid #52645b;margin:8px 0}
+ .study-branch>summary{padding:10px 2px;gap:6px}
+ .study-branch summary em{font-size:14px;overflow-wrap:anywhere}
+ .rank-genus>.branch-content{border-left:0;padding-left:0}
+ .tree-names h3,.tree-names p{overflow-wrap:normal;word-break:normal}
+}
+
+@media(min-width:761px){.branch-content{margin-left:8px;padding-left:12px}.rank-genus>.branch-content>.branch-children{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),340px))}}

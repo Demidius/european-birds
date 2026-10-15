@@ -195,7 +195,7 @@ window.PASSERINE_TREE = {
             "id": "Corvides",
             "rank": "group",
             "latin": "Corvides",
-            "ru": "Corvides",
+            "ru": "Враноподобные",
             "children": [
               {
                 "id": "Vireonidae",
@@ -553,7 +553,7 @@ window.PASSERINE_TREE = {
                     "id": "Coloeus",
                     "rank": "genus",
                     "latin": "Coloeus",
-                    "ru": "",
+                    "ru": "Галки",
                     "children": [
                       {
                         "id": "Coloeus_dauuricus",
@@ -581,7 +581,7 @@ window.PASSERINE_TREE = {
                     "id": "Corvus",
                     "rank": "genus",
                     "latin": "Corvus",
-                    "ru": "",
+                    "ru": "Вороны",
                     "children": [
                       {
                         "id": "Corvus_frugilegus",
@@ -617,11 +617,14 @@ window.PASSERINE_TREE = {
                         "id": "Corvus_corone",
                         "rank": "species",
                         "latin": "Corvus corone",
-                        "ru": "Carrion Crow",
+                        "ru": "Ворона",
                         "en": "Carrion Crow",
                         "pl": "Wrona",
                         "vagrant": false,
-                        "introduced": false
+                        "introduced": false,
+                        "aliases": [
+                          "Carrion Crow"
+                        ]
                       },
                       {
                         "id": "Corvus_splendens",
@@ -643,13 +646,13 @@ window.PASSERINE_TREE = {
             "id": "Passerides",
             "rank": "group",
             "latin": "Passerides",
-            "ru": "Passerides",
+            "ru": "Воробьеподобные",
             "children": [
               {
                 "id": "Sylviida",
                 "rank": "group",
                 "latin": "Sylviida",
-                "ru": "Sylviida",
+                "ru": "Славкоподобные",
                 "children": [
                   {
                     "id": "Remizidae",
@@ -661,7 +664,7 @@ window.PASSERINE_TREE = {
                         "id": "Remiz",
                         "rank": "genus",
                         "latin": "Remiz",
-                        "ru": "",
+                        "ru": "Ремезы",
                         "children": [
                           {
                             "id": "Remiz_pendulinus",
@@ -687,7 +690,7 @@ window.PASSERINE_TREE = {
                         "id": "Cyanistes",
                         "rank": "genus",
                         "latin": "Cyanistes",
-                        "ru": "",
+                        "ru": "Лазоревки",
                         "children": [
                           {
                             "id": "Cyanistes_teneriffae",
@@ -725,7 +728,7 @@ window.PASSERINE_TREE = {
                         "id": "Parus",
                         "rank": "genus",
                         "latin": "Parus",
-                        "ru": "",
+                        "ru": "Большие синицы",
                         "children": [
                           {
                             "id": "Parus_major",
@@ -743,7 +746,7 @@ window.PASSERINE_TREE = {
                         "id": "Periparus",
                         "rank": "genus",
                         "latin": "Periparus",
-                        "ru": "",
+                        "ru": "Московки",
                         "children": [
                           {
                             "id": "Periparus_ater",
@@ -761,7 +764,7 @@ window.PASSERINE_TREE = {
                         "id": "Lophophanes",
                         "rank": "genus",
                         "latin": "Lophophanes",
-                        "ru": "",
+                        "ru": "Хохлатые синицы",
                         "children": [
                           {
                             "id": "Lophophanes_cristatus",
@@ -779,7 +782,7 @@ window.PASSERINE_TREE = {
                         "id": "Poecile",
                         "rank": "genus",
                         "latin": "Poecile",
-                        "ru": "",
+                        "ru": "Гаички",
                         "children": [
                           {
                             "id": "Poecile_lugubris",
@@ -943,7 +946,7 @@ window.PASSERINE_TREE = {
                         "id": "Alauda",
                         "rank": "genus",
                         "latin": "Alauda",
-                        "ru": "",
+                        "ru": "Полевые жаворонки",
                         "children": [
                           {
                             "id": "Alauda_leucoptera",
@@ -1669,21 +1672,27 @@ window.PASSERINE_TREE = {
                             "id": "Cecropis_rufula",
                             "rank": "species",
                             "latin": "Cecropis rufula",
-                            "ru": "Рыжепоясничная ласточка",
+                            "ru": "Средиземноморская рыжепоясничная ласточка",
                             "en": "European Red-rumped Swallow",
                             "pl": "Jaskółka śródziemnomorska",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Рыжепоясничная ласточка"
+                            ]
                           },
                           {
                             "id": "Cecropis_daurica",
                             "rank": "species",
                             "latin": "Cecropis daurica",
-                            "ru": "Рыжепоясничная ласточка",
+                            "ru": "Восточная рыжепоясничная ласточка",
                             "en": "Eastern Red-rumped Swallow",
                             "pl": "Jaskółka rudawa",
                             "vagrant": true,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Рыжепоясничная ласточка"
+                            ]
                           }
                         ]
                       },
@@ -1717,7 +1726,7 @@ window.PASSERINE_TREE = {
                         "id": "Aegithalos",
                         "rank": "genus",
                         "latin": "Aegithalos",
-                        "ru": "",
+                        "ru": "Длиннохвостые синицы",
                         "children": [
                           {
                             "id": "Aegithalos_caudatus",
@@ -1769,7 +1778,7 @@ window.PASSERINE_TREE = {
                         "id": "Phylloscopus",
                         "rank": "genus",
                         "latin": "Phylloscopus",
-                        "ru": "",
+                        "ru": "Пеночки",
                         "children": [
                           {
                             "id": "Phylloscopus_sibilatrix",
@@ -2353,7 +2362,7 @@ window.PASSERINE_TREE = {
                 "id": "Muscicapida",
                 "rank": "group",
                 "latin": "Muscicapida",
-                "ru": "Muscicapida",
+                "ru": "Мухоловкоподобные",
                 "children": [
                   {
                     "id": "Regulidae",
@@ -2491,7 +2500,7 @@ window.PASSERINE_TREE = {
                         "id": "Sitta",
                         "rank": "genus",
                         "latin": "Sitta",
-                        "ru": "",
+                        "ru": "Поползни",
                         "children": [
                           {
                             "id": "Sitta_krueperi",
@@ -2557,7 +2566,7 @@ window.PASSERINE_TREE = {
                         "id": "Certhia",
                         "rank": "genus",
                         "latin": "Certhia",
-                        "ru": "",
+                        "ru": "Пищухи",
                         "children": [
                           {
                             "id": "Certhia_familiaris",
@@ -2945,7 +2954,7 @@ window.PASSERINE_TREE = {
                         "id": "Turdus",
                         "rank": "genus",
                         "latin": "Turdus",
-                        "ru": "",
+                        "ru": "Дрозды",
                         "children": [
                           {
                             "id": "Turdus_viscivorus",
@@ -3109,7 +3118,7 @@ window.PASSERINE_TREE = {
                         "id": "Muscicapa",
                         "rank": "genus",
                         "latin": "Muscicapa",
-                        "ru": "",
+                        "ru": "Серые мухоловки",
                         "children": [
                           {
                             "id": "Muscicapa_sibirica",
@@ -3267,7 +3276,7 @@ window.PASSERINE_TREE = {
                         "id": "Ficedula",
                         "rank": "genus",
                         "latin": "Ficedula",
-                        "ru": "",
+                        "ru": "Мухоловки-пеструшки",
                         "children": [
                           {
                             "id": "Ficedula_parva",
@@ -3276,7 +3285,7 @@ window.PASSERINE_TREE = {
                             "ru": "Малая мухоловка",
                             "en": "Red-breasted Flycatcher",
                             "pl": "Muchołówka mała",
-                            "vagrant": true,
+                            "vagrant": false,
                             "introduced": false
                           },
                           {
@@ -3449,7 +3458,7 @@ window.PASSERINE_TREE = {
                         "id": "Saxicola",
                         "rank": "genus",
                         "latin": "Saxicola",
-                        "ru": "",
+                        "ru": "Чеканы",
                         "children": [
                           {
                             "id": "Saxicola_rubetra",
@@ -3517,7 +3526,7 @@ window.PASSERINE_TREE = {
                         "id": "Oenanthe",
                         "rank": "genus",
                         "latin": "Oenanthe",
-                        "ru": "",
+                        "ru": "Каменки",
                         "children": [
                           {
                             "id": "Oenanthe_deserti",
@@ -3573,11 +3582,14 @@ window.PASSERINE_TREE = {
                             "id": "Oenanthe_seebohmi",
                             "rank": "species",
                             "latin": "Oenanthe seebohmi",
-                            "ru": "Atlas Wheatear",
+                            "ru": "Атласская каменка",
                             "en": "Atlas Wheatear",
                             "pl": "Białorzytka czarnogardła",
                             "vagrant": true,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Atlas Wheatear"
+                            ]
                           },
                           {
                             "id": "Oenanthe_oenanthe",
@@ -3669,7 +3681,7 @@ window.PASSERINE_TREE = {
                 "id": "Passerida",
                 "rank": "group",
                 "latin": "Passerida",
-                "ru": "Passerida",
+                "ru": "Воробьиная клада",
                 "children": [
                   {
                     "id": "Passeridae",
@@ -3735,7 +3747,7 @@ window.PASSERINE_TREE = {
                         "id": "Passer",
                         "rank": "genus",
                         "latin": "Passer",
-                        "ru": "",
+                        "ru": "Воробьи",
                         "children": [
                           {
                             "id": "Passer_montanus",
@@ -4021,7 +4033,7 @@ window.PASSERINE_TREE = {
                         "id": "Motacilla",
                         "rank": "genus",
                         "latin": "Motacilla",
-                        "ru": "",
+                        "ru": "Трясогузки",
                         "children": [
                           {
                             "id": "Motacilla_cinerea",
@@ -4079,7 +4091,7 @@ window.PASSERINE_TREE = {
                         "id": "Anthus",
                         "rank": "genus",
                         "latin": "Anthus",
-                        "ru": "",
+                        "ru": "Коньки",
                         "children": [
                           {
                             "id": "Anthus_godlewskii",
@@ -4185,21 +4197,27 @@ window.PASSERINE_TREE = {
                             "id": "Anthus_japonicus",
                             "rank": "species",
                             "latin": "Anthus japonicus",
-                            "ru": "Гольцовый конёк",
+                            "ru": "Сибирский гольцовый конёк",
                             "en": "Siberian Pipit",
                             "pl": "Świergotek syberyjski",
                             "vagrant": true,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Гольцовый конёк"
+                            ]
                           },
                           {
                             "id": "Anthus_rubescens",
                             "rank": "species",
                             "latin": "Anthus rubescens",
-                            "ru": "Гольцовый конёк",
+                            "ru": "Американский гольцовый конёк",
                             "en": "American Pipit",
                             "pl": "Świergotek bagienny",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Гольцовый конёк"
+                            ]
                           },
                           {
                             "id": "Anthus_pratensis",
@@ -4245,7 +4263,7 @@ window.PASSERINE_TREE = {
                         "id": "Fringilla",
                         "rank": "genus",
                         "latin": "Fringilla",
-                        "ru": "",
+                        "ru": "Зяблики",
                         "children": [
                           {
                             "id": "Fringilla_montifringilla",
@@ -4271,21 +4289,27 @@ window.PASSERINE_TREE = {
                             "id": "Fringilla_polatzeki",
                             "rank": "species",
                             "latin": "Fringilla polatzeki",
-                            "ru": "Канарский зяблик",
+                            "ru": "Гран-канарский голубой зяблик",
                             "en": "Gran Canaria Blue Chaffinch",
                             "pl": "Zięba czarnoczelna",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Канарский зяблик"
+                            ]
                           },
                           {
                             "id": "Fringilla_spodiogenys",
                             "rank": "species",
                             "latin": "Fringilla spodiogenys",
-                            "ru": "African Chaffinch",
+                            "ru": "Североафриканский зяблик",
                             "en": "African Chaffinch",
                             "pl": "Zięba zielonogrzbieta",
                             "vagrant": true,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "African Chaffinch"
+                            ]
                           },
                           {
                             "id": "Fringilla_coelebs",
@@ -4301,31 +4325,40 @@ window.PASSERINE_TREE = {
                             "id": "Fringilla_moreletti",
                             "rank": "species",
                             "latin": "Fringilla moreletti",
-                            "ru": "Azores Chaffinch",
+                            "ru": "Азорский зяблик",
                             "en": "Azores Chaffinch",
                             "pl": "Zięba atlantycka",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Azores Chaffinch"
+                            ]
                           },
                           {
                             "id": "Fringilla_maderensis",
                             "rank": "species",
                             "latin": "Fringilla maderensis",
-                            "ru": "Madeira Chaffinch",
+                            "ru": "Мадейрский зяблик",
                             "en": "Madeira Chaffinch",
                             "pl": "Zięba maderska",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Madeira Chaffinch"
+                            ]
                           },
                           {
                             "id": "Fringilla_canariensis",
                             "rank": "species",
                             "latin": "Fringilla canariensis",
-                            "ru": "Canary Islands Chaffinch",
+                            "ru": "Канарский зяблик",
                             "en": "Canary Islands Chaffinch",
                             "pl": "Zięba modrogrzbieta",
                             "vagrant": false,
-                            "introduced": false
+                            "introduced": false,
+                            "aliases": [
+                              "Canary Islands Chaffinch"
+                            ]
                           }
                         ]
                       },
@@ -4425,7 +4458,7 @@ window.PASSERINE_TREE = {
                         "id": "Pyrrhula",
                         "rank": "genus",
                         "latin": "Pyrrhula",
-                        "ru": "",
+                        "ru": "Снегири",
                         "children": [
                           {
                             "id": "Pyrrhula_murina",
@@ -4647,7 +4680,7 @@ window.PASSERINE_TREE = {
                         "id": "Carduelis",
                         "rank": "genus",
                         "latin": "Carduelis",
-                        "ru": "",
+                        "ru": "Щеглы",
                         "children": [
                           {
                             "id": "Carduelis_citrinella",
@@ -5940,6 +5973,10 @@ window.PASSERINE_TREE = {
     {
       "title": "Polish names: Komisja Faunistyczna, national list 2026-06-01",
       "url": "https://komisjafaunistyczna.pl/lista/"
+    },
+    {
+      "title": "Review corrections, 15 October 2026; original labels retained as aliases",
+      "url": "tree-corrections.json"
     }
   ]
 };

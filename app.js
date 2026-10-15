@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const $=id=>document.getElementById(id),C=BirdStudy,BIRDS=window.BIRD_DATA||[],PREFIX='europeanBirds:v1:',GROUPS={all:'Все виды',garden:'Сады и парки',forest:'Лесные',urban:'Рядом с человеком',corvid:'Врановые',water:'У воды',wetland:'Луга и болота',raptor:'Хищные'};
+const $=id=>document.getElementById(id),C=BirdStudy,BIRDS=window.BIRD_DATA||[],PREFIX='europeanBirds:v1:',GROUPS={all:'Все виды',garden:'Сады и парки',forest:'Лесные',urban:'Рядом с человеком',corvid:'Врановые',water:'У воды',wetland:'Луга и болота',raptor:'Хищные',unclassified:'Среда не уточнена'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const savedSettings=read('settings',{});
 let mode='photo',language=['ru','en','latin','pl'].includes(savedSettings.testLanguage)?savedSettings.testLanguage:'ru',group='all',states={},uid='guest',me=null,profiles=[],db=null,auth=null,session=null,loadToken=0,unsubProgress=null,unsubProfiles=null,cloudReady=false,cloudState='',restoreFocus=null;
@@ -10,7 +10,7 @@ function read(key,fallback){try{return JSON.parse(localStorage.getItem(PREFIX+ke
 function write(key,value){try{localStorage.setItem(PREFIX+key,JSON.stringify(value));return true;}catch{return false;}}
 function key(b,m=mode,l=language){if(m==='names')return b.id+'__names-'+l;return b.id+'__'+(l==='ru'?m:m+'-'+l);}
 const validKeys=new Set(BIRDS.flatMap(b=>['photo','audio','photo-en','photo-latin','photo-pl','audio-en','audio-latin','audio-pl','names-ru','names-en','names-latin','names-pl'].map(m=>b.id+'__'+m)));
-function cleanMap(obj){const out={};if(obj&&typeof obj==='object'&&!Array.isArray(obj))for(const [k,v]of Object.entries(obj))if(validKeys.has(k))out[k]=C.clean(v);return out;}
+function cleanMap(obj){const out={};const aliases=window.BIRD_ID_ALIASES||{};if(obj&&typeof obj==='object'&&!Array.isArray(obj)){obj={...obj};for(const [oldId,newId]of Object.entries(aliases))for(const k of Object.keys(obj))if(k.startsWith(oldId+'__')){const to=newId+k.slice(oldId.length);if(!obj[to]||(obj[k]?.updatedAt||0)>(obj[to]?.updatedAt||0))obj[to]=obj[k];}}if(obj&&typeof obj==='object'&&!Array.isArray(obj))for(const [k,v]of Object.entries(obj))if(validKeys.has(k))out[k]=C.clean(v);return out;}
 function own(){return uid==='guest'?!me:!!me&&uid===me.uid;}
 function available(b,m=mode){return m==='names'||(m==='photo'?b.photos.length:b.audio.length)>0;}
 function eligible(){return BIRDS.filter(b=>available(b)&&(!treeScope||treeScope.has(b.id))&&(group==='all'||b.group===group));}
@@ -20,7 +20,7 @@ function notice(text,error=false){$('notice').textContent=text;$('notice').class
 function showNotice(){if(!own()){notice('Ты смотришь чужой прогресс. Изменять его нельзя.');return;}if(!me){notice('Гость: прогресс сохраняется на этом устройстве.');return;}notice(cloudState||'Прогресс сохранён в аккаунте.');}
 function setMode(next){if(session)finishSession(false);mode=next;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));render();}
 function render(){const pool=eligible(),done=pool.filter(b=>state(b).level===10).length,due=pool.filter(b=>C.due(state(b))).length,newN=pool.filter(b=>state(b).reps===0).length;
- $('speciesCount').textContent=BIRDS.length;$('dueCount').textContent=due;$('newCount').textContent=newN;$('masteredCount').textContent=done;$('totalCount').textContent='/ '+pool.length+' видов';
+ $('speciesCount').textContent=BIRDS.length;$('dueCount').textContent=due;$('newCount').textContent=newN;$('masteredCount').textContent=done;$('totalCount').textContent='/ '+pool.length+' '+C.word(pool.length);
  $('reviewBtn').disabled=!own()||due===0;$('learnBtn').disabled=!own()||newN===0;
  const labels={photo:'Узнаю по фото',audio:'Узнаю по голосу',names:'Помню названия'};$('progressTitle').textContent=labels[mode];
  const counts={new:0,learning:0,review:0,mastered:0};pool.forEach(b=>counts[status(state(b))]++);const meta=[['new','Новые','none'],['learning','Изучаю','learn'],['review','Повторяю','review'],['mastered','Выучено','master']];
@@ -31,8 +31,8 @@ function render(){const pool=eligible(),done=pool.filter(b=>state(b).level===10)
  renderCatalog();showNotice();window.dispatchEvent(new CustomEvent('birdatlas:render'));
 }
 function renderCatalog(){const q=C.normalizeAnswer($('search').value),sf=$('statusFilter').value;
- const visible=eligible().filter(b=>(!q||C.normalizeAnswer([b.ru,b.en,b.latin,b.pl].join(' ')).includes(q))&&(sf==='all'||sf===status(state(b))));
- $('resultCount').textContent=visible.length+' из '+eligible().length+' видов'+(mode==='audio'?' с проверенными записями':'');$('empty').hidden=visible.length>0;
+ const visible=eligible().filter(b=>(!q||C.normalizeAnswer(C.searchNames(b)).includes(q))&&(sf==='all'||sf===status(state(b))));
+ $('resultCount').textContent=visible.length+' из '+eligible().length+' '+C.word(eligible().length)+(mode==='audio'?' с проверенными записями':'');$('empty').hidden=visible.length>0;
  $('birdGrid').innerHTML=visible.map(b=>{const s=state(b),p=b.photos[0];return '<button class="bird-tile" data-bird="'+b.id+'" aria-label="'+esc(b.ru)+': карточка вида"><span class="tile-img'+(!p?' placeholder':'')+'">'+(p?'<img src="'+esc(p.src)+'" alt="'+esc(b.ru)+'" loading="lazy" decoding="async">':'Фото скоро')+(b.audio.length?'<span class="voice-badge">Есть голос</span>':'')+'</span><span class="tile-body"><strong>'+esc(b.ru)+'</strong><em>'+esc(C.latinLabel(b.latin))+'</em><span class="tile-progress"><span>'+({new:'Новое знакомство',learning:'Изучаю',review:'Повторяю',mastered:'Выучено'}[status(s)])+'</span><span>'+s.level+' / 10</span></span><span class="mini-bar"><span style="width:'+(s.level*10)+'%"></span></span></span></button>';}).join('');
 }
 function renderGroups(){$('groups').innerHTML=Object.entries(GROUPS).map(([id,title])=>'<button data-group="'+id+'" aria-pressed="'+(group===id)+'">'+title+'</button>').join('');}
