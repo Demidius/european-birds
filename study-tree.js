@@ -60,8 +60,12 @@ function render(){const ctx=A.context(),pool=birds.filter(b=>(!filteredIds||filt
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
  $('treeBoard').innerHTML='<div class="tree-heading"><div><p class="eyebrow">ЕДИНАЯ ДОСКА · ДЕРЕВО И ТЕСТЫ</p><h2 id="treeTitle">Дерево птиц</h2><p class="tree-subtitle">Выбери отряд, затем семейство. Нажми на птицу, чтобы открыть карточку.</p></div><button id="testTitBranch" class="tree-test-button"'+(!ctx.own||!pool.length?' disabled':'')+'>Учить выборку <span>'+pool.length+' '+C.word(pool.length)+'</span></button></div><div class="tree-toolbar"><span>'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span><span>Выучено '+learned+' / '+pool.length+'</span><span class="tree-score-rule">Снова · Трудно · Хорошо · Легко</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Для дополнительных отрядов состав неполный.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p><p>Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p></details>';
 }
-function setView(next){view=next;$('treeBoard').hidden=view!=='tree';$('catalogSection').hidden=view!=='catalog';$('treeView').setAttribute('aria-pressed',String(view==='tree'));$('catalogView').setAttribute('aria-pressed',String(view==='catalog'));}
-document.addEventListener('click',e=>{if(e.target.closest('#treeView'))setView('tree');if(e.target.closest('#catalogView'))setView('catalog');if(e.target.closest('#testTitBranch'))A.study(filteredIds||leaves(taxonomy),'Выборка дерева');const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=birds.find(b=>b.id===test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
+const VIEWS={tree:['treeView','treeBoard'],board:['boardView','speciesBoard'],catalog:['catalogView','catalogSection']},VIEW_KEY='europeanBirds:view';
+function setView(next,remember){if(!VIEWS[next]||!$(VIEWS[next][1]))next='tree';view=next;for(const [k,[btn,sec]] of Object.entries(VIEWS)){if($(sec))$(sec).hidden=k!==view;if($(btn))$(btn).setAttribute('aria-pressed',String(k===view));}
+ if(remember)try{localStorage.setItem(VIEW_KEY,view);}catch(e){}window.dispatchEvent(new CustomEvent('birdatlas:view',{detail:view}));}
+// Shared with species-board.js: the filtered taxonomy and the species row of the tree.
+window.BirdTree={filtered:()=>filteredTree,speciesRow,nameOf,get view(){return view;}};
+document.addEventListener('click',e=>{const v=e.target.closest('#treeView,#boardView,#catalogView');if(v)setView({treeView:'tree',boardView:'board',catalogView:'catalog'}[v.id],true);if(e.target.closest('#testTitBranch'))A.study(filteredIds||leaves(taxonomy),'Выборка дерева');const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=birds.find(b=>b.id===test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
 window.addEventListener('birdatlas:render',render);
 
 history.replaceState({...(history.state||{}),tree:currentId},'');
@@ -77,5 +81,5 @@ document.addEventListener('click',e=>{
  if(e.target.closest('[data-tree-clear]')){$('treeSearch').value='';applyFilters();}
  if(e.target.closest('[data-tree-back]')){if($('treeSearch').value.trim()){$('treeSearch').value='';applyFilters();}else if(history.state?.tree===currentId&&history.state.depth)history.back();else if(parents.has(currentId))go(parents.get(currentId));}
 });
-applyFilters();setView('tree');
+applyFilters();setView((()=>{try{return localStorage.getItem(VIEW_KEY);}catch(e){return null;}})()||'tree');
 })();
