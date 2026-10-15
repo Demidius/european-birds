@@ -4,6 +4,7 @@ const $=id=>document.getElementById(id),C=BirdStudy,BIRDS=window.BIRD_DATA||[],P
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const savedSettings=read('settings',{});
 let mode='photo',language=['ru','en','latin','pl'].includes(savedSettings.testLanguage)?savedSettings.testLanguage:'ru',group='all',states={},uid='guest',me=null,profiles=[],db=null,auth=null,session=null,loadToken=0,unsubProgress=null,unsubProfiles=null,cloudReady=false,cloudState='',restoreFocus=null;
+let treeScope=null;
 let batchSize=Number(savedSettings.batchSize)||20;
 function read(key,fallback){try{return JSON.parse(localStorage.getItem(PREFIX+key))??fallback;}catch{return fallback;}}
 function write(key,value){try{localStorage.setItem(PREFIX+key,JSON.stringify(value));return true;}catch{return false;}}
@@ -12,7 +13,7 @@ const validKeys=new Set(BIRDS.flatMap(b=>['photo','audio','photo-en','photo-lati
 function cleanMap(obj){const out={};if(obj&&typeof obj==='object'&&!Array.isArray(obj))for(const [k,v]of Object.entries(obj))if(validKeys.has(k))out[k]=C.clean(v);return out;}
 function own(){return uid==='guest'?!me:!!me&&uid===me.uid;}
 function available(b,m=mode){return m==='names'||(m==='photo'?b.photos.length:b.audio.length)>0;}
-function eligible(){return BIRDS.filter(b=>available(b)&&(group==='all'||b.group===group));}
+function eligible(){return BIRDS.filter(b=>available(b)&&(!treeScope||treeScope.has(b.id))&&(group==='all'||b.group===group));}
 function state(b){return states[key(b)]||C.initial();}
 function status(s){return s.reps===0?'new':s.level>=10?'mastered':s.level>=5?'review':'learning';}
 function notice(text,error=false){$('notice').textContent=text;$('notice').classList.toggle('error',error);}
@@ -40,7 +41,7 @@ function closeDialog(id){$(id).close();if(restoreFocus?.isConnected)restoreFocus
 function stopAudio(){document.querySelectorAll('audio').forEach(a=>{a.pause();});}
 function start(kind,bird=null){if(!own())return;if(session)finishSession(false);const queue=bird?[bird]:C.queue(eligible(),states,b=>key(b),kind,Date.now(),batchSize);if(!queue.length)return;
  session={queue,index:0,revealed:false,rated:0,good:0,mode,language,uid};$('sessionDone').hidden=true;openDialog('cardDialog');showCard();}
-function credit(m){if(!m)return '';return '<p class="media-credit">'+esc(m.author||'Автор указан в источнике')+' · <a target="_blank" rel="noopener" href="'+esc(m.source)+'">Wikimedia Commons</a> · <a target="_blank" rel="noopener" href="'+esc(m.licenseUrl||m.source)+'">'+esc(m.license)+'</a></p>';}
+function credit(m){if(!m)return '';return '<p class="media-credit">'+esc(m.author||'Автор указан в источнике')+' · <a target="_blank" rel="noopener" href="'+esc(m.source)+'">Источник</a> · <a target="_blank" rel="noopener" href="'+esc(m.licenseUrl||m.source)+'">'+esc(m.license)+'</a></p>';}
 function showCard(){stopAudio();const s=session,b=s.queue[s.index];s.revealed=false;s.blocked=false;const sm=s.mode,photo=b.photos[Math.floor(Math.random()*b.photos.length)],audio=b.audio[Math.floor(Math.random()*b.audio.length)];s.media=sm==='photo'?photo:sm==='audio'?audio:null;
  $('sessionCount').textContent=({photo:'ПО ФОТО',audio:'ПО ГОЛОСУ',names:'НАЗВАНИЯ'}[sm])+' · '+(s.index+1)+' / '+s.queue.length;$('cardTitle').textContent=sm==='names'?'Как называется эта птица?':'Кто это?';
  $('cardMedia').innerHTML=sm==='photo'?(photo?'<img src="'+esc(photo.src)+'" alt="Птица для определения">':'<p class="error-media">Для этого вида пока нет фотографии.</p>'):sm==='audio'?(audio?'<div class="audio-question"><div class="audio-mark" aria-hidden="true">▂▅▇▃▆</div><audio controls preload="none" src="'+esc(audio.src)+'" aria-label="Голос птицы для определения"></audio><p>Нажми воспроизведение и выбери вид.</p></div>':'<p class="error-media">Для этого вида пока нет записи.</p>'):'';
@@ -105,6 +106,7 @@ window.addEventListener('online',syncPending);window.addEventListener('pagehide'
 // Shared progress API for the phylogenetic board; no second progress store.
 window.BirdAtlas={
  context:()=>({uid,mode,language,own:own()}),
+ setScope:ids=>{treeScope=ids?new Set(ids):null;render();},
  state:id=>C.clean(states[key(BIRDS.find(b=>b.id===id))]),
  available:id=>available(BIRDS.find(b=>b.id===id)),
  detail:id=>detail(BIRDS.find(b=>b.id===id)),
@@ -117,3 +119,4 @@ window.BirdAtlas={
 };
 states=cleanMap(read('progress:guest',{}));$('language').value=language;renderGroups();renderProfiles();render();initCloud();
 })();
+
