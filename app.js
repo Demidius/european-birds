@@ -26,8 +26,7 @@ function render(){const pool=eligible(),done=pool.filter(b=>state(b).level===10)
  const counts={new:0,learning:0,review:0,mastered:0};pool.forEach(b=>counts[status(state(b))]++);const meta=[['new','Новые','none'],['learning','Изучаю','learn'],['review','Повторяю','review'],['mastered','Выучено','master']];
  $('progressBar').innerHTML=meta.map(([s,,color])=>'<span style="width:'+(pool.length?counts[s]/pool.length*100:0)+'%;background:var(--'+color+')"></span>').join('');$('progressBar').setAttribute('aria-label',meta.map(([s,l])=>l+': '+counts[s]).join(', '));
  $('legend').innerHTML=meta.map(([s,l,color])=>'<span><i class="dot" style="background:var(--'+color+')"></i>'+l+' '+counts[s]+'</span>').join('');
- const answerLang={ru:'русском',en:'английском',latin:'латыни',pl:'польском'}[language];
- $('modeNote').textContent=mode==='photo'?'Выбери название птицы на '+answerLang+' из шести вариантов.':mode==='audio'?'Сначала послушай и выбери название на '+answerLang+'. Фотография появится после ответа.':language==='ru'?'Латинское название -> выбери русское.':'Русское название -> выбери '+({en:'английское',latin:'латинское',pl:'польское'}[language])+'.';
+ $('modeNote').textContent=mode==='photo'?'Посмотри на фото и вспомни вид, затем открой ответ и оцени себя.':mode==='audio'?'Послушай голос и вспомни вид, затем открой ответ и оцени себя.':language==='ru'?'Латинское название -> вспомни русское и остальные названия.':'Русское название -> вспомни '+({en:'английское',latin:'латинское',pl:'польское'}[language])+' и остальные названия.';
  renderCatalog();showNotice();window.dispatchEvent(new CustomEvent('birdatlas:render'));
 }
 function renderCatalog(){const q=C.normalizeAnswer($('search').value),sf=$('statusFilter').value;
@@ -39,36 +38,85 @@ function renderGroups(){$('groups').innerHTML=Object.entries(GROUPS).map(([id,ti
 function openDialog(id){restoreFocus=document.activeElement;$(id).showModal();}
 function closeDialog(id){$(id).close();if(restoreFocus?.isConnected)restoreFocus.focus();}
 function stopAudio(){document.querySelectorAll('audio').forEach(a=>{a.pause();});}
-function start(kind,bird=null){if(!own())return;if(session)finishSession(false);const queue=bird?[bird]:C.queue(eligible(),states,b=>key(b),kind,Date.now(),batchSize);if(!queue.length)return;
- session={queue,index:0,revealed:false,rated:0,good:0,mode,language,uid};$('sessionDone').hidden=true;openDialog('cardDialog');showCard();}
+// Anki-style cards, the same flow as the English site: front, "Показать ответ", four grades.
+function pickOne(list){return list.length?list[Math.floor(Math.random()*list.length)]:null;}
+function start(kind,bird=null){if(!own())return;openSession(bird?[bird]:C.queue(eligible(),states,b=>key(b),kind,Date.now(),batchSize),kind==='due'?'Повторение':'Новые виды');}
+function study(ids,title){if(!own())return;const set=new Set(ids||[]),pool=BIRDS.filter(b=>set.has(b.id)&&available(b)),now=Date.now();
+ let q=pool.length===1?pool:[...pool.filter(b=>C.due(state(b),now)).sort((a,b)=>state(a).due-state(b).due),...C.shuffle(pool.filter(b=>state(b).reps===0))].slice(0,batchSize);
+ if(!q.length)q=pool.slice().sort((a,b)=>state(a).due-state(b).due).slice(0,batchSize);
+ openSession(q,title);}
+function openSession(queue,title){if(session)finishSession(false);if(!queue.length)return;
+ session={queue:queue.slice(),wait:[],done:0,skipped:0,seen:[],start:{},hist:[],media:{},flipped:false,kbox:false,kres:'',kdone:null,blocked:false,timer:null,mode,language,uid,title:title||''};
+ openDialog('cardDialog');renderCard();}
 function credit(m){if(!m)return '';return '<p class="media-credit">'+esc(m.author||'Автор указан в источнике')+' · <a target="_blank" rel="noopener" href="'+esc(m.source)+'">Источник</a> · <a target="_blank" rel="noopener" href="'+esc(m.licenseUrl||m.source)+'">'+esc(m.license)+'</a></p>';}
-function showCard(){stopAudio();const s=session,b=s.queue[s.index];s.revealed=false;s.blocked=false;const sm=s.mode,photo=b.photos[Math.floor(Math.random()*b.photos.length)],audio=b.audio[Math.floor(Math.random()*b.audio.length)];s.media=sm==='photo'?photo:sm==='audio'?audio:null;
- $('sessionCount').textContent=({photo:'ПО ФОТО',audio:'ПО ГОЛОСУ',names:'НАЗВАНИЯ'}[sm])+' · '+(s.index+1)+' / '+s.queue.length;$('cardTitle').textContent=sm==='names'?'Как называется эта птица?':'Кто это?';
- $('cardMedia').innerHTML=sm==='photo'?(photo?'<img src="'+esc(photo.src)+'" alt="Птица для определения">':'<p class="error-media">Для этого вида пока нет фотографии.</p>'):sm==='audio'?(audio?'<div class="audio-question"><div class="audio-mark" aria-hidden="true">▂▅▇▃▆</div><audio controls preload="none" src="'+esc(audio.src)+'" aria-label="Голос птицы для определения"></audio><p>Нажми воспроизведение и выбери вид.</p></div>':'<p class="error-media">Для этого вида пока нет записи.</p>'):'';
- const field=s.language,promptField=sm==='names'?(field==='ru'?'latin':'ru'):null;
- $('questionArea').textContent=promptField?(promptField==='latin'?C.latinLabel(b.latin):b[promptField]):'';$('questionArea').classList.toggle('latin',promptField==='latin');
- s.choices=C.answerChoices(b,BIRDS,field);
- $('answerChoices').innerHTML=s.choices.map(x=>'<button type="button" data-answer="'+esc(x.id)+'"'+(field==='latin'?' class="latin"':'')+'>'+esc(field==='latin'?C.latinLabel(x.latin):x[field])+'</button>').join('');
- $('answerChoices').hidden=false;$('answerFeedback').textContent='';$('answerFeedback').className='';$('answerArea').hidden=true;$('answerArea').innerHTML='';$('nextCard').hidden=true;$('sessionDone').hidden=true;
- const fail=()=>{if(session!==s||s.queue[s.index]!==b||s.revealed||s.blocked)return;s.blocked=true;$('answerChoices').querySelectorAll('button').forEach(button=>button.disabled=true);$('answerFeedback').className='feedback-wrong';$('answerFeedback').textContent='Материал не загрузился. Пропусти карточку без изменения прогресса.';$('nextCard').hidden=false;$('nextCard').textContent='Пропустить';};
- $('cardMedia').querySelector('img')?.addEventListener('error',fail,{once:true});
- $('cardMedia').querySelector('audio')?.addEventListener('error',fail,{once:true});
- if(sm!=='names'&&!s.media)fail();
- $('answerChoices').querySelector('button')?.focus();
+function sessionHead(s,extra){$('sessionCount').textContent=(extra||({photo:'ПО ФОТО',audio:'ПО ГОЛОСУ',names:'НАЗВАНИЯ'}[s.mode]))+(s.title?' · '+s.title:'');}
+function canKnow(s){return !(s.mode==='names'&&s.language==='ru');}
+function meter(level){let h='<span class="fc-meter" role="img" aria-label="уровень '+level+' из 10">';for(let i=1;i<=10;i++)h+='<i'+(i<=level?' class="on"':'')+'></i>';return h+'</span>';}
+function renderCard(){const s=session;if(!s)return;clearInterval(s.timer);s.timer=null;stopAudio();
+ if(s.kdone){renderKnown();return;}
+ if(!s.flipped&&!s.kbox&&s.wait.length){const now=Date.now(),ready=s.wait.filter(x=>x.due<=now);if(ready.length){s.wait=s.wait.filter(x=>x.due>now);s.queue.unshift(...ready.map(x=>x.b));}}
+ if(!s.queue.length){if(s.wait.length)renderWait();else renderDone();return;}
+ const b=s.queue[0],sm=s.mode,st=C.clean(states[key(b,sm,s.language)]),now=Date.now();s.blocked=false;
+ if(!(b.id in s.media))s.media[b.id]=sm==='photo'?pickOne(b.photos):sm==='audio'?pickOne(b.audio):null;
+ const m=s.media[b.id],total=s.done+s.queue.length+s.wait.length,pct=total?Math.round(s.done/total*100):0,nx=g=>C.ivlLabel(C.schedule(st,g,now).due-now),latinPrompt=sm==='names'&&s.language==='ru';
+ sessionHead(s);
+ let h='<div class="fc-meta"><span>осталось '+s.queue.length+(s.wait.length?' · ждут '+s.wait.length:'')+'</span><span>готово '+s.done+'</span></div><div class="fc-bar"><span style="width:'+pct+'%"></span></div>'+
+  '<h2 id="cardTitle" class="fc-title">'+(sm==='names'?'Вспомни название':'Кто это?')+'</h2>';
+ if(sm==='photo')h+=m?'<div class="card-media fc-front"><img src="'+esc(m.src)+'" alt="Птица для определения"></div>':'<p class="error-media">Для этого вида пока нет фотографии.</p>';
+ else if(sm==='audio')h+=m?'<div class="card-media fc-front"><div class="audio-question"><div class="audio-mark" aria-hidden="true">▂▅▇▃▆</div><audio controls preload="none" src="'+esc(m.src)+'" aria-label="Голос птицы для определения"></audio><p>Послушай запись и вспомни вид.</p></div></div>':'<p class="error-media">Для этого вида пока нет записи голоса.</p>';
+ else h+='<div class="fc-prompt'+(latinPrompt?' latin':'')+'">'+esc(latinPrompt?C.latinLabel(b.latin):b.ru)+'</div>';
+ if(!s.flipped&&s.kbox)h+='<form class="kbox" id="knownForm" autocomplete="off"><label for="knownIn">Напиши латинское название</label><div class="kbox-row"><input id="knownIn" type="text" lang="la" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Genus species"><button type="submit" class="reveal">Проверить</button></div><button type="button" class="linkbtn" data-act="kcancel">Отмена</button></form>';
+ if(s.flipped){
+  if(s.kres)h+='<div class="kres" role="status">Ты написал: <b>'+esc(s.kres)+'</b> — не совпадает, вид не засчитан. Оцени себя как обычно.</div>';
+  h+='<div class="fc-answer">'+(sm!=='photo'&&b.photos[0]?'<div class="card-media fc-photo"><img src="'+esc(b.photos[0].src)+'" alt="'+esc(b.ru)+'"></div>':'')+'<h3>'+esc(b.ru)+'</h3>'+names(b)+'<p class="fact">'+esc(b.tip||'Смотри на сочетание признаков: силуэт, окраску, клюв и поведение. Одна фотография не показывает все варианты оперения.')+'</p>'+(window.BirdBiology?window.BirdBiology.render(b,{audio:false}):'')+credit(m||(sm!=='photo'?b.photos[0]:null))+'</div>';
+ }
+ h+='<div class="fc-level">'+meter(st.level)+'<span>уровень '+st.level+' из 10'+(st.reps&&st.interval?' · интервал '+C.ivlLabel(st.interval*C.DAY):'')+'</span></div><div class="fc-actions'+(s.flipped?' sticky':'')+'">';
+ const ti=s.flipped?'':' tabindex="-1"';
+ h+='<div class="grades'+(s.flipped?'':' hidden-grades')+'"'+(s.flipped?'':' aria-hidden="true"')+'>'+[['again','Снова'],['hard','Трудно'],['good','Хорошо'],['easy','Легко']].map(([g,l])=>'<button type="button" class="grade '+g+'" data-grade="'+g+'"'+ti+'>'+l+'<small>'+nx(g)+'</small></button>').join('')+'</div>'+
+  (s.flipped?'':'<button type="button" class="reveal fc-show" data-act="flip">Показать ответ</button>')+'</div>'+
+  '<div class="fc-row"><button type="button" class="quiet" data-act="undo"'+(s.hist.length?'':' disabled')+'>← Предыдущая</button>'+
+  (canKnow(s)?'<button type="button" class="quiet fc-know" data-act="kopen"'+(s.flipped||s.kbox?' disabled':'')+' title="Впиши латинское название: если верно — уровень 10, вид не повторяется полгода">Я знаю</button>':'')+'</div>'+
+  '<p class="fc-hint">'+(s.flipped?'Клавиши 1–4 — оценка':'Пробел — показать ответ')+'</p>';
+ $('cardBody').innerHTML=h;
+ const fail=()=>{if(session!==s||s.queue[0]!==b||s.flipped||s.blocked)return;s.blocked=true;const a=$('cardBody').querySelector('.fc-actions');if(a)a.innerHTML='<p class="error-media">Материал не загрузился. Пропусти карточку — прогресс не изменится.</p><button type="button" class="reveal" data-act="skip">Пропустить</button>';};
+ $('cardBody').querySelector('.fc-front img')?.addEventListener('error',fail,{once:true});$('cardBody').querySelector('.fc-front audio')?.addEventListener('error',fail,{once:true});
+ if(sm!=='names'&&!m)fail();
+ const f=$('cardBody').querySelector(s.blocked?'[data-act="skip"]':!s.flipped&&s.kbox?'#knownIn':s.flipped?'.grade.good':'[data-act="flip"]');f?.focus({preventScroll:true});
 }
-function answerCard(id){if(!session||session.revealed||session.blocked||!own()||session.uid!==uid)return;const s=session,b=s.queue[s.index];if(!s.choices.some(x=>x.id===id))return;
- s.revealed=true;const ok=id===b.id,k=key(b,s.mode,s.language),before=C.clean(states[k]).level,next=C.schedule(states[k],ok?'good':'again');saveState(k,next);s.rated++;if(ok)s.good++;
- $('answerChoices').querySelectorAll('button').forEach(button=>{button.disabled=true;button.hidden=button.dataset.answer!==b.id;button.classList.toggle('correct',button.dataset.answer===b.id);button.classList.toggle('wrong',!ok&&button.dataset.answer===id);});
- $('answerFeedback').textContent=(ok?'Верно!':'Правильный ответ: '+(s.language==='latin'?C.latinLabel(b.latin):b[s.language]))+ ' · Уровень '+before+' -> '+next.level+' / 10';
- $('answerFeedback').className=ok?'feedback-ok':'feedback-wrong';$('answerArea').hidden=false;
- $('answerArea').innerHTML='<h3>'+esc(b.ru)+'</h3>'+names(b)+'<p class="fact">'+esc(b.tip||'Смотри на сочетание признаков: силуэт, окраску, клюв и поведение. Одна фотография не показывает все варианты оперения.')+'</p>'+(window.BirdBiology?window.BirdBiology.render(b,{audio:false}):'')+credit(s.media);
- $('nextCard').hidden=false;$('nextCard').textContent=s.index+1===s.queue.length?'Завершить':'Следующая птица';render();$('nextCard').focus();
-}
-function nextCard(){if(!session||(!session.revealed&&!session.blocked))return;session.index++;if(session.index<session.queue.length)showCard();else finishSession(true);}
+function flip(){const s=session;if(!s||s.flipped||s.kbox||s.blocked||!s.queue.length)return;s.flipped=true;renderCard();const a=$('cardBody').querySelector('.fc-answer');if(a&&a.scrollIntoView)a.scrollIntoView({block:'start'});}
+function skip(){const s=session;if(!s||!s.blocked||!s.queue.length)return;s.queue.shift();s.skipped++;renderCard();}
+function grade(g){const s=session;if(!s||!s.flipped||!s.queue.length||!own()||s.uid!==uid)return;
+ const b=s.queue[0],k=key(b,s.mode,s.language),prev=states[k]?{...states[k]}:null;
+ s.hist.push({queue:s.queue.slice(),wait:s.wait.slice(),done:s.done,seen:s.seen.slice(),k,prev});
+ s.queue.shift();if(!(b.id in s.start))s.start[b.id]=C.clean(prev).level;
+ const next=C.schedule(prev,g,Date.now());saveState(k,next);if(!s.seen.includes(b))s.seen.push(b);
+ if(g==='again'){s.wait.push({b,due:next.due});s.wait.sort((x,y)=>x.due-y.due);}else s.done++;
+ s.flipped=false;s.kbox=false;s.kres='';render();renderCard();}
+function undo(){const s=session;if(!s||!s.hist.length||!own()||s.uid!==uid)return;const h=s.hist.pop();
+ s.queue=h.queue;s.wait=h.wait;s.done=h.done;s.seen=h.seen;s.flipped=true;s.kbox=false;s.kres='';s.kdone=null;
+ saveState(h.k,{...(h.prev?C.clean(h.prev):C.initial()),updatedAt:Date.now()});render();renderCard();}
+function latinAnswers(b){const out=new Set([C.normalizeAnswer(b.latin)]);for(const a of [b.aliases].flat(2).concat(Object.values(b.aliases&&!Array.isArray(b.aliases)?b.aliases:{}).flat()))if(typeof a==='string'&&/^[A-Z][a-z]+ [a-z-]+$/.test(a.trim()))out.add(C.normalizeAnswer(a));return out;}
+function checkKnown(){const s=session;if(!s||s.flipped||!s.kbox||!s.queue.length)return;const typed=($('knownIn')?.value||'').trim();if(!typed){$('knownIn')?.focus();return;}
+ const b=s.queue[0];s.kbox=false;s.flipped=true;
+ if(latinAnswers(b).has(C.normalizeAnswer(typed))){s.kdone={b,typed};grade('known');}else{s.kres=typed;renderCard();}}
+function renderKnown(){const s=session,b=s.kdone.b;sessionHead(s);
+ $('cardBody').innerHTML='<div class="kok" role="status"><div class="kok-ico" aria-hidden="true">✓</div><h2 id="cardTitle" class="kok-t">Засчитано</h2><div class="kok-w"><span>'+esc(b.ru)+'</span><b class="latin">'+esc(b.latin)+'</b></div><p>Вид отмечен как выученный: уровень 10, следующий показ не раньше чем через полгода.</p></div>'+
+  '<div class="fc-row"><button type="button" class="quiet" data-act="undo">Отменить</button><button type="button" class="reveal" data-act="knext">Дальше →</button></div>';
+ $('cardBody').querySelector('[data-act="knext"]').focus({preventScroll:true});}
+function renderWait(){const s=session,n=s.wait.length;sessionHead(s,'ПАУЗА');
+ $('cardBody').innerHTML='<div class="wait-box" role="status"><h2 id="cardTitle">Следующая карточка через</h2><div class="wait-n" id="waitN">—</div><p>'+n+' '+C.word(n,['вид ждёт','вида ждут','видов ждут'])+' повтора: после «Снова» карточка возвращается через 10 минут. Можно подождать здесь или закрыть — виды придут в «Повторить», когда подойдёт срок.</p></div>'+
+  '<div class="fc-row">'+(s.hist.length?'<button type="button" class="quiet" data-act="undo">← Предыдущая</button>':'')+'<button type="button" class="quiet" data-act="wend">Завершить</button></div>';
+ const tick=()=>{if(session!==s||!s.wait.length){clearInterval(s.timer);return;}const ms=s.wait[0].due-Date.now();if(ms<=0){clearInterval(s.timer);s.timer=null;renderCard();return;}const t=Math.ceil(ms/1000),e=$('waitN');if(e)e.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');};
+ s.timer=setInterval(tick,1000);tick();}
+function renderDone(){const s=session;clearInterval(s.timer);s.timer=null;const now=Date.now(),due=eligible().filter(b=>C.due(state(b),now)).length;sessionHead(s,'ИТОГ');
+ const rows=s.seen.map(b=>{const st=C.clean(states[key(b,s.mode,s.language)]);return '<li><span>'+esc(b.ru)+'</span><em class="latin">'+esc(b.latin)+'</em><b>'+s.start[b.id]+' → '+st.level+(st.due>now?' · через '+C.ivlLabel(st.due-now):'')+'</b></li>';}).join('');
+ $('cardBody').innerHTML='<div class="fc-done"><h2 id="cardTitle">Занятие завершено</h2><p class="session-results">Видов: '+s.seen.length+(s.skipped?' · пропущено: '+s.skipped:'')+'. Сейчас к повторению: '+due+'.</p>'+(rows?'<ol class="fc-list">'+rows+'</ol>':'')+'</div>'+
+  '<div class="fc-row">'+(s.hist.length?'<button type="button" class="quiet" data-act="undo">← Предыдущая</button>':'')+'<button type="button" class="reveal" id="doneBtn" data-act="close">Закрыть</button></div>';
+ $('doneBtn').focus({preventScroll:true});}
 async function saveState(k,v){if(!own()||session&&session.uid!==uid)return;states[k]=v;write('progress:'+uid,states);if(me){const pending=read('pending:'+uid,{});pending[k]=v;write('pending:'+uid,pending);await syncPending();}}
 async function syncPending(){if(!db||!me||uid!==me.uid||!cloudReady)return;const saveUid=me.uid,pending=read('pending:'+saveUid,{});if(!Object.keys(pending).length)return;
  cloudState='Сохраняю прогресс…';showNotice();try{const batch=db.batch();for(const[k,v]of Object.entries(pending).slice(0,400))batch.set(db.doc('profiles/'+saveUid+'/birdProgress/'+k),v);await batch.commit();const currentPending=read('pending:'+saveUid,{});for(const[k,v]of Object.entries(pending).slice(0,400))if(currentPending[k]?.updatedAt===v.updatedAt)delete currentPending[k];write('pending:'+saveUid,currentPending);if(me?.uid===saveUid){cloudState='Прогресс сохранён в аккаунте.';showNotice();}}catch(e){if(me?.uid===saveUid){cloudState=e.code==='permission-denied'?'На этом устройстве сохранено. Облачный доступ к карточкам птиц ещё не включён.':'На этом устройстве сохранено. Синхронизация повторится при подключении.';showNotice();}}}
-function finishSession(done){stopAudio();if(!session)return;if(!done){session=null;if($('cardDialog').open)closeDialog('cardDialog');return;}const s=session;session=null;for(const id of ['cardMedia','questionArea','answerArea'])$(id).innerHTML='';$('answerFeedback').textContent='';for(const id of ['answerChoices','nextCard','answerArea'])$(id).hidden=true;$('cardTitle').textContent='Занятие завершено';$('sessionCount').textContent='ОТЛИЧНАЯ РАБОТА';$('sessionDone').hidden=false;$('sessionDone').innerHTML='<h3>'+s.rated+' карточек</h3><p class="session-results">Верных ответов: '+s.good+' / '+s.rated+'.<br>Повторения назначены отдельно для этого режима.</p><button class="reveal" id="doneBtn">Вернуться к видам</button>';}
+function finishSession(){stopAudio();if(!session)return;clearInterval(session.timer);session=null;if($('cardDialog').open)closeDialog('cardDialog');render();}
 function names(b){return '<dl class="bird-names"><dt>англ.</dt><dd class="name-en">'+esc(b.en)+'</dd><dt>лат.</dt><dd class="name-latin latin">'+esc(C.latinLabel(b.latin))+'</dd><dt>пол.</dt><dd class="name-pl">'+esc(b.pl)+'</dd></dl>';}
 function info(title,html){$('infoTitle').textContent=title;$('infoBody').innerHTML=html;openDialog('infoDialog');}
 function detail(b){info(b.ru,(b.photos[0]?'<div class="card-media"><img src="'+esc(b.photos[0].src)+'" alt="'+esc(b.ru)+'"></div>':'')+names(b)+'<p class="fact">'+esc(b.tip||'')+'</p>'+(window.BirdBiology?window.BirdBiology.render(b):(b.audio[0]?'<h3>Голос</h3><audio controls preload="none" src="'+esc(b.audio[0].src)+'" style="width:100%"></audio>':''))+b.photos.concat(window.BirdBiology?[]:b.audio).map(credit).join('')+'<div class="detail-actions">'+(own()?'<button class="quiet" data-start-bird="'+b.id+'">Учить в этом режиме</button>':'<p>Доступен только просмотр чужого прогресса.</p>')+'</div>');}
@@ -88,11 +136,13 @@ async function initCloud(){if(new URLSearchParams(location.search).get('offline'
 // Events are delegated so card re-rendering does not duplicate listeners.
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
 $('language').addEventListener('change',()=>{language=$('language').value;write('settings',{...read('settings',{}),testLanguage:language});render();});$('groups').addEventListener('click',e=>{const b=e.target.closest('[data-group]');if(b){group=b.dataset.group;renderGroups();render();}});$('search').addEventListener('input',renderCatalog);$('statusFilter').addEventListener('change',renderCatalog);$('birdGrid').addEventListener('click',e=>{const b=e.target.closest('[data-bird]');if(b)detail(BIRDS.find(x=>x.id===b.dataset.bird));});
-$('reviewBtn').addEventListener('click',()=>start('due'));$('learnBtn').addEventListener('click',()=>start('new'));$('nextCard').addEventListener('click',nextCard);
-$('answerChoices').addEventListener('click',e=>{const b=e.target.closest('[data-answer]');if(b)answerCard(b.dataset.answer);});
-$('closeCard').addEventListener('click',()=>{if(session)finishSession(false);else closeDialog('cardDialog');});$('cardDialog').addEventListener('cancel',()=>{stopAudio();session=null;});$('cardDialog').addEventListener('click',e=>{if(e.target.closest('#doneBtn'))closeDialog('cardDialog');});$('closeInfo').addEventListener('click',()=>{stopAudio();closeDialog('infoDialog');});$('infoDialog').addEventListener('cancel',stopAudio);
+$('reviewBtn').addEventListener('click',()=>start('due'));$('learnBtn').addEventListener('click',()=>start('new'));
+$('cardDialog').addEventListener('click',e=>{const a=e.target.closest('[data-act],[data-grade]');if(!a||a.disabled||!session)return;if(a.dataset.grade){grade(a.dataset.grade);return;}
+ const act=a.dataset.act;if(act==='flip')flip();else if(act==='undo')undo();else if(act==='skip')skip();else if(act==='kopen'){session.kbox=true;renderCard();}else if(act==='kcancel'){session.kbox=false;renderCard();}else if(act==='knext'){session.kdone=null;renderCard();}else if(act==='wend'){session.wait=[];renderDone();}else if(act==='close')finishSession();});
+$('cardDialog').addEventListener('submit',e=>{if(e.target.id==='knownForm'){e.preventDefault();checkKnown();}});
+$('closeCard').addEventListener('click',()=>{if(session)finishSession();else closeDialog('cardDialog');});$('cardDialog').addEventListener('cancel',()=>{stopAudio();if(session)clearInterval(session.timer);session=null;render();});$('closeInfo').addEventListener('click',()=>{stopAudio();closeDialog('infoDialog');});$('infoDialog').addEventListener('cancel',stopAudio);
 $('profileSelect').addEventListener('change',()=>selectProfile($('profileSelect').value));$('backToMe').addEventListener('click',()=>me&&selectProfile(me.uid));$('accountBtn').addEventListener('click',account);$('settingsBtn').addEventListener('click',settings);
-$('helpBtn').addEventListener('click',()=>info('Как работают тесты','<p>Выбери фото, голоса или названия, язык ответов и группу птиц. «Изучать» открывает новые карточки, «Повторить» - те, срок которых наступил.</p><p>В каждой карточке шесть вариантов: правильный и пять случайных. Они заново подбираются и перемешиваются при каждом показе.</p><ul><li>Верный ответ: уровень +1, интервал повторения растёт.</li><li>Ошибка: уровень -2, повтор через 10 минут.</li><li>Если материал не загрузился, карточку можно пропустить без изменения прогресса.</li></ul><p>Результат сохраняется сразу после выбора ответа. Уровень ограничен шкалой 0-10. Для английского, латыни и польского прогресс по фото и голосам считается отдельно; прежний прогресс по фото и голосам сохранён как русский.</p>'));
+$('helpBtn').addEventListener('click',()=>info('Как работают карточки','<p>Карточки устроены как в Anki и на сайте английского. Выбери фото, голоса или названия и группу птиц. «Изучать» открывает новые виды, «Повторить» — те, у которых подошёл срок. В дереве «Учить ветку» берёт виды выбранной ветки.</p><ol><li>Посмотри на фото, послушай голос или прочитай название и вспомни вид.</li><li>Нажми «Показать ответ» (или пробел): откроются русское, латинское с чтением, польское и английское названия, биотоп и голос.</li><li>Оцени себя: «Снова» — карточка вернётся через 10 минут; «Трудно», «Хорошо», «Легко» — через растущее число дней. Под кнопкой видно, когда вид вернётся. Клавиши 1–4 тоже работают.</li></ol><p>«Я знаю» — впиши латинское название до ответа. Если верно, вид получает уровень 10 и не повторяется полгода. «← Предыдущая» отменяет последнюю оценку.</p><p>Уровень 0–10 показывает текущий интервал: 2 — сутки, 5 — неделя, 8 — полтора месяца, 10 — полгода и больше. Фото, голоса и названия на каждом языке имеют отдельный прогресс. Если материал не загрузился, карточку можно пропустить без изменения прогресса.</p>'));
 $('creditsBtn').addEventListener('click',()=>info('Авторы фото и записей','<p>Фотографии и записи получены из Wikimedia Commons, iNaturalist и xeno-canto; источники каждого материала указаны отдельно. Для каждого сохранены автор, ссылка на оригинал и лицензия. Записи и снимки не созданы ИИ.</p><ol class="credits-list">'+BIRDS.flatMap(b=>b.photos.concat(b.audio).map(m=>'<li><strong>'+esc(b.ru)+'</strong> · '+(m.mime.startsWith('audio')?'аудио':'фото')+credit(m)+'</li>')).join('')+'</ol>'));
 $('infoDialog').addEventListener('submit',e=>{if(e.target.id==='birdAuth'){e.preventDefault();doAuth(false);}});
 $('infoDialog').addEventListener('click',e=>{if(e.target.closest('#register'))doAuth(true);if(e.target.closest('#logout'))auth?.signOut().then(()=>closeDialog('infoDialog'));if(e.target.closest('[data-start-bird]')){const b=BIRDS.find(b=>b.id===e.target.closest('[data-start-bird]').dataset.startBird);stopAudio();closeDialog('infoDialog');if(available(b))start('new',b);}
@@ -101,7 +151,7 @@ $('infoDialog').addEventListener('click',e=>{if(e.target.closest('#register'))do
  if(e.target.closest('#importGuest')&&me&&own()){const guest=cleanMap(read('progress:guest',{}));for(const[k,v]of Object.entries(guest))if(!states[k]||states[k].updatedAt<v.updatedAt)states[k]=v;write('progress:'+uid,states);write('pending:'+uid,{...read('pending:'+uid,{}),...states});syncPending();render();$('accountMessage').textContent='Гостевой прогресс перенесён. Более свежие результаты сохранены.';}
 });
 $('infoDialog').addEventListener('change',e=>{if(e.target.id==='progressFile')importProgress(e.target.files[0]);});
-document.addEventListener('keydown',e=>{if(!session||!$('cardDialog').open||e.repeat||e.target.matches('input,textarea,select'))return;if(!session.revealed&&!session.blocked&&/^[1-6]$/.test(e.key)){e.preventDefault();const option=session.choices[Number(e.key)-1];if(option)answerCard(option.id);}});
+document.addEventListener('keydown',e=>{const s=session;if(!s||!$('cardDialog').open||e.repeat||e.target.matches('input,textarea,select'))return;if(e.key===' '&&!s.flipped&&!e.target.closest('button')){e.preventDefault();flip();}else if(s.flipped&&!s.kdone&&/^[1-4]$/.test(e.key)){e.preventDefault();grade(['again','hard','good','easy'][Number(e.key)-1]);}});
 window.addEventListener('online',syncPending);window.addEventListener('pagehide',stopAudio);
 // Shared progress API for the phylogenetic board; no second progress store.
 window.BirdAtlas={
@@ -110,13 +160,7 @@ window.BirdAtlas={
  state:id=>C.clean(states[key(BIRDS.find(b=>b.id===id))]),
  available:id=>available(BIRDS.find(b=>b.id===id)),
  detail:id=>detail(BIRDS.find(b=>b.id===id)),
- grade:(id,correct,context)=>{
-  if(!own()||context.uid!==uid||context.mode!==mode||context.language!==language)return null;
-  const b=BIRDS.find(b=>b.id===id);if(!b||!available(b))return null;
-  const k=key(b),next=C.schedule(states[k],correct?'good':'again');
-  saveState(k,next);render();return next.level;
- }
+ study:(ids,title)=>study(ids,title)
 };
 states=cleanMap(read('progress:guest',{}));$('language').value=language;renderGroups();renderProfiles();render();initCloud();
 })();
-
