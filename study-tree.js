@@ -20,11 +20,11 @@ function restoreFilters(){
 }
 function saveFilters(){try{localStorage.setItem(FILTER_KEY,JSON.stringify(Object.fromEntries(FILTER_IDS.map(id=>[id,$(id).checked]))));}catch(e){}}
 function prune(n,filters,parentMatch=false){
- const {q,local,typical,seasons,includeVagrants}=filters,match=parentMatch||!q||C.normalizeAnswer(C.searchNames(n)).includes(q);
+ const {q,local,typical,seasons,includeVagrants}=filters,match=parentMatch||!q||C.matchesName(n,q);
  if(n.rank==='species'){
   const region=window.BirdTaxonomy.region(n);
   if(typical&&!isTypical(n))return null;
-  if(local&&(!region||(seasons.length&&!seasons.some(k=>region.seasons?.[k]))))return null;
+  if(local&&(!region||!['A','C'].includes(region.category)||(seasons.length&&!seasons.some(k=>region.seasons?.[k]))))return null;
   if(!local&&!includeVagrants&&n.vagrant)return null;
   return match?n:null;
  }
@@ -112,7 +112,7 @@ function go(id){currentId=id;history.pushState({...(history.state||{}),tree:id,d
 function anchorOffset(){const v=document.querySelector('.board-views'),t=$('treeBoard');if(!v||t.hidden)return;document.documentElement.style.setProperty('--board-lead',Math.max(0,Math.round(t.getBoundingClientRect().top-v.getBoundingClientRect().top+8))+'px');}
 function render(){const ctx=A.context();
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
- $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Для дополнительных отрядов состав неполный.</p><p>Полоса под ветвью: зелёный — выучено, золотой — повторяю, голубой — изучаю. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
+ $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Дополнительные отряды теперь включают виды из списка Польши; их европейский состав остаётся неполным. Новые виды пока без фото.</p><p>Полоса под ветвью: зелёный — выучено, золотой — повторяю, голубой — изучаю. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
  // The breadcrumbs end on the open level; the cut-off start fades out.
  const c=$('treeBoard').querySelector('.drill-crumbs');if(c){c.scrollLeft=c.scrollWidth;fade(c);}
  anchorOffset();

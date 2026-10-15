@@ -4,12 +4,13 @@
  const crow=birds.find(b=>b.id==='hooded-crow');
  if(crow){crow.aliases=[crow.ru,crow.en,crow.latin,crow.pl,'Серая ворона','Чёрная ворона','Черная ворона','Wrona siwa','Czarnowron'];crow.latin='Corvus corone';crow.tip='По AviList серая и чёрная вороны относятся к одному виду Corvus corone. Серая форма: Corvus corone cornix (ранее Corvus cornix). В тестах проверяется вид; окраска форм различается.';}
  const byLatin=new Map(birds.map(b=>[b.latin,b]));
+ const aliasesOf=b=>Array.isArray(b.aliases)?b.aliases:Object.values(b.aliases||{}).flat();
  function link(n,family){
   if(n.rank==='family')family=n;
   if(n.rank==='species'){
    let b=byLatin.get(n.latin);const photo=window.BIRD_PHOTOS?.[n.id];
    if(!b){b={id:n.id,group:family?.latin==='Corvidae'?'corvid':'unclassified',photos:photo?[photo]:[],audio:[],tip:''};birds.push(b);byLatin.set(n.latin,b);}
-   const aliases=[...(Array.isArray(b.aliases)?b.aliases:Object.values(b.aliases||{}).flat()),...(n.aliases||[]),b.ru,b.en,b.pl,n.latin];
+   const aliases=[...aliasesOf(b),...(n.aliases||[]),b.ru,b.en,b.pl,n.latin];
    Object.assign(b,{ru:n.ru,en:n.en,pl:n.pl,latin:n.latin,treeId:n.id});
    b.aliases=[...new Set(aliases.filter(Boolean))];n.aliases=b.aliases;n.birdId=b.id;
    if(n.latin==='Corvus corone'&&photo&&!b.photos.some(p=>p.src===photo.src))b.photos.push(photo);
@@ -41,6 +42,27 @@
   }
  }
  window.STUDY_TREE={id:'Aves',rank:'class',ru:'Птицы Европы',latin:'Aves',children:[window.PASSERINE_TREE.root,...orders.values()]};
+ // Extend the existing branches; scientific names are the canonical species identity.
+ const additions=window.POLAND_ADDITIONS,treeNodes=new Map();
+ (function index(n){treeNodes.set(n.id,n);(n.children||[]).forEach(index);})(window.STUDY_TREE);
+ for(const [latin,variants]of Object.entries(additions?.aliases||{})){
+  const b=byLatin.get(latin),n=treeNodes.get(b?.treeId);if(!b||!n)continue;
+  b.aliases=[...new Set([...aliasesOf(b),...variants])];n.aliases=b.aliases;
+ }
+ for(const row of additions?.records||[]){
+  if(byLatin.has(row.latin))continue;
+  const order=treeNodes.get(row.order)||branch(window.STUDY_TREE.children,row.order,row.orderRu,'order');
+  const family=treeNodes.get(row.family)||branch(order.children,row.family,row.familyRu,'family');
+  const genus=branch(family.children,row.genus,row.genus,'genus'),id=row.latin.replaceAll(' ','_');
+  const n={id,rank:'species',ru:row.ru,en:row.en,pl:row.pl,latin:row.latin,aliases:[],vagrant:null};
+  genus.children.push(n);treeNodes.set(order.id,order);treeNodes.set(family.id,family);treeNodes.set(genus.id,genus);treeNodes.set(id,n);
+  link(n,family);
+  const b=byLatin.get(row.latin);b.importSource=additions.source;b.polandStatus=row.statusText;
+  b.tip='Вид добавлен из списка птиц Польши. Фотография пока не добавлена.';
+  const evidence={};
+  for(const season of ['breeding','passage'])if(row.seasons[season]===true)evidence[season]={url:additions.statusSource,basis:'National list 2026-06-01: '+row.status};
+  regions[id]={latin:row.latin,category:row.category,status:row.status,rare:row.rare,seasons:{...row.seasons},evidence};
+ }
  window.BIRD_ID_ALIASES={Corvus_corone:'hooded-crow'};
  const region=n=>regions[n.treeId||n.id];
  const leaves=n=>n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);

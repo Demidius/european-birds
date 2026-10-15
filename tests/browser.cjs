@@ -29,7 +29,7 @@ try{
  assert.equal(await page.locator('.drill-bar').evaluate(e=>getComputedStyle(e).position),'sticky');
 
  // Root level: orders only, nothing to go back to.
- assert.equal(await total(),435);assert.ok(await page.locator('.drill-row[data-tree-go="Passeriformes"]').count());
+ assert.equal(await total(),713);assert.ok(await page.locator('.drill-row[data-tree-go="Passeriformes"]').count());
  assert.equal(await page.locator('.drill-back').isDisabled(),true);
 
  // Search by any of the four languages and by former names.
@@ -39,22 +39,38 @@ try{
   for(const lang of ['ru','la','pl'])assert.equal(await page.locator('.drill-species [lang='+lang+']').count(),1,query+' '+lang);
   assert.match(await page.locator('.drill-crumbs').innerText(),/Поиск/);
  }
- await page.locator('.drill-back').click();assert.equal(await page.locator('#treeSearch').inputValue(),'','Back clears the search');assert.equal(await total(),435);
+ await page.locator('.drill-back').click();assert.equal(await page.locator('#treeSearch').inputValue(),'','Back clears the search');assert.equal(await total(),713);
 
  // Filters: vagrants, Poland and seasons. The chips open from one button; the count and the summary show what is on.
  assert.equal(await page.locator('#filterPanel').isHidden(),true);await page.locator('#filterToggle').click();assert.equal(await page.locator('#filterToggle').getAttribute('aria-expanded'),'true');
  await page.locator('#includeVagrants').uncheck();await page.locator('#treeSearch').fill('Ficedula parva');assert.equal(await page.locator('[data-tree-species="Ficedula_parva"]').count(),1);await page.locator('#treeSearch').fill('');
- await page.locator('#onlyPoland').check();assert.equal(await total(),196);
+ await page.locator('#onlyPoland').check();assert.equal(await total(),471);
  for(const latin of ['Corvus corone','Anas platyrhynchos','Columba palumbus','Ardea cinerea']){await page.locator('#treeSearch').fill(latin);assert.equal(await page.locator('[data-tree-species="'+await idOf(latin)+'"]').count(),1,latin);}
  await page.locator('#treeSearch').fill('');
- await page.locator('#polandBreeding').check();const breeding=await total();assert.ok(breeding<196);
+ await page.locator('#polandBreeding').check();const breeding=await total();assert.ok(breeding<471);
  await page.locator('#treeSearch').fill('Anas platyrhynchos');assert.equal(await page.locator('[data-tree-species="mallard"]').count(),1);await page.locator('#treeSearch').fill('');
  await page.locator('#polandWinter').check();assert.ok(await total()>=breeding,'seasons combine with OR');
  await page.locator('#onlyPoland').uncheck();assert.equal(await page.locator('#polandBreeding').isChecked(),false);assert.equal(await page.locator('#polandWinter').isChecked(),false);
- await page.locator('#includeVagrants').check();assert.equal(await total(),435);
+ await page.locator('#includeVagrants').check();assert.equal(await total(),713);
  await page.locator('#onlyPoland').check();assert.equal(await page.locator('#includeVagrants').isDisabled(),true,'vagrants do not apply inside Poland');await page.locator('#filterToggle').click();
  assert.equal(await page.locator('#filterCount').innerText(),'1');assert.match(await page.locator('#filterSummary').innerText(),/Только Польша/);
- await page.locator('[data-filter-reset]').click();assert.equal(await total(),435);assert.equal(await page.locator('#filterCount').isHidden(),true);assert.equal(await page.locator('#filterSummary').isHidden(),true);
+ await page.locator('[data-filter-reset]').click();assert.equal(await total(),713);assert.equal(await page.locator('#filterCount').isHidden(),true);assert.equal(await page.locator('#filterSummary').isHidden(),true);
+
+ // Imported birds are browsable without photos, and names can be studied immediately.
+ await page.locator('#treeSearch').fill('Ciconia ciconia');assert.equal(await page.locator('.drill-species').count(),1,'a tautonym does not match the whole genus');
+ assert.equal(await page.locator('[data-tree-species="Ciconia_ciconia"] img').count(),0);
+ assert.equal(await page.locator('[data-tree-test="Ciconia_ciconia"]').isDisabled(),true);
+ await page.locator('[data-tree-detail="Ciconia_ciconia"]').click();assert.match(await page.locator('#infoBody').innerText(),/гнездится/);
+ assert.equal(await page.locator('#infoBody img').count(),0);assert.equal(await page.locator('[data-start-bird]').isDisabled(),true);await page.locator('#closeInfo').click();
+ await page.locator('#catalogView').click();assert.equal(await page.locator('.bird-tile').count(),1);assert.match(await page.locator('.bird-tile').innerText(),/Без фото/);
+ await page.locator('[data-mode="names"]').click();assert.equal(await page.locator('#newCount').innerText(),'1');
+ await page.locator('#learnBtn').click();await page.locator('[data-act="flip"]').click();assert.match(await page.locator('#cardBody').innerText(),/Ciconia ciconia/);
+ assert.equal(await page.locator('#cardBody img').count(),0);await page.locator('[data-grade="good"]').click();await page.locator('#closeCard').click();
+ await page.locator('[data-mode="photo"]').click();await page.locator('#treeView').click();
+ await page.locator('#treeSearch').fill('Columba livia forma urbana');assert.equal(await page.locator('.drill-species').count(),1);assert.equal(await page.locator('[data-tree-species="rock-dove"]').count(),1,'the urban form reuses the existing pigeon');
+ await page.locator('#treeSearch').fill('Ciconia ciconia');
+ for(const width of [390,1440]){await page.setViewportSize({width,height:844});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,'imported-stork-'+width+'.png')});}
+ await page.locator('#treeSearch').fill('');
 
  // Drill-down, breadcrumbs, the Back button and browser history.
  await page.locator('[data-tree-go="Passeriformes"]').click();assert.equal(await hero(),'Воробьинообразные');

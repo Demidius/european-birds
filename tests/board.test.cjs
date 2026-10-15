@@ -6,7 +6,7 @@ function fixture(){
  w.localStorage.setItem('europeanBirds:filters',JSON.stringify({typicalPoland:false,onlyPoland:false}));
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
  w.Element.prototype.scrollIntoView=function(){};w.Element.prototype.scrollTo=function(){};
- for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','species-board.js'])w.eval(read(f));
+ for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','species-board.js'])w.eval(read(f));
  const B=d.getElementById('speciesBoard'),$=s=>B.querySelector(s),$$=s=>[...B.querySelectorAll(s)];
  return {w,d,B,$,$$,close:()=>w.close()};
 }
@@ -16,7 +16,7 @@ test('Board tab shows group columns, family dividers and every genus once',()=>{
   d.getElementById('boardView').click();assert.equal(B.hidden,false);assert.equal(d.getElementById('treeBoard').hidden,true);
   assert.equal(d.getElementById('boardView').getAttribute('aria-pressed'),'true');
   assert.deepEqual($$('.sb-head h3').map(h=>h.textContent),['Враноподобные','Славкоподобные','Мухоловкоподобные','Воробьиная клада','Неворобьиные','Кричащие воробьинообразные'],'vagrant-only group goes last');
-  assert.equal($$('.sb-card').length,168);assert.equal($$('.sb-fam').length,51);assert.equal($$('.sb-bar i').length,435);
+  assert.equal($$('.sb-card').length,311);assert.equal($$('.sb-fam').length,83);assert.equal($$('.sb-bar i').length,713);
   assert.match($('.sb-stat').textContent,/выучено 0 из \d+ видов/);
   const parus=$('[data-sb-genus="Parus"]');assert.match(parus.textContent,/Большие синицы/);assert.match(parus.textContent,/PL 1/);assert.match(parus.textContent,/0\/1 · 0%/);
   assert.equal($$('.sb-col.on').length,1,'one column is active for phones');
@@ -41,7 +41,7 @@ test('Genus opens its species; filters and status chips narrow the board',()=>{
   card.querySelector('[data-tree-detail="blue-tit"]').click();assert.equal(d.getElementById('infoDialog').open,true);d.getElementById('closeInfo').click();
   $('[data-sb-toggle="Cyanistes"]').click();assert.equal($('[data-sb-genus="Cyanistes"] .drill-species'),null);
   d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));
-  assert.ok(!$$('.sb-head h3').some(h=>/Кричащие/.test(h.textContent)),'no Poland species among tyrant flycatchers');assert.equal($$('.sb-bar i').length,196);
+  assert.ok(!$$('.sb-head h3').some(h=>/Кричащие/.test(h.textContent)),'no Poland species among tyrant flycatchers');assert.equal($$('.sb-bar i').length,471);
   d.getElementById('onlyPoland').checked=false;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));
   d.getElementById('treeSearch').value='Parus major';d.getElementById('treeSearch').dispatchEvent(new w.Event('input'));
   assert.equal($$('.sb-card').length,1);assert.equal($$('.sb-col').length,1);
