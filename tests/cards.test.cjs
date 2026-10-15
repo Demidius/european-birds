@@ -4,6 +4,7 @@ const read=f=>fs.readFileSync(path.join(__dirname,'..',f),'utf8');
 function fixture(progress){
  const dom=new JSDOM(read('study.html'),{url:'https://example.org/?offline=1',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window,d=w.document;
  if(progress)w.localStorage.setItem('europeanBirds:v1:progress:guest',JSON.stringify(progress));
+ w.localStorage.setItem('europeanBirds:filters',JSON.stringify({typicalPoland:false,onlyPoland:false}));
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
  let now=Date.UTC(2026,9,15,12);w.Date.now=()=>now;
  for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js'])w.eval(read(f));

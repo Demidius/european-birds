@@ -38,8 +38,15 @@ function latinReading(value){
  });
 }
 function latinLabel(value){return value?value+' ('+latinReading(value)+')':'';}
+function status(s){return s.reps===0?'new':s.level>=10?'mastered':s.level>=5?'review':'learning';}
+function progress(states){
+ const out={n:states.length,new:0,learning:0,review:0,mastered:0,pct:0,status:'new'};
+ let levels=0;for(const s of states){out[status(s)]++;levels+=s.level;}
+ if(out.n){out.pct=Math.round(levels/(10*out.n)*100);out.status=out.new===out.n?'new':out.mastered===out.n?'mastered':out.review+out.mastered===out.n?'review':'learning';}
+ return out;
+}
 function due(s,now=Date.now()){return s&&s.reps>0&&s.due<=now;}
 function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function queue(birds,states,key,kind,now=Date.now(),limit=20){let a=birds.filter(b=>kind==='new'?!states[key(b)]||states[key(b)].reps===0:due(states[key(b)],now));if(kind==='new')a=shuffle(a);else a.sort((a,b)=>states[key(a)].due-states[key(b)].due);return a.slice(0,limit);}
-const api={DAY,initial,clean,schedule,levelFor,ivlLabel,normalizeAnswer,word,searchNames,latinReading,latinLabel,due,shuffle,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
+const api={DAY,initial,clean,schedule,levelFor,ivlLabel,normalizeAnswer,word,searchNames,latinReading,latinLabel,status,progress,due,shuffle,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
