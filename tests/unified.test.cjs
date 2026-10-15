@@ -27,6 +27,28 @@ d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').d
 search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.drill-species').length,0);assert.ok(d.querySelector('.drill-empty'));assert.equal(d.getElementById('learnBtn').disabled,true);
 }finally{close()}});
 
+test('Tree board: one study button per level, branch photos and progress, filter count and reset',()=>{
+const {w,d,go,total,close}=fixture();try{
+assert.equal(d.getElementById('testTitBranch'),null,'no second whole-tree button');assert.equal(d.querySelectorAll('[data-test-branch]').length,1);assert.ok(d.querySelector('.drill-bar .drill-branch-test'),'the study button sits in the pinned bar');
+assert.equal(d.querySelector('.tree-score-rule'),null);assert.match(d.querySelector('.tree-mode').textContent,/По фото · русский/);
+// With thumbnails on, every row photo is a local square thumbnail that exists in the repository.
+if(w.BirdTree.thumbs)for(const b of w.BIRD_DATA){const src=b.photos[0].src;if(/^assets\/(photos|bird-photos)\//.test(src))assert.ok(fs.existsSync(path.join(__dirname,'..',src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'))),'thumbnail for '+src);}
+const imgs=[...d.querySelectorAll('.drill-row .drill-thumb img')];assert.equal(imgs.length,d.querySelectorAll('.drill-row').length,'every branch has a photo');assert.ok(imgs.every(i=>w.BirdTree.thumbs?/^assets\/thumbs\//.test(i.getAttribute('src'))&&i.dataset.full:/^assets\/(photos|bird-photos)\//.test(i.getAttribute('src'))));
+assert.equal(d.querySelectorAll('.drill-prog').length,0,'no empty progress bars before any study');
+go('Passeriformes');go('Paridae');d.querySelector('[data-tree-test="great-tit"]').click();const body=d.getElementById('cardBody');body.querySelector('[data-act="flip"]').click();body.querySelector('[data-grade="good"]').click();d.getElementById('closeCard').click();
+assert.ok(d.querySelector('.drill-hero .drill-prog .learning'),'the open level shows its progress');assert.match(d.querySelector('.drill-total').textContent,/изучаю 1/);
+go('Passeriformes');const row=d.querySelector('.drill-row[data-tree-go="Paridae"]');assert.ok(row.querySelector('.drill-prog .learning'));assert.match(row.querySelector('.drill-count').textContent,/10 видов · изучаю 1/);
+// Filters: the count, the summary while the panel is closed, vagrants off inside Poland, and reset.
+const check=id=>{const e=d.getElementById(id);e.checked=!e.checked;e.dispatchEvent(new w.Event('change'));};
+assert.equal(d.getElementById('filterCount').hidden,true);check('polandBreeding');
+assert.equal(d.getElementById('onlyPoland').checked,true);assert.equal(d.getElementById('filterCount').textContent,'2');assert.equal(d.getElementById('includeVagrants').disabled,true);
+const summary=d.getElementById('filterSummary');assert.equal(summary.hidden,false);assert.match(summary.textContent,/Только Польша · Гнездятся/);
+d.getElementById('filterToggle').click();assert.equal(d.getElementById('filterPanel').hidden,false);assert.equal(summary.hidden,true,'the open panel shows the chips themselves');d.getElementById('filterToggle').click();
+summary.querySelector('[data-filter-reset]').click();assert.equal(d.getElementById('onlyPoland').checked,false);assert.equal(d.getElementById('polandBreeding').checked,false);assert.equal(d.getElementById('includeVagrants').checked,true);assert.equal(d.getElementById('includeVagrants').disabled,false);
+assert.equal(d.getElementById('filterCount').hidden,true);assert.equal(summary.hidden,true);
+check('includeVagrants');assert.equal(d.getElementById('filterCount').textContent,'1');assert.match(summary.textContent,/Без редких залётов/);check('includeVagrants');
+}finally{close()}});
+
 test('Latin names have Russian readings; species and name cards show every name on the back',()=>{
 const {w,d,close}=fixture();try{
 assert.equal(w.BirdStudy.latinLabel('Pyrrhula pyrrhula'),'Pyrrhula pyrrhula (Пиррула пиррула)');
