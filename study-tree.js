@@ -42,8 +42,8 @@ const POLAND=()=>window.BIRD_REGIONS?.poland?.species||{};
 // The Latin name stays gold; its Russian reading is quieter so the name itself is easy to scan.
 const latinHTML=latin=>latin?esc(latin)+' <span class="drill-read">('+esc(C.latinReading(latin))+')</span>':'';
 // Rows load a 160 px square thumbnail (tools/build-thumbs.py -> assets/thumbs/) and fall back to the full photo.
-// THUMBS stays false until assets/thumbs/ is in the repository, so no row asks for a missing file.
-const THUMBS=false;
+// assets/thumbs/ is built by .github/workflows/thumbs.yml whenever photos change.
+const THUMBS=true;
 const thumbOf=src=>THUMBS&&/^assets\/(photos|bird-photos)\/[^/]+\.(jpe?g|png|webp)$/i.test(src||'')?src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'):src;
 function photoHTML(photo){if(!photo)return '<span>нет фото</span>';const t=thumbOf(photo.src);return '<img src="'+esc(t)+'"'+(t!==photo.src?' data-full="'+esc(photo.src)+'" onerror="this.onerror=null;this.src=this.dataset.full"':'')+' alt="" width="80" height="80" loading="lazy" decoding="async">';}
 // Progress of a branch: only species that can be studied in the current mode count.
