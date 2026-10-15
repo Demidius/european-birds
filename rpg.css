@@ -1,0 +1,118 @@
+/* RPG skin, the same as the RPG theme of English File · Skill Tree:
+   steel pixel frames with a hard shadow, square corners, yellow primary buttons that press down,
+   coloured "quest" banners and status-coloured cards. Loaded after every other stylesheet. */
+:root{color-scheme:dark;--bg:#1C1C20;--panel:#26262B;--panel2:#2C2C32;--ink:#EDF2F4;--muted:#AEB2C7;--line:#3F3F48;--gold:#FFD166;--green:#06D6A0;--cyan:#4CC9F0;--none:#44444E;--learn:#4CC9F0;--review:#FFD166;--master:#06D6A0;
+ --frame:#8D99AE;--deep:#0E0E12;--pink:#EF476F;--btn-ink:#2B2D42;--yellow-edge:#735E2E;--quest:#3D4F66}
+*,*::before,*::after{border-radius:0!important}
+body{background:var(--bg)}
+
+/* Windows: steel frame, a dark inner line and a hard drop shadow. */
+.site-header,.study-hub,.tree-board,.tf-panel,.intro-badge,dialog{border:3px solid var(--frame);box-shadow:inset 0 0 0 2px var(--bg),4px 4px 0 var(--deep);background:var(--panel)}
+dialog{box-shadow:inset 0 0 0 2px var(--bg),6px 6px 0 var(--deep)}
+.site-header{width:calc(100% - 64px);max-width:1256px;margin:14px auto 0;padding:14px 18px}
+.brand strong{color:var(--gold);text-shadow:2px 2px 0 var(--deep)}
+.brand-icon{color:var(--gold);text-shadow:2px 2px 0 var(--deep)}
+h1{text-shadow:3px 3px 0 var(--deep)}
+.tree-head h2,.tree-heading h2,.study-panel h2,.progress-panel h2,.collection-head h2{text-shadow:2px 2px 0 var(--deep)}
+.progress-panel{border-left:2px solid #4A4A55}
+
+/* Buttons: square, dark, a hard shadow underneath; pressed ones sink. */
+:is(.board-views button,.mode-switch button,.tf-toggle,.quiet,.drill-back,.drill-test,.drill-branch-test,.group-tabs button,.sb-f,.sb-jump button,.sb-test,.sb-fam-test,.grade,.reveal,.tf-summary button){box-shadow:0 3px 0 var(--deep)}
+:is(.board-views button,.mode-switch button,.tf-toggle,.quiet,.drill-back,.drill-test,.drill-branch-test,.group-tabs button,.sb-f,.sb-jump button,.sb-test,.sb-fam-test,.grade,.reveal,.action):active:not(:disabled){transform:translateY(3px);box-shadow:none}
+/* Primary: yellow with dark ink, like «Промт» and the active tabs. */
+:is(.board-views button,.mode-switch button,.group-tabs button,.sb-f)[aria-pressed=true],.drill-branch-test,.reveal{background:var(--gold);border:2px solid #000;color:var(--btn-ink);box-shadow:0 4px 0 var(--yellow-edge)}
+.drill-branch-test:hover:not(:disabled),.reveal:hover{background:#FFDD8A;filter:none}
+.tf-toggle[aria-expanded=true]{border-color:var(--gold);color:var(--gold)}
+/* Per-species «Учить» is the outlined yellow «Тест» of the English site. */
+.drill-test,.sb-test{background:transparent;border:2px solid var(--gold);color:var(--gold)}
+.drill-test:hover:not(:disabled),.sb-test:hover:not(:disabled){background:#322A16}
+/* Study hub: «Повторить» and «Изучать» as chunky coloured buttons, dashed when empty. */
+.action{border:3px solid #000}
+.action.primary{background:var(--pink);border-color:#000;color:#fff;box-shadow:0 4px 0 #6B1F31}
+.action.secondary{background:var(--cyan);border-color:#000;color:#0F0F1B;box-shadow:0 4px 0 #1F5A6B}
+.action:hover:not(:disabled){filter:brightness(1.08)}
+.action:disabled{background:#26262B;color:#7C8096;border:3px dashed #4A4A55;box-shadow:none;opacity:1}
+/* Grades in the cards: Снова / Трудно / Хорошо / Легко. */
+.grade.again{background:#3A1E27;border:2px solid var(--pink);color:#FFD3DD}
+.grade.hard{background:#322A16;border:2px solid var(--gold);color:#FFE3A3}
+.grade.good{background:#1B2F2B;border:2px solid var(--green);color:#EDF2F4}
+.grade.easy{background:#1B2A38;border:2px solid var(--cyan);color:#D9F4FC}
+
+/* Inputs and chips. */
+select,input{border-width:2px}
+.tf-chip{border-width:2px;font:600 19px/1 var(--ui)}
+.tf-label{font:600 15px/1.2 var(--ui);letter-spacing:.06em}
+.tf-count{background:var(--pink);color:#fff}
+.tf-summary{font:600 18px/1.2 var(--ui)}
+
+/* Tree heading and the pinned bar (3 px steel line: the sections stick right under it). */
+.unified-tree.drill{--bar-h:67px}
+.tree-mode{font:500 18px/1.2 var(--ui);border:2px solid #4A4A55;color:var(--muted)}
+.drill-bar{margin:0 -24px;padding:10px 24px;border-bottom:3px solid var(--frame)}
+.drill-crumbs{font:500 19px/1.2 var(--ui)}
+.drill-crumbs span{color:#6A6A78}
+
+/* Level title as a coloured quest banner (colour per order, as the topic headers of the English site). */
+.drill-hero{margin:16px 0 6px;padding:14px 16px 16px;background:var(--quest);border:2px solid #000;box-shadow:4px 4px 0 var(--deep);color:#fff}
+.drill-hero h3{text-shadow:2px 2px 0 rgba(0,0,0,.35)}
+.drill-hero em{color:#fff;opacity:.92}
+.drill-hero .drill-read{color:#fff;opacity:.75}
+.drill-hero .drill-total{color:#fff;opacity:.9;font:500 18px/1.2 var(--ui);margin-top:8px}
+.drill-hero .drill-prog{background:rgba(0,0,0,.3);border:1px solid #000;height:8px}
+.drill-only{font:500 19px/1.3 var(--ui)}
+
+/* Sections: a level diamond, like «A1 Beginner». */
+.drill-section{font:600 20px/1.15 var(--ui);letter-spacing:.02em;text-transform:none;color:var(--ink);border-bottom:2px solid #4A4A55;align-items:center}
+.drill-section>span:first-child{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 6px}
+.drill-section>span:first-child::before{content:'';flex:none;align-self:center;width:11px;height:11px;margin:0 4px 0 2px;background:var(--green);border:2px solid #000;transform:rotate(45deg)}
+.drill-section em{font:italic 500 13px/1.3 'Manrope',sans-serif}
+.drill-section>span:last-child{font:500 18px/1 var(--ui);color:var(--muted)}
+
+/* Branch and species rows become cards with a status stripe, like the rule cards. */
+.unified-tree .drill-row,.unified-tree .drill-species{margin-top:8px;background:var(--panel2);border:1px solid #3F3F48;border-left:5px solid var(--none);box-shadow:3px 3px 0 var(--deep)}
+.unified-tree .drill-row{padding:10px 10px 10px 10px}
+.unified-tree .drill-species{padding:10px}
+.unified-tree .drill-row:hover{background:#34343C}
+.unified-tree .drill-row[data-status=learning],.unified-tree .drill-species.learning{border-left-color:var(--learn)}
+.unified-tree .drill-row[data-status=review],.unified-tree .drill-species.review{border-left-color:var(--review)}
+.unified-tree .drill-row[data-status=mastered],.unified-tree .drill-species.mastered{border-left-color:var(--master)}
+.drill-thumb{border:2px solid #000}
+.drill-count{font:500 17px/1.2 var(--ui)}
+.drill-chev{color:var(--gold)}
+.drill-badge{font:600 15px/1 var(--ui);padding:2px 5px 3px;border:2px solid var(--green);color:var(--green);vertical-align:3px}
+.drill-badge.rare{border-color:#4A4A55;color:var(--muted)}
+.drill-meter{gap:3px}.drill-meter i{height:5px}
+.drill-names small{font:500 16px/1.2 var(--ui)}
+
+/* Catalog and species board. */
+.bird-tile{border:2px solid #3F3F48;box-shadow:3px 3px 0 var(--deep)}
+.bird-tile:hover{border-color:var(--gold)}
+.sb-card{box-shadow:3px 3px 0 var(--deep)}
+.sb-head{border:2px solid #000;box-shadow:4px 4px 0 var(--deep)}
+
+/* The rest of the old teal palette, in the shared stylesheets. */
+.notice.error{color:#FFD3DD}
+.mode-switch button{background:var(--panel2)}
+select,input{background:var(--bg)}
+.bird-tile:hover{background:#2F3036}
+.tile-img,.card-media,.fc-prompt{background:#141418}
+.voice-badge{background:#1c1c20e8;border-color:#4A4A55}
+dialog::backdrop{background:#08080cc2}
+.ratings button[data-rating=again]{border-color:var(--pink)}
+.ratings button[data-rating=good],.answer-choices button.correct{background:#1B2F2B;color:var(--ink)}
+.answer-choices button.wrong{background:#3A1E27;border-color:var(--pink);color:#FFD3DD}
+.kres{border-color:var(--pink);background:#33202A}
+.fc-dialog .fc-actions.sticky{box-shadow:0 -10px 14px -6px var(--deep)}
+.sb-card{background:var(--panel2)}
+.sb-chip{background:#34343C}
+.sb-pl{border-color:#4A4A55}
+.biology-recording{background:#1F1F24}
+
+@media(max-width:760px){
+ .site-header{width:calc(100% - 32px);margin-top:10px;padding:12px 12px}
+ .unified-tree.drill{--bar-h:63px}
+ .drill-bar{margin:0 -8px;padding:8px}
+ .drill-hero{padding:12px 12px 14px}
+ .drill-hero .drill-total{font-size:17px}
+ .tf-chip{font-size:18px}
+}
