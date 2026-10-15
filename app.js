@@ -77,13 +77,13 @@ function renderCard(){const s=session;if(!s)return;clearInterval(s.timer);s.time
   '<div class="fc-row"><button type="button" class="quiet" data-act="undo"'+(s.hist.length?'':' disabled')+'>← Предыдущая</button>'+
   (canKnow(s)?'<button type="button" class="quiet fc-know" data-act="kopen"'+(s.flipped||s.kbox?' disabled':'')+' title="Впиши латинское название: если верно — уровень 10, вид не повторяется полгода">Я знаю</button>':'')+'</div>'+
   '<p class="fc-hint">'+(s.flipped?'Клавиши 1–4 — оценка':'Пробел — показать ответ')+'</p>';
- $('cardBody').innerHTML=h;
+ $('cardBody').innerHTML=h;$('cardDialog').scrollTop=0;
  const fail=()=>{if(session!==s||s.queue[0]!==b||s.flipped||s.blocked)return;s.blocked=true;const a=$('cardBody').querySelector('.fc-actions');if(a)a.innerHTML='<p class="error-media">Материал не загрузился. Пропусти карточку — прогресс не изменится.</p><button type="button" class="reveal" data-act="skip">Пропустить</button>';};
  $('cardBody').querySelector('.fc-front img')?.addEventListener('error',fail,{once:true});$('cardBody').querySelector('.fc-front audio')?.addEventListener('error',fail,{once:true});
  if(sm!=='names'&&!m)fail();
  const f=$('cardBody').querySelector(s.blocked?'[data-act="skip"]':!s.flipped&&s.kbox?'#knownIn':s.flipped?'.grade.good':'[data-act="flip"]');f?.focus({preventScroll:true});
 }
-function flip(){const s=session;if(!s||s.flipped||s.kbox||s.blocked||!s.queue.length)return;s.flipped=true;renderCard();const a=$('cardBody').querySelector('.fc-answer');if(a&&a.scrollIntoView)a.scrollIntoView({block:'start'});}
+function flip(){const s=session;if(!s||s.flipped||s.kbox||s.blocked||!s.queue.length)return;s.flipped=true;renderCard();}
 function skip(){const s=session;if(!s||!s.blocked||!s.queue.length)return;s.queue.shift();s.skipped++;renderCard();}
 function grade(g){const s=session;if(!s||!s.flipped||!s.queue.length||!own()||s.uid!==uid)return;
  const b=s.queue[0],k=key(b,s.mode,s.language),prev=states[k]?{...states[k]}:null;
