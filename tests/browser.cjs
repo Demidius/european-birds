@@ -123,7 +123,7 @@ try{
   assert.ok(await page.locator('#cardDialog').evaluate(d=>d.scrollWidth<=d.clientWidth+1),'no sideways scroll at '+width);
   const show=await page.locator('[data-act="flip"]').boundingBox(),grades=await page.locator('.grades').boundingBox();assert.ok(Math.abs(show.height-grades.height)<=1,'the answer button covers the grades');
   if(width===390||width===1440)await page.screenshot({path:path.join(out,'card-front-'+width+'.png')});
-  await page.locator('[data-act="flip"]').click();const g=await page.locator('.grade').evaluateAll(b=>b.map(x=>x.getBoundingClientRect()).map(r=>({h:r.height,top:Math.round(r.top)})));
+  await page.locator('#cardDialog').evaluate(d=>{d.scrollTop=d.scrollHeight;});await page.locator('[data-act="flip"]').click();assert.equal(await page.locator('#cardDialog').evaluate(d=>d.scrollTop),0,'the answer opens from the top at '+width);const g=await page.locator('.grade').evaluateAll(b=>b.map(x=>x.getBoundingClientRect()).map(r=>({h:r.height,top:Math.round(r.top)})));
   assert.ok(g.every(r=>r.h>=44),'grade buttons are tappable at '+width);assert.equal(new Set(g.map(r=>r.top)).size,width<=360?2:1,'grade rows at '+width);
   if(width===390||width===1440){await page.locator('.fc-actions').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'card-back-'+width+'.png')});}
   await page.locator('#closeCard').click();
