@@ -51,10 +51,12 @@ function summary(ids){const st=ids.filter(id=>A.available(id)).map(id=>A.state(i
  return {n:st.length,mastered:st.filter(s=>s.level===10).length,review:st.filter(s=>s.level>=5&&s.level<10).length,learning:st.filter(s=>s.reps>0&&s.level<5).length};}
 function progressHTML(sum){if(!sum.n||!(sum.mastered+sum.review+sum.learning))return '';const seg=(k,cls)=>sum[k]?'<i class="'+cls+'" style="width:'+(sum[k]/sum.n*100).toFixed(2)+'%"></i>':'';
  return '<span class="drill-prog" role="img" aria-label="Выучено '+sum.mastered+' из '+sum.n+', повторяю '+sum.review+', изучаю '+sum.learning+'">'+seg('mastered','mastered')+seg('review','review')+seg('learning','learning')+'</span>';}
+function status(sum){return !(sum.mastered+sum.review+sum.learning)?'new':sum.mastered===sum.n?'mastered':sum.mastered+sum.review===sum.n?'review':'learning';}
 function statsText(sum){return [['mastered','выучено'],['review','повторяю'],['learning','изучаю']].filter(([k])=>sum[k]).map(([k,t])=>' · '+t+' '+sum[k]).join('');}
 // A branch is shown with a clear photo of a familiar bird: the study collection's own photos first,
 // then species that breed in Poland, then regular visitors.
 const covers=new Map();
+const QUEST=['#3F7A4E','#7A4E98','#9E3818','#4A7090','#6C4829','#9A6D24'],QUEST_ROOT='#3D4F66',QUEST_SEARCH='#4A7090';
 function cover(id){if(covers.has(id))return covers.get(id);const P=POLAND();let best=null,score=-1;
  for(const bid of leaves(nodes.get(id)||{children:[]})){const b=byBird.get(bid);if(!b?.photos?.length)continue;const r=P[b.treeId||bid],s=(/^assets\/photos\//.test(b.photos[0].src)?4:0)+(r?(!r.rare?(/^L/.test(r.status||'')?3:2):1):0);if(s>score){best=b;score=s;if(s===7)break;}}
  covers.set(id,best);return best;}
@@ -67,7 +69,7 @@ function speciesRow(id,context){const b=byBird.get(id);if(!b)return '';const s=A
  const pl=region?'<span class="drill-badge'+(/^[LP]/.test(region.status||'')?'':' rare')+'" title="Статус в Польше">PL '+esc(region.status||'')+'</span>':'';
  return '<article class="drill-species '+tone(s)+'" data-tree-species="'+id+'"><button class="drill-open" data-tree-detail="'+id+'" aria-label="Открыть карточку: '+esc(b.ru)+'"><span class="drill-thumb">'+photoHTML(b.photos[0])+'</span><span class="drill-names"><strong lang="ru">'+esc(b.ru)+pl+'</strong><em lang="la">'+latinHTML(b.latin)+'</em><span class="drill-pl" lang="pl">'+esc(b.pl)+'</span>'+(context?'<small>'+esc(context)+'</small>':'')+'<span class="drill-meter" role="img" aria-label="'+label(s)+', уровень '+s.level+' из 10">'+Array.from({length:10},(_,i)=>'<i'+(i<s.level?' class="filled"':'')+'></i>').join('')+'</span></span></button><button class="drill-test" data-tree-test="'+id+'" aria-label="Учить: '+esc(b.ru)+'"'+(!ctx.own||!usable?' disabled':'')+'>Учить</button></article>';}
 function nodeRow(n){const ids=leaves(n),sum=summary(ids),b=cover(n.id);
- return '<button class="drill-row" data-tree-go="'+esc(n.id)+'"><span class="drill-thumb">'+photoHTML(b?.photos?.[0])+'</span><span class="drill-names"><strong>'+esc(nameOf(n))+'</strong>'+(n.ru&&n.ru!==n.latin?'<em lang="la">'+latinHTML(n.latin)+'</em>':'')+'<span class="drill-count">'+ids.length+' '+C.word(ids.length)+statsText(sum)+'</span>'+progressHTML(sum)+'</span><span class="drill-chev" aria-hidden="true">›</span></button>';}
+ return '<button class="drill-row" data-tree-go="'+esc(n.id)+'" data-status="'+status(sum)+'"><span class="drill-thumb">'+photoHTML(b?.photos?.[0])+'</span><span class="drill-names"><strong>'+esc(nameOf(n))+'</strong>'+(n.ru&&n.ru!==n.latin?'<em lang="la">'+latinHTML(n.latin)+'</em>':'')+'<span class="drill-count">'+ids.length+' '+C.word(ids.length)+statsText(sum)+'</span>'+progressHTML(sum)+'</span><span class="drill-chev" aria-hidden="true">›</span></button>';}
 function section(title,latin,count){return '<h4 class="drill-section"><span>'+esc(title)+(latin?' · <em lang="la">'+latinHTML(latin)+'</em>':'')+'</span><span>'+count+'</span></h4>';}
 function list(items){return '<div class="drill-list">'+items.join('')+'</div>';}
 // Blocks (a genus, a group of families) flow in columns on wide screens instead of one per row.
@@ -87,10 +89,12 @@ function drillHTML(){
  const q=$('treeSearch').value.trim(),n=q?filteredTree:visibleNode(),ids=leaves(n),ctx=A.context(),usable=ids.filter(id=>A.available(id)),sum=summary(ids);if(!q)currentId=n.id;branches.set(n.id,ids);
  const path=pathTo(n.id),root=!q&&!parents.has(n.id),crumbs=q?'<button data-tree-clear>Все птицы</button><span aria-hidden="true">›</span><button aria-current="page">Поиск</button>':path.map((x,i)=>(i?'<span aria-hidden="true">›</span>':'')+'<button data-tree-go="'+esc(x.id)+'"'+(i===path.length-1?' aria-current="page"':'')+'>'+esc(i?nameOf(x):'Все птицы')+'</button>').join('');
  const title=q?'Найдено':nameOf(n),latin=!q&&n.ru&&n.ru!==n.latin?n.latin:'',action=q?'Учить найденных':root?'Учить всех':'Учить ветку';
+ // The level banner takes its order's colour, like the topic headers of English File · Skill Tree.
+ const order=!q&&path[1]?taxonomy.children.findIndex(c=>c.id===path[1].id):-1,quest=order<0?(q?QUEST_SEARCH:QUEST_ROOT):QUEST[order%QUEST.length];
  // One study button per level, pinned with the breadcrumbs so it stays in reach while scrolling.
  return '<div class="drill-bar"><button class="drill-back" data-tree-back aria-label="Назад"'+(root?' disabled':'')+'>‹</button><nav class="drill-crumbs" aria-label="Путь по дереву">'+crumbs+'</nav>'+
   '<button class="drill-branch-test" data-test-branch="'+esc(n.id)+'" aria-label="'+action+': '+usable.length+' '+C.word(usable.length)+'"'+(!ctx.own||!usable.length?' disabled':'')+'>'+action+'</button></div>'+
-  '<div class="drill-hero"><h3>'+esc(title)+'</h3>'+(latin?'<em lang="la">'+latinHTML(latin)+'</em>':'')+'<p class="drill-total">'+ids.length+' '+C.word(ids.length)+statsText(sum)+'</p>'+progressHTML(sum)+'</div>'+screenHTML(n);
+  '<div class="drill-hero" style="--quest:'+quest+'"><h3>'+esc(title)+'</h3>'+(latin?'<em lang="la">'+latinHTML(latin)+'</em>':'')+'<p class="drill-total">'+ids.length+' '+C.word(ids.length)+statsText(sum)+'</p>'+progressHTML(sum)+'</div>'+screenHTML(n);
 }
 function reveal(){const t=$('treeBoard').querySelector('.unified-tree');if(t&&t.getBoundingClientRect().top<0)t.scrollIntoView({block:'start'});}
 function fade(c){c.classList.toggle('cut',c.scrollLeft>2);}
