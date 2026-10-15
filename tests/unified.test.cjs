@@ -16,18 +16,18 @@ find('a');const shown=d.querySelectorAll('.drill-species').length;for(const lang
 const search=d.getElementById('treeSearch');search.value='Paridae';search.dispatchEvent(new w.Event('input'));
 assert.equal(d.querySelectorAll('.drill-species').length,10);assert.equal(d.getElementById('newCount').textContent,'10');
 d.getElementById('language').value='pl';d.getElementById('language').dispatchEvent(new w.Event('change'));
-const answer=w.BIRD_DATA.find(b=>b.id===ids.find(id=>d.querySelector('[data-tree-species="'+id+'"]')));
-d.querySelector('.drill-branch-test').click();assert.equal(d.getElementById('treeQuiz').open,true);assert.equal(d.querySelectorAll('[data-tree-answer]').length,6);
-const q=d.querySelector('#treeQuizMedia img'),current=w.BIRD_DATA.find(b=>b.photos.some(p=>p.src===q.getAttribute('src')));
-assert.ok(current);assert.ok(d.getElementById('treeQuizCount').textContent.endsWith('/ 10'));
-const correct=d.querySelector('[data-tree-answer="'+current.id+'"]');assert.equal(correct.textContent,current.pl);correct.click();assert.equal(w.BirdAtlas.state(current.id).level,1);assert.equal(d.querySelectorAll('[data-tree-species="'+current.id+'"] .drill-meter i.filled').length,1);assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,current.id);correct.click();assert.equal(w.BirdAtlas.state(current.id).reps,1);
-d.getElementById('closeTreeQuiz').click();search.value='';search.dispatchEvent(new w.Event('input'));
+d.querySelector('.drill-branch-test').click();const card=d.getElementById('cardDialog'),body=d.getElementById('cardBody');assert.equal(card.open,true);assert.match(d.getElementById('sessionCount').textContent,/Найдено/);
+const src=body.querySelector('.fc-front img').getAttribute('src'),current=w.BIRD_DATA.find(b=>b.photos.some(p=>p.src===src));assert.ok(ids.includes(current.id)&&d.querySelector('[data-tree-species="'+current.id+'"]'));
+assert.match(body.querySelector('.fc-meta').textContent,/осталось 10/);assert.ok(body.querySelector('.grades.hidden-grades'));body.querySelector('[data-act="flip"]').click();
+assert.equal(body.querySelector('.fc-answer h3').textContent,current.ru);assert.match(body.querySelector('.fc-answer').textContent,new RegExp(current.pl));body.querySelector('[data-grade="good"]').click();
+assert.equal(w.BirdAtlas.state(current.id).level,2);assert.equal(w.BirdAtlas.state(current.id).reps,1);assert.equal(d.querySelectorAll('[data-tree-species="'+current.id+'"] .drill-meter i.filled').length,2);assert.match(body.querySelector('.fc-meta').textContent,/осталось 9/);
+d.getElementById('closeCard').click();assert.equal(card.open,false);search.value='';search.dispatchEvent(new w.Event('input'));
 d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=total();assert.ok(polandCount>100&&polandCount<423);
 d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').dispatchEvent(new w.Event('change'));assert.ok(total()<polandCount);
 search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.drill-species').length,0);assert.ok(d.querySelector('.drill-empty'));assert.equal(d.getElementById('learnBtn').disabled,true);
 }finally{close()}});
 
-test('Latin names have Russian readings; wrong options disappear after a wrong answer',()=>{
+test('Latin names have Russian readings; species and name cards show every name on the back',()=>{
 const {w,d,close}=fixture();try{
 assert.equal(w.BirdStudy.latinLabel('Pyrrhula pyrrhula'),'Pyrrhula pyrrhula (Пиррула пиррула)');
 assert.equal(w.BirdStudy.latinReading('Phylloscopus collybita'),'Филлоскопус коллибита');
@@ -36,15 +36,11 @@ assert.equal(w.BirdStudy.latinReading('Parus major'),'Парус майор');
 for(const b of w.BIRD_DATA)assert.doesNotMatch(w.BirdStudy.latinReading(b.latin),/[a-z]/i);
 d.querySelector('[data-mode="names"]').click();d.getElementById('language').value='latin';d.getElementById('language').dispatchEvent(new w.Event('change'));
 const s2=d.getElementById('treeSearch');s2.value='Parus major';s2.dispatchEvent(new w.Event('input'));d.querySelector('[data-tree-test="great-tit"]').click();
-assert.equal(d.querySelector('[data-tree-answer="great-tit"]').textContent,'Parus major (Парус майор)');
-d.querySelector('[data-tree-answer]:not([data-tree-answer="great-tit"])').click();
-assert.equal(d.querySelectorAll('[data-tree-answer]:not([hidden])').length,1);
-assert.equal(d.querySelector('[data-tree-answer]:not([hidden])').dataset.treeAnswer,'great-tit');
-assert.match(d.getElementById('treeQuizResult').textContent,/Parus major \(Парус майор\)/);
-d.getElementById('closeTreeQuiz').click();s2.value='';s2.dispatchEvent(new w.Event('input'));d.getElementById('learnBtn').click();
-assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
-d.querySelector('[data-answer]').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,1);
-d.getElementById('nextCard').click();assert.equal(d.querySelectorAll('[data-answer]:not([hidden])').length,6);
+const body=d.getElementById('cardBody');assert.equal(body.querySelector('.fc-prompt').textContent,'Большая синица');assert.ok(body.querySelector('.fc-know'));
+body.querySelector('[data-act="flip"]').click();assert.match(body.querySelector('.bird-names').textContent,/Parus major \(Парус майор\)/);assert.match(body.querySelector('.bird-names').textContent,/Bogatka/);assert.match(body.querySelector('.bird-names').textContent,/Great Tit/);
+d.getElementById('closeCard').click();d.getElementById('language').value='ru';d.getElementById('language').dispatchEvent(new w.Event('change'));d.querySelector('[data-tree-test="great-tit"]').click();
+assert.equal(body.querySelector('.fc-prompt').textContent,'Parus major (Парус майор)');assert.equal(body.querySelector('.fc-know'),null,'no typed Latin check when the prompt is Latin');
+d.getElementById('closeCard').click();s2.value='';s2.dispatchEvent(new w.Event('input'));
 }finally{close()}});
 
 test('Audit regressions: canonical names, aliases, Poland filters, taxonomy and saved crow progress',()=>{
