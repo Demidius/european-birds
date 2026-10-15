@@ -99,32 +99,36 @@ try{
  await page.setViewportSize({width:390,height:844});
  await page.locator('[data-tree-go="Passeriformes"]').click();await page.locator('.drill-row[data-tree-go="Paridae"]').click();
  await page.locator('[data-tree-detail="great-tit"]').click();assert.equal(await page.locator('#infoDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#infoTitle').innerText(),/Большая синица/);await page.locator('#closeInfo').click();
- await page.locator('.drill-branch-test').click();assert.match(await page.locator('#treeQuizCount').innerText(),/\/ 10$/);assert.equal(await page.locator('[data-tree-answer]').count(),6);await page.locator('#closeTreeQuiz').click();
- await page.selectOption('#language','latin');await page.locator('[data-tree-test="great-tit"]').click();assert.equal(await page.locator('[data-tree-answer]').count(),6);assert.match(await page.locator('[data-tree-answer="great-tit"]').innerText(),/Парус майор/);
- await page.locator('[data-tree-answer]:not([data-tree-answer="great-tit"])').first().click();assert.equal(await page.locator('[data-tree-answer]:visible').count(),1);assert.equal(await page.locator('[data-tree-answer="great-tit"]').isVisible(),true);assert.match(await page.locator('#treeQuiz').innerText(),/Типичный биотоп/);await page.locator('#closeTreeQuiz').click();
- assert.equal(await hero(),'Синицевые','closing a quiz keeps the current level');
+ // Anki-style cards from the tree: front, answer with every name, four grades with the next interval.
+ await page.locator('.drill-branch-test').click();assert.equal(await page.locator('#cardDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#sessionCount').innerText(),/Синицевые/);
+ assert.match(await page.locator('.fc-meta').innerText(),/осталось 10/);assert.equal(await page.locator('.grades').isVisible(),false);await page.keyboard.press(' ');
+ assert.equal(await page.locator('.grades').isVisible(),true);assert.deepEqual(await page.locator('.grade small').allInnerTexts(),['10 мин','12 ч','1 дн.','4 дн.']);
+ await page.keyboard.press('3');assert.match(await page.locator('.fc-meta').innerText(),/осталось 9/);assert.match(await page.locator('.fc-meta').innerText(),/готово 1/);
+ await page.locator('[data-act="undo"]').click();assert.equal(await page.locator('.fc-answer').isVisible(),true);await page.locator('#closeCard').click();
+ await page.selectOption('#language','latin');await page.locator('[data-tree-test="great-tit"]').click();await page.locator('[data-act="kopen"]').click();
+ await page.locator('#knownIn').fill('parus major');await page.locator('#knownIn').press('Enter');assert.equal(await page.locator('.kok-t').innerText(),'Засчитано');
+ assert.equal(await page.evaluate(()=>window.BirdAtlas.state('great-tit').level),10);await page.locator('[data-act="knext"]').click();assert.ok(await page.locator('.fc-done').isVisible());await page.locator('[data-act="close"]').click();
+ assert.equal(await page.locator('[data-tree-species="great-tit"] .drill-meter i.filled').count(),10,'the tree shows the new level');
+ assert.equal(await hero(),'Синицевые','closing the cards keeps the current level');
 
  // Catalog view shares the same data.
  await page.locator('#catalogView').click();assert.equal(await page.locator('#treeBoard').isHidden(),true);await page.locator('#search').fill('Буроголовая');assert.equal(await page.locator('.bird-tile').count(),1);assert.ok((await page.locator('.bird-tile').innerText()).includes(await page.evaluate(()=>window.BIRD_DATA.find(b=>b.latin==='Poecile montanus').ru)));
  await page.locator('#treeView').click();assert.equal(await page.locator('#treeBoard').isVisible(),true);
 
- // Every answer label in every language keeps its words whole (a break after a hyphen is fine).
- for(const width of [320,390,430,480,560,561,760,1024]){
-  await page.setViewportSize({width,height:900});
-  const split=await page.evaluate(()=>{const C=window.BirdStudy,bad=[];
-   for(const [dialog,box,attr] of [['treeQuiz','treeQuizChoices','data-tree-answer'],['cardDialog','answerChoices','data-answer']]){
-    const d=document.getElementById(dialog),c=document.getElementById(box),opened=!d.open;if(opened)d.showModal();const saved=c.innerHTML;
-    for(const lang of ['ru','en','pl','latin']){
-     c.innerHTML=window.BIRD_DATA.map(b=>'<button '+attr+'="'+b.id+'"'+(lang==='latin'?' class="latin"':'')+'>'+(lang==='latin'?C.latinLabel(b.latin):b[lang])+'</button>').join('');
-     for(const t of [...c.querySelectorAll('button')].map(e=>e.firstChild)){const s=t.textContent,re=/\S+/g;let m;
-      while((m=re.exec(s))){let top=null;for(let i=m.index;i<m.index+m[0].length;i++){const r=document.createRange();r.setStart(t,i);r.setEnd(t,i+1);const rc=r.getClientRects()[0];if(!rc)continue;if(top!==null&&rc.top>top+2&&!/[-‑]/.test(s[i-1])){bad.push(dialog+' '+lang+': '+m[0]);break;}top=rc.top;}}}
-    }
-    c.innerHTML=saved;if(opened)d.close();
-   }
-   return bad;});
-  assert.deepEqual(split.slice(0,5),[],'answer words split mid-word at '+width+'px ('+split.length+')');
+ // Card layout on phones and desktop: nothing overflows, grade buttons stay tappable and on one row (two rows at 320).
+ for(const width of [320,390,760,1440]){
+  await page.setViewportSize({width,height:844});await page.locator('[data-tree-test="blue-tit"]').click();
+  await page.locator('.fc-front img').evaluate(i=>i.complete||new Promise(r=>{i.onload=i.onerror=r;}));
+  const box=await page.locator('#cardDialog').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1,'dialog fits at '+width);
+  assert.ok(await page.locator('#cardDialog').evaluate(d=>d.scrollWidth<=d.clientWidth+1),'no sideways scroll at '+width);
+  const show=await page.locator('[data-act="flip"]').boundingBox(),grades=await page.locator('.grades').boundingBox();assert.ok(Math.abs(show.height-grades.height)<=1,'the answer button covers the grades');
+  if(width===390||width===1440)await page.screenshot({path:path.join(out,'card-front-'+width+'.png')});
+  await page.locator('[data-act="flip"]').click();const g=await page.locator('.grade').evaluateAll(b=>b.map(x=>x.getBoundingClientRect()).map(r=>({h:r.height,top:Math.round(r.top)})));
+  assert.ok(g.every(r=>r.h>=44),'grade buttons are tappable at '+width);assert.equal(new Set(g.map(r=>r.top)).size,width<=360?2:1,'grade rows at '+width);
+  if(width===390||width===1440){await page.locator('.fc-actions').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'card-back-'+width+'.png')});}
+  await page.locator('#closeCard').click();
  }
 
- assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, cards, quizzes, catalog, answer wrapping and layouts at 320-1440px passed');
+ assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});
