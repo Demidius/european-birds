@@ -1,0 +1,12 @@
+(()=>{
+'use strict';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const kinds={song:'Пение',call:'Позывки и другие сигналы',voice:'Голос · тип записи не уточнён',mechanical:'Механический сигнал · не вокальное пение'};
+function attach(){for(const b of window.BIRD_DATA||[]){const bio=window.BIRD_BIOLOGY?.[b.latin];if(!bio)continue;b.biology=bio;if(bio.recordings.length)b.audio=bio.recordings.map(r=>({...r,url:r.src}));}}
+function render(b,options={}){
+ const bio=b.biology||window.BIRD_BIOLOGY?.[b.latin];if(!bio)return '';
+ const audio=options.audio!==false;
+ return '<section class="bird-biology" aria-label="Биотоп и голос"><h3>Типичный биотоп</h3><p>'+esc(bio.habitat)+'</p><h3>Пение и голос</h3>'+(bio.voice?'<p>'+esc(bio.voice)+'</p>':'')+(audio?bio.recordings.map(r=>'<div class="biology-recording"><strong>'+esc(kinds[r.kind]||kinds.voice)+'</strong><audio controls preload="none" src="'+esc(r.src)+'" aria-label="'+esc((kinds[r.kind]||'Голос')+': '+b.ru)+'"></audio><p class="media-credit">'+esc(r.author)+' · <a href="'+esc(r.source)+'" target="_blank" rel="noopener">Запись и определение</a> · <a href="'+esc(r.licenseUrl||r.source)+'" target="_blank" rel="noopener">'+esc(r.license)+'</a></p></div>').join(''):'')+(bio.reference?'<p class="biology-reference"><a href="'+esc(bio.reference.source)+'" target="_blank" rel="noopener">'+esc(bio.reference.kind==='song'?'Послушать пение':'Послушать голос')+' · XC'+esc(bio.reference.xcId)+'</a><br><small>'+esc(bio.reference.author)+' · '+esc(bio.reference.license)+'</small></p>':'')+'<div class="biology-links"><a href="'+esc(bio.songUrl)+'" target="_blank" rel="noopener">Найти пение на xeno-canto ↗</a><a href="'+esc(bio.listenUrl)+'" target="_blank" rel="noopener">Все записи голоса ↗</a></div>'+(audio&&!bio.recordings.length?'<p class="biology-note">Встроенная запись пока не найдена. Голос можно искать по ссылкам выше.</p>':'')+'<details class="biology-sources"><summary>Источники описания</summary><ul>'+bio.sources.map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title)+' · '+esc(s.provider)+'</a></li>').join('')+'</ul><p>Краткий учебный пересказ по видовым очеркам. Для перелётных видов биотоп указан преимущественно для периода гнездования. Проверено '+esc(bio.checkedAt)+'.</p></details></section>';
+}
+window.BirdBiology={attach,render};attach();
+})();

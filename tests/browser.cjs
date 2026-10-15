@@ -80,13 +80,28 @@ try{
   await page.locator('.drill-crumbs button').first().click();
  }
 
+ // Biology remains readable inside the species dialog on narrow phones.
+ for(const width of [320,390,760]){
+  await page.setViewportSize({width,height:844});
+  await page.evaluate(()=>window.BirdAtlas.detail('great-tit'));
+  assert.match(await page.locator('#infoBody').innerText(),/Типичный биотоп/);
+  assert.match(await page.locator('#infoBody').innerText(),/Пение и голос/);
+  assert.ok(await page.locator('#infoBody .biology-recording audio').count()>0);
+  assert.equal(await page.locator('#infoBody audio').first().getAttribute('preload'),'none');
+  assert.ok(await page.locator('#infoBody').evaluate(e=>e.scrollWidth<=e.clientWidth+1),'Biology dialog overflow at '+width);
+  await page.locator('#infoBody .biology-sources summary').click();
+  assert.ok(await page.locator('#infoBody .biology-sources a').count()>0);
+  if(width===390)await page.screenshot({path:path.join(out,'biology-phone.png')});
+  await page.locator('#closeInfo').click();
+ }
+
  // Species card and quizzes.
  await page.setViewportSize({width:390,height:844});
  await page.locator('[data-tree-go="Passeriformes"]').click();await page.locator('.drill-row[data-tree-go="Paridae"]').click();
  await page.locator('[data-tree-detail="great-tit"]').click();assert.equal(await page.locator('#infoDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#infoTitle').innerText(),/Большая синица/);await page.locator('#closeInfo').click();
  await page.locator('.drill-branch-test').click();assert.match(await page.locator('#treeQuizCount').innerText(),/\/ 10$/);assert.equal(await page.locator('[data-tree-answer]').count(),6);await page.locator('#closeTreeQuiz').click();
  await page.selectOption('#language','latin');await page.locator('[data-tree-test="great-tit"]').click();assert.equal(await page.locator('[data-tree-answer]').count(),6);assert.match(await page.locator('[data-tree-answer="great-tit"]').innerText(),/Парус майор/);
- await page.locator('[data-tree-answer]:not([data-tree-answer="great-tit"])').first().click();assert.equal(await page.locator('[data-tree-answer]:visible').count(),1);assert.equal(await page.locator('[data-tree-answer="great-tit"]').isVisible(),true);await page.locator('#closeTreeQuiz').click();
+ await page.locator('[data-tree-answer]:not([data-tree-answer="great-tit"])').first().click();assert.equal(await page.locator('[data-tree-answer]:visible').count(),1);assert.equal(await page.locator('[data-tree-answer="great-tit"]').isVisible(),true);assert.match(await page.locator('#treeQuiz').innerText(),/Типичный биотоп/);await page.locator('#closeTreeQuiz').click();
  assert.equal(await hero(),'Синицевые','closing a quiz keeps the current level');
 
  // Catalog view shares the same data.
