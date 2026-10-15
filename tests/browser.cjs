@@ -5,7 +5,7 @@ const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),ass
 const LOCAL_CHROMIUM='/opt/pw-browsers/chromium';
 (async()=>{
 const root=path.resolve(__dirname,'..'),out=process.env.BIRD_QA_OUTPUT||path.resolve(root,'../bird-qa');fs.mkdirSync(out,{recursive:true});
-const types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.webmanifest':'application/manifest+json'};
+const types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.webp':'image/webp','.webmanifest':'application/manifest+json'};
 const server=http.createServer((req,res)=>{let rel=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(rel.endsWith('/'))rel+='index.html';const file=path.resolve(root,'.'+rel);if(!file.startsWith(root+path.sep)){res.writeHead(403).end();return;}fs.readFile(file,(err,b)=>{if(err){res.writeHead(404).end();return;}res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');res.end(b);});});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
 const placeholder='<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="400" height="300" fill="#4a6355"/></svg>';
@@ -40,7 +40,8 @@ try{
  }
  await page.locator('.drill-back').click();assert.equal(await page.locator('#treeSearch').inputValue(),'','Back clears the search');assert.equal(await total(),435);
 
- // Filters: vagrants, Poland and seasons.
+ // Filters: vagrants, Poland and seasons. The chips open from one button; the count and the summary show what is on.
+ assert.equal(await page.locator('#filterPanel').isHidden(),true);await page.locator('#filterToggle').click();assert.equal(await page.locator('#filterToggle').getAttribute('aria-expanded'),'true');
  await page.locator('#includeVagrants').uncheck();await page.locator('#treeSearch').fill('Ficedula parva');assert.equal(await page.locator('[data-tree-species="Ficedula_parva"]').count(),1);await page.locator('#treeSearch').fill('');
  await page.locator('#onlyPoland').check();assert.equal(await total(),196);
  for(const latin of ['Corvus corone','Anas platyrhynchos','Columba palumbus','Ardea cinerea']){await page.locator('#treeSearch').fill(latin);assert.equal(await page.locator('[data-tree-species="'+await idOf(latin)+'"]').count(),1,latin);}
@@ -50,6 +51,9 @@ try{
  await page.locator('#polandWinter').check();assert.ok(await total()>=breeding,'seasons combine with OR');
  await page.locator('#onlyPoland').uncheck();assert.equal(await page.locator('#polandBreeding').isChecked(),false);assert.equal(await page.locator('#polandWinter').isChecked(),false);
  await page.locator('#includeVagrants').check();assert.equal(await total(),435);
+ await page.locator('#onlyPoland').check();assert.equal(await page.locator('#includeVagrants').isDisabled(),true,'vagrants do not apply inside Poland');await page.locator('#filterToggle').click();
+ assert.equal(await page.locator('#filterCount').innerText(),'1');assert.match(await page.locator('#filterSummary').innerText(),/Только Польша/);
+ await page.locator('[data-filter-reset]').click();assert.equal(await total(),435);assert.equal(await page.locator('#filterCount').isHidden(),true);assert.equal(await page.locator('#filterSummary').isHidden(),true);
 
  // Drill-down, breadcrumbs, the Back button and browser history.
  await page.locator('[data-tree-go="Passeriformes"]').click();assert.equal(await hero(),'Воробьинообразные');
@@ -76,6 +80,9 @@ try{
   assert.ok(test.height>=44,'Test button is below the 44px touch target at '+width);
   const fonts=await page.locator('[data-tree-species="great-tit"] .drill-names').evaluate(e=>['em','.drill-pl'].map(s=>getComputedStyle(e.querySelector(s)).fontSize));assert.equal(new Set(fonts).size,1,'Latin and Polish names share one size');
   await page.evaluate(()=>scrollBy(0,400));assert.ok(Math.abs(await page.locator('.drill-bar').evaluate(e=>e.getBoundingClientRect().top))<=1,'breadcrumb bar stays pinned at '+width);
+  assert.equal(await page.locator('[data-test-branch]').count(),1,'one study button per level at '+width);
+  assert.ok((await page.locator('.drill-bar .drill-branch-test').boundingBox()).height>=44,'the branch study button is tappable at '+width);
+  if(width===390){const img=page.locator('[data-tree-species="great-tit"] .drill-thumb img');await img.scrollIntoViewIfNeeded();if(await page.evaluate(()=>window.BirdTree.thumbs))assert.match(await img.getAttribute('src'),/^assets\/thumbs\//);assert.ok(await img.evaluate(i=>i.complete&&i.naturalWidth?i.naturalWidth:new Promise(r=>{i.onload=()=>r(i.naturalWidth);i.onerror=()=>r(0);})),'row thumbnails load');}
   if(width===390||width===1440){await page.locator('.unified-tree').evaluate(e=>e.scrollIntoView({block:'start'}));await page.screenshot({path:path.join(out,'drill-paridae-'+width+'.png')});}
   await page.locator('.drill-crumbs button').first().click();
  }
@@ -147,6 +154,11 @@ try{
  await page.locator('[data-sb-study="Cyanistes"]').click();assert.equal(await page.locator('#cardDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#sessionCount').innerText(),/Лазоревки/);await page.locator('#closeCard').click();
  await page.locator('#treeView').click();assert.equal(await page.locator('#speciesBoard').isHidden(),true);
 
+ // Links to #treeBoard land on the view switch and the search above the tree.
+ await page.setViewportSize({width:390,height:844});await page.goto(base+'/study.html?offline=1#treeBoard');await page.waitForSelector('.drill-row');await page.waitForLoadState('load');await page.waitForTimeout(150);
+ const lead=await page.evaluate(()=>({views:document.querySelector('.board-views').getBoundingClientRect().top,search:document.getElementById('treeSearch').getBoundingClientRect().top}));
+ assert.ok(lead.views>=0&&lead.views<40&&lead.search>0&&lead.search<200,'#treeBoard shows the view switch and the search: '+JSON.stringify(lead));
+ await page.screenshot({path:path.join(out,'tree-anchor-390.png')});
  assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});
