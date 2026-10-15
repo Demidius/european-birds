@@ -30,7 +30,7 @@ function branchHTML(n){
  if(n.rank==='species')return card(n.birdId);
  const ids=leaves(n),ctx=A.context(),usable=ids.filter(id=>A.available(id));branches.set(n.id,ids);
  const open=$('treeSearch').value.trim()?true:openStates.has(n.id)?openStates.get(n.id):['class','order','group'].includes(n.rank);
- return '<details class="study-branch rank-'+n.rank+'" data-branch="'+esc(n.id)+'" data-rank="'+n.rank+'"'+(open?' open':'')+'><summary><span><strong>'+esc(n.ru||n.latin)+'</strong><em>'+esc(n.latin)+'</em></span><span class="branch-count">'+ids.length+' видов</span></summary><div class="branch-content"><button class="branch-test" data-test-branch="'+esc(n.id)+'"'+(!ctx.own||!usable.length?' disabled':'')+'>Тест по ветке · '+usable.length+'</button><div class="branch-children">'+n.children.map(branchHTML).join('')+'</div></div></details>';
+ return '<details class="study-branch rank-'+n.rank+'" data-branch="'+esc(n.id)+'" data-rank="'+n.rank+'"'+(open?' open':'')+'><summary><span class="branch-label"><strong>'+esc(n.ru||n.latin)+'</strong><em>'+esc(n.latin)+'</em><span class="branch-count">'+ids.length+' видов</span></span><button class="branch-test" aria-label="Тест: '+esc(n.ru||n.latin)+'" data-test-branch="'+esc(n.id)+'"'+(!ctx.own||!usable.length?' disabled':'')+'>Тест</button></summary><div class="branch-content"><div class="branch-children">'+n.children.map(branchHTML).join('')+'</div></div></details>';
 }
 function render(){const ctx=A.context(),pool=birds.filter(b=>(!filteredIds||filteredIds.includes(b.id))&&A.available(b.id)),learned=pool.filter(b=>A.state(b.id).level===10).length;
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
@@ -74,7 +74,7 @@ for(const id of ['treeSearch','onlyPoland','includeVagrants','polandBreeding','p
  applyFilters();
 });
 document.addEventListener('click',e=>{
- const branch=e.target.closest('[data-test-branch]');if(branch)startQuiz(null,branches.get(branch.dataset.testBranch));
+ const branch=e.target.closest('[data-test-branch]');if(branch){e.preventDefault();startQuiz(null,branches.get(branch.dataset.testBranch));}
  const depth=e.target.closest('[data-depth]');if(depth){const level=depth.dataset.depth;$('treeBoard').querySelectorAll('details[data-branch]').forEach(d=>{d.open=level==='species'||level==='genus'&&d.dataset.rank!=='genus'||level==='family'&&['class','order','group'].includes(d.dataset.rank);openStates.set(d.dataset.branch,d.open);});}
 });
 applyFilters();setView('tree');
