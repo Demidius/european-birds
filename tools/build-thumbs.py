@@ -8,7 +8,10 @@ already show with object-fit: cover) for every local photo:
   assets/bird-photos/Acanthis_flammea.jpg -> assets/thumbs/bird-photos/Acanthis_flammea.webp
 
 Run from the repository root: python3 tools/build-thumbs.py
+--all rebuilds every thumbnail (CI does this: a fresh checkout has no useful file times).
+The GitHub Action .github/workflows/thumbs.yml runs it whenever photos change.
 """
+import sys
 from pathlib import Path
 from PIL import Image, ImageOps
 
@@ -18,6 +21,7 @@ SOURCES = ["photos", "bird-photos"]
 
 
 def main():
+    rebuild = "--all" in sys.argv[1:]
     made = skipped = 0
     for folder in SOURCES:
         src_dir = ROOT / "assets" / folder
@@ -27,7 +31,7 @@ def main():
             if src.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
                 continue
             out = out_dir / (src.stem + ".webp")
-            if out.exists() and out.stat().st_mtime >= src.stat().st_mtime:
+            if not rebuild and out.exists() and out.stat().st_mtime >= src.stat().st_mtime:
                 skipped += 1
                 continue
             with Image.open(src) as im:
