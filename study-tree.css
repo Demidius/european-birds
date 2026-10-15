@@ -1,4 +1,4 @@
-/* Tree board shell, filters and branch quiz. Drill-down levels live in study-tree-drill.css. */
+/* Tree board shell and filters. Drill-down levels: study-tree-drill.css; study cards: cards.css. */
 .board-views{display:flex;gap:8px;margin:36px 0 20px;border-bottom:1px solid var(--line);padding-bottom:12px}
 .board-views button{font:600 28px/1.15 var(--ui);padding:12px 22px;min-height:50px}
 .board-views button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:var(--bg)}
@@ -7,9 +7,6 @@
 .tree-test-button{padding:12px 20px;border:1px solid var(--green);background:#31483d;font:600 29px/1.1 var(--ui);text-align:left;min-height:62px}.tree-test-button span{display:block;font:11px/1.4 'Manrope',sans-serif;color:#c6dcca;margin-top:4px}
 .tree-toolbar{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:20px 0 30px;padding:10px 0;border-block:1px solid var(--line);font-size:12px;color:var(--muted)}.tree-toolbar>span:first-child{color:var(--ink);font-weight:600}.tree-score-rule{margin-left:auto;color:var(--gold)}
 .tree-explanation{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:12px}.tree-explanation summary{cursor:pointer;font:500 24px var(--ui);color:var(--ink)}.tree-explanation p{max-width:850px;line-height:1.7}.tree-explanation a{text-decoration:underline}
-.tree-quiz h2{font-size:36px;margin:0 0 16px}.tree-quiz-question{font:500 27px/1.3 var(--ui);margin:18px 0 12px}.tree-quiz-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tree-quiz-choices button{font:600 28px/1.15 var(--ui);padding:12px;min-height:64px;text-align:left;overflow-wrap:anywhere}.tree-quiz-choices button:disabled{opacity:1}.tree-quiz-choices button.correct{border-color:var(--green);background:#31483d;color:#ddf4e2}.tree-quiz-choices button.wrong{border-color:#d59c94;background:#493036;color:#ffd8d2}.tree-answer-result{margin:18px 0;padding:14px;border:1px solid var(--green);background:#24382e}.tree-answer-result.wrong{border-color:#a56f71;background:#34282b}.tree-answer-result strong{font:600 29px/1.2 var(--ui);display:block}.tree-answer-result span{display:block;font-size:12px;margin-top:5px;color:var(--muted)}#treeQuizResult h3{font:600 32px/1.1 var(--ui);margin:14px 0 8px}.tree-answer-names{font-size:13px;margin:8px 0}.tree-quiz-finish{text-align:center;padding:20px 0}.tree-quiz-finish>strong{font:600 62px/1.1 var(--ui);color:var(--green)}.tree-quiz-finish p{font-size:13px;color:var(--muted)}
-.tree-quiz-choices button[hidden],.answer-choices button[hidden]{display:none}
-.tree-quiz-choices:has(button.correct),.answer-choices:has(button.correct){grid-template-columns:minmax(0,1fr)}
 
 /* Filters for the tree and its tests. */
 .tree-filters{margin:28px 0;padding:20px;border:1px solid var(--line);background:var(--panel)}
@@ -23,9 +20,6 @@
  .tree-test-button{width:100%;font-size:30px;display:flex;justify-content:space-between;align-items:center;gap:10px}.tree-test-button span{margin:0;font-size:11px}
  .tree-toolbar{margin:18px 0 22px;gap:8px;font-size:11px}.tree-toolbar>span:first-child{flex-basis:100%}.tree-score-rule{margin-left:auto}
  .tree-explanation summary{font-size:26px}
- .tree-quiz-choices button{font-size:29px;padding:12px 10px}.tree-answer-result span{font-size:12px}
  .tree-filters{padding:14px}
 }
-/* Two answer columns split long names mid-word below ~560px, so phones get one column. */
-@media(max-width:560px){.tree-quiz-choices,.answer-choices{grid-template-columns:minmax(0,1fr)}.tree-quiz-choices button,.answer-choices button{min-height:52px}}
 @media(max-width:360px){.tree-toolbar{font-size:10px}.tree-test-button{font-size:28px}}
