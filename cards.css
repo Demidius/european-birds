@@ -44,3 +44,9 @@
 /* Long answers scroll inside the dialog; the grades stay at the bottom edge. */
 .fc-dialog .fc-actions.sticky{position:sticky;bottom:-24px;z-index:2;margin:0 -24px;padding:10px 24px 24px;background:var(--panel);box-shadow:0 -10px 14px -6px #0b1013}
 @media(max-width:760px){.fc-dialog .fc-actions.sticky{bottom:-18px;margin:0 -18px;padding:8px 18px 18px}}
+/* Answer: the Russian name sits in the same grid and size as the English, Latin and Polish ones. */
+.fc-answer>h3{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;align-items:center;margin:0 0 4px;font:600 20px/1.3 'Manrope',sans-serif;color:var(--ink)}
+.fc-answer>h3::before{content:'рус.';color:var(--muted);font-size:11px;font-weight:400}
+.fc-answer .bird-names dd{font-size:20px;line-height:1.3;font-weight:600}
+@media(max-width:760px){.fc-answer>h3{grid-template-columns:56px minmax(0,1fr)}}
+@media(max-width:560px){.fc-answer>h3,.fc-answer .bird-names dd{font-size:18px}}
