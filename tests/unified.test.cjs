@@ -3,20 +3,20 @@ function fixture(progress,filters={typicalPoland:false,onlyPoland:false}){const 
 if(progress)w.localStorage.setItem('europeanBirds:v1:progress:guest',JSON.stringify(progress));
 if(filters)w.localStorage.setItem('europeanBirds:filters',JSON.stringify(filters));
 w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
-for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','app.js','study-tree.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
+for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','app.js','study-tree.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
 const d=w.document,go=id=>d.querySelector('[data-tree-go="'+id+'"]').click(),total=()=>Number(d.querySelector('.drill-total').textContent.split(' ')[0]),find=q=>{const s=d.getElementById('treeSearch');s.value=q;s.dispatchEvent(new w.Event('input'));};
 return {w,d,go,total,find,close:()=>w.close()};}
 test('Typical Polish species are the default scope for every view and learning; filters survive reload',()=>{
  const {w,d,total,find,close}=fixture(undefined,null);let saved;
  try{
   const typical=w.BIRD_DATA.filter(w.BirdTaxonomy.isTypical),ids=typical.map(b=>b.id);
-  assert.equal(typical.length,120);assert.equal(total(),120);
+  assert.equal(typical.length,285);assert.equal(total(),285);
   assert.equal(d.getElementById('filterSummary').hidden,true,'the visible quick filter is not repeated');
-  assert.equal(d.getElementById('newCount').textContent,'120');assert.equal(d.querySelectorAll('.bird-tile').length,120);
+  assert.equal(d.getElementById('newCount').textContent,'120');assert.equal(d.querySelectorAll('.bird-tile').length,285);
   assert.deepEqual([...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort(),[...ids].sort());
   assert.ok(ids.includes('great-tit'));assert.ok(ids.includes('mallard'));assert.ok(!typical.some(b=>b.latin==='Vireo olivaceus'));
   w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));d.getElementById('boardView').click();
-  assert.equal(d.querySelectorAll('.sb-bar i').length,120);
+  assert.equal(d.querySelectorAll('.sb-bar i').length,285);
   const change=id=>d.getElementById(id).dispatchEvent(new w.Event('change'));
   d.getElementById('polandWinter').checked=true;change('polandWinter');
   const winter=typical.filter(b=>w.BirdTaxonomy.region(b).seasons.winter);
@@ -26,21 +26,21 @@ test('Typical Polish species are the default scope for every view and learning; 
   find('');d.getElementById('polandWinter').checked=false;change('polandWinter');
   const original=w.BirdStudy.shuffle;w.BirdStudy.shuffle=pool=>{assert.ok(pool.every(b=>ids.includes(b.id)));return pool;};
   d.getElementById('learnBtn').click();assert.equal(d.getElementById('cardDialog').open,true);d.getElementById('closeCard').click();w.BirdStudy.shuffle=original;
-  d.getElementById('typicalPoland').checked=false;change('typicalPoland');assert.equal(total(),196,'all national records remain available');
+  d.getElementById('typicalPoland').checked=false;change('typicalPoland');assert.equal(total(),471,'all national records remain available');
   saved=JSON.parse(w.localStorage.getItem('europeanBirds:filters'));
-  d.getElementById('onlyPoland').checked=false;change('onlyPoland');assert.equal(total(),435);
-  d.getElementById('typicalPoland').checked=true;change('typicalPoland');assert.equal(total(),120);
+  d.getElementById('onlyPoland').checked=false;change('onlyPoland');assert.equal(total(),713);
+  d.getElementById('typicalPoland').checked=true;change('typicalPoland');assert.equal(total(),285);
   d.querySelector('[data-mode="audio"]').click();assert.equal(d.getElementById('newCount').textContent,String(typical.filter(b=>b.audio.length).length));
  }finally{close();}
- const restored=fixture(undefined,saved);try{assert.equal(restored.total(),196);assert.equal(restored.d.getElementById('typicalPoland').checked,false);}finally{restored.close();}
+ const restored=fixture(undefined,saved);try{assert.equal(restored.total(),471);assert.equal(restored.d.getElementById('typicalPoland').checked,false);}finally{restored.close();}
 });
 test('All taxonomy species share learning cards; filters, languages, branch tests and progress work',()=>{
 const {w,d,go,total,find,close}=fixture();try{
-const ranks={};(function r(n){ranks[n.rank]=(ranks[n.rank]||0)+1;(n.children||[]).forEach(r)})(w.STUDY_TREE);assert.equal(ranks.family,51);assert.equal(ranks.genus,168);
+const ranks={};(function r(n){ranks[n.rank]=(ranks[n.rank]||0)+1;(n.children||[]).forEach(r)})(w.STUDY_TREE);assert.equal(ranks.family,83);assert.equal(ranks.genus,311);
 assert.equal(d.querySelectorAll('details.study-branch').length,0,'no nested frames');assert.ok(d.querySelector('.drill-row[data-tree-go="Passeriformes"]'));
 const ids=[];function walk(n){if(n.rank==='species')ids.push(n.birdId);(n.children||[]).forEach(walk)}walk(w.PASSERINE_TREE.root);
-assert.equal(new Set(ids).size,423);assert.ok(ids.every(id=>w.BIRD_DATA.some(b=>b.id===id)));
-assert.equal(total(),w.BIRD_DATA.length);assert.equal(w.BIRD_DATA.length,435);
+assert.equal(new Set(ids).size,424);assert.ok(ids.every(id=>w.BIRD_DATA.some(b=>b.id===id)));
+assert.equal(total(),w.BIRD_DATA.length);assert.equal(w.BIRD_DATA.length,713);
 find('a');const shown=d.querySelectorAll('.drill-species').length;for(const lang of ['ru','la','pl'])assert.equal(d.querySelectorAll('.drill-species [lang='+lang+']').length,shown);find('');
 const search=d.getElementById('treeSearch');search.value='Paridae';search.dispatchEvent(new w.Event('input'));
 assert.equal(d.querySelectorAll('.drill-species').length,10);assert.equal(d.getElementById('newCount').textContent,'10');
@@ -51,7 +51,7 @@ assert.match(body.querySelector('.fc-meta').textContent,/осталось 10/);a
 assert.equal(body.querySelector('.fc-answer h3').textContent,current.ru);assert.match(body.querySelector('.fc-answer').textContent,new RegExp(current.pl));body.querySelector('[data-grade="good"]').click();
 assert.equal(w.BirdAtlas.state(current.id).level,2);assert.equal(w.BirdAtlas.state(current.id).reps,1);assert.equal(d.querySelectorAll('[data-tree-species="'+current.id+'"] .drill-meter i.filled').length,2);assert.match(body.querySelector('.fc-meta').textContent,/осталось 9/);
 d.getElementById('closeCard').click();assert.equal(card.open,false);search.value='';search.dispatchEvent(new w.Event('input'));
-d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=total();assert.ok(polandCount>100&&polandCount<423);
+d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));const polandCount=total();assert.ok(polandCount>100&&polandCount<713);
 d.getElementById('polandWinter').checked=true;d.getElementById('polandWinter').dispatchEvent(new w.Event('change'));assert.ok(total()<polandCount);
 search.value='no such bird';search.dispatchEvent(new w.Event('input'));assert.equal(d.querySelectorAll('.drill-species').length,0);assert.ok(d.querySelector('.drill-empty'));assert.equal(d.getElementById('learnBtn').disabled,true);
 }finally{close()}});
@@ -61,8 +61,8 @@ const {w,d,go,total,close}=fixture();try{
 assert.equal(d.getElementById('testTitBranch'),null,'no second whole-tree button');assert.equal(d.querySelectorAll('[data-test-branch]').length,1);assert.ok(d.querySelector('.drill-bar .drill-branch-test'),'the study button sits in the pinned bar');
 assert.equal(d.querySelector('.tree-score-rule'),null);assert.match(d.querySelector('.tree-mode').textContent,/По фото · русский/);
 // With thumbnails on, every row photo is a local square thumbnail that exists in the repository.
-if(w.BirdTree.thumbs)for(const b of w.BIRD_DATA){const src=b.photos[0].src;if(/^assets\/(photos|bird-photos)\//.test(src))assert.ok(fs.existsSync(path.join(__dirname,'..',src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'))),'thumbnail for '+src);}
-const imgs=[...d.querySelectorAll('.drill-row .drill-thumb img')];assert.equal(imgs.length,d.querySelectorAll('.drill-row').length,'every branch has a photo');assert.ok(imgs.every(i=>w.BirdTree.thumbs?/^assets\/thumbs\//.test(i.getAttribute('src'))&&i.dataset.full:/^assets\/(photos|bird-photos)\//.test(i.getAttribute('src'))));
+if(w.BirdTree.thumbs)for(const b of w.BIRD_DATA){const src=b.photos[0]?.src;if(/^assets\/(photos|bird-photos)\//.test(src))assert.ok(fs.existsSync(path.join(__dirname,'..',src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'))),'thumbnail for '+src);}
+const imgs=[...d.querySelectorAll('.drill-row .drill-thumb img')];assert.equal(imgs.length,9,'existing branches keep their photos; new branches remain without photos');assert.equal(d.querySelectorAll('.drill-row .drill-thumb span').length,15);assert.ok(imgs.every(i=>w.BirdTree.thumbs?/^assets\/thumbs\//.test(i.getAttribute('src'))&&i.dataset.full:/^assets\/(photos|bird-photos)\//.test(i.getAttribute('src'))));
 assert.equal(d.querySelectorAll('.drill-prog').length,0,'no empty progress bars before any study');
 go('Passeriformes');go('Paridae');d.querySelector('[data-tree-test="great-tit"]').click();const body=d.getElementById('cardBody');body.querySelector('[data-act="flip"]').click();body.querySelector('[data-grade="good"]').click();d.getElementById('closeCard').click();
 assert.ok(d.querySelector('.drill-hero .drill-prog .learning'),'the open level shows its progress');assert.match(d.querySelector('.drill-total').textContent,/изучаю 1/);
@@ -97,7 +97,7 @@ d.getElementById('closeCard').click();s2.value='';s2.dispatchEvent(new w.Event('
 test('Audit regressions: canonical names, aliases, Poland filters, taxonomy and saved crow progress',()=>{
 const {w,d,go,find,close}=fixture({'Corvus_corone__photo':{level:4,reps:5,updatedAt:200},'hooded-crow__photo':{level:2,reps:2,updatedAt:100}});try{
 const birds=w.BIRD_DATA;
-assert.equal(birds.length,435);assert.equal(birds.filter(b=>b.latin==='Corvus corone').length,1);assert.equal(birds.some(b=>b.latin==='Corvus cornix'),false);
+assert.equal(birds.length,713);assert.equal(birds.filter(b=>b.latin==='Corvus corone').length,1);assert.equal(birds.some(b=>b.latin==='Corvus cornix'),false);
 assert.equal(w.BirdAtlas.state('hooded-crow').level,4);
 assert.ok(birds.every(b=>/[А-Яа-яЁё]/.test(b.ru)));
 assert.equal(new Set(birds.map(b=>b.ru)).size,birds.length,'Russian answer labels must distinguish every species');

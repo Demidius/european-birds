@@ -1,0 +1,3332 @@
+{
+  "source": "https://komisjafaunistyczna.pl/lista/",
+  "sourceDate": "2026-06-01",
+  "checkedAt": "2026-10-16",
+  "records": [
+    {
+      "number": 1,
+      "latin": "Oxyura leucocephala",
+      "pl": "sterniczka",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 2,
+      "latin": "Cygnus olor",
+      "pl": "łabędź niemy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 3,
+      "latin": "Cygnus columbianus",
+      "pl": "łabędź czarnodzioby",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 4,
+      "latin": "Cygnus cygnus",
+      "pl": "łabędź krzykliwy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 5,
+      "latin": "Branta bernicla",
+      "pl": "bernikla obrożna",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 6,
+      "latin": "Branta ruficollis",
+      "pl": "bernikla rdzawoszyja",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 7,
+      "latin": "Branta canadensis",
+      "pl": "bernikla kanadyjska",
+      "category": "C",
+      "status": "l P"
+    },
+    {
+      "number": 8,
+      "latin": "Branta leucopsis",
+      "pl": "bernikla białolica",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 9,
+      "latin": "Anser anser",
+      "pl": "gęgawa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 10,
+      "latin": "Anser erythropus",
+      "pl": "gęś mała",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 11,
+      "latin": "Anser albifrons",
+      "pl": "gęś białoczelna",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 12,
+      "latin": "Anser serrirostris",
+      "pl": "gęś tundrowa",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 13,
+      "latin": "Anser brachyrhynchus",
+      "pl": "gęś krótkodzioba",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 14,
+      "latin": "Anser fabalis",
+      "pl": "gęś zbożowa",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 15,
+      "latin": "Aix galericulata",
+      "pl": "mandarynka",
+      "category": "C",
+      "status": "l P"
+    },
+    {
+      "number": 16,
+      "latin": "Alopochen aegyptiaca",
+      "pl": "gęsiówka egipska",
+      "category": "C",
+      "status": "l P"
+    },
+    {
+      "number": 17,
+      "latin": "Tadorna tadorna",
+      "pl": "ohar",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 18,
+      "latin": "Tadorna ferruginea",
+      "pl": "kazarka rdzawa",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 19,
+      "latin": "Clangula hyemalis",
+      "pl": "lodówka",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 20,
+      "latin": "Polysticta stelleri",
+      "pl": "birginiak",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 21,
+      "latin": "Somateria spectabilis",
+      "pl": "turkan",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 22,
+      "latin": "Somateria mollissima",
+      "pl": "edredon",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 23,
+      "latin": "Histrionicus histrionicus",
+      "pl": "kamieniuszka",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 24,
+      "latin": "Melanitta nigra",
+      "pl": "markaczka",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 25,
+      "latin": "Melanitta americana",
+      "pl": "markaczka amerykańska",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 26,
+      "latin": "Melanitta fusca",
+      "pl": "uhla",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 27,
+      "latin": "Melanitta stejnegeri",
+      "pl": "uhla azjatycka",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 28,
+      "latin": "Bucephala clangula",
+      "pl": "gągoł",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 29,
+      "latin": "Mergellus albellus",
+      "pl": "bielaczek",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 30,
+      "latin": "Mergus serrator",
+      "pl": "szlachar",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 31,
+      "latin": "Mergus merganser",
+      "pl": "nurogęś",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 32,
+      "latin": "Netta rufina",
+      "pl": "hełmiatka",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 33,
+      "latin": "Aythya nyroca",
+      "pl": "podgorzałka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 34,
+      "latin": "Aythya ferina",
+      "pl": "głowienka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 35,
+      "latin": "Aythya collaris",
+      "pl": "czerniczka",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 36,
+      "latin": "Aythya fuligula",
+      "pl": "czernica",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 37,
+      "latin": "Aythya affinis",
+      "pl": "ogorzałka mała",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 38,
+      "latin": "Aythya marila",
+      "pl": "ogorzałka",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 39,
+      "latin": "Sibirionetta formosa",
+      "pl": "bajkałówka",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 40,
+      "latin": "Spatula querquedula",
+      "pl": "cyranka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 41,
+      "latin": "Spatula discors",
+      "pl": "cyranka modroskrzydła",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 42,
+      "latin": "Spatula clypeata",
+      "pl": "płaskonos",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 43,
+      "latin": "Mareca strepera",
+      "pl": "krakwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 44,
+      "latin": "Mareca penelope",
+      "pl": "świstun",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 45,
+      "latin": "Mareca americana",
+      "pl": "świstun amerykański",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 46,
+      "latin": "Anas platyrhynchos",
+      "pl": "krzyżówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 47,
+      "latin": "Anas acuta",
+      "pl": "rożeniec",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 48,
+      "latin": "Anas crecca",
+      "pl": "cyraneczka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 49,
+      "latin": "Tetrastes bonasia",
+      "pl": "jarząbek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 50,
+      "latin": "Lagopus lagopus",
+      "pl": "pardwa mszarna",
+      "category": "B",
+      "status": "(z)"
+    },
+    {
+      "number": 51,
+      "latin": "Tetrao urogallus",
+      "pl": "głuszec",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 52,
+      "latin": "Lyrurus tetrix",
+      "pl": "cietrzew",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 53,
+      "latin": "Perdix perdix",
+      "pl": "kuropatwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 54,
+      "latin": "Phasianus colchicus",
+      "pl": "bażant",
+      "category": "C",
+      "status": "L"
+    },
+    {
+      "number": 55,
+      "latin": "Coturnix coturnix",
+      "pl": "przepiórka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 56,
+      "latin": "Phoenicopterus roseus",
+      "pl": "flaming różowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 57,
+      "latin": "Tachybaptus ruficollis",
+      "pl": "perkozek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 58,
+      "latin": "Podilymbus podiceps",
+      "pl": "perkoz grubodzioby",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 59,
+      "latin": "Podiceps auritus",
+      "pl": "perkoz rogaty",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 60,
+      "latin": "Podiceps grisegena",
+      "pl": "perkoz rdzawoszyi",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 61,
+      "latin": "Podiceps cristatus",
+      "pl": "perkoz dwuczuby",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 62,
+      "latin": "Podiceps nigricollis",
+      "pl": "zausznik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 63,
+      "latin": "Otis tarda",
+      "pl": "drop",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 64,
+      "latin": "Chlamydotis macqueenii",
+      "pl": "hubara arabska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 65,
+      "latin": "Tetrax tetrax",
+      "pl": "strepet",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 66,
+      "latin": "Cuculus canorus",
+      "pl": "kukułka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 67,
+      "latin": "Syrrhaptes paradoxus",
+      "pl": "pustynnik",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 68,
+      "latin": "Streptopelia orientalis",
+      "pl": "turkawka wschodnia",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 69,
+      "latin": "Streptopelia turtur",
+      "pl": "turkawka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 70,
+      "latin": "Streptopelia decaocto",
+      "pl": "sierpówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 71,
+      "latin": "Columba palumbus",
+      "pl": "grzywacz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 72,
+      "latin": "Columba livia forma urbana",
+      "pl": "gołąb miejski",
+      "category": "C",
+      "status": "L"
+    },
+    {
+      "number": 73,
+      "latin": "Columba oenas",
+      "pl": "siniak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 74,
+      "latin": "Antigone canadensis",
+      "pl": "żuraw kanadyjski",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 75,
+      "latin": "Grus virgo",
+      "pl": "żuraw stepowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 76,
+      "latin": "Grus grus",
+      "pl": "żuraw",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 77,
+      "latin": "Rallus aquaticus",
+      "pl": "wodnik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 78,
+      "latin": "Crex crex",
+      "pl": "derkacz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 79,
+      "latin": "Porzana porzana",
+      "pl": "kropiatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 80,
+      "latin": "Gallinula chloropus",
+      "pl": "kokoszka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 81,
+      "latin": "Fulica atra",
+      "pl": "łyska",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 82,
+      "latin": "Zapornia parva",
+      "pl": "zielonka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 83,
+      "latin": "Zapornia pusilla",
+      "pl": "karliczka",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 84,
+      "latin": "Burhinus oedicnemus",
+      "pl": "kulon",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 85,
+      "latin": "Recurvirostra avosetta",
+      "pl": "szablodziób",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 86,
+      "latin": "Himantopus himantopus",
+      "pl": "szczudłak",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 87,
+      "latin": "Haematopus ostralegus",
+      "pl": "ostrygojad",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 88,
+      "latin": "Pluvialis squatarola",
+      "pl": "siewnica",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 89,
+      "latin": "Pluvialis apricaria",
+      "pl": "siewka złota",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 90,
+      "latin": "Pluvialis dominica",
+      "pl": "siewka szara",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 91,
+      "latin": "Pluvialis fulva",
+      "pl": "siewka złotawa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 92,
+      "latin": "Eudromias morinellus",
+      "pl": "mornel",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 93,
+      "latin": "Charadrius hiaticula",
+      "pl": "sieweczka obrożna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 94,
+      "latin": "Thinornis dubius",
+      "pl": "sieweczka rzeczna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 95,
+      "latin": "Vanellus vanellus",
+      "pl": "czajka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 96,
+      "latin": "Vanellus spinosus",
+      "pl": "czajka szponiasta",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 97,
+      "latin": "Vanellus gregarius",
+      "pl": "czajka towarzyska",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 98,
+      "latin": "Vanellus leucurus",
+      "pl": "czajka stepowa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 99,
+      "latin": "Anarhynchus asiaticus",
+      "pl": "sieweczka długonoga",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 100,
+      "latin": "Anarhynchus atrifrons",
+      "pl": "sieweczka tybetańska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 101,
+      "latin": "Anarhynchus leschenaultii",
+      "pl": "sieweczka pustynna",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 102,
+      "latin": "Anarhynchus alexandrinus",
+      "pl": "sieweczka morska",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 103,
+      "latin": "Numenius phaeopus",
+      "pl": "kulik mniejszy",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 104,
+      "latin": "Numenius tenuirostris",
+      "pl": "kulik cienkodzioby",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 105,
+      "latin": "Numenius arquata",
+      "pl": "kulik wielki",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 106,
+      "latin": "Limosa lapponica",
+      "pl": "szlamnik",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 107,
+      "latin": "Limosa limosa",
+      "pl": "rycyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 108,
+      "latin": "Limnodromus scolopaceus",
+      "pl": "szlamiec długodzioby",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 109,
+      "latin": "Lymnocryptes minimus",
+      "pl": "bekasik",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 110,
+      "latin": "Scolopax rusticola",
+      "pl": "słonka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 111,
+      "latin": "Gallinago media",
+      "pl": "dubelt",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 112,
+      "latin": "Gallinago gallinago",
+      "pl": "kszyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 113,
+      "latin": "Xenus cinereus",
+      "pl": "terekia",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 114,
+      "latin": "Actitis hypoleucos",
+      "pl": "brodziec piskliwy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 115,
+      "latin": "Actitis macularius",
+      "pl": "brodziec plamisty",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 116,
+      "latin": "Phalaropus fulicarius",
+      "pl": "płatkonóg płaskodzioby",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 117,
+      "latin": "Phalaropus lobatus",
+      "pl": "płatkonóg szydłodzioby",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 118,
+      "latin": "Tringa ochropus",
+      "pl": "samotnik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 119,
+      "latin": "Tringa stagnatilis",
+      "pl": "brodziec pławny",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 120,
+      "latin": "Tringa glareola",
+      "pl": "łęczak",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 121,
+      "latin": "Tringa totanus",
+      "pl": "krwawodziób",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 122,
+      "latin": "Tringa flavipes",
+      "pl": "brodziec żółtonogi",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 123,
+      "latin": "Tringa erythropus",
+      "pl": "brodziec śniady",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 124,
+      "latin": "Tringa nebularia",
+      "pl": "kwokacz",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 125,
+      "latin": "Tringa melanoleuca",
+      "pl": "brodziec piegowaty",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 126,
+      "latin": "Arenaria interpres",
+      "pl": "kamusznik",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 127,
+      "latin": "Calidris canutus",
+      "pl": "biegus rdzawy",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 128,
+      "latin": "Calidris tenuirostris",
+      "pl": "biegus wielki",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 129,
+      "latin": "Calidris pugnax",
+      "pl": "batalion",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 130,
+      "latin": "Calidris acuminata",
+      "pl": "biegus ostrosterny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 131,
+      "latin": "Calidris falcinellus",
+      "pl": "biegus płaskodzioby",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 132,
+      "latin": "Calidris ferruginea",
+      "pl": "biegus krzywodzioby",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 133,
+      "latin": "Calidris temminckii",
+      "pl": "biegus mały",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 134,
+      "latin": "Calidris subruficollis",
+      "pl": "biegus płowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 135,
+      "latin": "Calidris alba",
+      "pl": "piaskowiec",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 136,
+      "latin": "Calidris alpina",
+      "pl": "biegus zmienny",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 137,
+      "latin": "Calidris maritima",
+      "pl": "biegus morski",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 138,
+      "latin": "Calidris bairdii",
+      "pl": "biegus długoskrzydły",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 139,
+      "latin": "Calidris melanotos",
+      "pl": "biegus arktyczny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 140,
+      "latin": "Calidris pusilla",
+      "pl": "biegus tundrowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 141,
+      "latin": "Calidris minuta",
+      "pl": "biegus malutki",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 142,
+      "latin": "Calidris minutilla",
+      "pl": "biegus karłowaty",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 143,
+      "latin": "Calidris fuscicollis",
+      "pl": "biegus białorzytny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 144,
+      "latin": "Glareola nordmanni",
+      "pl": "żwirowiec stepowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 145,
+      "latin": "Glareola pratincola",
+      "pl": "żwirowiec łąkowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 146,
+      "latin": "Stercorarius parasiticus",
+      "pl": "wydrzyk ostrosterny",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 147,
+      "latin": "Stercorarius longicaudus",
+      "pl": "wydrzyk długosterny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 148,
+      "latin": "Stercorarius pomarinus",
+      "pl": "wydrzyk tęposterny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 149,
+      "latin": "Stercorarius skua",
+      "pl": "wydrzyk wielki",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 150,
+      "latin": "Fratercula arctica",
+      "pl": "maskonur",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 151,
+      "latin": "Cepphus grylle",
+      "pl": "nurnik",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 152,
+      "latin": "Alca torda",
+      "pl": "alka",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 153,
+      "latin": "Alle alle",
+      "pl": "alczyk",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 154,
+      "latin": "Uria lomvia",
+      "pl": "nurzyk polarny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 155,
+      "latin": "Uria aalge",
+      "pl": "nurzyk",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 156,
+      "latin": "Sternula albifrons",
+      "pl": "rybitwa białoczelna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 157,
+      "latin": "Hydroprogne caspia",
+      "pl": "rybitwa wielkodzioba",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 158,
+      "latin": "Gelochelidon nilotica",
+      "pl": "rybitwa krótkodzioba",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 159,
+      "latin": "Chlidonias hybrida",
+      "pl": "rybitwa białowąsa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 160,
+      "latin": "Chlidonias leucopterus",
+      "pl": "rybitwa białoskrzydła",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 161,
+      "latin": "Chlidonias niger",
+      "pl": "rybitwa czarna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 162,
+      "latin": "Thalasseus sandvicensis",
+      "pl": "rybitwa czubata",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 163,
+      "latin": "Sterna paradisaea",
+      "pl": "rybitwa popielata",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 164,
+      "latin": "Sterna hirundo",
+      "pl": "rybitwa rzeczna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 165,
+      "latin": "Sterna dougallii",
+      "pl": "rybitwa różowa",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 166,
+      "latin": "Hydrocoloeus minutus",
+      "pl": "mewa mała",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 167,
+      "latin": "Rhodostethia rosea",
+      "pl": "mewa różowa",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 168,
+      "latin": "Rissa tridactyla",
+      "pl": "mewa trójpalczasta",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 169,
+      "latin": "Xema sabini",
+      "pl": "mewa obrożna",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 170,
+      "latin": "Pagophila eburnea",
+      "pl": "mewa modrodzioba",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 171,
+      "latin": "Chroicocephalus genei",
+      "pl": "mewa cienkodzioba",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 172,
+      "latin": "Chroicocephalus ridibundus",
+      "pl": "śmieszka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 173,
+      "latin": "Leucophaeus atricilla",
+      "pl": "mewa karaibska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 174,
+      "latin": "Ichthyaetus ichthyaetus",
+      "pl": "orlica",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 175,
+      "latin": "Ichthyaetus audouinii",
+      "pl": "mewa śródziemnomorska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 176,
+      "latin": "Ichthyaetus melanocephalus",
+      "pl": "mewa czarnogłowa",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 177,
+      "latin": "Larus delawarensis",
+      "pl": "mewa delawarska",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 178,
+      "latin": "Larus canus",
+      "pl": "mewa siwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 179,
+      "latin": "Larus cachinnans",
+      "pl": "mewa białogłowa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 180,
+      "latin": "Larus smithsonianus",
+      "pl": "mewa popielata",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 181,
+      "latin": "Larus argentatus",
+      "pl": "mewa srebrzysta",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 182,
+      "latin": "Larus michahellis",
+      "pl": "mewa romańska",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 183,
+      "latin": "Larus marinus",
+      "pl": "mewa siodłata",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 184,
+      "latin": "Larus hyperboreus",
+      "pl": "mewa blada",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 185,
+      "latin": "Larus fuscus",
+      "pl": "mewa żółtonoga",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 186,
+      "latin": "Larus schistisagus",
+      "pl": "mewa ochocka",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 187,
+      "latin": "Larus glaucoides",
+      "pl": "mewa polarna",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 188,
+      "latin": "Gavia stellata",
+      "pl": "nur rdzawoszyi",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 189,
+      "latin": "Gavia immer",
+      "pl": "lodowiec",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 190,
+      "latin": "Gavia adamsii",
+      "pl": "nur białodzioby",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 191,
+      "latin": "Gavia pacifica",
+      "pl": "nur pacyficzny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 192,
+      "latin": "Gavia arctica",
+      "pl": "nur czarnoszyi",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 193,
+      "latin": "Hydrobates pelagicus",
+      "pl": "nawałnik burzowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 194,
+      "latin": "Hydrobates leucorhous",
+      "pl": "nawałnik duży",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 195,
+      "latin": "Fulmarus glacialis",
+      "pl": "fulmar",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 196,
+      "latin": "Calonectris diomedea",
+      "pl": "burzyk żółtodzioby",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 197,
+      "latin": "Ardenna grisea",
+      "pl": "burzyk szary",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 198,
+      "latin": "Puffinus puffinus",
+      "pl": "burzyk północny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 199,
+      "latin": "Ciconia nigra",
+      "pl": "bocian czarny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 200,
+      "latin": "Ciconia ciconia",
+      "pl": "bocian biały",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 201,
+      "latin": "Morus bassanus",
+      "pl": "głuptak",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 202,
+      "latin": "Sula leucogaster",
+      "pl": "głuptak białobrzuchy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 203,
+      "latin": "Microcarbo pygmaeus",
+      "pl": "kormoran mały",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 204,
+      "latin": "Gulosus aristotelis",
+      "pl": "kormoran czubaty",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 205,
+      "latin": "Phalacrocorax carbo",
+      "pl": "kormoran",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 206,
+      "latin": "Plegadis falcinellus",
+      "pl": "ibis kasztanowaty",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 207,
+      "latin": "Platalea leucorodia",
+      "pl": "warzęcha",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 208,
+      "latin": "Pelecanus onocrotalus",
+      "pl": "pelikan różowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 209,
+      "latin": "Pelecanus crispus",
+      "pl": "pelikan kędzierzawy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 210,
+      "latin": "Botaurus stellaris",
+      "pl": "bąk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 211,
+      "latin": "Botaurus minutus",
+      "pl": "bączek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 212,
+      "latin": "Egretta garzetta",
+      "pl": "czapla nadobna",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 213,
+      "latin": "Nycticorax nycticorax",
+      "pl": "ślepowron",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 214,
+      "latin": "Ardeola ralloides",
+      "pl": "czapla modronosa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 215,
+      "latin": "Ardea alba",
+      "pl": "czapla biała",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 216,
+      "latin": "Ardea ibis",
+      "pl": "czapla złotawa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 217,
+      "latin": "Ardea purpurea",
+      "pl": "czapla purpurowa",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 218,
+      "latin": "Ardea cinerea",
+      "pl": "czapla siwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 219,
+      "latin": "Caprimulgus europaeus",
+      "pl": "lelek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 220,
+      "latin": "Tachymarptis melba",
+      "pl": "jerzyk alpejski",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 221,
+      "latin": "Apus apus",
+      "pl": "jerzyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 222,
+      "latin": "Apus pallidus",
+      "pl": "jerzyk blady",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 223,
+      "latin": "Tyto alba",
+      "pl": "płomykówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 224,
+      "latin": "Aegolius funereus",
+      "pl": "włochatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 225,
+      "latin": "Athene noctua",
+      "pl": "pójdźka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 226,
+      "latin": "Surnia ulula",
+      "pl": "sowa jarzębata",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 227,
+      "latin": "Glaucidium passerinum",
+      "pl": "sóweczka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 228,
+      "latin": "Otus scops",
+      "pl": "syczek",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 229,
+      "latin": "Asio flammeus",
+      "pl": "uszatka błotna",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 230,
+      "latin": "Asio otus",
+      "pl": "uszatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 231,
+      "latin": "Bubo scandiacus",
+      "pl": "puchacz śnieżny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 232,
+      "latin": "Bubo bubo",
+      "pl": "puchacz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 233,
+      "latin": "Strix aluco",
+      "pl": "puszczyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 234,
+      "latin": "Strix uralensis",
+      "pl": "puszczyk uralski",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 235,
+      "latin": "Strix nebulosa",
+      "pl": "puszczyk mszarny",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 236,
+      "latin": "Pandion haliaetus",
+      "pl": "rybołów",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 237,
+      "latin": "Elanus caeruleus",
+      "pl": "kaniuk",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 238,
+      "latin": "Gypaetus barbatus",
+      "pl": "orłosęp",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 239,
+      "latin": "Neophron percnopterus",
+      "pl": "ścierwnik",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 240,
+      "latin": "Pernis apivorus",
+      "pl": "trzmielojad",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 241,
+      "latin": "Aegypius monachus",
+      "pl": "sęp kasztanowaty",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 242,
+      "latin": "Gyps fulvus",
+      "pl": "sęp płowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 243,
+      "latin": "Circaetus gallicus",
+      "pl": "gadożer",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 244,
+      "latin": "Clanga clanga",
+      "pl": "orlik grubodzioby",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 245,
+      "latin": "Clanga pomarina",
+      "pl": "orlik krzykliwy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 246,
+      "latin": "Hieraaetus pennatus",
+      "pl": "orzełek",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 247,
+      "latin": "Aquila nipalensis",
+      "pl": "orzeł stepowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 248,
+      "latin": "Aquila heliaca",
+      "pl": "orzeł cesarski",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 249,
+      "latin": "Aquila chrysaetos",
+      "pl": "orzeł przedni",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 250,
+      "latin": "Aquila fasciata",
+      "pl": "orzeł południowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 251,
+      "latin": "Tachyspiza brevipes",
+      "pl": "krogulec krótkonogi",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 252,
+      "latin": "Accipiter nisus",
+      "pl": "krogulec",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 253,
+      "latin": "Astur gentilis",
+      "pl": "jastrząb",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 254,
+      "latin": "Circus macrourus",
+      "pl": "błotniak stepowy",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 255,
+      "latin": "Circus cyaneus",
+      "pl": "błotniak zbożowy",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 256,
+      "latin": "Circus pygargus",
+      "pl": "błotniak łąkowy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 257,
+      "latin": "Circus aeruginosus",
+      "pl": "błotniak stawowy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 258,
+      "latin": "Milvus milvus",
+      "pl": "kania ruda",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 259,
+      "latin": "Milvus migrans",
+      "pl": "kania czarna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 260,
+      "latin": "Haliaeetus leucoryphus",
+      "pl": "bielik wschodni",
+      "category": "B",
+      "status": "(z)"
+    },
+    {
+      "number": 261,
+      "latin": "Haliaeetus albicilla",
+      "pl": "bielik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 262,
+      "latin": "Buteo lagopus",
+      "pl": "myszołów włochaty",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 263,
+      "latin": "Buteo buteo",
+      "pl": "myszołów",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 264,
+      "latin": "Buteo rufinus",
+      "pl": "kurhannik",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 265,
+      "latin": "Upupa epops",
+      "pl": "dudek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 266,
+      "latin": "Coracias garrulus",
+      "pl": "kraska",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 267,
+      "latin": "Merops apiaster",
+      "pl": "żołna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 268,
+      "latin": "Alcedo atthis",
+      "pl": "zimorodek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 269,
+      "latin": "Ceryle rudis",
+      "pl": "rybaczek srokaty",
+      "category": "B",
+      "status": "(z)"
+    },
+    {
+      "number": 270,
+      "latin": "Jynx torquilla",
+      "pl": "krętogłów",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 271,
+      "latin": "Picus canus",
+      "pl": "dzięcioł zielonosiwy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 272,
+      "latin": "Picus viridis",
+      "pl": "dzięcioł zielony",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 273,
+      "latin": "Dryocopus martius",
+      "pl": "dzięcioł czarny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 274,
+      "latin": "Picoides tridactylus",
+      "pl": "dzięcioł trójpalczasty",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 275,
+      "latin": "Dendrocoptes medius",
+      "pl": "dzięcioł średni",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 276,
+      "latin": "Dendrocopos leucotos",
+      "pl": "dzięcioł białogrzbiety",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 277,
+      "latin": "Dendrocopos major",
+      "pl": "dzięcioł duży",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 278,
+      "latin": "Dendrocopos syriacus",
+      "pl": "dzięcioł białoszyi",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 279,
+      "latin": "Dryobates minor",
+      "pl": "dzięciołek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 280,
+      "latin": "Falco naumanni",
+      "pl": "pustułeczka",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 281,
+      "latin": "Falco tinnunculus",
+      "pl": "pustułka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 282,
+      "latin": "Falco vespertinus",
+      "pl": "kobczyk",
+      "category": "A",
+      "status": "(l) P"
+    },
+    {
+      "number": 283,
+      "latin": "Falco columbarius",
+      "pl": "drzemlik",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 284,
+      "latin": "Falco eleonorae",
+      "pl": "sokół skalny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 285,
+      "latin": "Falco subbuteo",
+      "pl": "kobuz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 286,
+      "latin": "Falco peregrinus",
+      "pl": "sokół wędrowny",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 287,
+      "latin": "Falco biarmicus",
+      "pl": "raróg górski",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 288,
+      "latin": "Falco rusticolus",
+      "pl": "białozór",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 289,
+      "latin": "Falco cherrug",
+      "pl": "raróg",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 290,
+      "latin": "Vireo olivaceus",
+      "pl": "wireonek czerwonooki",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 291,
+      "latin": "Oriolus oriolus",
+      "pl": "wilga",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 292,
+      "latin": "Lanius excubitor",
+      "pl": "srokosz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 293,
+      "latin": "Lanius borealis",
+      "pl": "srokosz północny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 294,
+      "latin": "Lanius minor",
+      "pl": "dzierzba czarnoczelna",
+      "category": "A",
+      "status": "l Z"
+    },
+    {
+      "number": 295,
+      "latin": "Lanius senator",
+      "pl": "dzierzba rudogłowa",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 296,
+      "latin": "Lanius isabellinus",
+      "pl": "dzierzba pustynna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 297,
+      "latin": "Lanius collurio",
+      "pl": "gąsiorek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 298,
+      "latin": "Lanius phoenicuroides",
+      "pl": "dzierzba rdzawosterna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 299,
+      "latin": "Pyrrhocorax graculus",
+      "pl": "wieszczek",
+      "category": "A",
+      "status": "(l) z"
+    },
+    {
+      "number": 300,
+      "latin": "Perisoreus infaustus",
+      "pl": "sójka syberyjska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 301,
+      "latin": "Garrulus glandarius",
+      "pl": "sójka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 302,
+      "latin": "Pica pica",
+      "pl": "sroka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 303,
+      "latin": "Nucifraga caryocatactes",
+      "pl": "orzechówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 304,
+      "latin": "Coloeus monedula",
+      "pl": "kawka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 305,
+      "latin": "Corvus frugilegus",
+      "pl": "gawron",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 306,
+      "latin": "Corvus corax",
+      "pl": "kruk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 307,
+      "latin": "Corvus corone",
+      "pl": "wrona",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 308,
+      "latin": "Remiz pendulinus",
+      "pl": "remiz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 309,
+      "latin": "Cyanistes caeruleus",
+      "pl": "modraszka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 310,
+      "latin": "Cyanistes cyanus",
+      "pl": "sikora lazurowa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 311,
+      "latin": "Parus major",
+      "pl": "bogatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 312,
+      "latin": "Periparus ater",
+      "pl": "sosnówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 313,
+      "latin": "Lophophanes cristatus",
+      "pl": "czubatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 314,
+      "latin": "Poecile palustris",
+      "pl": "sikora uboga",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 315,
+      "latin": "Poecile montanus",
+      "pl": "czarnogłówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 316,
+      "latin": "Panurus biarmicus",
+      "pl": "wąsatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 317,
+      "latin": "Lullula arborea",
+      "pl": "lerka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 318,
+      "latin": "Alauda leucoptera",
+      "pl": "skowronek białoskrzydły",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 319,
+      "latin": "Alauda arvensis",
+      "pl": "skowronek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 320,
+      "latin": "Galerida cristata",
+      "pl": "dzierlatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 321,
+      "latin": "Eremophila alpestris",
+      "pl": "górniczek",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 322,
+      "latin": "Calandrella brachydactyla",
+      "pl": "skowrończyk krótkopalcowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 323,
+      "latin": "Melanocorypha bimaculata",
+      "pl": "kalandra dwuplamista",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 324,
+      "latin": "Melanocorypha yeltoniensis",
+      "pl": "kalandra czarna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 325,
+      "latin": "Melanocorypha calandra",
+      "pl": "kalandra szara",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 326,
+      "latin": "Hippolais icterina",
+      "pl": "zaganiacz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 327,
+      "latin": "Hippolais polyglotta",
+      "pl": "zaganiacz szczebiotliwy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 328,
+      "latin": "Iduna rama",
+      "pl": "zaganiacz afgański",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 329,
+      "latin": "Iduna caligata",
+      "pl": "zaganiacz mały",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 330,
+      "latin": "Iduna pallida",
+      "pl": "zaganiacz blady",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 331,
+      "latin": "Acrocephalus schoenobaenus",
+      "pl": "rokitniczka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 332,
+      "latin": "Acrocephalus paludicola",
+      "pl": "wodniczka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 333,
+      "latin": "Acrocephalus melanopogon",
+      "pl": "tamaryszka",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 334,
+      "latin": "Acrocephalus agricola",
+      "pl": "trzcinniczek kaspijski",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 335,
+      "latin": "Acrocephalus dumetorum",
+      "pl": "zaroślówka",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 336,
+      "latin": "Acrocephalus palustris",
+      "pl": "łozówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 337,
+      "latin": "Acrocephalus scirpaceus",
+      "pl": "trzcinniczek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 338,
+      "latin": "Acrocephalus arundinaceus",
+      "pl": "trzciniak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 339,
+      "latin": "Helopsaltes certhiola",
+      "pl": "świerszczak melodyjny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 340,
+      "latin": "Locustella fluviatilis",
+      "pl": "strumieniówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 341,
+      "latin": "Locustella luscinioides",
+      "pl": "brzęczka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 342,
+      "latin": "Locustella naevia",
+      "pl": "świerszczak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 343,
+      "latin": "Riparia riparia",
+      "pl": "brzegówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 344,
+      "latin": "Hirundo rustica",
+      "pl": "dymówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 345,
+      "latin": "Delichon urbicum",
+      "pl": "oknówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 346,
+      "latin": "Cecropis rufula",
+      "pl": "jaskółka śródziemnomorska",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 347,
+      "latin": "Aegithalos caudatus",
+      "pl": "raniuszek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 348,
+      "latin": "Cettia cetti",
+      "pl": "wierzbówka",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 349,
+      "latin": "Phylloscopus sibilatrix",
+      "pl": "świstunka leśna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 350,
+      "latin": "Phylloscopus bonelli",
+      "pl": "świstunka górska",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 351,
+      "latin": "Phylloscopus inornatus",
+      "pl": "świstunka żółtawa",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 352,
+      "latin": "Phylloscopus humei",
+      "pl": "świstunka ałtajska",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 353,
+      "latin": "Phylloscopus proregulus",
+      "pl": "świstunka złotawa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 354,
+      "latin": "Phylloscopus schwarzi",
+      "pl": "świstunka grubodzioba",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 355,
+      "latin": "Phylloscopus fuscatus",
+      "pl": "świstunka brunatna",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 356,
+      "latin": "Phylloscopus trochilus",
+      "pl": "piecuszek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 357,
+      "latin": "Phylloscopus ibericus",
+      "pl": "świstunka iberyjska",
+      "category": "A",
+      "status": "l z"
+    },
+    {
+      "number": 358,
+      "latin": "Phylloscopus collybita",
+      "pl": "pierwiosnek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 359,
+      "latin": "Phylloscopus trochiloides",
+      "pl": "wójcik",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 360,
+      "latin": "Phylloscopus borealis",
+      "pl": "świstunka północna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 361,
+      "latin": "Sylvia borin",
+      "pl": "gajówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 362,
+      "latin": "Sylvia atricapilla",
+      "pl": "kapturka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 363,
+      "latin": "Curruca nisoria",
+      "pl": "jarzębatka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 364,
+      "latin": "Curruca curruca",
+      "pl": "piegża",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 365,
+      "latin": "Curruca mystacea",
+      "pl": "pokrzewka kaspijska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 366,
+      "latin": "Curruca communis",
+      "pl": "cierniówka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 367,
+      "latin": "Curruca melanocephala",
+      "pl": "pokrzewka aksamitna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 368,
+      "latin": "Curruca iberiae",
+      "pl": "pokrzewka iberyjska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 369,
+      "latin": "Curruca cantillans",
+      "pl": "pokrzewka wąsata",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 370,
+      "latin": "Bombycilla garrulus",
+      "pl": "jemiołuszka",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 371,
+      "latin": "Regulus regulus",
+      "pl": "mysikrólik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 372,
+      "latin": "Regulus ignicapilla",
+      "pl": "zniczek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 373,
+      "latin": "Tichodroma muraria",
+      "pl": "pomurnik",
+      "category": "A",
+      "status": "l"
+    },
+    {
+      "number": 374,
+      "latin": "Sitta europaea",
+      "pl": "kowalik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 375,
+      "latin": "Certhia familiaris",
+      "pl": "pełzacz leśny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 376,
+      "latin": "Certhia brachydactyla",
+      "pl": "pełzacz ogrodowy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 377,
+      "latin": "Troglodytes troglodytes",
+      "pl": "strzyżyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 378,
+      "latin": "Sturnus unicolor",
+      "pl": "szpak jednobarwny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 379,
+      "latin": "Sturnus vulgaris",
+      "pl": "szpak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 380,
+      "latin": "Pastor roseus",
+      "pl": "pasterz",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 381,
+      "latin": "Cinclus cinclus",
+      "pl": "pluszcz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 382,
+      "latin": "Zoothera aurea",
+      "pl": "drozdoń tajgowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 383,
+      "latin": "Geokichla sibirica",
+      "pl": "drozdaczek ciemny",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 384,
+      "latin": "Turdus viscivorus",
+      "pl": "paszkot",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 385,
+      "latin": "Turdus philomelos",
+      "pl": "śpiewak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 386,
+      "latin": "Turdus iliacus",
+      "pl": "droździk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 387,
+      "latin": "Turdus merula",
+      "pl": "kos",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 388,
+      "latin": "Turdus pilaris",
+      "pl": "kwiczoł",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 389,
+      "latin": "Turdus torquatus",
+      "pl": "drozd obrożny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 390,
+      "latin": "Turdus naumanni",
+      "pl": "drozd rdzawy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 391,
+      "latin": "Turdus eunomus",
+      "pl": "drozd rdzawoskrzydły",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 392,
+      "latin": "Turdus ruficollis",
+      "pl": "drozd rdzawogardły",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 393,
+      "latin": "Turdus atrogularis",
+      "pl": "drozd czarnogardły",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 394,
+      "latin": "Turdus obscurus",
+      "pl": "drozd oliwkowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 395,
+      "latin": "Muscicapa striata",
+      "pl": "muchołówka szara",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 396,
+      "latin": "Erithacus rubecula",
+      "pl": "rudzik",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 397,
+      "latin": "Luscinia megarhynchos",
+      "pl": "słowik rdzawy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 398,
+      "latin": "Luscinia luscinia",
+      "pl": "słowik szary",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 399,
+      "latin": "Luscinia svecica",
+      "pl": "podróżniczek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 400,
+      "latin": "Larvivora sibilans",
+      "pl": "słowik syberyjski",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 401,
+      "latin": "Ficedula parva",
+      "pl": "muchołówka mała",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 402,
+      "latin": "Ficedula albicollis",
+      "pl": "muchołówka białoszyja",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 403,
+      "latin": "Ficedula hypoleuca",
+      "pl": "muchołówka żałobna",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 404,
+      "latin": "Tarsiger cyanurus",
+      "pl": "modraczek",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 405,
+      "latin": "Phoenicurus ochruros",
+      "pl": "kopciuszek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 406,
+      "latin": "Phoenicurus phoenicurus",
+      "pl": "pleszka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 407,
+      "latin": "Monticola saxatilis",
+      "pl": "nagórnik",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 408,
+      "latin": "Saxicola rubetra",
+      "pl": "pokląskwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 409,
+      "latin": "Saxicola maurus",
+      "pl": "kląskawka syberyjska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 410,
+      "latin": "Saxicola rubicola",
+      "pl": "kląskawka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 411,
+      "latin": "Oenanthe deserti",
+      "pl": "białorzytka pustynna",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 412,
+      "latin": "Oenanthe hispanica",
+      "pl": "białorzytka rdzawa",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 413,
+      "latin": "Oenanthe pleschanka",
+      "pl": "białorzytka pstra",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 414,
+      "latin": "Oenanthe oenanthe",
+      "pl": "białorzytka",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 415,
+      "latin": "Oenanthe isabellina",
+      "pl": "białorzytka płowa",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 416,
+      "latin": "Oenanthe leucopyga",
+      "pl": "białorzytka saharyjska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 417,
+      "latin": "Prunella collaris",
+      "pl": "płochacz halny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 418,
+      "latin": "Prunella atrogularis",
+      "pl": "płochacz czarnogardły",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 419,
+      "latin": "Prunella modularis",
+      "pl": "pokrzywnica",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 420,
+      "latin": "Prunella montanella",
+      "pl": "płochacz syberyjski",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 421,
+      "latin": "Petronia petronia",
+      "pl": "wróbel skalny",
+      "category": "B",
+      "status": "(z)"
+    },
+    {
+      "number": 422,
+      "latin": "Montifringilla nivalis",
+      "pl": "śnieżka",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 423,
+      "latin": "Passer montanus",
+      "pl": "mazurek",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 424,
+      "latin": "Passer domesticus",
+      "pl": "wróbel",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 425,
+      "latin": "Motacilla cinerea",
+      "pl": "pliszka górska",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 426,
+      "latin": "Motacilla flava",
+      "pl": "pliszka żółta",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 427,
+      "latin": "Motacilla citreola",
+      "pl": "pliszka cytrynowa",
+      "category": "A",
+      "status": "L P"
+    },
+    {
+      "number": 428,
+      "latin": "Motacilla tschutschensis",
+      "pl": "pliszka syberyjska",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 429,
+      "latin": "Motacilla alba",
+      "pl": "pliszka siwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 430,
+      "latin": "Anthus godlewskii",
+      "pl": "świergotek stepowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 431,
+      "latin": "Anthus campestris",
+      "pl": "świergotek polny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 432,
+      "latin": "Anthus richardi",
+      "pl": "świergotek szponiasty",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 433,
+      "latin": "Anthus trivialis",
+      "pl": "świergotek drzewny",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 434,
+      "latin": "Anthus hodgsoni",
+      "pl": "świergotek tajgowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 435,
+      "latin": "Anthus cervinus",
+      "pl": "świergotek rdzawogardły",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 436,
+      "latin": "Anthus pratensis",
+      "pl": "świergotek łąkowy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 437,
+      "latin": "Anthus japonicus",
+      "pl": "świergotek syberyjski",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 438,
+      "latin": "Anthus petrosus",
+      "pl": "świergotek nadmorski",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 439,
+      "latin": "Anthus spinoletta",
+      "pl": "siwerniak",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 440,
+      "latin": "Fringilla montifringilla",
+      "pl": "jer",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 441,
+      "latin": "Fringilla coelebs",
+      "pl": "zięba",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 442,
+      "latin": "Coccothraustes coccothraustes",
+      "pl": "grubodziób",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 443,
+      "latin": "Carpodacus erythrinus",
+      "pl": "dziwonia",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 444,
+      "latin": "Pinicola enucleator",
+      "pl": "łuskowiec",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 445,
+      "latin": "Pyrrhula pyrrhula",
+      "pl": "gil",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 446,
+      "latin": "Bucanetes githagineus",
+      "pl": "gilak pustynny",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 447,
+      "latin": "Chloris chloris",
+      "pl": "dzwoniec",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 448,
+      "latin": "Linaria flavirostris",
+      "pl": "rzepołuch",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 449,
+      "latin": "Linaria cannabina",
+      "pl": "makolągwa",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 450,
+      "latin": "Acanthis flammea",
+      "pl": "czeczotka",
+      "category": "A",
+      "status": "l P"
+    },
+    {
+      "number": 451,
+      "latin": "Loxia leucoptera",
+      "pl": "krzyżodziób modrzewiowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 452,
+      "latin": "Loxia pytyopsittacus",
+      "pl": "krzyżodziób sosnowy",
+      "category": "A",
+      "status": "(l) Z"
+    },
+    {
+      "number": 453,
+      "latin": "Loxia curvirostra",
+      "pl": "krzyżodziób świerkowy",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 454,
+      "latin": "Carduelis citrinella",
+      "pl": "osetnik",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 455,
+      "latin": "Carduelis carduelis",
+      "pl": "szczygieł",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 456,
+      "latin": "Serinus serinus",
+      "pl": "kulczyk",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 457,
+      "latin": "Spinus spinus",
+      "pl": "czyż",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 458,
+      "latin": "Plectrophenax nivalis",
+      "pl": "śnieguła",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 459,
+      "latin": "Calcarius lapponicus",
+      "pl": "poświerka",
+      "category": "A",
+      "status": "P"
+    },
+    {
+      "number": 460,
+      "latin": "Emberiza schoeniclus",
+      "pl": "potrzos",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 461,
+      "latin": "Emberiza chrysophrys",
+      "pl": "trznadel złotobrewy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 462,
+      "latin": "Emberiza aureola",
+      "pl": "trznadel złotawy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 463,
+      "latin": "Emberiza pusilla",
+      "pl": "trznadelek",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 464,
+      "latin": "Emberiza rustica",
+      "pl": "trznadel czubaty",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 465,
+      "latin": "Emberiza spodocephala",
+      "pl": "trznadel szarogłowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 466,
+      "latin": "Emberiza melanocephala",
+      "pl": "trznadel czarnogłowy",
+      "category": "A",
+      "status": "Z"
+    },
+    {
+      "number": 467,
+      "latin": "Emberiza bruniceps",
+      "pl": "trznadel rudogłowy",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 468,
+      "latin": "Emberiza calandra",
+      "pl": "potrzeszcz",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 469,
+      "latin": "Emberiza cia",
+      "pl": "głuszek",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 470,
+      "latin": "Emberiza hortulana",
+      "pl": "ortolan",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 471,
+      "latin": "Emberiza cirlus",
+      "pl": "cierlik",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 472,
+      "latin": "Emberiza leucocephalos",
+      "pl": "trznadel białogłowy",
+      "category": "A",
+      "status": "(l) z"
+    },
+    {
+      "number": 473,
+      "latin": "Emberiza citrinella",
+      "pl": "trznadel",
+      "category": "A",
+      "status": "L"
+    },
+    {
+      "number": 474,
+      "latin": "Junco hyemalis",
+      "pl": "junko",
+      "category": "A",
+      "status": "z"
+    },
+    {
+      "number": 475,
+      "latin": "Passerculus sandwichensis",
+      "pl": "bagiennik żółtobrewy",
+      "category": "A",
+      "status": "z"
+    }
+  ]
+}

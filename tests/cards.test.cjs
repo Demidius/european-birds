@@ -7,7 +7,7 @@ function fixture(progress){
  w.localStorage.setItem('europeanBirds:filters',JSON.stringify({typicalPoland:false,onlyPoland:false}));
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
  let now=Date.UTC(2026,9,15,12);w.Date.now=()=>now;
- for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js'])w.eval(read(f));
+ for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js'])w.eval(read(f));
  const body=()=>d.getElementById('cardBody'),$=s=>body().querySelector(s),stored=()=>JSON.parse(w.localStorage.getItem('europeanBirds:v1:progress:guest')||'{}');
  const current=()=>{const img=$('.fc-front img'),audio=$('.fc-front audio'),prompt=$('.fc-prompt');
   if(img)return w.BIRD_DATA.find(b=>b.photos.some(p=>p.src===img.getAttribute('src')));

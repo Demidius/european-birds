@@ -1,0 +1,4759 @@
+{
+  "source": "https://docs.google.com/document/d/117CIDW382Ddmy8_Y1DpEyIAE0I9yaH6i9808JE5cizk",
+  "tabId": "t.0",
+  "title": "Птицы Польши - 475 видов по семействам и родам",
+  "revisionId": "AHj4eMS8iKpcaqs_LcHUt4o1oWoH2eb-mM1sYEjGcdKDf-fMlEMNBEPe3EaUcJ090xaTnsWBn6mijpt5_EJP7UdjhqFcUIoauSLdTKSXj2E",
+  "importedAt": "2026-10-16",
+  "records": [
+    {
+      "number": 1,
+      "family": "Anatidae",
+      "genus": "Oxyura",
+      "ru": "Савка",
+      "en": "White-headed Duck",
+      "latin": "Oxyura leucocephala",
+      "pl": "sterniczka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 2,
+      "family": "Anatidae",
+      "genus": "Cygnus",
+      "ru": "Лебедь-шипун",
+      "en": "Mute Swan",
+      "latin": "Cygnus olor",
+      "pl": "łabędź niemy",
+      "status": "гнездится"
+    },
+    {
+      "number": 3,
+      "family": "Anatidae",
+      "genus": "Cygnus",
+      "ru": "Малый лебедь",
+      "en": "Tundra Swan",
+      "latin": "Cygnus columbianus",
+      "pl": "łabędź czarnodzioby",
+      "status": "пролётный"
+    },
+    {
+      "number": 4,
+      "family": "Anatidae",
+      "genus": "Cygnus",
+      "ru": "Лебедь-кликун",
+      "en": "Whooper Swan",
+      "latin": "Cygnus cygnus",
+      "pl": "łabędź krzykliwy",
+      "status": "гнездится"
+    },
+    {
+      "number": 5,
+      "family": "Anatidae",
+      "genus": "Branta",
+      "ru": "Чёрная казарка",
+      "en": "Brant Goose",
+      "latin": "Branta bernicla",
+      "pl": "bernikla obrożna",
+      "status": "пролётный"
+    },
+    {
+      "number": 6,
+      "family": "Anatidae",
+      "genus": "Branta",
+      "ru": "Краснозобая казарка",
+      "en": "Red-breasted Goose",
+      "latin": "Branta ruficollis",
+      "pl": "bernikla rdzawoszyja",
+      "status": "пролётный"
+    },
+    {
+      "number": 7,
+      "family": "Anatidae",
+      "genus": "Branta",
+      "ru": "Канадская казарка",
+      "en": "Canada Goose",
+      "latin": "Branta canadensis",
+      "pl": "bernikla kanadyjska",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 8,
+      "family": "Anatidae",
+      "genus": "Branta",
+      "ru": "Белощёкая казарка",
+      "en": "Barnacle Goose",
+      "latin": "Branta leucopsis",
+      "pl": "bernikla białolica",
+      "status": "пролётный"
+    },
+    {
+      "number": 9,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Серый гусь",
+      "en": "Greylag Goose",
+      "latin": "Anser anser",
+      "pl": "gęgawa",
+      "status": "гнездится"
+    },
+    {
+      "number": 10,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Пискулька",
+      "en": "Lesser White-fronted Goose",
+      "latin": "Anser erythropus",
+      "pl": "gęś mała",
+      "status": "пролётный"
+    },
+    {
+      "number": 11,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Белолобый гусь",
+      "en": "Greater White-fronted Goose",
+      "latin": "Anser albifrons",
+      "pl": "gęś białoczelna",
+      "status": "пролётный"
+    },
+    {
+      "number": 12,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Тундровый гуменник",
+      "en": "Tundra Bean Goose",
+      "latin": "Anser serrirostris",
+      "pl": "gęś tundrowa",
+      "status": "пролётный"
+    },
+    {
+      "number": 13,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Короткоклювый гуменник",
+      "en": "Pink-footed Goose",
+      "latin": "Anser brachyrhynchus",
+      "pl": "gęś krótkodzioba",
+      "status": "пролётный"
+    },
+    {
+      "number": 14,
+      "family": "Anatidae",
+      "genus": "Anser",
+      "ru": "Таёжный гуменник",
+      "en": "Taiga Bean Goose",
+      "latin": "Anser fabalis",
+      "pl": "gęś zbożowa",
+      "status": "пролётный"
+    },
+    {
+      "number": 15,
+      "family": "Anatidae",
+      "genus": "Aix",
+      "ru": "Мандаринка",
+      "en": "Mandarin Duck",
+      "latin": "Aix galericulata",
+      "pl": "mandarynka",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 16,
+      "family": "Anatidae",
+      "genus": "Alopochen",
+      "ru": "Нильский гусь",
+      "en": "Egyptian Goose",
+      "latin": "Alopochen aegyptiaca",
+      "pl": "gęsiówka egipska",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 17,
+      "family": "Anatidae",
+      "genus": "Tadorna",
+      "ru": "Пеганка",
+      "en": "Common Shelduck",
+      "latin": "Tadorna tadorna",
+      "pl": "ohar",
+      "status": "гнездится"
+    },
+    {
+      "number": 18,
+      "family": "Anatidae",
+      "genus": "Tadorna",
+      "ru": "Огарь",
+      "en": "Ruddy Shelduck",
+      "latin": "Tadorna ferruginea",
+      "pl": "kazarka rdzawa",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 19,
+      "family": "Anatidae",
+      "genus": "Clangula",
+      "ru": "Морянка",
+      "en": "Long-tailed Duck",
+      "latin": "Clangula hyemalis",
+      "pl": "lodówka",
+      "status": "пролётный"
+    },
+    {
+      "number": 20,
+      "family": "Anatidae",
+      "genus": "Polysticta",
+      "ru": "Сибирская гага",
+      "en": "Steller's Eider",
+      "latin": "Polysticta stelleri",
+      "pl": "birginiak",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 21,
+      "family": "Anatidae",
+      "genus": "Somateria",
+      "ru": "Гага-гребенушка",
+      "en": "King Eider",
+      "latin": "Somateria spectabilis",
+      "pl": "turkan",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 22,
+      "family": "Anatidae",
+      "genus": "Somateria",
+      "ru": "Обыкновенная гага",
+      "en": "Common Eider",
+      "latin": "Somateria mollissima",
+      "pl": "edredon",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 23,
+      "family": "Anatidae",
+      "genus": "Histrionicus",
+      "ru": "Каменушка",
+      "en": "Harlequin Duck",
+      "latin": "Histrionicus histrionicus",
+      "pl": "kamieniuszka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 24,
+      "family": "Anatidae",
+      "genus": "Melanitta",
+      "ru": "Синьга",
+      "en": "Common Scoter",
+      "latin": "Melanitta nigra",
+      "pl": "markaczka",
+      "status": "пролётный"
+    },
+    {
+      "number": 25,
+      "family": "Anatidae",
+      "genus": "Melanitta",
+      "ru": "Американская синьга",
+      "en": "Black Scoter",
+      "latin": "Melanitta americana",
+      "pl": "markaczka amerykańska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 26,
+      "family": "Anatidae",
+      "genus": "Melanitta",
+      "ru": "Турпан",
+      "en": "Velvet Scoter",
+      "latin": "Melanitta fusca",
+      "pl": "uhla",
+      "status": "пролётный"
+    },
+    {
+      "number": 27,
+      "family": "Anatidae",
+      "genus": "Melanitta",
+      "ru": "Горбоносый турпан",
+      "en": "Stejneger's Scoter",
+      "latin": "Melanitta stejnegeri",
+      "pl": "uhla azjatycka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 28,
+      "family": "Anatidae",
+      "genus": "Bucephala",
+      "ru": "Обыкновенный гоголь",
+      "en": "Common Goldeneye",
+      "latin": "Bucephala clangula",
+      "pl": "gągoł",
+      "status": "гнездится"
+    },
+    {
+      "number": 29,
+      "family": "Anatidae",
+      "genus": "Mergellus",
+      "ru": "Луток",
+      "en": "Smew",
+      "latin": "Mergellus albellus",
+      "pl": "bielaczek",
+      "status": "пролётный"
+    },
+    {
+      "number": 30,
+      "family": "Anatidae",
+      "genus": "Mergus",
+      "ru": "Длинноносый крохаль",
+      "en": "Red-breasted Merganser",
+      "latin": "Mergus serrator",
+      "pl": "szlachar",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 31,
+      "family": "Anatidae",
+      "genus": "Mergus",
+      "ru": "Большой крохаль",
+      "en": "Common Merganser",
+      "latin": "Mergus merganser",
+      "pl": "nurogęś",
+      "status": "гнездится"
+    },
+    {
+      "number": 32,
+      "family": "Anatidae",
+      "genus": "Netta",
+      "ru": "Красноносый нырок",
+      "en": "Red-crested Pochard",
+      "latin": "Netta rufina",
+      "pl": "hełmiatka",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 33,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Белоглазый нырок",
+      "en": "Ferruginous Duck",
+      "latin": "Aythya nyroca",
+      "pl": "podgorzałka",
+      "status": "гнездится"
+    },
+    {
+      "number": 34,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Красноголовый нырок",
+      "en": "Common Pochard",
+      "latin": "Aythya ferina",
+      "pl": "głowienka",
+      "status": "гнездится"
+    },
+    {
+      "number": 35,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Кольчатая чернеть",
+      "en": "Ring-necked Duck",
+      "latin": "Aythya collaris",
+      "pl": "czerniczka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 36,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Хохлатая чернеть",
+      "en": "Tufted Duck",
+      "latin": "Aythya fuligula",
+      "pl": "czernica",
+      "status": "гнездится"
+    },
+    {
+      "number": 37,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Малая морская чернеть",
+      "en": "Lesser Scaup",
+      "latin": "Aythya affinis",
+      "pl": "ogorzałka mała",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 38,
+      "family": "Anatidae",
+      "genus": "Aythya",
+      "ru": "Морская чернеть",
+      "en": "Greater Scaup",
+      "latin": "Aythya marila",
+      "pl": "ogorzałka",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 39,
+      "family": "Anatidae",
+      "genus": "Sibirionetta",
+      "ru": "Клоктун",
+      "en": "Baikal Teal",
+      "latin": "Sibirionetta formosa",
+      "pl": "bajkałówka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 40,
+      "family": "Anatidae",
+      "genus": "Spatula",
+      "ru": "Чирок-трескунок",
+      "en": "Garganey",
+      "latin": "Spatula querquedula",
+      "pl": "cyranka",
+      "status": "гнездится"
+    },
+    {
+      "number": 41,
+      "family": "Anatidae",
+      "genus": "Spatula",
+      "ru": "Голубокрылый чирок",
+      "en": "Blue-winged Teal",
+      "latin": "Spatula discors",
+      "pl": "cyranka modroskrzydła",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 42,
+      "family": "Anatidae",
+      "genus": "Spatula",
+      "ru": "Широконоска",
+      "en": "Northern Shoveler",
+      "latin": "Spatula clypeata",
+      "pl": "płaskonos",
+      "status": "гнездится"
+    },
+    {
+      "number": 43,
+      "family": "Anatidae",
+      "genus": "Mareca",
+      "ru": "Серая утка",
+      "en": "Gadwall",
+      "latin": "Mareca strepera",
+      "pl": "krakwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 44,
+      "family": "Anatidae",
+      "genus": "Mareca",
+      "ru": "Свиязь",
+      "en": "Eurasian Wigeon",
+      "latin": "Mareca penelope",
+      "pl": "świstun",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 45,
+      "family": "Anatidae",
+      "genus": "Mareca",
+      "ru": "Американская свиязь",
+      "en": "American Wigeon",
+      "latin": "Mareca americana",
+      "pl": "świstun amerykański",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 46,
+      "family": "Anatidae",
+      "genus": "Anas",
+      "ru": "Кряква",
+      "en": "Mallard",
+      "latin": "Anas platyrhynchos",
+      "pl": "krzyżówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 47,
+      "family": "Anatidae",
+      "genus": "Anas",
+      "ru": "Шилохвость",
+      "en": "Northern Pintail",
+      "latin": "Anas acuta",
+      "pl": "rożeniec",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 48,
+      "family": "Anatidae",
+      "genus": "Anas",
+      "ru": "Чирок-свистунок",
+      "en": "Green-winged Teal",
+      "latin": "Anas crecca",
+      "pl": "cyraneczka",
+      "status": "гнездится"
+    },
+    {
+      "number": 49,
+      "family": "Phasianidae",
+      "genus": "Tetrastes",
+      "ru": "Рябчик",
+      "en": "Hazel Grouse",
+      "latin": "Tetrastes bonasia",
+      "pl": "jarząbek",
+      "status": "гнездится"
+    },
+    {
+      "number": 50,
+      "family": "Phasianidae",
+      "genus": "Lagopus",
+      "ru": "Белая куропатка",
+      "en": "Willow Ptarmigan",
+      "latin": "Lagopus lagopus",
+      "pl": "pardwa mszarna",
+      "status": "исторические залёты"
+    },
+    {
+      "number": 51,
+      "family": "Phasianidae",
+      "genus": "Tetrao",
+      "ru": "Глухарь",
+      "en": "Western Capercaillie",
+      "latin": "Tetrao urogallus",
+      "pl": "głuszec",
+      "status": "гнездится"
+    },
+    {
+      "number": 52,
+      "family": "Phasianidae",
+      "genus": "Lyrurus",
+      "ru": "Тетерев",
+      "en": "Black Grouse",
+      "latin": "Lyrurus tetrix",
+      "pl": "cietrzew",
+      "status": "гнездится"
+    },
+    {
+      "number": 53,
+      "family": "Phasianidae",
+      "genus": "Perdix",
+      "ru": "Серая куропатка",
+      "en": "Grey Partridge",
+      "latin": "Perdix perdix",
+      "pl": "kuropatwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 54,
+      "family": "Phasianidae",
+      "genus": "Phasianus",
+      "ru": "Обыкновенный фазан",
+      "en": "Common Pheasant",
+      "latin": "Phasianus colchicus",
+      "pl": "bażant",
+      "status": "гнездится"
+    },
+    {
+      "number": 55,
+      "family": "Phasianidae",
+      "genus": "Coturnix",
+      "ru": "Обыкновенный перепел",
+      "en": "Common Quail",
+      "latin": "Coturnix coturnix",
+      "pl": "przepiórka",
+      "status": "гнездится"
+    },
+    {
+      "number": 56,
+      "family": "Phoenicopteridae",
+      "genus": "Phoenicopterus",
+      "ru": "Розовый фламинго",
+      "en": "Greater Flamingo",
+      "latin": "Phoenicopterus roseus",
+      "pl": "flaming różowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 57,
+      "family": "Podicipedidae",
+      "genus": "Tachybaptus",
+      "ru": "Малая поганка",
+      "en": "Little Grebe",
+      "latin": "Tachybaptus ruficollis",
+      "pl": "perkozek",
+      "status": "гнездится"
+    },
+    {
+      "number": 58,
+      "family": "Podicipedidae",
+      "genus": "Podilymbus",
+      "ru": "Пестроклювая поганка",
+      "en": "Pied-billed Grebe",
+      "latin": "Podilymbus podiceps",
+      "pl": "perkoz grubodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 59,
+      "family": "Podicipedidae",
+      "genus": "Podiceps",
+      "ru": "Красношейная поганка",
+      "en": "Horned Grebe",
+      "latin": "Podiceps auritus",
+      "pl": "perkoz rogaty",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 60,
+      "family": "Podicipedidae",
+      "genus": "Podiceps",
+      "ru": "Серощёкая поганка",
+      "en": "Red-necked Grebe",
+      "latin": "Podiceps grisegena",
+      "pl": "perkoz rdzawoszyi",
+      "status": "гнездится"
+    },
+    {
+      "number": 61,
+      "family": "Podicipedidae",
+      "genus": "Podiceps",
+      "ru": "Большая поганка (чомга)",
+      "en": "Great Crested Grebe",
+      "latin": "Podiceps cristatus",
+      "pl": "perkoz dwuczuby",
+      "status": "гнездится"
+    },
+    {
+      "number": 62,
+      "family": "Podicipedidae",
+      "genus": "Podiceps",
+      "ru": "Черношейная поганка",
+      "en": "Black-necked Grebe",
+      "latin": "Podiceps nigricollis",
+      "pl": "zausznik",
+      "status": "гнездится"
+    },
+    {
+      "number": 63,
+      "family": "Otididae",
+      "genus": "Otis",
+      "ru": "Дрофа",
+      "en": "Great Bustard",
+      "latin": "Otis tarda",
+      "pl": "drop",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 64,
+      "family": "Otididae",
+      "genus": "Chlamydotis",
+      "ru": "Вихляй",
+      "en": "Asian Houbara",
+      "latin": "Chlamydotis macqueenii",
+      "pl": "hubara arabska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 65,
+      "family": "Otididae",
+      "genus": "Tetrax",
+      "ru": "Стрепет",
+      "en": "Little Bustard",
+      "latin": "Tetrax tetrax",
+      "pl": "strepet",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 66,
+      "family": "Cuculidae",
+      "genus": "Cuculus",
+      "ru": "Обыкновенная кукушка",
+      "en": "Common Cuckoo",
+      "latin": "Cuculus canorus",
+      "pl": "kukułka",
+      "status": "гнездится"
+    },
+    {
+      "number": 67,
+      "family": "Pteroclidae",
+      "genus": "Syrrhaptes",
+      "ru": "Саджа",
+      "en": "Pallas's Sandgrouse",
+      "latin": "Syrrhaptes paradoxus",
+      "pl": "pustynnik",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 68,
+      "family": "Columbidae",
+      "genus": "Streptopelia",
+      "ru": "Большая горлица",
+      "en": "Oriental Turtle Dove",
+      "latin": "Streptopelia orientalis",
+      "pl": "turkawka wschodnia",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 69,
+      "family": "Columbidae",
+      "genus": "Streptopelia",
+      "ru": "Обыкновенная горлица",
+      "en": "European Turtle Dove",
+      "latin": "Streptopelia turtur",
+      "pl": "turkawka",
+      "status": "гнездится"
+    },
+    {
+      "number": 70,
+      "family": "Columbidae",
+      "genus": "Streptopelia",
+      "ru": "Кольчатая горлица",
+      "en": "Eurasian Collared Dove",
+      "latin": "Streptopelia decaocto",
+      "pl": "sierpówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 71,
+      "family": "Columbidae",
+      "genus": "Columba",
+      "ru": "Вяхирь",
+      "en": "Common Wood Pigeon",
+      "latin": "Columba palumbus",
+      "pl": "grzywacz",
+      "status": "гнездится"
+    },
+    {
+      "number": 72,
+      "family": "Columbidae",
+      "genus": "Columba",
+      "ru": "Сизый голубь (городская форма)",
+      "en": "Rock Dove",
+      "latin": "Columba livia forma urbana",
+      "pl": "gołąb miejski",
+      "status": "гнездится"
+    },
+    {
+      "number": 73,
+      "family": "Columbidae",
+      "genus": "Columba",
+      "ru": "Клинтух",
+      "en": "Stock Dove",
+      "latin": "Columba oenas",
+      "pl": "siniak",
+      "status": "гнездится"
+    },
+    {
+      "number": 74,
+      "family": "Gruidae",
+      "genus": "Antigone",
+      "ru": "Канадский журавль",
+      "en": "Sandhill Crane",
+      "latin": "Antigone canadensis",
+      "pl": "żuraw kanadyjski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 75,
+      "family": "Gruidae",
+      "genus": "Grus",
+      "ru": "Красавка",
+      "en": "Demoiselle Crane",
+      "latin": "Grus virgo",
+      "pl": "żuraw stepowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 76,
+      "family": "Gruidae",
+      "genus": "Grus",
+      "ru": "Серый журавль",
+      "en": "Common Crane",
+      "latin": "Grus grus",
+      "pl": "żuraw",
+      "status": "гнездится"
+    },
+    {
+      "number": 77,
+      "family": "Rallidae",
+      "genus": "Rallus",
+      "ru": "Водяной пастушок",
+      "en": "Water Rail",
+      "latin": "Rallus aquaticus",
+      "pl": "wodnik",
+      "status": "гнездится"
+    },
+    {
+      "number": 78,
+      "family": "Rallidae",
+      "genus": "Crex",
+      "ru": "Коростель",
+      "en": "Corn Crake",
+      "latin": "Crex crex",
+      "pl": "derkacz",
+      "status": "гнездится"
+    },
+    {
+      "number": 79,
+      "family": "Rallidae",
+      "genus": "Porzana",
+      "ru": "Погоныш",
+      "en": "Spotted Crake",
+      "latin": "Porzana porzana",
+      "pl": "kropiatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 80,
+      "family": "Rallidae",
+      "genus": "Gallinula",
+      "ru": "Камышница",
+      "en": "Common Moorhen",
+      "latin": "Gallinula chloropus",
+      "pl": "kokoszka",
+      "status": "гнездится"
+    },
+    {
+      "number": 81,
+      "family": "Rallidae",
+      "genus": "Fulica",
+      "ru": "Лысуха",
+      "en": "Eurasian Coot",
+      "latin": "Fulica atra",
+      "pl": "łyska",
+      "status": "гнездится"
+    },
+    {
+      "number": 82,
+      "family": "Rallidae",
+      "genus": "Zapornia",
+      "ru": "Малый погоныш",
+      "en": "Little Crake",
+      "latin": "Zapornia parva",
+      "pl": "zielonka",
+      "status": "гнездится"
+    },
+    {
+      "number": 83,
+      "family": "Rallidae",
+      "genus": "Zapornia",
+      "ru": "Погоныш-крошка",
+      "en": "Baillon's Crake",
+      "latin": "Zapornia pusilla",
+      "pl": "karliczka",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 84,
+      "family": "Burhinidae",
+      "genus": "Burhinus",
+      "ru": "Авдотка",
+      "en": "Eurasian Stone-curlew",
+      "latin": "Burhinus oedicnemus",
+      "pl": "kulon",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 85,
+      "family": "Recurvirostridae",
+      "genus": "Recurvirostra",
+      "ru": "Шилоклювка",
+      "en": "Pied Avocet",
+      "latin": "Recurvirostra avosetta",
+      "pl": "szablodziób",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 86,
+      "family": "Recurvirostridae",
+      "genus": "Himantopus",
+      "ru": "Ходулочник",
+      "en": "Black-winged Stilt",
+      "latin": "Himantopus himantopus",
+      "pl": "szczudłak",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 87,
+      "family": "Haematopodidae",
+      "genus": "Haematopus",
+      "ru": "Кулик-сорока",
+      "en": "Eurasian Oystercatcher",
+      "latin": "Haematopus ostralegus",
+      "pl": "ostrygojad",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 88,
+      "family": "Charadriidae",
+      "genus": "Pluvialis",
+      "ru": "Тулес",
+      "en": "Grey Plover",
+      "latin": "Pluvialis squatarola",
+      "pl": "siewnica",
+      "status": "пролётный"
+    },
+    {
+      "number": 89,
+      "family": "Charadriidae",
+      "genus": "Pluvialis",
+      "ru": "Золотистая ржанка",
+      "en": "European Golden Plover",
+      "latin": "Pluvialis apricaria",
+      "pl": "siewka złota",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 90,
+      "family": "Charadriidae",
+      "genus": "Pluvialis",
+      "ru": "Американская золотистая ржанка",
+      "en": "American Golden Plover",
+      "latin": "Pluvialis dominica",
+      "pl": "siewka szara",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 91,
+      "family": "Charadriidae",
+      "genus": "Pluvialis",
+      "ru": "Бурокрылая ржанка",
+      "en": "Pacific Golden Plover",
+      "latin": "Pluvialis fulva",
+      "pl": "siewka złotawa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 92,
+      "family": "Charadriidae",
+      "genus": "Eudromias",
+      "ru": "Хрустан",
+      "en": "Eurasian Dotterel",
+      "latin": "Eudromias morinellus",
+      "pl": "mornel",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 93,
+      "family": "Charadriidae",
+      "genus": "Charadrius",
+      "ru": "Галстучник",
+      "en": "Common Ringed Plover",
+      "latin": "Charadrius hiaticula",
+      "pl": "sieweczka obrożna",
+      "status": "гнездится"
+    },
+    {
+      "number": 94,
+      "family": "Charadriidae",
+      "genus": "Thinornis",
+      "ru": "Малый зуёк",
+      "en": "Little Ringed Plover",
+      "latin": "Thinornis dubius",
+      "pl": "sieweczka rzeczna",
+      "status": "гнездится"
+    },
+    {
+      "number": 95,
+      "family": "Charadriidae",
+      "genus": "Vanellus",
+      "ru": "Чибис",
+      "en": "Northern Lapwing",
+      "latin": "Vanellus vanellus",
+      "pl": "czajka",
+      "status": "гнездится"
+    },
+    {
+      "number": 96,
+      "family": "Charadriidae",
+      "genus": "Vanellus",
+      "ru": "Шпорцевый чибис",
+      "en": "Spur-winged Lapwing",
+      "latin": "Vanellus spinosus",
+      "pl": "czajka szponiasta",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 97,
+      "family": "Charadriidae",
+      "genus": "Vanellus",
+      "ru": "Кречётка",
+      "en": "Sociable Lapwing",
+      "latin": "Vanellus gregarius",
+      "pl": "czajka towarzyska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 98,
+      "family": "Charadriidae",
+      "genus": "Vanellus",
+      "ru": "Белохвостая пигалица",
+      "en": "White-tailed Lapwing",
+      "latin": "Vanellus leucurus",
+      "pl": "czajka stepowa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 99,
+      "family": "Charadriidae",
+      "genus": "Anarhynchus",
+      "ru": "Каспийский зуёк",
+      "en": "Caspian Plover",
+      "latin": "Anarhynchus asiaticus",
+      "pl": "sieweczka długonoga",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 100,
+      "family": "Charadriidae",
+      "genus": "Anarhynchus",
+      "ru": "Памирский зуёк",
+      "en": "Tibetan Sand Plover",
+      "latin": "Anarhynchus atrifrons",
+      "pl": "sieweczka tybetańska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 101,
+      "family": "Charadriidae",
+      "genus": "Anarhynchus",
+      "ru": "Толстоклювый зуёк",
+      "en": "Greater Sand Plover",
+      "latin": "Anarhynchus leschenaultii",
+      "pl": "sieweczka pustynna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 102,
+      "family": "Charadriidae",
+      "genus": "Anarhynchus",
+      "ru": "Морской зуёк",
+      "en": "Kentish Plover",
+      "latin": "Anarhynchus alexandrinus",
+      "pl": "sieweczka morska",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 103,
+      "family": "Scolopacidae",
+      "genus": "Numenius",
+      "ru": "Средний кроншнеп",
+      "en": "Eurasian Whimbrel",
+      "latin": "Numenius phaeopus",
+      "pl": "kulik mniejszy",
+      "status": "пролётный"
+    },
+    {
+      "number": 104,
+      "family": "Scolopacidae",
+      "genus": "Numenius",
+      "ru": "Тонкоклювый кроншнеп",
+      "en": "Slender-billed Curlew",
+      "latin": "Numenius tenuirostris",
+      "pl": "kulik cienkodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 105,
+      "family": "Scolopacidae",
+      "genus": "Numenius",
+      "ru": "Большой кроншнеп",
+      "en": "Eurasian Curlew",
+      "latin": "Numenius arquata",
+      "pl": "kulik wielki",
+      "status": "гнездится"
+    },
+    {
+      "number": 106,
+      "family": "Scolopacidae",
+      "genus": "Limosa",
+      "ru": "Малый веретенник",
+      "en": "Bar-tailed Godwit",
+      "latin": "Limosa lapponica",
+      "pl": "szlamnik",
+      "status": "пролётный"
+    },
+    {
+      "number": 107,
+      "family": "Scolopacidae",
+      "genus": "Limosa",
+      "ru": "Большой веретенник",
+      "en": "Black-tailed Godwit",
+      "latin": "Limosa limosa",
+      "pl": "rycyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 108,
+      "family": "Scolopacidae",
+      "genus": "Limnodromus",
+      "ru": "Длинноклювый американский бекасовидный веретенник",
+      "en": "Long-billed Dowitcher",
+      "latin": "Limnodromus scolopaceus",
+      "pl": "szlamiec długodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 109,
+      "family": "Scolopacidae",
+      "genus": "Lymnocryptes",
+      "ru": "Гаршнеп",
+      "en": "Jack Snipe",
+      "latin": "Lymnocryptes minimus",
+      "pl": "bekasik",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 110,
+      "family": "Scolopacidae",
+      "genus": "Scolopax",
+      "ru": "Вальдшнеп",
+      "en": "Eurasian Woodcock",
+      "latin": "Scolopax rusticola",
+      "pl": "słonka",
+      "status": "гнездится"
+    },
+    {
+      "number": 111,
+      "family": "Scolopacidae",
+      "genus": "Gallinago",
+      "ru": "Дупель",
+      "en": "Great Snipe",
+      "latin": "Gallinago media",
+      "pl": "dubelt",
+      "status": "гнездится"
+    },
+    {
+      "number": 112,
+      "family": "Scolopacidae",
+      "genus": "Gallinago",
+      "ru": "Бекас",
+      "en": "Common Snipe",
+      "latin": "Gallinago gallinago",
+      "pl": "kszyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 113,
+      "family": "Scolopacidae",
+      "genus": "Xenus",
+      "ru": "Мородунка",
+      "en": "Terek Sandpiper",
+      "latin": "Xenus cinereus",
+      "pl": "terekia",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 114,
+      "family": "Scolopacidae",
+      "genus": "Actitis",
+      "ru": "Перевозчик",
+      "en": "Common Sandpiper",
+      "latin": "Actitis hypoleucos",
+      "pl": "brodziec piskliwy",
+      "status": "гнездится"
+    },
+    {
+      "number": 115,
+      "family": "Scolopacidae",
+      "genus": "Actitis",
+      "ru": "Пятнистый перевозчик",
+      "en": "Spotted Sandpiper",
+      "latin": "Actitis macularius",
+      "pl": "brodziec plamisty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 116,
+      "family": "Scolopacidae",
+      "genus": "Phalaropus",
+      "ru": "Плосконосый плавунчик",
+      "en": "Red Phalarope",
+      "latin": "Phalaropus fulicarius",
+      "pl": "płatkonóg płaskodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 117,
+      "family": "Scolopacidae",
+      "genus": "Phalaropus",
+      "ru": "Круглоносый плавунчик",
+      "en": "Red-necked Phalarope",
+      "latin": "Phalaropus lobatus",
+      "pl": "płatkonóg szydłodzioby",
+      "status": "пролётный"
+    },
+    {
+      "number": 118,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Черныш",
+      "en": "Green Sandpiper",
+      "latin": "Tringa ochropus",
+      "pl": "samotnik",
+      "status": "гнездится"
+    },
+    {
+      "number": 119,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Поручейник",
+      "en": "Marsh Sandpiper",
+      "latin": "Tringa stagnatilis",
+      "pl": "brodziec pławny",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 120,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Фифи",
+      "en": "Wood Sandpiper",
+      "latin": "Tringa glareola",
+      "pl": "łęczak",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 121,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Травник",
+      "en": "Common Redshank",
+      "latin": "Tringa totanus",
+      "pl": "krwawodziób",
+      "status": "гнездится"
+    },
+    {
+      "number": 122,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Малый желтоногий улит",
+      "en": "Lesser Yellowlegs",
+      "latin": "Tringa flavipes",
+      "pl": "brodziec żółtonogi",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 123,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Щёголь",
+      "en": "Spotted Redshank",
+      "latin": "Tringa erythropus",
+      "pl": "brodziec śniady",
+      "status": "пролётный"
+    },
+    {
+      "number": 124,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Большой улит",
+      "en": "Common Greenshank",
+      "latin": "Tringa nebularia",
+      "pl": "kwokacz",
+      "status": "пролётный"
+    },
+    {
+      "number": 125,
+      "family": "Scolopacidae",
+      "genus": "Tringa",
+      "ru": "Большой желтоногий улит",
+      "en": "Greater Yellowlegs",
+      "latin": "Tringa melanoleuca",
+      "pl": "brodziec piegowaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 126,
+      "family": "Scolopacidae",
+      "genus": "Arenaria",
+      "ru": "Камнешарка",
+      "en": "Ruddy Turnstone",
+      "latin": "Arenaria interpres",
+      "pl": "kamusznik",
+      "status": "пролётный"
+    },
+    {
+      "number": 127,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Исландский песочник",
+      "en": "Red Knot",
+      "latin": "Calidris canutus",
+      "pl": "biegus rdzawy",
+      "status": "пролётный"
+    },
+    {
+      "number": 128,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Большой песочник",
+      "en": "Great Knot",
+      "latin": "Calidris tenuirostris",
+      "pl": "biegus wielki",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 129,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Турухтан",
+      "en": "Ruff",
+      "latin": "Calidris pugnax",
+      "pl": "batalion",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 130,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Острохвостый песочник",
+      "en": "Sharp-tailed Sandpiper",
+      "latin": "Calidris acuminata",
+      "pl": "biegus ostrosterny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 131,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Грязовик",
+      "en": "Broad-billed Sandpiper",
+      "latin": "Calidris falcinellus",
+      "pl": "biegus płaskodzioby",
+      "status": "пролётный"
+    },
+    {
+      "number": 132,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Краснозобик",
+      "en": "Curlew Sandpiper",
+      "latin": "Calidris ferruginea",
+      "pl": "biegus krzywodzioby",
+      "status": "пролётный"
+    },
+    {
+      "number": 133,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Белохвостый песочник",
+      "en": "Temminck's Stint",
+      "latin": "Calidris temminckii",
+      "pl": "biegus mały",
+      "status": "пролётный"
+    },
+    {
+      "number": 134,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Канадский песочник",
+      "en": "Buff-breasted Sandpiper",
+      "latin": "Calidris subruficollis",
+      "pl": "biegus płowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 135,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Песчанка",
+      "en": "Sanderling",
+      "latin": "Calidris alba",
+      "pl": "piaskowiec",
+      "status": "пролётный"
+    },
+    {
+      "number": 136,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Чернозобик",
+      "en": "Dunlin",
+      "latin": "Calidris alpina",
+      "pl": "biegus zmienny",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 137,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Морской песочник",
+      "en": "Purple Sandpiper",
+      "latin": "Calidris maritima",
+      "pl": "biegus morski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 138,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Бэрдов песочник",
+      "en": "Baird's Sandpiper",
+      "latin": "Calidris bairdii",
+      "pl": "biegus długoskrzydły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 139,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Дутыш",
+      "en": "Pectoral Sandpiper",
+      "latin": "Calidris melanotos",
+      "pl": "biegus arktyczny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 140,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Перепончатопалый песочник",
+      "en": "Semipalmated Sandpiper",
+      "latin": "Calidris pusilla",
+      "pl": "biegus tundrowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 141,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Кулик-воробей",
+      "en": "Little Stint",
+      "latin": "Calidris minuta",
+      "pl": "biegus malutki",
+      "status": "пролётный"
+    },
+    {
+      "number": 142,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Песочник-крошка",
+      "en": "Least Sandpiper",
+      "latin": "Calidris minutilla",
+      "pl": "biegus karłowaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 143,
+      "family": "Scolopacidae",
+      "genus": "Calidris",
+      "ru": "Бонапартов песочник",
+      "en": "White-rumped Sandpiper",
+      "latin": "Calidris fuscicollis",
+      "pl": "biegus białorzytny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 144,
+      "family": "Glareolidae",
+      "genus": "Glareola",
+      "ru": "Степная тиркушка",
+      "en": "Black-winged Pratincole",
+      "latin": "Glareola nordmanni",
+      "pl": "żwirowiec stepowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 145,
+      "family": "Glareolidae",
+      "genus": "Glareola",
+      "ru": "Луговая тиркушка",
+      "en": "Collared Pratincole",
+      "latin": "Glareola pratincola",
+      "pl": "żwirowiec łąkowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 146,
+      "family": "Stercorariidae",
+      "genus": "Stercorarius",
+      "ru": "Короткохвостый поморник",
+      "en": "Parasitic Jaeger",
+      "latin": "Stercorarius parasiticus",
+      "pl": "wydrzyk ostrosterny",
+      "status": "пролётный"
+    },
+    {
+      "number": 147,
+      "family": "Stercorariidae",
+      "genus": "Stercorarius",
+      "ru": "Длиннохвостый поморник",
+      "en": "Long-tailed Jaeger",
+      "latin": "Stercorarius longicaudus",
+      "pl": "wydrzyk długosterny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 148,
+      "family": "Stercorariidae",
+      "genus": "Stercorarius",
+      "ru": "Средний поморник",
+      "en": "Pomarine Jaeger",
+      "latin": "Stercorarius pomarinus",
+      "pl": "wydrzyk tęposterny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 149,
+      "family": "Stercorariidae",
+      "genus": "Stercorarius",
+      "ru": "Большой поморник",
+      "en": "Great Skua",
+      "latin": "Stercorarius skua",
+      "pl": "wydrzyk wielki",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 150,
+      "family": "Alcidae",
+      "genus": "Fratercula",
+      "ru": "Тупик",
+      "en": "Atlantic Puffin",
+      "latin": "Fratercula arctica",
+      "pl": "maskonur",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 151,
+      "family": "Alcidae",
+      "genus": "Cepphus",
+      "ru": "Чистик",
+      "en": "Black Guillemot",
+      "latin": "Cepphus grylle",
+      "pl": "nurnik",
+      "status": "пролётный"
+    },
+    {
+      "number": 152,
+      "family": "Alcidae",
+      "genus": "Alca",
+      "ru": "Гагарка",
+      "en": "Razorbill",
+      "latin": "Alca torda",
+      "pl": "alka",
+      "status": "пролётный"
+    },
+    {
+      "number": 153,
+      "family": "Alcidae",
+      "genus": "Alle",
+      "ru": "Люрик",
+      "en": "Little Auk",
+      "latin": "Alle alle",
+      "pl": "alczyk",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 154,
+      "family": "Alcidae",
+      "genus": "Uria",
+      "ru": "Толстоклювая кайра",
+      "en": "Thick-billed Murre",
+      "latin": "Uria lomvia",
+      "pl": "nurzyk polarny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 155,
+      "family": "Alcidae",
+      "genus": "Uria",
+      "ru": "Тонкоклювая кайра",
+      "en": "Common Murre",
+      "latin": "Uria aalge",
+      "pl": "nurzyk",
+      "status": "пролётный"
+    },
+    {
+      "number": 156,
+      "family": "Laridae",
+      "genus": "Sternula",
+      "ru": "Малая крачка",
+      "en": "Little Tern",
+      "latin": "Sternula albifrons",
+      "pl": "rybitwa białoczelna",
+      "status": "гнездится"
+    },
+    {
+      "number": 157,
+      "family": "Laridae",
+      "genus": "Hydroprogne",
+      "ru": "Чеграва",
+      "en": "Caspian Tern",
+      "latin": "Hydroprogne caspia",
+      "pl": "rybitwa wielkodzioba",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 158,
+      "family": "Laridae",
+      "genus": "Gelochelidon",
+      "ru": "Чайконосая крачка",
+      "en": "Gull-billed Tern",
+      "latin": "Gelochelidon nilotica",
+      "pl": "rybitwa krótkodzioba",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 159,
+      "family": "Laridae",
+      "genus": "Chlidonias",
+      "ru": "Белощёкая крачка",
+      "en": "Whiskered Tern",
+      "latin": "Chlidonias hybrida",
+      "pl": "rybitwa białowąsa",
+      "status": "гнездится"
+    },
+    {
+      "number": 160,
+      "family": "Laridae",
+      "genus": "Chlidonias",
+      "ru": "Белокрылая крачка",
+      "en": "White-winged Tern",
+      "latin": "Chlidonias leucopterus",
+      "pl": "rybitwa białoskrzydła",
+      "status": "гнездится"
+    },
+    {
+      "number": 161,
+      "family": "Laridae",
+      "genus": "Chlidonias",
+      "ru": "Чёрная крачка",
+      "en": "Black Tern",
+      "latin": "Chlidonias niger",
+      "pl": "rybitwa czarna",
+      "status": "гнездится"
+    },
+    {
+      "number": 162,
+      "family": "Laridae",
+      "genus": "Thalasseus",
+      "ru": "Пестроносая крачка",
+      "en": "Sandwich Tern",
+      "latin": "Thalasseus sandvicensis",
+      "pl": "rybitwa czubata",
+      "status": "гнездится"
+    },
+    {
+      "number": 163,
+      "family": "Laridae",
+      "genus": "Sterna",
+      "ru": "Полярная крачка",
+      "en": "Arctic Tern",
+      "latin": "Sterna paradisaea",
+      "pl": "rybitwa popielata",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 164,
+      "family": "Laridae",
+      "genus": "Sterna",
+      "ru": "Речная крачка",
+      "en": "Common Tern",
+      "latin": "Sterna hirundo",
+      "pl": "rybitwa rzeczna",
+      "status": "гнездится"
+    },
+    {
+      "number": 165,
+      "family": "Laridae",
+      "genus": "Sterna",
+      "ru": "Розовая крачка",
+      "en": "Roseate Tern",
+      "latin": "Sterna dougallii",
+      "pl": "rybitwa różowa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 166,
+      "family": "Laridae",
+      "genus": "Hydrocoloeus",
+      "ru": "Малая чайка",
+      "en": "Little Gull",
+      "latin": "Hydrocoloeus minutus",
+      "pl": "mewa mała",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 167,
+      "family": "Laridae",
+      "genus": "Rhodostethia",
+      "ru": "Розовая чайка",
+      "en": "Ross's Gull",
+      "latin": "Rhodostethia rosea",
+      "pl": "mewa różowa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 168,
+      "family": "Laridae",
+      "genus": "Rissa",
+      "ru": "Моёвка",
+      "en": "Black-legged Kittiwake",
+      "latin": "Rissa tridactyla",
+      "pl": "mewa trójpalczasta",
+      "status": "пролётный"
+    },
+    {
+      "number": 169,
+      "family": "Laridae",
+      "genus": "Xema",
+      "ru": "Вилохвостая чайка",
+      "en": "Sabine's Gull",
+      "latin": "Xema sabini",
+      "pl": "mewa obrożna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 170,
+      "family": "Laridae",
+      "genus": "Pagophila",
+      "ru": "Белая чайка",
+      "en": "Ivory Gull",
+      "latin": "Pagophila eburnea",
+      "pl": "mewa modrodzioba",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 171,
+      "family": "Laridae",
+      "genus": "Chroicocephalus",
+      "ru": "Тонкоклювая чайка",
+      "en": "Slender-billed Gull",
+      "latin": "Chroicocephalus genei",
+      "pl": "mewa cienkodzioba",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 172,
+      "family": "Laridae",
+      "genus": "Chroicocephalus",
+      "ru": "Озёрная чайка",
+      "en": "Black-headed Gull",
+      "latin": "Chroicocephalus ridibundus",
+      "pl": "śmieszka",
+      "status": "гнездится"
+    },
+    {
+      "number": 173,
+      "family": "Laridae",
+      "genus": "Leucophaeus",
+      "ru": "Ацтекская чайка",
+      "en": "Laughing Gull",
+      "latin": "Leucophaeus atricilla",
+      "pl": "mewa karaibska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 174,
+      "family": "Laridae",
+      "genus": "Ichthyaetus",
+      "ru": "Черноголовый хохотун",
+      "en": "Pallas's Gull",
+      "latin": "Ichthyaetus ichthyaetus",
+      "pl": "orlica",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 175,
+      "family": "Laridae",
+      "genus": "Ichthyaetus",
+      "ru": "Чайка Одуэна",
+      "en": "Audouin's Gull",
+      "latin": "Ichthyaetus audouinii",
+      "pl": "mewa śródziemnomorska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 176,
+      "family": "Laridae",
+      "genus": "Ichthyaetus",
+      "ru": "Черноголовая чайка",
+      "en": "Mediterranean Gull",
+      "latin": "Ichthyaetus melanocephalus",
+      "pl": "mewa czarnogłowa",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 177,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Кольцеклювая чайка",
+      "en": "Ring-billed Gull",
+      "latin": "Larus delawarensis",
+      "pl": "mewa delawarska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 178,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Сизая чайка",
+      "en": "Common Gull",
+      "latin": "Larus canus",
+      "pl": "mewa siwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 179,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Хохотунья",
+      "en": "Caspian Gull",
+      "latin": "Larus cachinnans",
+      "pl": "mewa białogłowa",
+      "status": "гнездится"
+    },
+    {
+      "number": 180,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Американская серебристая чайка",
+      "en": "American Herring Gull",
+      "latin": "Larus smithsonianus",
+      "pl": "mewa popielata",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 181,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Серебристая чайка",
+      "en": "European Herring Gull",
+      "latin": "Larus argentatus",
+      "pl": "mewa srebrzysta",
+      "status": "гнездится"
+    },
+    {
+      "number": 182,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Средиземноморская чайка",
+      "en": "Yellow-legged Gull",
+      "latin": "Larus michahellis",
+      "pl": "mewa romańska",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 183,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Морская чайка",
+      "en": "Great Black-backed Gull",
+      "latin": "Larus marinus",
+      "pl": "mewa siodłata",
+      "status": "пролётный"
+    },
+    {
+      "number": 184,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Бургомистр",
+      "en": "Glaucous Gull",
+      "latin": "Larus hyperboreus",
+      "pl": "mewa blada",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 185,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Клуша",
+      "en": "Lesser Black-backed Gull",
+      "latin": "Larus fuscus",
+      "pl": "mewa żółtonoga",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 186,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Тихоокеанская чайка",
+      "en": "Slaty-backed Gull",
+      "latin": "Larus schistisagus",
+      "pl": "mewa ochocka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 187,
+      "family": "Laridae",
+      "genus": "Larus",
+      "ru": "Исландская чайка",
+      "en": "Iceland Gull",
+      "latin": "Larus glaucoides",
+      "pl": "mewa polarna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 188,
+      "family": "Gaviidae",
+      "genus": "Gavia",
+      "ru": "Краснозобая гагара",
+      "en": "Red-throated Loon",
+      "latin": "Gavia stellata",
+      "pl": "nur rdzawoszyi",
+      "status": "пролётный"
+    },
+    {
+      "number": 189,
+      "family": "Gaviidae",
+      "genus": "Gavia",
+      "ru": "Черноклювая гагара",
+      "en": "Common Loon",
+      "latin": "Gavia immer",
+      "pl": "lodowiec",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 190,
+      "family": "Gaviidae",
+      "genus": "Gavia",
+      "ru": "Белоклювая гагара",
+      "en": "Yellow-billed Loon",
+      "latin": "Gavia adamsii",
+      "pl": "nur białodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 191,
+      "family": "Gaviidae",
+      "genus": "Gavia",
+      "ru": "Белошейная гагара",
+      "en": "Pacific Loon",
+      "latin": "Gavia pacifica",
+      "pl": "nur pacyficzny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 192,
+      "family": "Gaviidae",
+      "genus": "Gavia",
+      "ru": "Чернозобая гагара",
+      "en": "Black-throated Loon",
+      "latin": "Gavia arctica",
+      "pl": "nur czarnoszyi",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 193,
+      "family": "Hydrobatidae",
+      "genus": "Hydrobates",
+      "ru": "Обыкновенная качурка",
+      "en": "European Storm Petrel",
+      "latin": "Hydrobates pelagicus",
+      "pl": "nawałnik burzowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 194,
+      "family": "Hydrobatidae",
+      "genus": "Hydrobates",
+      "ru": "Северная качурка",
+      "en": "Leach's Storm Petrel",
+      "latin": "Hydrobates leucorhous",
+      "pl": "nawałnik duży",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 195,
+      "family": "Procellariidae",
+      "genus": "Fulmarus",
+      "ru": "Глупыш",
+      "en": "Northern Fulmar",
+      "latin": "Fulmarus glacialis",
+      "pl": "fulmar",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 196,
+      "family": "Procellariidae",
+      "genus": "Calonectris",
+      "ru": "Средиземноморский буревестник",
+      "en": "Scopoli's Shearwater",
+      "latin": "Calonectris diomedea",
+      "pl": "burzyk żółtodzioby",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 197,
+      "family": "Procellariidae",
+      "genus": "Ardenna",
+      "ru": "Серый буревестник",
+      "en": "Sooty Shearwater",
+      "latin": "Ardenna grisea",
+      "pl": "burzyk szary",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 198,
+      "family": "Procellariidae",
+      "genus": "Puffinus",
+      "ru": "Малый буревестник",
+      "en": "Manx Shearwater",
+      "latin": "Puffinus puffinus",
+      "pl": "burzyk północny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 199,
+      "family": "Ciconiidae",
+      "genus": "Ciconia",
+      "ru": "Чёрный аист",
+      "en": "Black Stork",
+      "latin": "Ciconia nigra",
+      "pl": "bocian czarny",
+      "status": "гнездится"
+    },
+    {
+      "number": 200,
+      "family": "Ciconiidae",
+      "genus": "Ciconia",
+      "ru": "Белый аист",
+      "en": "White Stork",
+      "latin": "Ciconia ciconia",
+      "pl": "bocian biały",
+      "status": "гнездится"
+    },
+    {
+      "number": 201,
+      "family": "Sulidae",
+      "genus": "Morus",
+      "ru": "Северная олуша",
+      "en": "Northern Gannet",
+      "latin": "Morus bassanus",
+      "pl": "głuptak",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 202,
+      "family": "Sulidae",
+      "genus": "Sula",
+      "ru": "Бурая олуша",
+      "en": "Brown Booby",
+      "latin": "Sula leucogaster",
+      "pl": "głuptak białobrzuchy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 203,
+      "family": "Phalacrocoracidae",
+      "genus": "Microcarbo",
+      "ru": "Малый баклан",
+      "en": "Pygmy Cormorant",
+      "latin": "Microcarbo pygmaeus",
+      "pl": "kormoran mały",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 204,
+      "family": "Phalacrocoracidae",
+      "genus": "Gulosus",
+      "ru": "Хохлатый баклан",
+      "en": "European Shag",
+      "latin": "Gulosus aristotelis",
+      "pl": "kormoran czubaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 205,
+      "family": "Phalacrocoracidae",
+      "genus": "Phalacrocorax",
+      "ru": "Большой баклан",
+      "en": "Great Cormorant",
+      "latin": "Phalacrocorax carbo",
+      "pl": "kormoran",
+      "status": "гнездится"
+    },
+    {
+      "number": 206,
+      "family": "Threskiornithidae",
+      "genus": "Plegadis",
+      "ru": "Каравайка",
+      "en": "Glossy Ibis",
+      "latin": "Plegadis falcinellus",
+      "pl": "ibis kasztanowaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 207,
+      "family": "Threskiornithidae",
+      "genus": "Platalea",
+      "ru": "Колпица",
+      "en": "Eurasian Spoonbill",
+      "latin": "Platalea leucorodia",
+      "pl": "warzęcha",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 208,
+      "family": "Pelecanidae",
+      "genus": "Pelecanus",
+      "ru": "Розовый пеликан",
+      "en": "Great White Pelican",
+      "latin": "Pelecanus onocrotalus",
+      "pl": "pelikan różowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 209,
+      "family": "Pelecanidae",
+      "genus": "Pelecanus",
+      "ru": "Кудрявый пеликан",
+      "en": "Dalmatian Pelican",
+      "latin": "Pelecanus crispus",
+      "pl": "pelikan kędzierzawy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 210,
+      "family": "Ardeidae",
+      "genus": "Botaurus",
+      "ru": "Большая выпь",
+      "en": "Eurasian Bittern",
+      "latin": "Botaurus stellaris",
+      "pl": "bąk",
+      "status": "гнездится"
+    },
+    {
+      "number": 211,
+      "family": "Ardeidae",
+      "genus": "Botaurus",
+      "ru": "Малая выпь",
+      "en": "Little Bittern",
+      "latin": "Botaurus minutus",
+      "pl": "bączek",
+      "status": "гнездится"
+    },
+    {
+      "number": 212,
+      "family": "Ardeidae",
+      "genus": "Egretta",
+      "ru": "Малая белая цапля",
+      "en": "Little Egret",
+      "latin": "Egretta garzetta",
+      "pl": "czapla nadobna",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 213,
+      "family": "Ardeidae",
+      "genus": "Nycticorax",
+      "ru": "Кваква",
+      "en": "Black-crowned Night Heron",
+      "latin": "Nycticorax nycticorax",
+      "pl": "ślepowron",
+      "status": "гнездится"
+    },
+    {
+      "number": 214,
+      "family": "Ardeidae",
+      "genus": "Ardeola",
+      "ru": "Жёлтая цапля",
+      "en": "Squacco Heron",
+      "latin": "Ardeola ralloides",
+      "pl": "czapla modronosa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 215,
+      "family": "Ardeidae",
+      "genus": "Ardea",
+      "ru": "Большая белая цапля",
+      "en": "Great Egret",
+      "latin": "Ardea alba",
+      "pl": "czapla biała",
+      "status": "гнездится"
+    },
+    {
+      "number": 216,
+      "family": "Ardeidae",
+      "genus": "Ardea",
+      "ru": "Египетская цапля",
+      "en": "Western Cattle Egret",
+      "latin": "Ardea ibis",
+      "pl": "czapla złotawa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 217,
+      "family": "Ardeidae",
+      "genus": "Ardea",
+      "ru": "Рыжая цапля",
+      "en": "Purple Heron",
+      "latin": "Ardea purpurea",
+      "pl": "czapla purpurowa",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 218,
+      "family": "Ardeidae",
+      "genus": "Ardea",
+      "ru": "Серая цапля",
+      "en": "Grey Heron",
+      "latin": "Ardea cinerea",
+      "pl": "czapla siwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 219,
+      "family": "Caprimulgidae",
+      "genus": "Caprimulgus",
+      "ru": "Обыкновенный козодой",
+      "en": "European Nightjar",
+      "latin": "Caprimulgus europaeus",
+      "pl": "lelek",
+      "status": "гнездится"
+    },
+    {
+      "number": 220,
+      "family": "Apodidae",
+      "genus": "Tachymarptis",
+      "ru": "Белобрюхий стриж",
+      "en": "Alpine Swift",
+      "latin": "Tachymarptis melba",
+      "pl": "jerzyk alpejski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 221,
+      "family": "Apodidae",
+      "genus": "Apus",
+      "ru": "Чёрный стриж",
+      "en": "Common Swift",
+      "latin": "Apus apus",
+      "pl": "jerzyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 222,
+      "family": "Apodidae",
+      "genus": "Apus",
+      "ru": "Бледный стриж",
+      "en": "Pallid Swift",
+      "latin": "Apus pallidus",
+      "pl": "jerzyk blady",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 223,
+      "family": "Tytonidae",
+      "genus": "Tyto",
+      "ru": "Обыкновенная сипуха",
+      "en": "Western Barn Owl",
+      "latin": "Tyto alba",
+      "pl": "płomykówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 224,
+      "family": "Strigidae",
+      "genus": "Aegolius",
+      "ru": "Мохноногий сыч",
+      "en": "Boreal Owl",
+      "latin": "Aegolius funereus",
+      "pl": "włochatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 225,
+      "family": "Strigidae",
+      "genus": "Athene",
+      "ru": "Домовый сыч",
+      "en": "Little Owl",
+      "latin": "Athene noctua",
+      "pl": "pójdźka",
+      "status": "гнездится"
+    },
+    {
+      "number": 226,
+      "family": "Strigidae",
+      "genus": "Surnia",
+      "ru": "Ястребиная сова",
+      "en": "Northern Hawk-Owl",
+      "latin": "Surnia ulula",
+      "pl": "sowa jarzębata",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 227,
+      "family": "Strigidae",
+      "genus": "Glaucidium",
+      "ru": "Воробьиный сыч",
+      "en": "Eurasian Pygmy Owl",
+      "latin": "Glaucidium passerinum",
+      "pl": "sóweczka",
+      "status": "гнездится"
+    },
+    {
+      "number": 228,
+      "family": "Strigidae",
+      "genus": "Otus",
+      "ru": "Сплюшка",
+      "en": "Eurasian Scops Owl",
+      "latin": "Otus scops",
+      "pl": "syczek",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 229,
+      "family": "Strigidae",
+      "genus": "Asio",
+      "ru": "Болотная сова",
+      "en": "Short-eared Owl",
+      "latin": "Asio flammeus",
+      "pl": "uszatka błotna",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 230,
+      "family": "Strigidae",
+      "genus": "Asio",
+      "ru": "Ушастая сова",
+      "en": "Long-eared Owl",
+      "latin": "Asio otus",
+      "pl": "uszatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 231,
+      "family": "Strigidae",
+      "genus": "Bubo",
+      "ru": "Белая сова",
+      "en": "Snowy Owl",
+      "latin": "Bubo scandiacus",
+      "pl": "puchacz śnieżny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 232,
+      "family": "Strigidae",
+      "genus": "Bubo",
+      "ru": "Филин",
+      "en": "Eurasian Eagle-Owl",
+      "latin": "Bubo bubo",
+      "pl": "puchacz",
+      "status": "гнездится"
+    },
+    {
+      "number": 233,
+      "family": "Strigidae",
+      "genus": "Strix",
+      "ru": "Серая неясыть",
+      "en": "Tawny Owl",
+      "latin": "Strix aluco",
+      "pl": "puszczyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 234,
+      "family": "Strigidae",
+      "genus": "Strix",
+      "ru": "Длиннохвостая неясыть",
+      "en": "Ural Owl",
+      "latin": "Strix uralensis",
+      "pl": "puszczyk uralski",
+      "status": "гнездится"
+    },
+    {
+      "number": 235,
+      "family": "Strigidae",
+      "genus": "Strix",
+      "ru": "Бородатая неясыть",
+      "en": "Great Grey Owl",
+      "latin": "Strix nebulosa",
+      "pl": "puszczyk mszarny",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 236,
+      "family": "Pandionidae",
+      "genus": "Pandion",
+      "ru": "Скопа",
+      "en": "Osprey",
+      "latin": "Pandion haliaetus",
+      "pl": "rybołów",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 237,
+      "family": "Accipitridae",
+      "genus": "Elanus",
+      "ru": "Дымчатый коршун",
+      "en": "Black-winged Kite",
+      "latin": "Elanus caeruleus",
+      "pl": "kaniuk",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 238,
+      "family": "Accipitridae",
+      "genus": "Gypaetus",
+      "ru": "Бородач",
+      "en": "Bearded Vulture",
+      "latin": "Gypaetus barbatus",
+      "pl": "orłosęp",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 239,
+      "family": "Accipitridae",
+      "genus": "Neophron",
+      "ru": "Стервятник",
+      "en": "Egyptian Vulture",
+      "latin": "Neophron percnopterus",
+      "pl": "ścierwnik",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 240,
+      "family": "Accipitridae",
+      "genus": "Pernis",
+      "ru": "Обыкновенный осоед",
+      "en": "European Honey Buzzard",
+      "latin": "Pernis apivorus",
+      "pl": "trzmielojad",
+      "status": "гнездится"
+    },
+    {
+      "number": 241,
+      "family": "Accipitridae",
+      "genus": "Aegypius",
+      "ru": "Чёрный гриф",
+      "en": "Cinereous Vulture",
+      "latin": "Aegypius monachus",
+      "pl": "sęp kasztanowaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 242,
+      "family": "Accipitridae",
+      "genus": "Gyps",
+      "ru": "Белоголовый сип",
+      "en": "Griffon Vulture",
+      "latin": "Gyps fulvus",
+      "pl": "sęp płowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 243,
+      "family": "Accipitridae",
+      "genus": "Circaetus",
+      "ru": "Змееяд",
+      "en": "Short-toed Snake Eagle",
+      "latin": "Circaetus gallicus",
+      "pl": "gadożer",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 244,
+      "family": "Accipitridae",
+      "genus": "Clanga",
+      "ru": "Большой подорлик",
+      "en": "Greater Spotted Eagle",
+      "latin": "Clanga clanga",
+      "pl": "orlik grubodzioby",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 245,
+      "family": "Accipitridae",
+      "genus": "Clanga",
+      "ru": "Малый подорлик",
+      "en": "Lesser Spotted Eagle",
+      "latin": "Clanga pomarina",
+      "pl": "orlik krzykliwy",
+      "status": "гнездится"
+    },
+    {
+      "number": 246,
+      "family": "Accipitridae",
+      "genus": "Hieraaetus",
+      "ru": "Орёл-карлик",
+      "en": "Booted Eagle",
+      "latin": "Hieraaetus pennatus",
+      "pl": "orzełek",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 247,
+      "family": "Accipitridae",
+      "genus": "Aquila",
+      "ru": "Степной орёл",
+      "en": "Steppe Eagle",
+      "latin": "Aquila nipalensis",
+      "pl": "orzeł stepowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 248,
+      "family": "Accipitridae",
+      "genus": "Aquila",
+      "ru": "Могильник",
+      "en": "Eastern Imperial Eagle",
+      "latin": "Aquila heliaca",
+      "pl": "orzeł cesarski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 249,
+      "family": "Accipitridae",
+      "genus": "Aquila",
+      "ru": "Беркут",
+      "en": "Golden Eagle",
+      "latin": "Aquila chrysaetos",
+      "pl": "orzeł przedni",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 250,
+      "family": "Accipitridae",
+      "genus": "Aquila",
+      "ru": "Ястребиный орёл",
+      "en": "Bonelli's Eagle",
+      "latin": "Aquila fasciata",
+      "pl": "orzeł południowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 251,
+      "family": "Accipitridae",
+      "genus": "Tachyspiza",
+      "ru": "Европейский тювик",
+      "en": "Levant Sparrowhawk",
+      "latin": "Tachyspiza brevipes",
+      "pl": "krogulec krótkonogi",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 252,
+      "family": "Accipitridae",
+      "genus": "Accipiter",
+      "ru": "Перепелятник",
+      "en": "Eurasian Sparrowhawk",
+      "latin": "Accipiter nisus",
+      "pl": "krogulec",
+      "status": "гнездится"
+    },
+    {
+      "number": 253,
+      "family": "Accipitridae",
+      "genus": "Astur",
+      "ru": "Тетеревятник",
+      "en": "Eurasian Goshawk",
+      "latin": "Astur gentilis",
+      "pl": "jastrząb",
+      "status": "гнездится"
+    },
+    {
+      "number": 254,
+      "family": "Accipitridae",
+      "genus": "Circus",
+      "ru": "Степной лунь",
+      "en": "Pallid Harrier",
+      "latin": "Circus macrourus",
+      "pl": "błotniak stepowy",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 255,
+      "family": "Accipitridae",
+      "genus": "Circus",
+      "ru": "Полевой лунь",
+      "en": "Hen Harrier",
+      "latin": "Circus cyaneus",
+      "pl": "błotniak zbożowy",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 256,
+      "family": "Accipitridae",
+      "genus": "Circus",
+      "ru": "Луговой лунь",
+      "en": "Montagu's Harrier",
+      "latin": "Circus pygargus",
+      "pl": "błotniak łąkowy",
+      "status": "гнездится"
+    },
+    {
+      "number": 257,
+      "family": "Accipitridae",
+      "genus": "Circus",
+      "ru": "Болотный лунь",
+      "en": "Western Marsh Harrier",
+      "latin": "Circus aeruginosus",
+      "pl": "błotniak stawowy",
+      "status": "гнездится"
+    },
+    {
+      "number": 258,
+      "family": "Accipitridae",
+      "genus": "Milvus",
+      "ru": "Красный коршун",
+      "en": "Red Kite",
+      "latin": "Milvus milvus",
+      "pl": "kania ruda",
+      "status": "гнездится"
+    },
+    {
+      "number": 259,
+      "family": "Accipitridae",
+      "genus": "Milvus",
+      "ru": "Чёрный коршун",
+      "en": "Black Kite",
+      "latin": "Milvus migrans",
+      "pl": "kania czarna",
+      "status": "гнездится"
+    },
+    {
+      "number": 260,
+      "family": "Accipitridae",
+      "genus": "Haliaeetus",
+      "ru": "Орлан-долгохвост",
+      "en": "Pallas's Fish Eagle",
+      "latin": "Haliaeetus leucoryphus",
+      "pl": "bielik wschodni",
+      "status": "исторические залёты"
+    },
+    {
+      "number": 261,
+      "family": "Accipitridae",
+      "genus": "Haliaeetus",
+      "ru": "Орлан-белохвост",
+      "en": "White-tailed Eagle",
+      "latin": "Haliaeetus albicilla",
+      "pl": "bielik",
+      "status": "гнездится"
+    },
+    {
+      "number": 262,
+      "family": "Accipitridae",
+      "genus": "Buteo",
+      "ru": "Зимняк",
+      "en": "Rough-legged Buzzard",
+      "latin": "Buteo lagopus",
+      "pl": "myszołów włochaty",
+      "status": "пролётный"
+    },
+    {
+      "number": 263,
+      "family": "Accipitridae",
+      "genus": "Buteo",
+      "ru": "Обыкновенный канюк",
+      "en": "Common Buzzard",
+      "latin": "Buteo buteo",
+      "pl": "myszołów",
+      "status": "гнездится"
+    },
+    {
+      "number": 264,
+      "family": "Accipitridae",
+      "genus": "Buteo",
+      "ru": "Курганник",
+      "en": "Long-legged Buzzard",
+      "latin": "Buteo rufinus",
+      "pl": "kurhannik",
+      "status": "пролётный"
+    },
+    {
+      "number": 265,
+      "family": "Upupidae",
+      "genus": "Upupa",
+      "ru": "Удод",
+      "en": "Common Hoopoe",
+      "latin": "Upupa epops",
+      "pl": "dudek",
+      "status": "гнездится"
+    },
+    {
+      "number": 266,
+      "family": "Coraciidae",
+      "genus": "Coracias",
+      "ru": "Сизоворонка",
+      "en": "European Roller",
+      "latin": "Coracias garrulus",
+      "pl": "kraska",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 267,
+      "family": "Meropidae",
+      "genus": "Merops",
+      "ru": "Золотистая щурка",
+      "en": "European Bee-eater",
+      "latin": "Merops apiaster",
+      "pl": "żołna",
+      "status": "гнездится"
+    },
+    {
+      "number": 268,
+      "family": "Alcedinidae",
+      "genus": "Alcedo",
+      "ru": "Обыкновенный зимородок",
+      "en": "Common Kingfisher",
+      "latin": "Alcedo atthis",
+      "pl": "zimorodek",
+      "status": "гнездится"
+    },
+    {
+      "number": 269,
+      "family": "Alcedinidae",
+      "genus": "Ceryle",
+      "ru": "Пегий зимородок",
+      "en": "Pied Kingfisher",
+      "latin": "Ceryle rudis",
+      "pl": "rybaczek srokaty",
+      "status": "исторические залёты"
+    },
+    {
+      "number": 270,
+      "family": "Picidae",
+      "genus": "Jynx",
+      "ru": "Вертишейка",
+      "en": "Eurasian Wryneck",
+      "latin": "Jynx torquilla",
+      "pl": "krętogłów",
+      "status": "гнездится"
+    },
+    {
+      "number": 271,
+      "family": "Picidae",
+      "genus": "Picus",
+      "ru": "Седой дятел",
+      "en": "Grey-headed Woodpecker",
+      "latin": "Picus canus",
+      "pl": "dzięcioł zielonosiwy",
+      "status": "гнездится"
+    },
+    {
+      "number": 272,
+      "family": "Picidae",
+      "genus": "Picus",
+      "ru": "Зелёный дятел",
+      "en": "European Green Woodpecker",
+      "latin": "Picus viridis",
+      "pl": "dzięcioł zielony",
+      "status": "гнездится"
+    },
+    {
+      "number": 273,
+      "family": "Picidae",
+      "genus": "Dryocopus",
+      "ru": "Желна",
+      "en": "Black Woodpecker",
+      "latin": "Dryocopus martius",
+      "pl": "dzięcioł czarny",
+      "status": "гнездится"
+    },
+    {
+      "number": 274,
+      "family": "Picidae",
+      "genus": "Picoides",
+      "ru": "Трёхпалый дятел",
+      "en": "Eurasian Three-toed Woodpecker",
+      "latin": "Picoides tridactylus",
+      "pl": "dzięcioł trójpalczasty",
+      "status": "гнездится"
+    },
+    {
+      "number": 275,
+      "family": "Picidae",
+      "genus": "Dendrocoptes",
+      "ru": "Средний пёстрый дятел",
+      "en": "Middle Spotted Woodpecker",
+      "latin": "Dendrocoptes medius",
+      "pl": "dzięcioł średni",
+      "status": "гнездится"
+    },
+    {
+      "number": 276,
+      "family": "Picidae",
+      "genus": "Dendrocopos",
+      "ru": "Белоспинный дятел",
+      "en": "White-backed Woodpecker",
+      "latin": "Dendrocopos leucotos",
+      "pl": "dzięcioł białogrzbiety",
+      "status": "гнездится"
+    },
+    {
+      "number": 277,
+      "family": "Picidae",
+      "genus": "Dendrocopos",
+      "ru": "Большой пёстрый дятел",
+      "en": "Great Spotted Woodpecker",
+      "latin": "Dendrocopos major",
+      "pl": "dzięcioł duży",
+      "status": "гнездится"
+    },
+    {
+      "number": 278,
+      "family": "Picidae",
+      "genus": "Dendrocopos",
+      "ru": "Сирийский дятел",
+      "en": "Syrian Woodpecker",
+      "latin": "Dendrocopos syriacus",
+      "pl": "dzięcioł białoszyi",
+      "status": "гнездится"
+    },
+    {
+      "number": 279,
+      "family": "Picidae",
+      "genus": "Dryobates",
+      "ru": "Малый пёстрый дятел",
+      "en": "Lesser Spotted Woodpecker",
+      "latin": "Dryobates minor",
+      "pl": "dzięciołek",
+      "status": "гнездится"
+    },
+    {
+      "number": 280,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Степная пустельга",
+      "en": "Lesser Kestrel",
+      "latin": "Falco naumanni",
+      "pl": "pustułeczka",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 281,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Обыкновенная пустельга",
+      "en": "Common Kestrel",
+      "latin": "Falco tinnunculus",
+      "pl": "pustułka",
+      "status": "гнездится"
+    },
+    {
+      "number": 282,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Кобчик",
+      "en": "Red-footed Falcon",
+      "latin": "Falco vespertinus",
+      "pl": "kobczyk",
+      "status": "пролётный, ранее гнездился"
+    },
+    {
+      "number": 283,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Дербник",
+      "en": "Merlin",
+      "latin": "Falco columbarius",
+      "pl": "drzemlik",
+      "status": "пролётный"
+    },
+    {
+      "number": 284,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Сокол Элеоноры",
+      "en": "Eleonora's Falcon",
+      "latin": "Falco eleonorae",
+      "pl": "sokół skalny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 285,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Чеглок",
+      "en": "Eurasian Hobby",
+      "latin": "Falco subbuteo",
+      "pl": "kobuz",
+      "status": "гнездится"
+    },
+    {
+      "number": 286,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Сапсан",
+      "en": "Peregrine Falcon",
+      "latin": "Falco peregrinus",
+      "pl": "sokół wędrowny",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 287,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Средиземноморский сокол",
+      "en": "Lanner Falcon",
+      "latin": "Falco biarmicus",
+      "pl": "raróg górski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 288,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Кречет",
+      "en": "Gyrfalcon",
+      "latin": "Falco rusticolus",
+      "pl": "białozór",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 289,
+      "family": "Falconidae",
+      "genus": "Falco",
+      "ru": "Балобан",
+      "en": "Saker Falcon",
+      "latin": "Falco cherrug",
+      "pl": "raróg",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 290,
+      "family": "Vireonidae",
+      "genus": "Vireo",
+      "ru": "Красноглазый виреон",
+      "en": "Red-eyed Vireo",
+      "latin": "Vireo olivaceus",
+      "pl": "wireonek czerwonooki",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 291,
+      "family": "Oriolidae",
+      "genus": "Oriolus",
+      "ru": "Обыкновенная иволга",
+      "en": "Eurasian Golden Oriole",
+      "latin": "Oriolus oriolus",
+      "pl": "wilga",
+      "status": "гнездится"
+    },
+    {
+      "number": 292,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Серый сорокопут",
+      "en": "Great Grey Shrike",
+      "latin": "Lanius excubitor",
+      "pl": "srokosz",
+      "status": "гнездится"
+    },
+    {
+      "number": 293,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Северный сорокопут",
+      "en": "Northern Shrike",
+      "latin": "Lanius borealis",
+      "pl": "srokosz północny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 294,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Чернолобый сорокопут",
+      "en": "Lesser Grey Shrike",
+      "latin": "Lanius minor",
+      "pl": "dzierzba czarnoczelna",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 295,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Красноголовый сорокопут",
+      "en": "Woodchat Shrike",
+      "latin": "Lanius senator",
+      "pl": "dzierzba rudogłowa",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 296,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Буланый сорокопут",
+      "en": "Isabelline Shrike",
+      "latin": "Lanius isabellinus",
+      "pl": "dzierzba pustynna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 297,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Обыкновенный жулан",
+      "en": "Red-backed Shrike",
+      "latin": "Lanius collurio",
+      "pl": "gąsiorek",
+      "status": "гнездится"
+    },
+    {
+      "number": 298,
+      "family": "Laniidae",
+      "genus": "Lanius",
+      "ru": "Рыжехвостый жулан",
+      "en": "Red-tailed Shrike",
+      "latin": "Lanius phoenicuroides",
+      "pl": "dzierzba rdzawosterna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 299,
+      "family": "Corvidae",
+      "genus": "Pyrrhocorax",
+      "ru": "Альпийская галка",
+      "en": "Alpine Chough",
+      "latin": "Pyrrhocorax graculus",
+      "pl": "wieszczek",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 300,
+      "family": "Corvidae",
+      "genus": "Perisoreus",
+      "ru": "Кукша",
+      "en": "Siberian Jay",
+      "latin": "Perisoreus infaustus",
+      "pl": "sójka syberyjska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 301,
+      "family": "Corvidae",
+      "genus": "Garrulus",
+      "ru": "Сойка",
+      "en": "Eurasian Jay",
+      "latin": "Garrulus glandarius",
+      "pl": "sójka",
+      "status": "гнездится"
+    },
+    {
+      "number": 302,
+      "family": "Corvidae",
+      "genus": "Pica",
+      "ru": "Сорока",
+      "en": "Eurasian Magpie",
+      "latin": "Pica pica",
+      "pl": "sroka",
+      "status": "гнездится"
+    },
+    {
+      "number": 303,
+      "family": "Corvidae",
+      "genus": "Nucifraga",
+      "ru": "Кедровка",
+      "en": "Northern Nutcracker",
+      "latin": "Nucifraga caryocatactes",
+      "pl": "orzechówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 304,
+      "family": "Corvidae",
+      "genus": "Coloeus",
+      "ru": "Галка",
+      "en": "Western Jackdaw",
+      "latin": "Coloeus monedula",
+      "pl": "kawka",
+      "status": "гнездится"
+    },
+    {
+      "number": 305,
+      "family": "Corvidae",
+      "genus": "Corvus",
+      "ru": "Грач",
+      "en": "Rook",
+      "latin": "Corvus frugilegus",
+      "pl": "gawron",
+      "status": "гнездится"
+    },
+    {
+      "number": 306,
+      "family": "Corvidae",
+      "genus": "Corvus",
+      "ru": "Ворон",
+      "en": "Northern Raven",
+      "latin": "Corvus corax",
+      "pl": "kruk",
+      "status": "гнездится"
+    },
+    {
+      "number": 307,
+      "family": "Corvidae",
+      "genus": "Corvus",
+      "ru": "Чёрная ворона",
+      "en": "Carrion Crow",
+      "latin": "Corvus corone",
+      "pl": "wrona",
+      "status": "гнездится"
+    },
+    {
+      "number": 308,
+      "family": "Remizidae",
+      "genus": "Remiz",
+      "ru": "Обыкновенный ремез",
+      "en": "Eurasian Penduline Tit",
+      "latin": "Remiz pendulinus",
+      "pl": "remiz",
+      "status": "гнездится"
+    },
+    {
+      "number": 309,
+      "family": "Paridae",
+      "genus": "Cyanistes",
+      "ru": "Обыкновенная лазоревка",
+      "en": "Eurasian Blue Tit",
+      "latin": "Cyanistes caeruleus",
+      "pl": "modraszka",
+      "status": "гнездится"
+    },
+    {
+      "number": 310,
+      "family": "Paridae",
+      "genus": "Cyanistes",
+      "ru": "Белая лазоревка",
+      "en": "Azure Tit",
+      "latin": "Cyanistes cyanus",
+      "pl": "sikora lazurowa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 311,
+      "family": "Paridae",
+      "genus": "Parus",
+      "ru": "Большая синица",
+      "en": "Great Tit",
+      "latin": "Parus major",
+      "pl": "bogatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 312,
+      "family": "Paridae",
+      "genus": "Periparus",
+      "ru": "Московка",
+      "en": "Coal Tit",
+      "latin": "Periparus ater",
+      "pl": "sosnówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 313,
+      "family": "Paridae",
+      "genus": "Lophophanes",
+      "ru": "Хохлатая синица",
+      "en": "Crested Tit",
+      "latin": "Lophophanes cristatus",
+      "pl": "czubatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 314,
+      "family": "Paridae",
+      "genus": "Poecile",
+      "ru": "Черноголовая гаичка",
+      "en": "Marsh Tit",
+      "latin": "Poecile palustris",
+      "pl": "sikora uboga",
+      "status": "гнездится"
+    },
+    {
+      "number": 315,
+      "family": "Paridae",
+      "genus": "Poecile",
+      "ru": "Буроголовая гаичка",
+      "en": "Willow Tit",
+      "latin": "Poecile montanus",
+      "pl": "czarnogłówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 316,
+      "family": "Panuridae",
+      "genus": "Panurus",
+      "ru": "Усатая синица",
+      "en": "Bearded Reedling",
+      "latin": "Panurus biarmicus",
+      "pl": "wąsatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 317,
+      "family": "Alaudidae",
+      "genus": "Lullula",
+      "ru": "Лесной жаворонок",
+      "en": "Woodlark",
+      "latin": "Lullula arborea",
+      "pl": "lerka",
+      "status": "гнездится"
+    },
+    {
+      "number": 318,
+      "family": "Alaudidae",
+      "genus": "Alauda",
+      "ru": "Белокрылый жаворонок",
+      "en": "White-winged Lark",
+      "latin": "Alauda leucoptera",
+      "pl": "skowronek białoskrzydły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 319,
+      "family": "Alaudidae",
+      "genus": "Alauda",
+      "ru": "Полевой жаворонок",
+      "en": "Eurasian Skylark",
+      "latin": "Alauda arvensis",
+      "pl": "skowronek",
+      "status": "гнездится"
+    },
+    {
+      "number": 320,
+      "family": "Alaudidae",
+      "genus": "Galerida",
+      "ru": "Хохлатый жаворонок",
+      "en": "Crested Lark",
+      "latin": "Galerida cristata",
+      "pl": "dzierlatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 321,
+      "family": "Alaudidae",
+      "genus": "Eremophila",
+      "ru": "Рогатый жаворонок",
+      "en": "Horned Lark",
+      "latin": "Eremophila alpestris",
+      "pl": "górniczek",
+      "status": "пролётный"
+    },
+    {
+      "number": 322,
+      "family": "Alaudidae",
+      "genus": "Calandrella",
+      "ru": "Малый жаворонок",
+      "en": "Greater Short-toed Lark",
+      "latin": "Calandrella brachydactyla",
+      "pl": "skowrończyk krótkopalcowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 323,
+      "family": "Alaudidae",
+      "genus": "Melanocorypha",
+      "ru": "Двупятнистый жаворонок",
+      "en": "Bimaculated Lark",
+      "latin": "Melanocorypha bimaculata",
+      "pl": "kalandra dwuplamista",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 324,
+      "family": "Alaudidae",
+      "genus": "Melanocorypha",
+      "ru": "Чёрный жаворонок",
+      "en": "Black Lark",
+      "latin": "Melanocorypha yeltoniensis",
+      "pl": "kalandra czarna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 325,
+      "family": "Alaudidae",
+      "genus": "Melanocorypha",
+      "ru": "Степной жаворонок",
+      "en": "Calandra Lark",
+      "latin": "Melanocorypha calandra",
+      "pl": "kalandra szara",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 326,
+      "family": "Acrocephalidae",
+      "genus": "Hippolais",
+      "ru": "Зелёная пересмешка",
+      "en": "Icterine Warbler",
+      "latin": "Hippolais icterina",
+      "pl": "zaganiacz",
+      "status": "гнездится"
+    },
+    {
+      "number": 327,
+      "family": "Acrocephalidae",
+      "genus": "Hippolais",
+      "ru": "Многоголосая пересмешка",
+      "en": "Melodious Warbler",
+      "latin": "Hippolais polyglotta",
+      "pl": "zaganiacz szczebiotliwy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 328,
+      "family": "Acrocephalidae",
+      "genus": "Iduna",
+      "ru": "Южная бормотушка",
+      "en": "Sykes's Warbler",
+      "latin": "Iduna rama",
+      "pl": "zaganiacz afgański",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 329,
+      "family": "Acrocephalidae",
+      "genus": "Iduna",
+      "ru": "Северная бормотушка",
+      "en": "Booted Warbler",
+      "latin": "Iduna caligata",
+      "pl": "zaganiacz mały",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 330,
+      "family": "Acrocephalidae",
+      "genus": "Iduna",
+      "ru": "Бледная пересмешка",
+      "en": "Eastern Olivaceous Warbler",
+      "latin": "Iduna pallida",
+      "pl": "zaganiacz blady",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 331,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Камышевка-барсучок",
+      "en": "Sedge Warbler",
+      "latin": "Acrocephalus schoenobaenus",
+      "pl": "rokitniczka",
+      "status": "гнездится"
+    },
+    {
+      "number": 332,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Вертлявая камышевка",
+      "en": "Aquatic Warbler",
+      "latin": "Acrocephalus paludicola",
+      "pl": "wodniczka",
+      "status": "гнездится"
+    },
+    {
+      "number": 333,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Тонкоклювая камышевка",
+      "en": "Moustached Warbler",
+      "latin": "Acrocephalus melanopogon",
+      "pl": "tamaryszka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 334,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Индийская камышевка",
+      "en": "Paddyfield Warbler",
+      "latin": "Acrocephalus agricola",
+      "pl": "trzcinniczek kaspijski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 335,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Садовая камышевка",
+      "en": "Blyth's Reed Warbler",
+      "latin": "Acrocephalus dumetorum",
+      "pl": "zaroślówka",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 336,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Болотная камышевка",
+      "en": "Marsh Warbler",
+      "latin": "Acrocephalus palustris",
+      "pl": "łozówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 337,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Тростниковая камышевка",
+      "en": "Common Reed Warbler",
+      "latin": "Acrocephalus scirpaceus",
+      "pl": "trzcinniczek",
+      "status": "гнездится"
+    },
+    {
+      "number": 338,
+      "family": "Acrocephalidae",
+      "genus": "Acrocephalus",
+      "ru": "Дроздовидная камышевка",
+      "en": "Great Reed Warbler",
+      "latin": "Acrocephalus arundinaceus",
+      "pl": "trzciniak",
+      "status": "гнездится"
+    },
+    {
+      "number": 339,
+      "family": "Locustellidae",
+      "genus": "Helopsaltes",
+      "ru": "Певчий сверчок",
+      "en": "Pallas's Grasshopper Warbler",
+      "latin": "Helopsaltes certhiola",
+      "pl": "świerszczak melodyjny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 340,
+      "family": "Locustellidae",
+      "genus": "Locustella",
+      "ru": "Речной сверчок",
+      "en": "River Warbler",
+      "latin": "Locustella fluviatilis",
+      "pl": "strumieniówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 341,
+      "family": "Locustellidae",
+      "genus": "Locustella",
+      "ru": "Соловьиный сверчок",
+      "en": "Savi's Warbler",
+      "latin": "Locustella luscinioides",
+      "pl": "brzęczka",
+      "status": "гнездится"
+    },
+    {
+      "number": 342,
+      "family": "Locustellidae",
+      "genus": "Locustella",
+      "ru": "Обыкновенный сверчок",
+      "en": "Common Grasshopper Warbler",
+      "latin": "Locustella naevia",
+      "pl": "świerszczak",
+      "status": "гнездится"
+    },
+    {
+      "number": 343,
+      "family": "Hirundinidae",
+      "genus": "Riparia",
+      "ru": "Береговушка",
+      "en": "Sand Martin",
+      "latin": "Riparia riparia",
+      "pl": "brzegówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 344,
+      "family": "Hirundinidae",
+      "genus": "Hirundo",
+      "ru": "Деревенская ласточка",
+      "en": "Barn Swallow",
+      "latin": "Hirundo rustica",
+      "pl": "dymówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 345,
+      "family": "Hirundinidae",
+      "genus": "Delichon",
+      "ru": "Городская ласточка",
+      "en": "Western House Martin",
+      "latin": "Delichon urbicum",
+      "pl": "oknówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 346,
+      "family": "Hirundinidae",
+      "genus": "Cecropis",
+      "ru": "Рыжепоясничная ласточка",
+      "en": "European Red-rumped Swallow",
+      "latin": "Cecropis rufula",
+      "pl": "jaskółka śródziemnomorska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 347,
+      "family": "Aegithalidae",
+      "genus": "Aegithalos",
+      "ru": "Длиннохвостая синица",
+      "en": "Long-tailed Tit",
+      "latin": "Aegithalos caudatus",
+      "pl": "raniuszek",
+      "status": "гнездится"
+    },
+    {
+      "number": 348,
+      "family": "Cettiidae",
+      "genus": "Cettia",
+      "ru": "Широкохвостая камышевка",
+      "en": "Cetti's Warbler",
+      "latin": "Cettia cetti",
+      "pl": "wierzbówka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 349,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка-трещотка",
+      "en": "Wood Warbler",
+      "latin": "Phylloscopus sibilatrix",
+      "pl": "świstunka leśna",
+      "status": "гнездится"
+    },
+    {
+      "number": 350,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Светлобрюхая пеночка",
+      "en": "Western Bonelli's Warbler",
+      "latin": "Phylloscopus bonelli",
+      "pl": "świstunka górska",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 351,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка-зарничка",
+      "en": "Yellow-browed Warbler",
+      "latin": "Phylloscopus inornatus",
+      "pl": "świstunka żółtawa",
+      "status": "пролётный"
+    },
+    {
+      "number": 352,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка Хьюма",
+      "en": "Hume's Leaf Warbler",
+      "latin": "Phylloscopus humei",
+      "pl": "świstunka ałtajska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 353,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Корольковая пеночка",
+      "en": "Pallas's Leaf Warbler",
+      "latin": "Phylloscopus proregulus",
+      "pl": "świstunka złotawa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 354,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Толстоклювая пеночка",
+      "en": "Radde's Warbler",
+      "latin": "Phylloscopus schwarzi",
+      "pl": "świstunka grubodzioba",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 355,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Бурая пеночка",
+      "en": "Dusky Warbler",
+      "latin": "Phylloscopus fuscatus",
+      "pl": "świstunka brunatna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 356,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка-весничка",
+      "en": "Willow Warbler",
+      "latin": "Phylloscopus trochilus",
+      "pl": "piecuszek",
+      "status": "гнездится"
+    },
+    {
+      "number": 357,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Иберийская пеночка",
+      "en": "Iberian Chiffchaff",
+      "latin": "Phylloscopus ibericus",
+      "pl": "świstunka iberyjska",
+      "status": "гнездится, случайные залёты"
+    },
+    {
+      "number": 358,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка-теньковка",
+      "en": "Common Chiffchaff",
+      "latin": "Phylloscopus collybita",
+      "pl": "pierwiosnek",
+      "status": "гнездится"
+    },
+    {
+      "number": 359,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Зелёная пеночка",
+      "en": "Greenish Warbler",
+      "latin": "Phylloscopus trochiloides",
+      "pl": "wójcik",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 360,
+      "family": "Phylloscopidae",
+      "genus": "Phylloscopus",
+      "ru": "Пеночка-таловка",
+      "en": "Arctic Warbler",
+      "latin": "Phylloscopus borealis",
+      "pl": "świstunka północna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 361,
+      "family": "Sylviidae",
+      "genus": "Sylvia",
+      "ru": "Садовая славка",
+      "en": "Garden Warbler",
+      "latin": "Sylvia borin",
+      "pl": "gajówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 362,
+      "family": "Sylviidae",
+      "genus": "Sylvia",
+      "ru": "Черноголовая славка",
+      "en": "Eurasian Blackcap",
+      "latin": "Sylvia atricapilla",
+      "pl": "kapturka",
+      "status": "гнездится"
+    },
+    {
+      "number": 363,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Ястребиная славка",
+      "en": "Barred Warbler",
+      "latin": "Curruca nisoria",
+      "pl": "jarzębatka",
+      "status": "гнездится"
+    },
+    {
+      "number": 364,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Славка-завирушка",
+      "en": "Lesser Whitethroat",
+      "latin": "Curruca curruca",
+      "pl": "piegża",
+      "status": "гнездится"
+    },
+    {
+      "number": 365,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Белоусая славка",
+      "en": "Menetries's Warbler",
+      "latin": "Curruca mystacea",
+      "pl": "pokrzewka kaspijska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 366,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Серая славка",
+      "en": "Common Whitethroat",
+      "latin": "Curruca communis",
+      "pl": "cierniówka",
+      "status": "гнездится"
+    },
+    {
+      "number": 367,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Сардинская славка",
+      "en": "Sardinian Warbler",
+      "latin": "Curruca melanocephala",
+      "pl": "pokrzewka aksamitna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 368,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Африканская рыжегрудая славка",
+      "en": "Western Subalpine Warbler",
+      "latin": "Curruca iberiae",
+      "pl": "pokrzewka iberyjska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 369,
+      "family": "Sylviidae",
+      "genus": "Curruca",
+      "ru": "Субальпийская славка",
+      "en": "Eastern Subalpine Warbler",
+      "latin": "Curruca cantillans",
+      "pl": "pokrzewka wąsata",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 370,
+      "family": "Bombycillidae",
+      "genus": "Bombycilla",
+      "ru": "Обыкновенный свиристель",
+      "en": "Bohemian Waxwing",
+      "latin": "Bombycilla garrulus",
+      "pl": "jemiołuszka",
+      "status": "пролётный"
+    },
+    {
+      "number": 371,
+      "family": "Regulidae",
+      "genus": "Regulus",
+      "ru": "Желтоголовый королёк",
+      "en": "Goldcrest",
+      "latin": "Regulus regulus",
+      "pl": "mysikrólik",
+      "status": "гнездится"
+    },
+    {
+      "number": 372,
+      "family": "Regulidae",
+      "genus": "Regulus",
+      "ru": "Красноголовый королёк",
+      "en": "Common Firecrest",
+      "latin": "Regulus ignicapilla",
+      "pl": "zniczek",
+      "status": "гнездится"
+    },
+    {
+      "number": 373,
+      "family": "Tichodromidae",
+      "genus": "Tichodroma",
+      "ru": "Стенолаз",
+      "en": "Wallcreeper",
+      "latin": "Tichodroma muraria",
+      "pl": "pomurnik",
+      "status": "гнездится"
+    },
+    {
+      "number": 374,
+      "family": "Sittidae",
+      "genus": "Sitta",
+      "ru": "Обыкновенный поползень",
+      "en": "Eurasian Nuthatch",
+      "latin": "Sitta europaea",
+      "pl": "kowalik",
+      "status": "гнездится"
+    },
+    {
+      "number": 375,
+      "family": "Certhiidae",
+      "genus": "Certhia",
+      "ru": "Обыкновенная пищуха",
+      "en": "Eurasian Treecreeper",
+      "latin": "Certhia familiaris",
+      "pl": "pełzacz leśny",
+      "status": "гнездится"
+    },
+    {
+      "number": 376,
+      "family": "Certhiidae",
+      "genus": "Certhia",
+      "ru": "Короткопалая пищуха",
+      "en": "Short-toed Treecreeper",
+      "latin": "Certhia brachydactyla",
+      "pl": "pełzacz ogrodowy",
+      "status": "гнездится"
+    },
+    {
+      "number": 377,
+      "family": "Troglodytidae",
+      "genus": "Troglodytes",
+      "ru": "Крапивник",
+      "en": "Eurasian Wren",
+      "latin": "Troglodytes troglodytes",
+      "pl": "strzyżyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 378,
+      "family": "Sturnidae",
+      "genus": "Sturnus",
+      "ru": "Одноцветный скворец",
+      "en": "Spotless Starling",
+      "latin": "Sturnus unicolor",
+      "pl": "szpak jednobarwny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 379,
+      "family": "Sturnidae",
+      "genus": "Sturnus",
+      "ru": "Обыкновенный скворец",
+      "en": "Common Starling",
+      "latin": "Sturnus vulgaris",
+      "pl": "szpak",
+      "status": "гнездится"
+    },
+    {
+      "number": 380,
+      "family": "Sturnidae",
+      "genus": "Pastor",
+      "ru": "Розовый скворец",
+      "en": "Rosy Starling",
+      "latin": "Pastor roseus",
+      "pl": "pasterz",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 381,
+      "family": "Cinclidae",
+      "genus": "Cinclus",
+      "ru": "Оляпка",
+      "en": "White-throated Dipper",
+      "latin": "Cinclus cinclus",
+      "pl": "pluszcz",
+      "status": "гнездится"
+    },
+    {
+      "number": 382,
+      "family": "Turdidae",
+      "genus": "Zoothera",
+      "ru": "Пёстрый дрозд",
+      "en": "White's Thrush",
+      "latin": "Zoothera aurea",
+      "pl": "drozdoń tajgowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 383,
+      "family": "Turdidae",
+      "genus": "Geokichla",
+      "ru": "Сибирский дрозд",
+      "en": "Siberian Thrush",
+      "latin": "Geokichla sibirica",
+      "pl": "drozdaczek ciemny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 384,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Деряба",
+      "en": "Mistle Thrush",
+      "latin": "Turdus viscivorus",
+      "pl": "paszkot",
+      "status": "гнездится"
+    },
+    {
+      "number": 385,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Певчий дрозд",
+      "en": "Song Thrush",
+      "latin": "Turdus philomelos",
+      "pl": "śpiewak",
+      "status": "гнездится"
+    },
+    {
+      "number": 386,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Белобровик",
+      "en": "Redwing",
+      "latin": "Turdus iliacus",
+      "pl": "droździk",
+      "status": "гнездится"
+    },
+    {
+      "number": 387,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Чёрный дрозд",
+      "en": "Common Blackbird",
+      "latin": "Turdus merula",
+      "pl": "kos",
+      "status": "гнездится"
+    },
+    {
+      "number": 388,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Рябинник",
+      "en": "Fieldfare",
+      "latin": "Turdus pilaris",
+      "pl": "kwiczoł",
+      "status": "гнездится"
+    },
+    {
+      "number": 389,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Белозобый дрозд",
+      "en": "Ring Ouzel",
+      "latin": "Turdus torquatus",
+      "pl": "drozd obrożny",
+      "status": "гнездится"
+    },
+    {
+      "number": 390,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Рыжий дрозд",
+      "en": "Naumann's Thrush",
+      "latin": "Turdus naumanni",
+      "pl": "drozd rdzawy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 391,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Тёмный дрозд",
+      "en": "Dusky Thrush",
+      "latin": "Turdus eunomus",
+      "pl": "drozd rdzawoskrzydły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 392,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Краснозобый дрозд",
+      "en": "Red-throated Thrush",
+      "latin": "Turdus ruficollis",
+      "pl": "drozd rdzawogardły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 393,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Чернозобый дрозд",
+      "en": "Black-throated Thrush",
+      "latin": "Turdus atrogularis",
+      "pl": "drozd czarnogardły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 394,
+      "family": "Turdidae",
+      "genus": "Turdus",
+      "ru": "Оливковый дрозд",
+      "en": "Eyebrowed Thrush",
+      "latin": "Turdus obscurus",
+      "pl": "drozd oliwkowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 395,
+      "family": "Muscicapidae",
+      "genus": "Muscicapa",
+      "ru": "Серая мухоловка",
+      "en": "Spotted Flycatcher",
+      "latin": "Muscicapa striata",
+      "pl": "muchołówka szara",
+      "status": "гнездится"
+    },
+    {
+      "number": 396,
+      "family": "Muscicapidae",
+      "genus": "Erithacus",
+      "ru": "Зарянка",
+      "en": "European Robin",
+      "latin": "Erithacus rubecula",
+      "pl": "rudzik",
+      "status": "гнездится"
+    },
+    {
+      "number": 397,
+      "family": "Muscicapidae",
+      "genus": "Luscinia",
+      "ru": "Западный соловей",
+      "en": "Common Nightingale",
+      "latin": "Luscinia megarhynchos",
+      "pl": "słowik rdzawy",
+      "status": "гнездится"
+    },
+    {
+      "number": 398,
+      "family": "Muscicapidae",
+      "genus": "Luscinia",
+      "ru": "Обыкновенный соловей",
+      "en": "Thrush Nightingale",
+      "latin": "Luscinia luscinia",
+      "pl": "słowik szary",
+      "status": "гнездится"
+    },
+    {
+      "number": 399,
+      "family": "Muscicapidae",
+      "genus": "Luscinia",
+      "ru": "Варакушка",
+      "en": "Bluethroat",
+      "latin": "Luscinia svecica",
+      "pl": "podróżniczek",
+      "status": "гнездится"
+    },
+    {
+      "number": 400,
+      "family": "Muscicapidae",
+      "genus": "Larvivora",
+      "ru": "Соловей-свистун",
+      "en": "Rufous-tailed Robin",
+      "latin": "Larvivora sibilans",
+      "pl": "słowik syberyjski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 401,
+      "family": "Muscicapidae",
+      "genus": "Ficedula",
+      "ru": "Малая мухоловка",
+      "en": "Red-breasted Flycatcher",
+      "latin": "Ficedula parva",
+      "pl": "muchołówka mała",
+      "status": "гнездится"
+    },
+    {
+      "number": 402,
+      "family": "Muscicapidae",
+      "genus": "Ficedula",
+      "ru": "Мухоловка-белошейка",
+      "en": "Collared Flycatcher",
+      "latin": "Ficedula albicollis",
+      "pl": "muchołówka białoszyja",
+      "status": "гнездится"
+    },
+    {
+      "number": 403,
+      "family": "Muscicapidae",
+      "genus": "Ficedula",
+      "ru": "Мухоловка-пеструшка",
+      "en": "European Pied Flycatcher",
+      "latin": "Ficedula hypoleuca",
+      "pl": "muchołówka żałobna",
+      "status": "гнездится"
+    },
+    {
+      "number": 404,
+      "family": "Muscicapidae",
+      "genus": "Tarsiger",
+      "ru": "Синехвостка",
+      "en": "Red-flanked Bluetail",
+      "latin": "Tarsiger cyanurus",
+      "pl": "modraczek",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 405,
+      "family": "Muscicapidae",
+      "genus": "Phoenicurus",
+      "ru": "Горихвостка-чернушка",
+      "en": "Black Redstart",
+      "latin": "Phoenicurus ochruros",
+      "pl": "kopciuszek",
+      "status": "гнездится"
+    },
+    {
+      "number": 406,
+      "family": "Muscicapidae",
+      "genus": "Phoenicurus",
+      "ru": "Обыкновенная горихвостка",
+      "en": "Common Redstart",
+      "latin": "Phoenicurus phoenicurus",
+      "pl": "pleszka",
+      "status": "гнездится"
+    },
+    {
+      "number": 407,
+      "family": "Muscicapidae",
+      "genus": "Monticola",
+      "ru": "Пёстрый каменный дрозд",
+      "en": "Common Rock Thrush",
+      "latin": "Monticola saxatilis",
+      "pl": "nagórnik",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 408,
+      "family": "Muscicapidae",
+      "genus": "Saxicola",
+      "ru": "Луговой чекан",
+      "en": "Whinchat",
+      "latin": "Saxicola rubetra",
+      "pl": "pokląskwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 409,
+      "family": "Muscicapidae",
+      "genus": "Saxicola",
+      "ru": "Сибирский черноголовый чекан",
+      "en": "Siberian Stonechat",
+      "latin": "Saxicola maurus",
+      "pl": "kląskawka syberyjska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 410,
+      "family": "Muscicapidae",
+      "genus": "Saxicola",
+      "ru": "Черноголовый чекан",
+      "en": "European Stonechat",
+      "latin": "Saxicola rubicola",
+      "pl": "kląskawka",
+      "status": "гнездится"
+    },
+    {
+      "number": 411,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Пустынная каменка",
+      "en": "Desert Wheatear",
+      "latin": "Oenanthe deserti",
+      "pl": "białorzytka pustynna",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 412,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Западная черноухая каменка",
+      "en": "Western Black-eared Wheatear",
+      "latin": "Oenanthe hispanica",
+      "pl": "białorzytka rdzawa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 413,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Каменка-плешанка",
+      "en": "Pied Wheatear",
+      "latin": "Oenanthe pleschanka",
+      "pl": "białorzytka pstra",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 414,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Обыкновенная каменка",
+      "en": "Northern Wheatear",
+      "latin": "Oenanthe oenanthe",
+      "pl": "białorzytka",
+      "status": "гнездится"
+    },
+    {
+      "number": 415,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Каменка-плясунья",
+      "en": "Isabelline Wheatear",
+      "latin": "Oenanthe isabellina",
+      "pl": "białorzytka płowa",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 416,
+      "family": "Muscicapidae",
+      "genus": "Oenanthe",
+      "ru": "Белоголовая каменка",
+      "en": "White-crowned Wheatear",
+      "latin": "Oenanthe leucopyga",
+      "pl": "białorzytka saharyjska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 417,
+      "family": "Prunellidae",
+      "genus": "Prunella",
+      "ru": "Альпийская завирушка",
+      "en": "Alpine Accentor",
+      "latin": "Prunella collaris",
+      "pl": "płochacz halny",
+      "status": "гнездится"
+    },
+    {
+      "number": 418,
+      "family": "Prunellidae",
+      "genus": "Prunella",
+      "ru": "Черногорлая завирушка",
+      "en": "Black-throated Accentor",
+      "latin": "Prunella atrogularis",
+      "pl": "płochacz czarnogardły",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 419,
+      "family": "Prunellidae",
+      "genus": "Prunella",
+      "ru": "Лесная завирушка",
+      "en": "Dunnock",
+      "latin": "Prunella modularis",
+      "pl": "pokrzywnica",
+      "status": "гнездится"
+    },
+    {
+      "number": 420,
+      "family": "Prunellidae",
+      "genus": "Prunella",
+      "ru": "Сибирская завирушка",
+      "en": "Siberian Accentor",
+      "latin": "Prunella montanella",
+      "pl": "płochacz syberyjski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 421,
+      "family": "Passeridae",
+      "genus": "Petronia",
+      "ru": "Каменный воробей",
+      "en": "Rock Sparrow",
+      "latin": "Petronia petronia",
+      "pl": "wróbel skalny",
+      "status": "исторические залёты"
+    },
+    {
+      "number": 422,
+      "family": "Passeridae",
+      "genus": "Montifringilla",
+      "ru": "Снежный вьюрок",
+      "en": "White-winged Snowfinch",
+      "latin": "Montifringilla nivalis",
+      "pl": "śnieżka",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 423,
+      "family": "Passeridae",
+      "genus": "Passer",
+      "ru": "Полевой воробей",
+      "en": "Eurasian Tree Sparrow",
+      "latin": "Passer montanus",
+      "pl": "mazurek",
+      "status": "гнездится"
+    },
+    {
+      "number": 424,
+      "family": "Passeridae",
+      "genus": "Passer",
+      "ru": "Домовый воробей",
+      "en": "House Sparrow",
+      "latin": "Passer domesticus",
+      "pl": "wróbel",
+      "status": "гнездится"
+    },
+    {
+      "number": 425,
+      "family": "Motacillidae",
+      "genus": "Motacilla",
+      "ru": "Горная трясогузка",
+      "en": "Grey Wagtail",
+      "latin": "Motacilla cinerea",
+      "pl": "pliszka górska",
+      "status": "гнездится"
+    },
+    {
+      "number": 426,
+      "family": "Motacillidae",
+      "genus": "Motacilla",
+      "ru": "Жёлтая трясогузка",
+      "en": "Western Yellow Wagtail",
+      "latin": "Motacilla flava",
+      "pl": "pliszka żółta",
+      "status": "гнездится"
+    },
+    {
+      "number": 427,
+      "family": "Motacillidae",
+      "genus": "Motacilla",
+      "ru": "Желтоголовая трясогузка",
+      "en": "Citrine Wagtail",
+      "latin": "Motacilla citreola",
+      "pl": "pliszka cytrynowa",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 428,
+      "family": "Motacillidae",
+      "genus": "Motacilla",
+      "ru": "Восточная жёлтая трясогузка",
+      "en": "Eastern Yellow Wagtail",
+      "latin": "Motacilla tschutschensis",
+      "pl": "pliszka syberyjska",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 429,
+      "family": "Motacillidae",
+      "genus": "Motacilla",
+      "ru": "Белая трясогузка",
+      "en": "White Wagtail",
+      "latin": "Motacilla alba",
+      "pl": "pliszka siwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 430,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Конёк Годлевского",
+      "en": "Blyth's Pipit",
+      "latin": "Anthus godlewskii",
+      "pl": "świergotek stepowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 431,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Полевой конёк",
+      "en": "Tawny Pipit",
+      "latin": "Anthus campestris",
+      "pl": "świergotek polny",
+      "status": "гнездится"
+    },
+    {
+      "number": 432,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Степной конёк",
+      "en": "Richard's Pipit",
+      "latin": "Anthus richardi",
+      "pl": "świergotek szponiasty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 433,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Лесной конёк",
+      "en": "Tree Pipit",
+      "latin": "Anthus trivialis",
+      "pl": "świergotek drzewny",
+      "status": "гнездится"
+    },
+    {
+      "number": 434,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Пятнистый конёк",
+      "en": "Olive-backed Pipit",
+      "latin": "Anthus hodgsoni",
+      "pl": "świergotek tajgowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 435,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Краснозобый конёк",
+      "en": "Red-throated Pipit",
+      "latin": "Anthus cervinus",
+      "pl": "świergotek rdzawogardły",
+      "status": "пролётный"
+    },
+    {
+      "number": 436,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Луговой конёк",
+      "en": "Meadow Pipit",
+      "latin": "Anthus pratensis",
+      "pl": "świergotek łąkowy",
+      "status": "гнездится"
+    },
+    {
+      "number": 437,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Сибирский конёк",
+      "en": "Siberian Pipit",
+      "latin": "Anthus japonicus",
+      "pl": "świergotek syberyjski",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 438,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Береговой конёк",
+      "en": "European Rock Pipit",
+      "latin": "Anthus petrosus",
+      "pl": "świergotek nadmorski",
+      "status": "пролётный"
+    },
+    {
+      "number": 439,
+      "family": "Motacillidae",
+      "genus": "Anthus",
+      "ru": "Горный конёк",
+      "en": "Water Pipit",
+      "latin": "Anthus spinoletta",
+      "pl": "siwerniak",
+      "status": "гнездится"
+    },
+    {
+      "number": 440,
+      "family": "Fringillidae",
+      "genus": "Fringilla",
+      "ru": "Вьюрок",
+      "en": "Brambling",
+      "latin": "Fringilla montifringilla",
+      "pl": "jer",
+      "status": "пролётный"
+    },
+    {
+      "number": 441,
+      "family": "Fringillidae",
+      "genus": "Fringilla",
+      "ru": "Зяблик",
+      "en": "Eurasian Chaffinch",
+      "latin": "Fringilla coelebs",
+      "pl": "zięba",
+      "status": "гнездится"
+    },
+    {
+      "number": 442,
+      "family": "Fringillidae",
+      "genus": "Coccothraustes",
+      "ru": "Обыкновенный дубонос",
+      "en": "Hawfinch",
+      "latin": "Coccothraustes coccothraustes",
+      "pl": "grubodziób",
+      "status": "гнездится"
+    },
+    {
+      "number": 443,
+      "family": "Fringillidae",
+      "genus": "Carpodacus",
+      "ru": "Обыкновенная чечевица",
+      "en": "Common Rosefinch",
+      "latin": "Carpodacus erythrinus",
+      "pl": "dziwonia",
+      "status": "гнездится"
+    },
+    {
+      "number": 444,
+      "family": "Fringillidae",
+      "genus": "Pinicola",
+      "ru": "Щур",
+      "en": "Pine Grosbeak",
+      "latin": "Pinicola enucleator",
+      "pl": "łuskowiec",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 445,
+      "family": "Fringillidae",
+      "genus": "Pyrrhula",
+      "ru": "Обыкновенный снегирь",
+      "en": "Eurasian Bullfinch",
+      "latin": "Pyrrhula pyrrhula",
+      "pl": "gil",
+      "status": "гнездится"
+    },
+    {
+      "number": 446,
+      "family": "Fringillidae",
+      "genus": "Bucanetes",
+      "ru": "Пустынный снегирь",
+      "en": "Trumpeter Finch",
+      "latin": "Bucanetes githagineus",
+      "pl": "gilak pustynny",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 447,
+      "family": "Fringillidae",
+      "genus": "Chloris",
+      "ru": "Обыкновенная зеленушка",
+      "en": "European Greenfinch",
+      "latin": "Chloris chloris",
+      "pl": "dzwoniec",
+      "status": "гнездится"
+    },
+    {
+      "number": 448,
+      "family": "Fringillidae",
+      "genus": "Linaria",
+      "ru": "Горная чечётка",
+      "en": "Twite",
+      "latin": "Linaria flavirostris",
+      "pl": "rzepołuch",
+      "status": "пролётный"
+    },
+    {
+      "number": 449,
+      "family": "Fringillidae",
+      "genus": "Linaria",
+      "ru": "Коноплянка",
+      "en": "Common Linnet",
+      "latin": "Linaria cannabina",
+      "pl": "makolągwa",
+      "status": "гнездится"
+    },
+    {
+      "number": 450,
+      "family": "Fringillidae",
+      "genus": "Acanthis",
+      "ru": "Обыкновенная чечётка",
+      "en": "Redpoll",
+      "latin": "Acanthis flammea",
+      "pl": "czeczotka",
+      "status": "гнездится, пролётный"
+    },
+    {
+      "number": 451,
+      "family": "Fringillidae",
+      "genus": "Loxia",
+      "ru": "Белокрылый клёст",
+      "en": "Two-barred Crossbill",
+      "latin": "Loxia leucoptera",
+      "pl": "krzyżodziób modrzewiowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 452,
+      "family": "Fringillidae",
+      "genus": "Loxia",
+      "ru": "Сосновый клёст",
+      "en": "Parrot Crossbill",
+      "latin": "Loxia pytyopsittacus",
+      "pl": "krzyżodziób sosnowy",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 453,
+      "family": "Fringillidae",
+      "genus": "Loxia",
+      "ru": "Клёст-еловик",
+      "en": "Red Crossbill",
+      "latin": "Loxia curvirostra",
+      "pl": "krzyżodziób świerkowy",
+      "status": "гнездится"
+    },
+    {
+      "number": 454,
+      "family": "Fringillidae",
+      "genus": "Carduelis",
+      "ru": "Цитроновый вьюрок",
+      "en": "Citril Finch",
+      "latin": "Carduelis citrinella",
+      "pl": "osetnik",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 455,
+      "family": "Fringillidae",
+      "genus": "Carduelis",
+      "ru": "Черноголовый щегол",
+      "en": "European Goldfinch",
+      "latin": "Carduelis carduelis",
+      "pl": "szczygieł",
+      "status": "гнездится"
+    },
+    {
+      "number": 456,
+      "family": "Fringillidae",
+      "genus": "Serinus",
+      "ru": "Канареечный вьюрок",
+      "en": "European Serin",
+      "latin": "Serinus serinus",
+      "pl": "kulczyk",
+      "status": "гнездится"
+    },
+    {
+      "number": 457,
+      "family": "Fringillidae",
+      "genus": "Spinus",
+      "ru": "Чиж",
+      "en": "Eurasian Siskin",
+      "latin": "Spinus spinus",
+      "pl": "czyż",
+      "status": "гнездится"
+    },
+    {
+      "number": 458,
+      "family": "Calcariidae",
+      "genus": "Plectrophenax",
+      "ru": "Пуночка",
+      "en": "Snow Bunting",
+      "latin": "Plectrophenax nivalis",
+      "pl": "śnieguła",
+      "status": "пролётный"
+    },
+    {
+      "number": 459,
+      "family": "Calcariidae",
+      "genus": "Calcarius",
+      "ru": "Лапландский подорожник",
+      "en": "Lapland Longspur",
+      "latin": "Calcarius lapponicus",
+      "pl": "poświerka",
+      "status": "пролётный"
+    },
+    {
+      "number": 460,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Камышовая овсянка",
+      "en": "Common Reed Bunting",
+      "latin": "Emberiza schoeniclus",
+      "pl": "potrzos",
+      "status": "гнездится"
+    },
+    {
+      "number": 461,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Желтобровая овсянка",
+      "en": "Yellow-browed Bunting",
+      "latin": "Emberiza chrysophrys",
+      "pl": "trznadel złotobrewy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 462,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Дубровник",
+      "en": "Yellow-breasted Bunting",
+      "latin": "Emberiza aureola",
+      "pl": "trznadel złotawy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 463,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Овсянка-крошка",
+      "en": "Little Bunting",
+      "latin": "Emberiza pusilla",
+      "pl": "trznadelek",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 464,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Овсянка-ремез",
+      "en": "Rustic Bunting",
+      "latin": "Emberiza rustica",
+      "pl": "trznadel czubaty",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 465,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Седоголовая овсянка",
+      "en": "Black-faced Bunting",
+      "latin": "Emberiza spodocephala",
+      "pl": "trznadel szarogłowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 466,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Черноголовая овсянка",
+      "en": "Black-headed Bunting",
+      "latin": "Emberiza melanocephala",
+      "pl": "trznadel czarnogłowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 467,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Красноголовая овсянка",
+      "en": "Red-headed Bunting",
+      "latin": "Emberiza bruniceps",
+      "pl": "trznadel rudogłowy",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 468,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Просянка",
+      "en": "Corn Bunting",
+      "latin": "Emberiza calandra",
+      "pl": "potrzeszcz",
+      "status": "гнездится"
+    },
+    {
+      "number": 469,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Горная овсянка",
+      "en": "Rock Bunting",
+      "latin": "Emberiza cia",
+      "pl": "głuszek",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 470,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Садовая овсянка",
+      "en": "Ortolan Bunting",
+      "latin": "Emberiza hortulana",
+      "pl": "ortolan",
+      "status": "гнездится"
+    },
+    {
+      "number": 471,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Огородная овсянка",
+      "en": "Cirl Bunting",
+      "latin": "Emberiza cirlus",
+      "pl": "cierlik",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 472,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Белошапочная овсянка",
+      "en": "Pine Bunting",
+      "latin": "Emberiza leucocephalos",
+      "pl": "trznadel białogłowy",
+      "status": "случайные залёты, ранее гнездился"
+    },
+    {
+      "number": 473,
+      "family": "Emberizidae",
+      "genus": "Emberiza",
+      "ru": "Обыкновенная овсянка",
+      "en": "Yellowhammer",
+      "latin": "Emberiza citrinella",
+      "pl": "trznadel",
+      "status": "гнездится"
+    },
+    {
+      "number": 474,
+      "family": "Passerellidae",
+      "genus": "Junco",
+      "ru": "Серый юнко",
+      "en": "Dark-eyed Junco",
+      "latin": "Junco hyemalis",
+      "pl": "junko",
+      "status": "случайные залёты"
+    },
+    {
+      "number": 475,
+      "family": "Passerellidae",
+      "genus": "Passerculus",
+      "ru": "Саванная овсянка",
+      "en": "Savannah Sparrow",
+      "latin": "Passerculus sandwichensis",
+      "pl": "bagiennik żółtobrewy",
+      "status": "случайные залёты"
+    }
+  ]
+}

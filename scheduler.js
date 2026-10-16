@@ -22,7 +22,9 @@ function normalizeAnswer(s){return String(s||'').toLowerCase().normalize('NFD').
 // Approximate Russian reading of scientific Latin, without inferred stress.
 // Uses the continental convention common in Russian biology teaching.
 function word(n,forms=['вид','вида','видов']){const a=n%10,b=n%100;return b>=11&&b<=14?forms[2]:a===1?forms[0]:a>=2&&a<=4?forms[1]:forms[2];}
-function searchNames(b){return [b.ru,b.en,b.latin,b.pl,...(Array.isArray(b.aliases)?b.aliases:Object.values(b.aliases||{}).flat())].filter(Boolean).join(' ');}
+function nameVariants(b){return [b.ru,b.en,b.latin,b.pl,...(Array.isArray(b.aliases)?b.aliases:Object.values(b.aliases||{}).flat())].filter(Boolean);}
+function searchNames(b){return nameVariants(b).join(' ');}
+function matchesName(b,query){const q=normalizeAnswer(query);return nameVariants(b).some(name=>normalizeAnswer(name).includes(q));}
 function latinReading(value){
  const letters={a:'а',b:'б',c:'к',d:'д',e:'е',f:'ф',g:'г',h:'г',i:'и',j:'й',k:'к',l:'л',m:'м',n:'н',o:'о',p:'п',q:'к',r:'р',s:'с',t:'т',u:'у',v:'в',w:'в',x:'кс',y:'и',z:'з'};
  return String(value||'').replace(/[A-Za-zÀ-ž]+/g,word=>{
@@ -48,5 +50,5 @@ function progress(states){
 function due(s,now=Date.now()){return s&&s.reps>0&&s.due<=now;}
 function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function queue(birds,states,key,kind,now=Date.now(),limit=20){let a=birds.filter(b=>kind==='new'?!states[key(b)]||states[key(b)].reps===0:due(states[key(b)],now));if(kind==='new')a=shuffle(a);else a.sort((a,b)=>states[key(a)].due-states[key(b)].due);return a.slice(0,limit);}
-const api={DAY,initial,clean,schedule,levelFor,ivlLabel,normalizeAnswer,word,searchNames,latinReading,latinLabel,status,progress,due,shuffle,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
+const api={DAY,initial,clean,schedule,levelFor,ivlLabel,normalizeAnswer,word,searchNames,matchesName,latinReading,latinLabel,status,progress,due,shuffle,queue};root.BirdStudy=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
