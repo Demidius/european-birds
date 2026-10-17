@@ -187,6 +187,10 @@ try{
  await page.locator('.tm-filters .tf-chip').filter({hasText:'Только воробьиные'}).click();assert.equal(await spCount(),185,'all Polish passerines');
  await page.locator('[data-tm="all"]').click();await page.waitForTimeout(550);await page.screenshot({path:path.join(out,'map-polish-passerines-1440.png')});
  await page.locator('.tm-filters .tf-chip').filter({hasText:'Только Польша'}).click();await page.locator('.tm-filters .tf-chip').filter({hasText:'Только воробьиные'}).click();assert.equal(await spCount(),713);
+ // One colour per rank: every pill of a rank shares it, and the six ranks differ.
+ const fills=new Map();for(const [r,f] of await page.locator('.tm-node').evaluateAll(n=>n.map(g=>[g.dataset.rank,getComputedStyle(g.querySelector('.tm-pill')).fill])))fills.set(r,(fills.get(r)||new Set()).add(f));
+ assert.equal(fills.size,6);for(const [r,f] of fills)assert.equal(f.size,1,'one colour for '+r);assert.equal(new Set([...fills.values()].map(f=>[...f][0])).size,6,'each rank has its own colour');
+ await page.locator('.tm-view').evaluate(e=>e.scrollIntoView({block:'center'}));
  const mv=()=>page.evaluate(()=>window.BirdMap.view),svgBox=await page.locator('.tm-svg').boundingBox(),mx=svgBox.x+svgBox.width/2,my=svgBox.y+svgBox.height/2,v0=await mv();
  await page.mouse.move(mx,my);await page.mouse.down();await page.mouse.move(mx+80,my+40,{steps:6});await page.mouse.up();
  let v=await mv();assert.ok(Math.abs(v.x-v0.x-80)<1&&Math.abs(v.y-v0.y-40)<1&&v.k===v0.k,'drag pans the map');
@@ -200,6 +204,9 @@ try{
  const pill=await page.locator('[data-map="Paridae"] .tm-pill').boundingBox();await page.mouse.click(pill.x+pill.width/2,pill.y+pill.height/2);await page.waitForTimeout(650);
  assert.equal(await page.evaluate(()=>window.BirdMap.focusId),'Paridae');const big=await page.locator('[data-map="Paridae"] .tm-pill').boundingBox();assert.ok(big.width>sb.width*0.5,'the tapped family fills the screen');
  assert.match(await page.locator('.tm-focus').innerText(),/Синицевые/);await page.screenshot({path:path.join(out,'map-paridae-390.png')});
+ // A wide branch opened on a phone keeps its family names readable; the rest is a swipe away.
+ await page.evaluate(()=>window.BirdMap.focus('Sylviida'));assert.ok(await page.locator('[data-map="Paridae"] .tm-name').evaluate(e=>e.getBoundingClientRect().height)>=10,'family names are readable inside an opened parvorder');
+ await page.screenshot({path:path.join(out,'map-sylviida-390.png')});await page.evaluate(()=>window.BirdMap.focus('Paridae'));
  const spRow=await page.locator('[data-map-sp="great-tit"] .tm-hit').boundingBox();await page.mouse.click(spRow.x+spRow.width/2,spRow.y+spRow.height/2);
  assert.equal(await page.locator('#infoDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#infoTitle').innerText(),/Большая синица/);await page.locator('#closeInfo').click();
  await page.locator('#treeView').click();assert.equal(await page.locator('#treeMap').isHidden(),true);
