@@ -1,5 +1,5 @@
-/* Zoomable tree diagram: light pills, orange arrows, families with their genera and species underneath. */
-.tree-map{width:var(--page-w,100vw);margin-left:calc((100% - var(--page-w,100vw))/2);border-left:0!important;border-right:0!important}
+/* Zoomable tree diagram: pills coloured by rank, orange arrows, families with their genera and species underneath. */
+.tree-map{--tm-class:#f6ecd0;--tm-order:#ffbe8a;--tm-suborder:#f7a1c4;--tm-infraorder:#c6aefc;--tm-parvorder:#92ccf8;--tm-family:#a8e39c;--tm-genus:#ffd98a;--tm-species:#eef6ea;width:var(--page-w,100vw);margin-left:calc((100% - var(--page-w,100vw))/2);border-left:0!important;border-right:0!important}
 .tm-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:14px 0 10px}
 .tm-focus{min-width:0}.tm-focus strong{display:block;font:600 30px/1.1 var(--ui)}.tm-focus em{display:block;color:var(--gold);font-size:13px;margin-top:2px}
 .tm-tools{display:flex;flex-wrap:wrap;gap:6px}
@@ -7,6 +7,11 @@
 .tm-tools .tm-study{background:var(--gold);border-color:var(--gold);color:var(--btn-ink,#2B2D42)}
 .tm-tools button:disabled{opacity:.4}
 .tm-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}.tm-filters .tf-chip{min-height:44px}
+.tm-legend{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 10px;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.tm-legend li{display:flex;align-items:center;gap:6px;white-space:nowrap}.tm-legend i{width:18px;height:12px;border-radius:6px!important;background:var(--c)}
+.tm-l-class{--c:var(--tm-class)}.tm-l-order{--c:var(--tm-order)}.tm-l-suborder{--c:var(--tm-suborder)}.tm-l-infraorder{--c:var(--tm-infraorder)}
+.tm-l-parvorder{--c:var(--tm-parvorder)}.tm-l-family{--c:var(--tm-family)}.tm-l-genus{--c:var(--tm-genus)}.tm-l-species{--c:var(--tm-species)}
+.tm-l-genus i,.tm-l-species i{height:4px;border-radius:2px!important}
 /* The map has its own check boxes; the page's Poland chips and filter panel would not apply to it. */
 body.map-view #treeFilters .tf-quick,body.map-view #filterToggle,body.map-view #filterSummary,body.map-view #filterPanel{display:none!important}
 .tm-view{position:relative;height:min(78vh,900px);min-height:420px;background:#1d3424;border:2px solid #31503a;overflow:hidden}
@@ -15,17 +20,19 @@ body.map-view #treeFilters .tf-quick,body.map-view #filterToggle,body.map-view #
 .tm-empty{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--muted)}
 .tm-edge{fill:none;stroke:#f3984a;stroke-linecap:round;stroke-linejoin:round}
 .tm-arrow{fill:#f3984a}
-.tm-pill{fill:#e6f6e0;stroke:#0f1f14;stroke-opacity:.35}
-.tm-node{cursor:pointer}.tm-node:hover .tm-pill,.tm-node:focus-visible .tm-pill{fill:#fff6c9}
+.tm-pill{fill:var(--tm-family);stroke:#0f1f14;stroke-opacity:.35}
+.tm-r-class .tm-pill{fill:var(--tm-class)}.tm-r-order .tm-pill{fill:var(--tm-order)}.tm-r-suborder .tm-pill{fill:var(--tm-suborder)}
+.tm-r-infraorder .tm-pill{fill:var(--tm-infraorder)}.tm-r-parvorder .tm-pill{fill:var(--tm-parvorder)}.tm-r-family .tm-pill{fill:var(--tm-family)}
+.tm-node{cursor:pointer}.tm-node:hover .tm-pill,.tm-node:focus-visible .tm-pill{stroke:#fff;stroke-opacity:1;stroke-width:3px;vector-effect:non-scaling-stroke}
 .tm-node:focus,.tm-genus:focus,.tm-sp:focus{outline:none}
 .tm-name{fill:#14261a;font-family:'Manrope',sans-serif;font-weight:600;text-anchor:middle}
-.tm-sub{fill:#4a6a52;font-family:'Manrope',sans-serif;font-weight:500;font-style:italic;text-anchor:middle}
-.tm-col{fill:#ffffff0d;stroke:#e6f6e026}
+.tm-sub{fill:#3d4f42;font-family:'Manrope',sans-serif;font-weight:500;font-style:italic;text-anchor:middle}
+.tm-col{fill:#ffffff0d;stroke:var(--tm-family);stroke-opacity:.3}
 .tm-hit{fill:transparent}
 .tm-genus,.tm-sp{cursor:pointer}
 .tm-genus:hover .tm-hit,.tm-genus:focus-visible .tm-hit,.tm-sp:hover .tm-hit,.tm-sp:focus-visible .tm-hit{fill:#ffffff14}
-.tm-gname{fill:#ffd98a;font-family:'Manrope',sans-serif;font-weight:600;font-style:italic}
-.tm-sname{fill:#eef6ea;font-family:'Manrope',sans-serif;font-weight:600}
+.tm-gname{fill:var(--tm-genus);font-family:'Manrope',sans-serif;font-weight:600;font-style:italic}
+.tm-sname{fill:var(--tm-species);font-family:'Manrope',sans-serif;font-weight:600}
 .tm-slat{fill:#b9c9b6;font-family:'Manrope',sans-serif;font-weight:500;font-style:italic}
 .tm-dot{fill:#5c6b60}.tm-dot.learning{fill:var(--learn)}.tm-dot.review{fill:var(--review)}.tm-dot.mastered{fill:var(--master)}.tm-dot.na{fill:none;stroke:#8a9a8c;stroke-width:1.5}
 @media(max-width:760px){.tm-focus strong{font-size:26px}.tm-tools{width:100%;flex-wrap:nowrap}.tm-tools .tm-study{margin-left:auto;white-space:nowrap}.tm-view{height:70vh;min-height:380px}}

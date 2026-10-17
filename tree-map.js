@@ -1,6 +1,7 @@
 // Zoomable bird tree drawn as a diagram: Birds → orders → passerine groups → families as pills joined by
-// arrows, with genera and species listed under each family. A branch's size grows with its number of
-// species. Drag, pinch or scroll to move and zoom; tap a branch to zoom into it, a species to open its card.
+// arrows, with genera and species listed under each family. Every rank has its own size and colour: all orders
+// alike, all families alike, and each rank smaller than the one above it. Drag, pinch or scroll to move and
+// zoom; tap a branch to zoom into it, a species to open its card.
 // The map always starts from every species on the site; its own check boxes keep only Polish species or
 // only passerines. The page's search applies; the page's Poland filters do not (they are hidden on this view).
 (()=>{
@@ -10,9 +11,12 @@ if(!A||!C||!T||!root)return;
 const NS='http://www.w3.org/2000/svg',FONT="'Manrope',sans-serif";
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const birds=new Map(window.BIRD_DATA.map(b=>[b.id,b]));
-// Font of a one-species family; fonts grow as (species count)^P, so big branches are big and small ones small.
-// A branch is never larger than 88% of its parent, so every level is smaller than the one above.
-const F0=22,P=0.62,K_MAX=5,MIN_TEXT_PX=2.6;
+// One font size per rank. Passerine groups are ranked by depth: suborder (Tyranni, Passeri), infraorder
+// (Corvides, Passerides), parvorder (Sylviida, Muscicapida, Passerida), as in Cracraft's passerine classification.
+const SIZE={class:150,order:112,suborder:92,infraorder:76,parvorder:62,family:48},K_MAX=5,MIN_TEXT_PX=2.6;
+const RANK={class:'Класс',order:'Отряд',suborder:'Подотряд',infraorder:'Инфраотряд',parvorder:'Парвотряд',family:'Семейство',genus:'Род',species:'Вид'};
+const GROUPS=['suborder','infraorder','parvorder'];
+const rankOf=(n,parent)=>n.rank==='group'?GROUPS[Math.min(GROUPS.length-1,parent?parent.groups:0)]:n.rank;
 const nameOf=n=>T.nameOf(n);
 const X=window.BirdTaxonomy,MF_KEY='europeanBirds:mapFilters',MF={poland:'Только Польша',passer:'Только воробьиные'};
 let mf=(()=>{try{const v=JSON.parse(localStorage.getItem(MF_KEY)||'{}');return {poland:v.poland===true,passer:v.passer===true};}catch(e){return {poland:false,passer:false};}})();
@@ -35,9 +39,9 @@ let L=null,view={x:0,y:0,k:1},focusId=null,lastKey='',anim=0,dirty=true;
 function layout(tree){
  const byId=new Map(),objs=[];
  function make(n,parent){
-  const ids=leaves(n),f=Math.min(F0*Math.pow(Math.max(1,ids.length),P),parent?parent.f*0.88:Infinity),name=nameOf(n),lat=n.latin&&n.latin!==name?n.latin:'';
-  const sub=(lat?lat+' · ':'')+ids.length+' '+C.word(ids.length),pad=f*0.75;
-  const o={n,id:n.id,ids,f,parent,name,sub,kids:[],w:Math.max(measure(name,f),measure(sub,f*0.42,500))+pad*2,h:f*2.1};
+  const ids=leaves(n),rank=rankOf(n,parent),f=SIZE[rank]||SIZE.family,name=nameOf(n),lat=n.latin&&n.latin!==name?n.latin:'';
+  const sub=(lat?lat+' · ':'')+ids.length+' '+C.word(ids.length),pad=f*0.75,groups=(parent?parent.groups:0)+(n.rank==='group'?1:0);
+  const o={n,id:n.id,ids,f,rank,groups,parent,name,sub,kids:[],w:Math.max(measure(name,f),measure(sub,f*0.42,500))+pad*2,h:f*2.1};
   byId.set(o.id,o);objs.push(o);
   if(n.rank==='family')o.list=listRows(o);
   else o.kids=(n.children||[]).filter(c=>c.rank!=='species'&&c.rank!=='genus').map(c=>make(c,o));
@@ -84,7 +88,7 @@ function draw(){
    o.kids.forEach((k,i)=>{d+='M'+k.cx+' '+busY+'V'+(k.y-ah[i]*0.9);});
    edges.append(svgEl('path',{d,class:'tm-edge','stroke-width':sw}));
    o.kids.forEach((k,i)=>{const a=ah[i];edges.append(svgEl('path',{d:'M'+(k.cx-a*0.75)+' '+(k.y-a)+'L'+k.cx+' '+k.y+'L'+(k.cx+a*0.75)+' '+(k.y-a)+'Z',class:'tm-arrow'}));});}
-  const g=svgEl('g',{class:'tm-node'+(o.list?' tm-family':''),'data-map':o.id,tabindex:'0',role:'button','aria-label':o.name+', '+o.sub});
+  const g=svgEl('g',{class:'tm-node tm-r-'+o.rank+(o.list?' tm-family':''),'data-map':o.id,'data-rank':o.rank,tabindex:'0',role:'button','aria-label':RANK[o.rank]+' '+o.name+', '+o.sub});
   if(o.list)g.append(svgEl('rect',{x:o.box.x,y:o.listTop,width:o.col,height:o.bottom-o.listTop,class:'tm-col'}));
   g.append(svgEl('rect',{x:o.x,y:o.y,width:o.w,height:o.h,rx:o.h/2,class:'tm-pill'}));
   const t=svgEl('text',{x:o.cx,y:o.y+o.h*0.47,'font-size':o.f,class:'tm-name '+bucket(o.f)});t.textContent=o.name;g.append(t);
@@ -116,8 +120,14 @@ function apply(){const w=root.querySelector('.tm-world');w.setAttribute('transfo
 function clampK(k){return Math.max(kMin(),Math.min(K_MAX,k));}
 function zoomAt(px,py,factor){const k=clampK(view.k*factor),wx=(px-view.x)/view.k,wy=(py-view.y)/view.k;view={k,x:px-k*wx,y:py-k*wy};apply();}
 // Branches fit the screen; a family or genus list fits the width and starts at the top if it is long.
-function fitBox(b,listLike){const s=size(),pad=0.06,kW=s.w/(b.w*(1+2*pad)),kH=s.h/(b.h*(1+2*pad));
- const k=clampK(Math.min(K_MAX,listLike?kW:Math.min(kW,kH)));const x=s.w/2-k*(b.x+b.w/2),y=b.h*k<s.h?s.h/2-k*(b.y+b.h/2):s.h*pad-k*b.y;return {x,y,k};}
+// Since every rank has one size, a wide branch on a narrow phone would shrink its labels to dots, so a branch
+// is never shown smaller than minK (its child labels stay readable); it then centres on the branch itself
+// and the rest is a swipe away.
+function fitBox(b,listLike,minK,anchor){const s=size(),pad=0.06,kW=s.w/(b.w*(1+2*pad)),kH=s.h/(b.h*(1+2*pad));
+ const k=clampK(Math.max(Math.min(K_MAX,listLike?kW:Math.min(kW,kH)),minK||0));let x=s.w/2-k*(b.x+b.w/2);
+ if(b.w*k>s.w*(1-2*pad)&&anchor!=null)x=Math.min(s.w*pad-k*b.x,Math.max(s.w*(1-pad)-k*(b.x+b.w),s.w/2-k*anchor));
+ const y=b.h*k<s.h?s.h/2-k*(b.y+b.h/2):s.h*pad-k*b.y;return {x,y,k};}
+const READ_PX=11;
 function animateTo(t){cancelAnimationFrame(anim);const s={...view},t0=performance.now(),D=450;
  if(/jsdom/i.test(navigator.userAgent)){view=t;apply();return;}
  const step=now=>{const p=Math.min(1,(now-t0)/D),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
@@ -126,10 +136,11 @@ function animateTo(t){cancelAnimationFrame(anim);const s={...view},t0=performanc
   view={k,x:s.x+(t.x-s.x)*(t.k===s.k?e:f),y:s.y+(t.y-s.y)*(t.k===s.k?e:f)};apply();if(p<1)anim=requestAnimationFrame(step);};
  anim=requestAnimationFrame(step);}
 function focus(id,instant){const o=L.byId.get(id)||L.top;focusId=o.id;
- const t=fitBox(o.box||{x:o.x,y:o.y,w:o.w,h:o.h},!!(o.list||o.genus));instant?(view=t,apply()):animateTo(t);panel();}
+ const kidF=o!==L.top&&o.kids&&o.kids.length?Math.min(...o.kids.map(c=>c.f)):0;
+ const t=fitBox(o.box||{x:o.x,y:o.y,w:o.w,h:o.h},!!(o.list||o.genus),kidF?READ_PX/kidF:0,o.genus?null:o.cx);instant?(view=t,apply()):animateTo(t);panel();}
 const parentOf=o=>o.parent;
 function panel(){const o=L.byId.get(focusId)||L.top,ctx=A.context(),usable=o.ids.filter(id=>A.available(id)).length;
- const name=o.genus?(o.n.ru&&o.n.ru!==o.n.latin?o.n.ru:'Род'):o.name,sub=o.genus?o.n.latin+' · '+o.ids.length+' '+C.word(o.ids.length):o.sub;
+ const name=o.genus?(o.n.ru&&o.n.ru!==o.n.latin?o.n.ru:'Род'):o.name,sub=(o.genus?'Род · '+o.n.latin+' · '+o.ids.length+' '+C.word(o.ids.length):RANK[o.rank]+' · '+o.sub);
  root.querySelector('.tm-focus').innerHTML='<strong>'+esc(name)+'</strong><em>'+esc(sub)+'</em>';
  root.querySelector('[data-tm="up"]').disabled=!parentOf(o);
  const st=root.querySelector('[data-tm="study"]');st.disabled=!ctx.own||!usable;st.textContent=o===L.top?'Учить всех':'Учить ветку';}
@@ -138,8 +149,9 @@ function panel(){const o=L.byId.get(focusId)||L.top,ctx=A.context(),usable=o.ids
 function shell(){root.innerHTML='<div class="tree-heading"><div><p class="eyebrow">СХЕМА · ПРИБЛИЖАЙ ВЕТКИ</p><h2 id="mapTitle">Схема птиц</h2><p class="tree-subtitle">Двигай и приближай пальцами или колесом мыши. Нажми на ветку, чтобы приблизить её, на вид — чтобы открыть карточку.</p></div></div>'+
  '<div class="tm-bar"><div class="tm-focus" aria-live="polite"></div><div class="tm-tools"><button data-tm="up" aria-label="На уровень выше">↑</button><button data-tm="all">Обзор</button><button data-tm="out" aria-label="Отдалить">−</button><button data-tm="in" aria-label="Приблизить">+</button><button class="tm-study" data-tm="study">Учить ветку</button></div></div>'+
  '<div class="tm-filters" role="group" aria-label="Какие виды показать на схеме">'+Object.entries(MF).map(([k,t])=>'<label class="tf-chip"><input type="checkbox" data-mf="'+k+'"'+(mf[k]?' checked':'')+'><span>'+t+'</span></label>').join('')+'</div>'+
+ '<ul class="tm-legend" aria-label="Цвет показывает ранг">'+Object.entries(RANK).map(([r,t])=>'<li class="tm-l-'+r+'"><i aria-hidden="true"></i>'+t+'</li>').join('')+'</ul>'+
  '<div class="tm-view"><svg class="tm-svg" role="group" aria-label="Схема родства птиц"><style class="tm-lod"></style><g class="tm-world"></g></svg><p class="tm-empty" hidden>Птицы не найдены. Измени поиск или галочки.</p></div>'+
- '<details class="tree-explanation"><summary>Как читать схему</summary><p>Сверху вниз: класс птиц, отряды, у воробьинообразных — подотряды и крупные группы, затем семейства. Под каждым семейством перечислены его роды (латынь, курсив) и виды. Размер рамки растёт с числом видов в ветке, поэтому крупные ветки видны издалека, а маленькие — при приближении.</p><p>Кружок у вида показывает прогресс в текущем режиме: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено; пустой — нет фото или записи.</p><p>Схема показывает все виды сайта. Галочка «Только Польша» оставляет виды национального списка Польши (категории A и C, вместе с редкими залётами), «Только воробьиные» — отряд воробьинообразных; вместе они дают всех воробьинообразных Польши. Поиск выше тоже действует на схему.</p></details>';
+ '<details class="tree-explanation"><summary>Как читать схему</summary><p>Сверху вниз: класс птиц, отряды, у воробьинообразных — подотряды и крупные группы, затем семейства. Под каждым семейством перечислены его роды (латынь, курсив) и виды. Цвет и размер рамки показывают ранг: все отряды одного цвета и размера, все семейства тоже, и каждый ранг меньше вышестоящего. У воробьинообразных между отрядом и семейством три ранга: подотряд (Tyranni, Passeri), инфраотряд (Corvides, Passerides) и парвотряд (Sylviida, Muscicapida, Passerida). Мелкие подписи появляются при приближении.</p><p>Кружок у вида показывает прогресс в текущем режиме: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено; пустой — нет фото или записи.</p><p>Схема показывает все виды сайта. Галочка «Только Польша» оставляет виды национального списка Польши (категории A и C, вместе с редкими залётами), «Только воробьиные» — отряд воробьинообразных; вместе они дают всех воробьинообразных Польши. Поиск выше тоже действует на схему.</p></details>';
  bind();}
 function render(){
  if(root.hidden){dirty=true;return;}dirty=false;
