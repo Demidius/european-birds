@@ -176,10 +176,17 @@ try{
   await page.setViewportSize({width,height:844});await page.locator('#mapView').click();await page.waitForSelector('.tm-node');assert.equal(await page.locator('#treeBoard').isHidden(),true);
   await page.evaluate(()=>document.fonts.ready);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+1,'Map overflow at '+width);
   const m=await page.locator('#treeMap').boundingBox(),cw=await page.evaluate(()=>document.documentElement.clientWidth);assert.ok(Math.abs(m.x)<=1&&Math.abs(m.width-cw)<=1,'map spans the screen at '+width);
-  for(const b of await page.locator('.tm-tools button').evaluateAll(x=>x.map(e=>e.getBoundingClientRect())))assert.ok(b.height>=44&&b.right<=width+1,'map tools fit at '+width);
+  for(const b of await page.locator('#treeMap .tm-tools button, #treeMap .tm-filters .tf-chip').evaluateAll(x=>x.map(e=>e.getBoundingClientRect())))assert.ok(b.height>=44&&b.right<=width+1,'map tools and check boxes fit at '+width);
+  assert.equal(await page.locator('#typicalPoland').isVisible(),false,'the page Poland chip is hidden on the map');
   await page.locator('[data-tm="all"]').click();await page.locator('.tm-view').evaluate(e=>e.scrollIntoView({block:'center'}));await page.waitForTimeout(550);
   if(width===390||width===1440)await page.screenshot({path:path.join(out,'map-'+width+'.png')});
  }
+ // Check boxes: every species on the site, then Polish species, then Polish passerines only.
+ const spCount=()=>page.locator('.tm-sp').count();assert.equal(await spCount(),713);
+ await page.locator('.tm-filters .tf-chip').filter({hasText:'Только Польша'}).click();assert.equal(await spCount(),471);
+ await page.locator('.tm-filters .tf-chip').filter({hasText:'Только воробьиные'}).click();assert.equal(await spCount(),185,'all Polish passerines');
+ await page.locator('[data-tm="all"]').click();await page.waitForTimeout(550);await page.screenshot({path:path.join(out,'map-polish-passerines-1440.png')});
+ await page.locator('.tm-filters .tf-chip').filter({hasText:'Только Польша'}).click();await page.locator('.tm-filters .tf-chip').filter({hasText:'Только воробьиные'}).click();assert.equal(await spCount(),713);
  const mv=()=>page.evaluate(()=>window.BirdMap.view),svgBox=await page.locator('.tm-svg').boundingBox(),mx=svgBox.x+svgBox.width/2,my=svgBox.y+svgBox.height/2,v0=await mv();
  await page.mouse.move(mx,my);await page.mouse.down();await page.mouse.move(mx+80,my+40,{steps:6});await page.mouse.up();
  let v=await mv();assert.ok(Math.abs(v.x-v0.x-80)<1&&Math.abs(v.y-v0.y-40)<1&&v.k===v0.k,'drag pans the map');
