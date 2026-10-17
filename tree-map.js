@@ -1,6 +1,8 @@
 // Zoomable bird tree drawn as a diagram: Birds → orders → passerine groups → families as pills joined by
 // arrows, with genera and species listed under each family. A branch's size grows with its number of
 // species. Drag, pinch or scroll to move and zoom; tap a branch to zoom into it, a species to open its card.
+// The map always starts from every species on the site; its own check boxes keep only Polish species or
+// only passerines. The page's search applies; the page's Poland filters do not (they are hidden on this view).
 (()=>{
 'use strict';
 const A=window.BirdAtlas,C=window.BirdStudy,T=window.BirdTree,$=id=>document.getElementById(id),root=$('treeMap');
@@ -12,6 +14,15 @@ const birds=new Map(window.BIRD_DATA.map(b=>[b.id,b]));
 // A branch is never larger than 88% of its parent, so every level is smaller than the one above.
 const F0=22,P=0.62,K_MAX=5,MIN_TEXT_PX=2.6;
 const nameOf=n=>T.nameOf(n);
+const X=window.BirdTaxonomy,MF_KEY='europeanBirds:mapFilters',MF={poland:'Только Польша',passer:'Только воробьиные'};
+let mf=(()=>{try{const v=JSON.parse(localStorage.getItem(MF_KEY)||'{}');return {poland:v.poland===true,passer:v.passer===true};}catch(e){return {poland:false,passer:false};}})();
+// Polish species: categories A and C of the national list (Komisja Faunistyczna), rare visitors included.
+const polish=n=>{const r=X.region(n);return !!r&&['A','C'].includes(r.category);};
+function source(){const q=C.normalizeAnswer(($('treeSearch')||{}).value||'');
+ const keep=(n,inPass,parentMatch)=>{const match=parentMatch||!q||C.matchesName(n,q);
+  if(n.rank==='species')return (mf.passer&&!inPass)||(mf.poland&&!polish(n))||!match?null:n;
+  const p=inPass||n.latin==='Passeriformes',kids=(n.children||[]).map(c=>keep(c,p,match&&!!q)).filter(Boolean);return kids.length?{...n,children:kids}:null;};
+ return keep(window.STUDY_TREE,false,false);}
 const measure=(()=>{let c=null;try{if(!/jsdom/i.test(navigator.userAgent))c=document.createElement('canvas').getContext('2d');}catch(e){}
  return (s,size,weight=600,italic=false)=>{if(c){c.font=(italic?'italic ':'')+weight+' 100px '+FONT;return c.measureText(s).width*size/100;}return String(s).length*size*0.6;};})();
 function leaves(n){return n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);}
@@ -126,13 +137,14 @@ function panel(){const o=L.byId.get(focusId)||L.top,ctx=A.context(),usable=o.ids
 // ---- render ----
 function shell(){root.innerHTML='<div class="tree-heading"><div><p class="eyebrow">СХЕМА · ПРИБЛИЖАЙ ВЕТКИ</p><h2 id="mapTitle">Схема птиц</h2><p class="tree-subtitle">Двигай и приближай пальцами или колесом мыши. Нажми на ветку, чтобы приблизить её, на вид — чтобы открыть карточку.</p></div></div>'+
  '<div class="tm-bar"><div class="tm-focus" aria-live="polite"></div><div class="tm-tools"><button data-tm="up" aria-label="На уровень выше">↑</button><button data-tm="all">Обзор</button><button data-tm="out" aria-label="Отдалить">−</button><button data-tm="in" aria-label="Приблизить">+</button><button class="tm-study" data-tm="study">Учить ветку</button></div></div>'+
- '<div class="tm-view"><svg class="tm-svg" role="group" aria-label="Схема родства птиц"><style class="tm-lod"></style><g class="tm-world"></g></svg><p class="tm-empty" hidden>Птицы не найдены. Измени фильтры.</p></div>'+
- '<details class="tree-explanation"><summary>Как читать схему</summary><p>Сверху вниз: класс птиц, отряды, у воробьинообразных — подотряды и крупные группы, затем семейства. Под каждым семейством перечислены его роды (латынь, курсив) и виды. Размер рамки растёт с числом видов в ветке, поэтому крупные ветки видны издалека, а маленькие — при приближении.</p><p>Кружок у вида показывает прогресс в текущем режиме: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено; пустой — нет фото или записи. Фильтры и поиск выше действуют и на схему.</p></details>';
+ '<div class="tm-filters" role="group" aria-label="Какие виды показать на схеме">'+Object.entries(MF).map(([k,t])=>'<label class="tf-chip"><input type="checkbox" data-mf="'+k+'"'+(mf[k]?' checked':'')+'><span>'+t+'</span></label>').join('')+'</div>'+
+ '<div class="tm-view"><svg class="tm-svg" role="group" aria-label="Схема родства птиц"><style class="tm-lod"></style><g class="tm-world"></g></svg><p class="tm-empty" hidden>Птицы не найдены. Измени поиск или галочки.</p></div>'+
+ '<details class="tree-explanation"><summary>Как читать схему</summary><p>Сверху вниз: класс птиц, отряды, у воробьинообразных — подотряды и крупные группы, затем семейства. Под каждым семейством перечислены его роды (латынь, курсив) и виды. Размер рамки растёт с числом видов в ветке, поэтому крупные ветки видны издалека, а маленькие — при приближении.</p><p>Кружок у вида показывает прогресс в текущем режиме: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено; пустой — нет фото или записи.</p><p>Схема показывает все виды сайта. Галочка «Только Польша» оставляет виды национального списка Польши (категории A и C, вместе с редкими залётами), «Только воробьиные» — отряд воробьинообразных; вместе они дают всех воробьинообразных Польши. Поиск выше тоже действует на схему.</p></details>';
  bind();}
 function render(){
  if(root.hidden){dirty=true;return;}dirty=false;
  if(!root.querySelector('.tm-svg'))shell();
- const tree=T.filtered(),empty=!tree;root.querySelector('.tm-empty').hidden=!empty;svg().style.display=empty?'none':'';
+ const tree=source(),empty=!tree;root.querySelector('.tm-empty').hidden=!empty;svg().style.display=empty?'none':'';
  if(empty){root.querySelector('.tm-focus').innerHTML='';return;}
  const key=leaves(tree).join(',');L=layout(tree);draw();
  if(key!==lastKey){lastKey=key;lodCut=null;focus(L.byId.has(focusId)?focusId:L.top.id,true);}else{lodCut=null;apply();panel();}
@@ -154,6 +166,7 @@ function bind(){const s=svg();
  s.addEventListener('wheel',e=>{e.preventDefault();cancelAnimationFrame(anim);const p=pos(e);zoomAt(p.x,p.y,Math.exp(-e.deltaY*(e.deltaMode===1?0.05:0.0016)));},{passive:false});
  s.addEventListener('click',e=>{if(moved){moved=false;return;}activate(e.target);});
  s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(e.target);}});
+ root.querySelector('.tm-filters').addEventListener('change',e=>{const c=e.target.closest('[data-mf]');if(!c)return;mf[c.dataset.mf]=c.checked;try{localStorage.setItem(MF_KEY,JSON.stringify(mf));}catch(_){}render();});
  root.querySelector('.tm-tools').addEventListener('click',e=>{const b=e.target.closest('[data-tm]');if(!b||b.disabled)return;const a=b.dataset.tm,sz=size();
   if(a==='all')focus(L.top.id);else if(a==='in')zoomAt(sz.w/2,sz.h/2,1.6);else if(a==='out')zoomAt(sz.w/2,sz.h/2,1/1.6);
   else if(a==='up'){const o=L.byId.get(focusId);if(o&&parentOf(o))focus(parentOf(o).id);}
@@ -165,7 +178,9 @@ function activate(t){const sp=t.closest&&t.closest('[data-map-sp]');if(sp){A.det
 const pageWidth=()=>document.documentElement.style.setProperty('--page-w',document.documentElement.clientWidth+'px');
 pageWidth();window.addEventListener('resize',()=>{pageWidth();if(L&&!root.hidden)apply();});
 window.addEventListener('birdatlas:render',render);
-window.addEventListener('birdatlas:view',e=>{if(e.detail==='map'&&dirty)render();});
-window.BirdMap={get view(){return {...view};},focus:id=>focus(id,true),get focusId(){return focusId;}};
+// On this view the page's Poland chips and filter panel are hidden: the map has its own check boxes.
+const mark=v=>document.body.classList.toggle('map-view',v==='map');
+window.addEventListener('birdatlas:view',e=>{mark(e.detail);if(e.detail==='map'&&dirty)render();});mark(T.view);
+window.BirdMap={get view(){return {...view};},focus:id=>focus(id,true),get focusId(){return focusId;},get filters(){return {...mf};}};
 if(T.view==='map')render();
 })();
