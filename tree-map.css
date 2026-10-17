@@ -39,3 +39,26 @@ body.map-view #treeFilters .tf-quick,body.map-view #filterToggle,body.map-view #
 /* Four view tabs fit a narrow phone (rpg.css loads later, hence the id). */
 @media(max-width:420px){#boards.board-views{gap:6px}#boards.board-views button{flex:1 1 0;min-width:0;font-size:21px;padding:6px 4px}.tm-tools{gap:4px}.tm-tools button{padding:6px 8px;font-size:20px}}
 @media(max-width:360px){.tm-tools{flex-wrap:wrap}}
+/* Families as a bunch of grapes: round berries on thin stalks, a stem and a leaf. */
+.tm-berry .tm-pill{fill:var(--tm-family);stroke:#245a2b;stroke-opacity:.6}
+.tm-berry:hover .tm-pill,.tm-berry:focus-visible .tm-pill,.tm-berry.on .tm-pill{stroke:#fff;stroke-opacity:1;stroke-width:4px;vector-effect:non-scaling-stroke}
+.tm-shine{fill:url(#tmShine);pointer-events:none}
+.tm-stem{fill:none;stroke:#a8743a;stroke-linecap:round}
+.tm-stalk{fill:none;stroke:#8a6430;stroke-linecap:round}
+.tm-leaf{fill:#5f9e4a;stroke:#3c6e2e;stroke-width:3px;vector-effect:non-scaling-stroke}.tm-vein{fill:none;stroke:#3c6e2e}
+.tm-bname{fill:#12301a;font-family:'Manrope',sans-serif;font-weight:700;text-anchor:middle;pointer-events:none}
+.tm-blat{fill:#24452c;font-family:'Manrope',sans-serif;font-style:italic;font-weight:500;text-anchor:middle;pointer-events:none}
+.tm-bcount{fill:#2f5236;font-family:'Manrope',sans-serif;font-weight:600;text-anchor:middle;pointer-events:none}
+.tm-ring{fill:none;pointer-events:none}.tm-ring.mastered{stroke:var(--master)}.tm-ring.review{stroke:var(--review)}.tm-ring.learning{stroke:var(--learn)}
+/* Genera and species of the tapped family: a bottom sheet on phones, a right-hand column on wide screens. */
+.tm-sheet{position:absolute;left:0;right:0;bottom:0;height:54%;display:flex;flex-direction:column;background:var(--panel,#23272c);border-top:3px solid var(--tm-family);box-shadow:0 -10px 28px #0007;z-index:2}
+.tm-sheet[hidden]{display:none}
+@media(min-width:860px){.tm-sheet{left:auto;top:0;height:auto;width:400px;border-top:0;border-left:3px solid var(--tm-family)}}
+.tm-sheet-head{display:flex;align-items:flex-start;gap:8px;padding:10px 12px 8px;border-bottom:1px solid var(--line)}
+.tm-sheet-title{flex:1;min-width:0}.tm-sheet-title strong{display:block;font:600 28px/1.1 var(--ui)}.tm-sheet-title em{display:block;margin-top:2px;font-size:12px;color:var(--gold)}
+.tm-sheet-close{flex:none;min-width:44px;min-height:44px;padding:0;font:600 28px/1 var(--ui)}
+.tm-sheet-body{flex:1;overflow:auto;padding:0 10px 14px;overscroll-behavior:contain}
+.tm-gsec h4{display:flex;align-items:center;gap:8px;margin:14px 0 4px;font:600 14px/1.25 'Manrope',sans-serif;color:var(--muted)}
+.tm-gl{flex:1;min-width:0}.tm-gl em{color:var(--tm-genus);font-size:16px}
+.tm-gstudy{flex:none;min-height:40px;padding:4px 10px;font:600 19px/1 var(--ui)}.tm-gstudy:disabled{opacity:.4}
+.tm-sheet .drill-thumb{width:52px;height:52px}
