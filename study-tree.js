@@ -83,6 +83,13 @@ function section(title,latin,count){return '<h4 class="drill-section"><span>'+es
 function list(items){return '<div class="drill-list">'+items.join('')+'</div>';}
 // Blocks (a genus, a group of families) flow in columns on wide screens instead of one per row.
 function blocks(items){return '<div class="drill-cols">'+items.map(x=>'<div class="drill-block">'+x+'</div>').join('')+'</div>';}
+// Families of a group grow from it like a tree: the group is a node, a trunk runs down from it,
+// and the families hang off the trunk in two columns, each reached by its own arrow.
+const isBranch=x=>x.rank!=='species'&&x.rank!=='genus';
+function fork(items){return '<div class="drill-fork'+(items.length===1?' single':'')+'">'+items.map(x=>'<div class="drill-twig"><i class="twig-trunk" aria-hidden="true"></i>'+nodeRow(x)+'</div>').join('')+'</div>';}
+function branchHTML(owner,items){const count=items.reduce((a,x)=>a+leaves(x).length,0);
+ return '<div class="drill-branch'+(owner?'':' from-hero')+'">'+(owner?'<h4 class="drill-node"><strong>'+esc(nameOf(owner))+'</strong>'+(owner.ru&&owner.ru!==owner.latin?'<em lang="la">'+latinHTML(owner.latin)+'</em>':'')+'<span>'+count+' '+C.word(count)+'</span></h4>':'')+fork(items)+'</div>';}
+function forks(items){return '<div class="drill-cols forks">'+items.map(x=>'<div class="drill-block">'+x+'</div>').join('')+'</div>';}
 function screenHTML(n){
  if($('treeSearch').value.trim()){const ids=leaves(filteredTree);return list(ids.map(id=>{const b=byBird.get(id),f=familyOf(b?.treeId||id);return speciesRow(id,f?nameOf(f):'');}));}
  const kids=n.children||[];
@@ -90,7 +97,9 @@ function screenHTML(n){
  if(kids.every(c=>c.rank==='species'))return list(kids.map(c=>speciesRow(c.birdId)));
  if(n.rank==='family'||kids.every(c=>c.rank==='genus'||c.rank==='species'))return blocks(kids.map(g=>{if(g.rank==='species')return list([speciesRow(g.birdId)]);const ids=leaves(g);return section(g.ru&&g.ru!==g.latin?'Род '+g.ru:'Род',g.latin,ids.length)+list(g.children.map(c=>c.rank==='species'?speciesRow(c.birdId):nodeRow(c)));}));
  if(kids.some(c=>c.rank==='group')){const secs=[];(function walk(x,owner){if(x!==n&&x.rank!=='group'){let s=secs.find(s=>s.owner===owner);if(!s)secs.push(s={owner,items:[]});s.items.push(x);return;}(x.children||[]).forEach(c=>walk(c,x.rank==='group'?x:owner));})(n,n);
+  if(secs.every(s=>s.items.every(isBranch)))return forks(secs.map(s=>branchHTML(s.owner!==n?s.owner:null,s.items)));
   return blocks(secs.map(s=>{const count=s.items.reduce((a,x)=>a+leaves(x).length,0);return (s.owner!==n?section(nameOf(s.owner),s.owner.ru&&s.owner.ru!==s.owner.latin?s.owner.latin:'',count+' '+C.word(count)):'')+list(s.items.map(x=>x.rank==='species'?speciesRow(x.birdId):nodeRow(x)));}));}
+ if(kids.every(c=>c.rank==='family'))return forks([branchHTML(null,kids)]);
  return blocks(kids.map(c=>c.rank==='species'?speciesRow(c.birdId):nodeRow(c)));
 }
 function drillHTML(){
