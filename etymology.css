@@ -1,0 +1,6 @@
+.name-origin{margin:1.4rem 0;color:var(--muted);font-size:1rem;line-height:1.65}
+.name-origin h4{margin:0 0 .6rem;color:var(--ink);font:inherit;font-weight:700}
+.name-origin p{margin:.5rem 0;overflow-wrap:anywhere}
+.name-origin i{color:var(--gold);font-weight:600}
+.name-origin details{margin-top:.7rem;font-size:.85rem}
+.name-origin summary{cursor:pointer;width:fit-content}
