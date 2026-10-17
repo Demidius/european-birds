@@ -1,0 +1,31 @@
+/* Zoomable tree diagram: light pills, orange arrows, families with their genera and species underneath. */
+.tree-map{width:var(--page-w,100vw);margin-left:calc((100% - var(--page-w,100vw))/2);border-left:0!important;border-right:0!important}
+.tm-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:14px 0 10px}
+.tm-focus{min-width:0}.tm-focus strong{display:block;font:600 30px/1.1 var(--ui)}.tm-focus em{display:block;color:var(--gold);font-size:13px;margin-top:2px}
+.tm-tools{display:flex;flex-wrap:wrap;gap:6px}
+.tm-tools button{min-height:44px;min-width:44px;padding:6px 12px;font:600 22px/1 var(--ui)}
+.tm-tools .tm-study{background:var(--gold);border-color:var(--gold);color:var(--btn-ink,#2B2D42)}
+.tm-tools button:disabled{opacity:.4}
+.tm-view{position:relative;height:min(78vh,900px);min-height:420px;background:#1d3424;border:2px solid #31503a;overflow:hidden}
+.tm-svg{display:block;width:100%;height:100%;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;text-size-adjust:none;-webkit-text-size-adjust:none}
+.tm-svg:active{cursor:grabbing}
+.tm-empty{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--muted)}
+.tm-edge{fill:none;stroke:#f3984a;stroke-linecap:round;stroke-linejoin:round}
+.tm-arrow{fill:#f3984a}
+.tm-pill{fill:#e6f6e0;stroke:#0f1f14;stroke-opacity:.35}
+.tm-node{cursor:pointer}.tm-node:hover .tm-pill,.tm-node:focus-visible .tm-pill{fill:#fff6c9}
+.tm-node:focus,.tm-genus:focus,.tm-sp:focus{outline:none}
+.tm-name{fill:#14261a;font-family:'Manrope',sans-serif;font-weight:600;text-anchor:middle}
+.tm-sub{fill:#4a6a52;font-family:'Manrope',sans-serif;font-weight:500;font-style:italic;text-anchor:middle}
+.tm-col{fill:#ffffff0d;stroke:#e6f6e026}
+.tm-hit{fill:transparent}
+.tm-genus,.tm-sp{cursor:pointer}
+.tm-genus:hover .tm-hit,.tm-genus:focus-visible .tm-hit,.tm-sp:hover .tm-hit,.tm-sp:focus-visible .tm-hit{fill:#ffffff14}
+.tm-gname{fill:#ffd98a;font-family:'Manrope',sans-serif;font-weight:600;font-style:italic}
+.tm-sname{fill:#eef6ea;font-family:'Manrope',sans-serif;font-weight:600}
+.tm-slat{fill:#b9c9b6;font-family:'Manrope',sans-serif;font-weight:500;font-style:italic}
+.tm-dot{fill:#5c6b60}.tm-dot.learning{fill:var(--learn)}.tm-dot.review{fill:var(--review)}.tm-dot.mastered{fill:var(--master)}.tm-dot.na{fill:none;stroke:#8a9a8c;stroke-width:1.5}
+@media(max-width:760px){.tm-focus strong{font-size:26px}.tm-tools{width:100%;flex-wrap:nowrap}.tm-tools .tm-study{margin-left:auto;white-space:nowrap}.tm-view{height:70vh;min-height:380px}}
+/* Four view tabs fit a narrow phone (rpg.css loads later, hence the id). */
+@media(max-width:420px){#boards.board-views{gap:6px}#boards.board-views button{flex:1 1 0;min-width:0;font-size:21px;padding:6px 4px}.tm-tools{gap:4px}.tm-tools button{padding:6px 8px;font-size:20px}}
+@media(max-width:360px){.tm-tools{flex-wrap:wrap}}
