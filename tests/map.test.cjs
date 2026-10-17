@@ -38,15 +38,23 @@ test('Tapping a branch zooms into it; species open their card; study runs on the
   const k=w.BirdMap.view.k;$('[data-tm="in"]').click();assert.ok(w.BirdMap.view.k>k);
  }finally{f.close();}
 });
-test('Filters redraw the map; progress colours the species dots',()=>{
+test('The map shows every species; its own check boxes keep Polish species and passerines; progress colours the dots',()=>{
  const f=fixture(),{w,d,$,$$}=f;try{
-  d.getElementById('mapView').click();
+  d.getElementById('typicalPoland').checked=true;d.getElementById('typicalPoland').dispatchEvent(new w.Event('change'));
+  d.getElementById('mapView').click();assert.equal($$('.tm-sp').length,w.BIRD_DATA.length,'the page Poland filter does not cut the map');
+  assert.ok(d.body.classList.contains('map-view'),'the page Poland chips are hidden on the map');
   w.BirdAtlas.study(['great-tit'],'Большая синица');d.querySelector('#cardBody [data-act="flip"]').click();d.querySelector('#cardBody [data-grade="good"]').click();d.getElementById('closeCard').click();
   assert.equal($('[data-map-sp="great-tit"] .tm-dot').getAttribute('class'),'tm-dot learning');
-  d.getElementById('onlyPoland').checked=true;d.getElementById('onlyPoland').dispatchEvent(new w.Event('change'));
-  const pl=$$('.tm-sp').length;assert.ok(pl<w.BIRD_DATA.length&&pl>150,'only Polish species: '+pl);assert.equal($('[data-map="Tyranni"]'),null);
+  const X=w.BirdTaxonomy,all=[];(function walk(n,p){if(n.rank==='species')all.push({n,p});(n.children||[]).forEach(c=>walk(c,p||n.latin==='Passeriformes'));})(w.STUDY_TREE,false);
+  const polish=all.filter(x=>{const r=X.region(x.n);return r&&['A','C'].includes(r.category);});
+  const tick=k=>{const c=$('[data-mf="'+k+'"]');c.checked=!c.checked;c.dispatchEvent(new w.Event('change',{bubbles:true}));};
+  tick('poland');assert.equal($$('.tm-sp').length,polish.length);assert.equal($('[data-map="Tyranni"]'),null);assert.ok($('[data-map="Anatidae"]'),'other orders stay');
+  tick('passer');assert.equal($$('.tm-sp').length,polish.filter(x=>x.p).length,'all Polish passerines');assert.equal($('[data-map="Anatidae"]'),null);assert.ok($('[data-map="Paridae"]'));
+  assert.equal(JSON.stringify(w.BirdMap.filters),'{"poland":true,"passer":true}');assert.deepEqual(JSON.parse(w.localStorage.getItem('europeanBirds:mapFilters')),{poland:true,passer:true});
+  tick('poland');assert.equal($$('.tm-sp').length,all.filter(x=>x.p).length,'all passerines on the site');tick('passer');assert.equal($$('.tm-sp').length,w.BIRD_DATA.length);
   d.getElementById('treeSearch').value='Parus major';d.getElementById('treeSearch').dispatchEvent(new w.Event('input'));
   assert.equal($$('.tm-sp').length,1);assert.equal($$('.tm-family').length,1);
   d.getElementById('treeSearch').value='zzzz';d.getElementById('treeSearch').dispatchEvent(new w.Event('input'));assert.equal($('.tm-empty').hidden,false);
+  d.getElementById('treeView').click();assert.equal(d.body.classList.contains('map-view'),false);
  }finally{f.close();}
 });
