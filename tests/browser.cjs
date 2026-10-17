@@ -171,6 +171,32 @@ try{
  await page.locator('[data-sb-study="Cyanistes"]').click();assert.equal(await page.locator('#cardDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#sessionCount').innerText(),/Лазоревки/);await page.locator('#closeCard').click();
  await page.locator('#treeView').click();assert.equal(await page.locator('#speciesBoard').isHidden(),true);
 
+ // Zoomable diagram: fits every width, drags, pinches, wheel-zooms; a tap zooms into a branch or opens a species.
+ for(const width of [320,390,760,1440]){
+  await page.setViewportSize({width,height:844});await page.locator('#mapView').click();await page.waitForSelector('.tm-node');assert.equal(await page.locator('#treeBoard').isHidden(),true);
+  await page.evaluate(()=>document.fonts.ready);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+1,'Map overflow at '+width);
+  const m=await page.locator('#treeMap').boundingBox(),cw=await page.evaluate(()=>document.documentElement.clientWidth);assert.ok(Math.abs(m.x)<=1&&Math.abs(m.width-cw)<=1,'map spans the screen at '+width);
+  for(const b of await page.locator('.tm-tools button').evaluateAll(x=>x.map(e=>e.getBoundingClientRect())))assert.ok(b.height>=44&&b.right<=width+1,'map tools fit at '+width);
+  await page.locator('[data-tm="all"]').click();await page.locator('.tm-view').evaluate(e=>e.scrollIntoView({block:'center'}));await page.waitForTimeout(550);
+  if(width===390||width===1440)await page.screenshot({path:path.join(out,'map-'+width+'.png')});
+ }
+ const mv=()=>page.evaluate(()=>window.BirdMap.view),svgBox=await page.locator('.tm-svg').boundingBox(),mx=svgBox.x+svgBox.width/2,my=svgBox.y+svgBox.height/2,v0=await mv();
+ await page.mouse.move(mx,my);await page.mouse.down();await page.mouse.move(mx+80,my+40,{steps:6});await page.mouse.up();
+ let v=await mv();assert.ok(Math.abs(v.x-v0.x-80)<1&&Math.abs(v.y-v0.y-40)<1&&v.k===v0.k,'drag pans the map');
+ await page.mouse.wheel(0,-400);v=await mv();assert.ok(v.k>v0.k*1.5,'wheel zooms in');
+ await page.setViewportSize({width:390,height:844});await page.locator('[data-tm="all"]').click();await page.waitForTimeout(550);
+ const sb=await page.locator('.tm-svg').boundingBox(),px=sb.x+sb.width/2,py=sb.y+sb.height/2,k1=(await mv()).k,cdp=await page.context().newCDPSession(page);
+ await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:px-30,y:py,id:1},{x:px+30,y:py,id:2}]});
+ for(let i=1;i<=6;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:px-30-i*15,y:py,id:1},{x:px+30+i*15,y:py,id:2}]});
+ await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});assert.ok((await mv()).k>k1*3,'pinch zooms in');await cdp.detach();
+ await page.locator('[data-tm="all"]').click();await page.waitForTimeout(550);
+ const pill=await page.locator('[data-map="Paridae"] .tm-pill').boundingBox();await page.mouse.click(pill.x+pill.width/2,pill.y+pill.height/2);await page.waitForTimeout(650);
+ assert.equal(await page.evaluate(()=>window.BirdMap.focusId),'Paridae');const big=await page.locator('[data-map="Paridae"] .tm-pill').boundingBox();assert.ok(big.width>sb.width*0.5,'the tapped family fills the screen');
+ assert.match(await page.locator('.tm-focus').innerText(),/Синицевые/);await page.screenshot({path:path.join(out,'map-paridae-390.png')});
+ const spRow=await page.locator('[data-map-sp="great-tit"] .tm-hit').boundingBox();await page.mouse.click(spRow.x+spRow.width/2,spRow.y+spRow.height/2);
+ assert.equal(await page.locator('#infoDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#infoTitle').innerText(),/Большая синица/);await page.locator('#closeInfo').click();
+ await page.locator('#treeView').click();assert.equal(await page.locator('#treeMap').isHidden(),true);
+
  // Links to #treeBoard land on the view switch and the search above the tree.
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/study.html?offline=1#treeBoard');await page.waitForSelector('.drill-row');await page.waitForLoadState('load');await page.waitForTimeout(150);
  const lead=await page.evaluate(()=>({views:document.querySelector('.board-views').getBoundingClientRect().top,search:document.getElementById('treeSearch').getBoundingClientRect().top}));
@@ -198,6 +224,6 @@ try{
  assert.equal(await polish.locator('#newCount').innerText(),'196');await polish.reload();
  assert.equal(await polish.locator('#typicalPoland').isChecked(),false);assert.equal(await polish.locator('#newCount').innerText(),'196');
  await polish.close();
- assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board and layouts at 320-1440px passed');
+ assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board, zoomable map and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});
