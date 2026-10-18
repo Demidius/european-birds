@@ -12,7 +12,7 @@ test('Typical Polish species are the default scope for every view and learning; 
   const typical=w.BIRD_DATA.filter(w.BirdTaxonomy.isTypical),ids=typical.map(b=>b.id);
   assert.equal(typical.length,285);assert.equal(total(),285);
   assert.equal(d.getElementById('filterSummary').hidden,true,'the visible quick filter is not repeated');
-  assert.equal(d.getElementById('newCount').textContent,'120');assert.equal(d.querySelectorAll('.bird-tile').length,285);
+  assert.equal(d.getElementById('newCount').textContent,'285');assert.equal(d.querySelectorAll('.bird-tile').length,285);
   assert.deepEqual([...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort(),[...ids].sort());
   assert.ok(ids.includes('great-tit'));assert.ok(ids.includes('mallard'));assert.ok(!typical.some(b=>b.latin==='Vireo olivaceus'));
   w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));d.getElementById('boardView').click();
@@ -62,7 +62,7 @@ assert.equal(d.getElementById('testTitBranch'),null,'no second whole-tree button
 assert.equal(d.querySelector('.tree-score-rule'),null);assert.match(d.querySelector('.tree-mode').textContent,/По фото · русский/);
 // With thumbnails on, every row photo is a local square thumbnail that exists in the repository.
 if(w.BirdTree.thumbs)for(const b of w.BIRD_DATA){const src=b.photos[0]?.src;if(/^assets\/(photos|bird-photos)\//.test(src))assert.ok(fs.existsSync(path.join(__dirname,'..',src.replace(/^assets\/([^/]+)\/(.+)\.\w+$/,'assets/thumbs/$1/$2.webp'))),'thumbnail for '+src);}
-const imgs=[...d.querySelectorAll('.drill-row .drill-thumb img')];assert.equal(imgs.length,9,'existing branches keep their photos; new branches remain without photos');assert.equal(d.querySelectorAll('.drill-row .drill-thumb span').length,15);assert.ok(imgs.every(i=>w.BirdTree.thumbs?/^assets\/thumbs\//.test(i.getAttribute('src'))&&i.dataset.full:/^assets\/(photos|bird-photos)\//.test(i.getAttribute('src'))));
+const imgs=[...d.querySelectorAll('.drill-row .drill-thumb img')];assert.equal(imgs.length,24,'every branch shows a photo');assert.equal(d.querySelectorAll('.drill-row .drill-thumb span').length,0);assert.ok(imgs.every(i=>w.BirdTree.thumbs?/^assets\/thumbs\//.test(i.getAttribute('src'))&&i.dataset.full:/^assets\/(photos|bird-photos)\//.test(i.getAttribute('src'))));
 assert.equal(d.querySelectorAll('.drill-prog').length,0,'no empty progress bars before any study');
 go('Passeriformes');go('Paridae');d.querySelector('[data-tree-test="great-tit"]').click();const body=d.getElementById('cardBody');body.querySelector('[data-act="flip"]').click();body.querySelector('[data-grade="good"]').click();d.getElementById('closeCard').click();
 assert.ok(d.querySelector('.drill-hero .drill-prog .learning'),'the open level shows its progress');assert.match(d.querySelector('.drill-total').textContent,/изучаю 1/);
