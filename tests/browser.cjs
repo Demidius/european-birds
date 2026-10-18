@@ -56,16 +56,16 @@ try{
  assert.equal(await page.locator('#filterCount').innerText(),'1');assert.match(await page.locator('#filterSummary').innerText(),/Только Польша/);
  await page.locator('[data-filter-reset]').click();assert.equal(await total(),713);assert.equal(await page.locator('#filterCount').isHidden(),true);assert.equal(await page.locator('#filterSummary').isHidden(),true);
 
- // Imported birds are browsable without photos, and names can be studied immediately.
+ // Imported birds carry a Wikipedia photo: rows, detail, catalogue and cards show it, and they study in photo mode.
  await page.locator('#treeSearch').fill('Ciconia ciconia');assert.equal(await page.locator('.drill-species').count(),1,'a tautonym does not match the whole genus');
- assert.equal(await page.locator('[data-tree-species="Ciconia_ciconia"] img').count(),0);
- assert.equal(await page.locator('[data-tree-test="Ciconia_ciconia"]').isDisabled(),true);
+ assert.equal(await page.locator('[data-tree-species="Ciconia_ciconia"] img').count(),1);
+ assert.equal(await page.locator('[data-tree-test="Ciconia_ciconia"]').isDisabled(),false);
  await page.locator('[data-tree-detail="Ciconia_ciconia"]').click();assert.match(await page.locator('#infoBody').innerText(),/гнездится/);
- assert.equal(await page.locator('#infoBody img').count(),0);assert.equal(await page.locator('[data-start-bird]').isDisabled(),true);await page.locator('#closeInfo').click();
- await page.locator('#catalogView').click();assert.equal(await page.locator('.bird-tile').count(),1);assert.match(await page.locator('.bird-tile').innerText(),/Без фото/);
+ assert.equal(await page.locator('#infoBody img').count(),1);assert.ok(await page.locator('#infoBody img').evaluate(i=>i.complete&&i.naturalWidth>0?true:new Promise(r=>{i.onload=()=>r(i.naturalWidth>0);i.onerror=()=>r(false);})),'the Wikipedia photo loads');assert.equal(await page.locator('[data-start-bird]').isDisabled(),false);await page.locator('#closeInfo').click();
+ await page.locator('#catalogView').click();assert.equal(await page.locator('.bird-tile').count(),1);assert.equal(await page.locator('.bird-tile img').count(),1);
  await page.locator('[data-mode="names"]').click();assert.equal(await page.locator('#newCount').innerText(),'1');
  await page.locator('#learnBtn').click();await page.locator('[data-act="flip"]').click();assert.match(await page.locator('#cardBody').innerText(),/Ciconia ciconia/);
- assert.equal(await page.locator('#cardBody img').count(),0);await page.locator('[data-grade="good"]').click();await page.locator('#closeCard').click();
+ assert.equal(await page.locator('#cardBody img').count(),1,'the answer shows the photo');await page.locator('[data-grade="good"]').click();await page.locator('#closeCard').click();
  await page.locator('[data-mode="photo"]').click();await page.locator('#treeView').click();
  await page.locator('#treeSearch').fill('Columba livia forma urbana');assert.equal(await page.locator('.drill-species').count(),1);assert.equal(await page.locator('[data-tree-species="rock-dove"]').count(),1,'the urban form reuses the existing pigeon');
  await page.locator('#treeSearch').fill('Ciconia ciconia');
@@ -221,7 +221,7 @@ try{
  await polish.route(/^https?:\/\/(?!127\.0\.0\.1[:/])/,r=>r.abort());
  await polish.goto(base+'/study.html?offline=1');await polish.waitForSelector('.drill-row');
  assert.equal(await polish.locator('#typicalPoland').isChecked(),true);
- assert.equal(await polish.locator('#newCount').innerText(),'120');
+ assert.equal(await polish.locator('#newCount').innerText(),'285');
  for(const width of [320,390,760,1440]){
   await polish.setViewportSize({width,height:844});await polish.evaluate(()=>document.fonts.ready);
   const lead=await polish.locator('.board-views').evaluate(e=>e.getBoundingClientRect().top+scrollY);
@@ -235,8 +235,8 @@ try{
  await polish.locator('#catalogView').click();assert.equal(await polish.locator('input[type=search]:visible').count(),1);
  await polish.locator('#treeSearch').fill('Paridae');assert.equal(await polish.locator('.bird-tile').count(),6);
  await polish.locator('#treeSearch').fill('');await polish.locator('#typicalPoland').uncheck();
- assert.equal(await polish.locator('#newCount').innerText(),'196');await polish.reload();
- assert.equal(await polish.locator('#typicalPoland').isChecked(),false);assert.equal(await polish.locator('#newCount').innerText(),'196');
+ assert.equal(await polish.locator('#newCount').innerText(),'471');await polish.reload();
+ assert.equal(await polish.locator('#typicalPoland').isChecked(),false);assert.equal(await polish.locator('#newCount').innerText(),'471');
  await polish.close();
  assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board, zoomable map and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
