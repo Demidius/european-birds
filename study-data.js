@@ -58,7 +58,7 @@
   genus.children.push(n);treeNodes.set(order.id,order);treeNodes.set(family.id,family);treeNodes.set(genus.id,genus);treeNodes.set(id,n);
   link(n,family);
   const b=byLatin.get(row.latin);b.importSource=additions.source;b.polandStatus=row.statusText;
-  b.tip='Вид добавлен из списка птиц Польши. Фотография пока не добавлена.';
+  b.tip='Вид добавлен из списка птиц Польши.'+(b.photos.length?'':' Фотография пока не добавлена.');
   const evidence={};
   for(const season of ['breeding','passage'])if(row.seasons[season]===true)evidence[season]={url:additions.statusSource,basis:'National list 2026-06-01: '+row.status};
   regions[id]={latin:row.latin,category:row.category,status:row.status,rare:row.rare,seasons:{...row.seasons},evidence};
