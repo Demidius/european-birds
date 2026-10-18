@@ -1,0 +1,49 @@
+# Adds Wikipedia photos (Wikimedia Commons, free licences) for species that have none yet
+# (tools/collect-wiki-photos.py), builds their row thumbnails and commits everything.
+# Runs when the collector or its species list changes, or by hand.
+name: Wikipedia photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/collect-wiki-photos.py'
+      - 'sources/missing-photos-*.json'
+      - '.github/workflows/wiki-photos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wiki-photos
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install Pillow==11.0.0
+      - name: Collect photos from Wikipedia
+        run: python tools/collect-wiki-photos.py sources/missing-photos-20261018.json
+      - name: Build thumbnails
+        run: python tools/build-thumbs.py
+      - name: Load the new photo list on both pages
+        run: |
+          v="$(date -u +%Y%m%d)-w${GITHUB_RUN_NUMBER}"
+          sed -i -E "s/data-photos\.js\?v=[0-9A-Za-z-]+/data-photos.js?v=${v}/" index.html study.html
+      - name: Commit photos
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898208+github-actions[bot]@users.noreply.github.com'
+          git add assets/bird-photos assets/thumbs data-photos.js sources/wiki-photos-report.json index.html study.html
+          if git diff --cached --quiet; then echo 'No new photos'; exit 0; fi
+          git commit -m "Photos from Wikipedia for species without one (tools/collect-wiki-photos.py)"
+          git pull --rebase origin main
+          git push
