@@ -173,14 +173,16 @@ try{
 
  // Zoomable diagram: fits every width, drags, pinches, wheel-zooms; a tap zooms into a branch or opens a species.
  for(const width of [320,390,760,1440]){
-  await page.setViewportSize({width,height:844});await page.locator('#mapView').click();await page.waitForSelector('.tm-node');assert.equal(await page.locator('#treeBoard').isHidden(),true);
+  await page.setViewportSize({width,height:844});await page.locator('#mapView').click();await page.waitForSelector('.tm-node');assert.equal(await page.locator('#treeBoard').isHidden(),false,'the map opens over the page');
   await page.evaluate(()=>document.fonts.ready);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+1,'Map overflow at '+width);
-  const m=await page.locator('#treeMap').boundingBox(),cw=await page.evaluate(()=>document.documentElement.clientWidth);assert.ok(Math.abs(m.x)<=1&&Math.abs(m.width-cw)<=1,'map spans the screen at '+width);
+  const m=await page.locator('#treeMap').boundingBox(),vp=page.viewportSize();assert.ok(Math.abs(m.x)<=1&&Math.abs(m.y)<=1&&Math.abs(m.width-vp.width)<=1&&Math.abs(m.height-vp.height)<=1,'map covers the screen at '+width);
   for(const b of await page.locator('#treeMap .tm-tools button, #treeMap .tm-filters .tf-chip').evaluateAll(x=>x.map(e=>e.getBoundingClientRect())))assert.ok(b.height>=44&&b.right<=width+1,'map tools and check boxes fit at '+width);
-  assert.equal(await page.locator('#typicalPoland').isVisible(),false,'the page Poland chip is hidden on the map');
+  assert.equal(await page.evaluate(()=>{const r=document.getElementById('treeSearch').getBoundingClientRect();return !!document.elementFromPoint(r.x+r.width/2,r.y+r.height/2).closest('#treeMap');}),true,'the open map covers the page at '+width);
   await page.locator('[data-tm="all"]').click();await page.locator('.tm-view').evaluate(e=>e.scrollIntoView({block:'center'}));await page.waitForTimeout(550);
   if(width===390||width===1440)await page.screenshot({path:path.join(out,'map-'+width+'.png')});
+  await page.locator('[data-tm-close]').click();assert.equal(await page.locator('#treeMap').isHidden(),true,'× closes the map at '+width);
  }
+ await page.locator('#mapView').click();
  // Check boxes: every species on the site, then Polish species, then Polish passerines only.
  const spCount=()=>page.locator('.tm-sp').count();assert.equal(await spCount(),713);
  await page.locator('.tm-filters .tf-chip').filter({hasText:'Только Польша'}).click();assert.equal(await spCount(),471);
@@ -209,7 +211,7 @@ try{
  await page.screenshot({path:path.join(out,'map-sylviida-390.png')});await page.evaluate(()=>window.BirdMap.focus('Paridae'));
  const spRow=await page.locator('[data-map-sp="great-tit"] .tm-hit').boundingBox();await page.mouse.click(spRow.x+spRow.width/2,spRow.y+spRow.height/2);
  assert.equal(await page.locator('#infoDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#infoTitle').innerText(),/Большая синица/);await page.locator('#closeInfo').click();
- await page.locator('#treeView').click();assert.equal(await page.locator('#treeMap').isHidden(),true);
+ await page.keyboard.press('Escape');assert.equal(await page.locator('#treeMap').isHidden(),true,'Esc closes the map');
 
  // Links to #treeBoard land on the view switch and the search above the tree.
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/study.html?offline=1#treeBoard');await page.waitForSelector('.drill-row');await page.waitForLoadState('load');await page.waitForTimeout(150);
