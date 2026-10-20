@@ -14,8 +14,8 @@ function fixture(){
 test('Map tab draws every branch down to families, with genera and species listed underneath',()=>{
  const f=fixture(),{w,d,M,$,$$,count}=f;try{
   assert.equal(M.hidden,true);assert.equal(M.innerHTML,'','the map is built only when opened');
-  d.getElementById('mapView').click();assert.equal(M.hidden,false);assert.equal(d.getElementById('treeBoard').hidden,true);
-  assert.equal(d.getElementById('mapView').getAttribute('aria-pressed'),'true');assert.equal(w.localStorage.getItem('europeanBirds:view'),'map');
+  d.getElementById('mapView').click();assert.equal(M.hidden,false);assert.ok(M.classList.contains('tm-full'),'the map opens over the page');assert.equal(d.getElementById('treeBoard').hidden,false,'the page view stays underneath');
+  assert.equal(d.getElementById('mapView').getAttribute('aria-pressed'),'true');assert.notEqual(w.localStorage.getItem('europeanBirds:view'),'map','the map is not a page view');
   const T=w.STUDY_TREE,branches=1+count(T,'order')+count(T,'group')+count(T,'family');
   assert.equal($$('.tm-node').length,branches);assert.equal($$('.tm-family').length,count(T,'family'));
   assert.equal($$('.tm-genus').length,count(T,'genus'));assert.equal($$('.tm-sp').length,w.BIRD_DATA.length);
@@ -47,7 +47,6 @@ test('The map shows every species; its own check boxes keep Polish species and p
  const f=fixture(),{w,d,$,$$}=f;try{
   d.getElementById('typicalPoland').checked=true;d.getElementById('typicalPoland').dispatchEvent(new w.Event('change'));
   d.getElementById('mapView').click();assert.equal($$('.tm-sp').length,w.BIRD_DATA.length,'the page Poland filter does not cut the map');
-  assert.ok(d.body.classList.contains('map-view'),'the page Poland chips are hidden on the map');
   w.BirdAtlas.study(['great-tit'],'Большая синица');d.querySelector('#cardBody [data-act="flip"]').click();d.querySelector('#cardBody [data-grade="good"]').click();d.getElementById('closeCard').click();
   assert.equal($('[data-map-sp="great-tit"] .tm-dot').getAttribute('class'),'tm-dot learning');
   const X=w.BirdTaxonomy,all=[];(function walk(n,p){if(n.rank==='species')all.push({n,p});(n.children||[]).forEach(c=>walk(c,p||n.latin==='Passeriformes'));})(w.STUDY_TREE,false);
@@ -60,6 +59,30 @@ test('The map shows every species; its own check boxes keep Polish species and p
   d.getElementById('treeSearch').value='Parus major';d.getElementById('treeSearch').dispatchEvent(new w.Event('input'));
   assert.equal($$('.tm-sp').length,1);assert.equal($$('.tm-family').length,1);
   d.getElementById('treeSearch').value='zzzz';d.getElementById('treeSearch').dispatchEvent(new w.Event('input'));assert.equal($('.tm-empty').hidden,false);
-  d.getElementById('treeView').click();assert.equal(d.body.classList.contains('map-view'),false);
+  $('[data-tm-close]').click();assert.equal(f.M.hidden,true);
  }finally{f.close();}
+});
+test('The map lives only behind the «Схема» button: it opens on the whole screen, × or Esc closes it',()=>{
+ const f=fixture(),{w,d,M,$}=f;try{
+  assert.equal(M.hidden,true);const tree=d.getElementById('treeBoard');assert.equal(tree.hidden,false);
+  w.localStorage.setItem('europeanBirds:view','map');
+  let asked=0;M.requestFullscreen=()=>{asked++;return Promise.reject(new Error('not allowed'));};
+  d.getElementById('mapView').click();assert.equal(asked,1,'asks the browser for full screen');assert.equal(M.hidden,false);assert.ok(M.classList.contains('tm-full'),'covers the window even if the browser refuses');
+  assert.ok(d.documentElement.classList.contains('tm-full-page'),'the page underneath does not scroll');assert.equal(w.BirdMap.isOpen,true);assert.equal(tree.hidden,false);
+  $('[data-map-sp="great-tit"]').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));assert.equal(d.getElementById('infoDialog').open,true,'species cards open over the map');
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape'}));assert.equal(M.hidden,false,'Esc closes an open card first');d.getElementById('closeInfo').click();
+  d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape'}));assert.equal(M.hidden,true,'Esc closes the map');assert.equal(d.documentElement.classList.contains('tm-full-page'),false);
+  assert.equal(d.getElementById('mapView').getAttribute('aria-pressed'),'false');
+  d.getElementById('mapView').click();$('[data-map="Paridae"] .tm-pill').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));
+  $('[data-tm-close]').click();assert.equal(M.hidden,true,'× closes the map');assert.equal(tree.hidden,false);
+  d.getElementById('mapView').click();assert.equal(w.BirdMap.focusId,'Paridae','reopening keeps the last place');w.BirdMap.close();
+  d.getElementById('boardView').click();assert.equal(M.hidden,true);assert.equal(d.getElementById('speciesBoard').hidden,false,'other tabs still switch the page');
+ }finally{f.close();}
+});
+test('A page saved on the old map tab opens on the tree',()=>{
+ const dom=new JSDOM(fs.readFileSync(path.join(__dirname,'..','study.html'),'utf8'),{url:'https://example.org/?offline=1',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window,d=w.document;
+ try{w.localStorage.setItem('europeanBirds:view','map');w.Element.prototype.scrollIntoView=function(){};w.Element.prototype.scrollTo=function(){};
+  for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','species-board.js','tree-map.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
+  assert.equal(d.getElementById('treeMap').hidden,true);assert.equal(d.getElementById('treeBoard').hidden,false);assert.equal(w.localStorage.getItem('europeanBirds:view'),'tree');
+ }finally{w.close();}
 });
