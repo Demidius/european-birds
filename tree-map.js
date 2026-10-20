@@ -6,6 +6,8 @@
 // Sylviida grows down instead of stretching the map sideways.
 // The map always starts from every species on the site; its own check boxes keep only Polish species or
 // only passerines. The page's search applies; the page's Poland filters do not (they are hidden on this view).
+// The corner button opens the map on the whole screen (the browser's full screen where it is allowed, otherwise
+// the section covers the window, as on iPhone); Esc or the same button closes it.
 (()=>{
 'use strict';
 const A=window.BirdAtlas,C=window.BirdStudy,T=window.BirdTree,$=id=>document.getElementById(id),root=$('treeMap');
@@ -166,7 +168,8 @@ function shell(){root.innerHTML='<div class="tree-heading"><div><p class="eyebro
  '<div class="tm-bar"><div class="tm-focus" aria-live="polite"></div><div class="tm-tools"><button data-tm="up" aria-label="На уровень выше">↑</button><button data-tm="all">Обзор</button><button data-tm="out" aria-label="Отдалить">−</button><button data-tm="in" aria-label="Приблизить">+</button><button class="tm-study" data-tm="study">Учить ветку</button></div></div>'+
  '<div class="tm-filters" role="group" aria-label="Какие виды показать на схеме">'+Object.entries(MF).map(([k,t])=>'<label class="tf-chip"><input type="checkbox" data-mf="'+k+'"'+(mf[k]?' checked':'')+'><span>'+t+'</span></label>').join('')+'</div>'+
  '<ul class="tm-legend" aria-label="Цвет показывает ранг">'+Object.entries(RANK).map(([r,t])=>'<li class="tm-l-'+r+'"><i aria-hidden="true"></i>'+t+'</li>').join('')+'</ul>'+
- '<div class="tm-view"><svg class="tm-svg" role="group" aria-label="Схема родства птиц"><style class="tm-lod"></style><g class="tm-world"></g></svg><p class="tm-empty" hidden>Птицы не найдены. Измени поиск или галочки.</p></div>'+
+ '<div class="tm-view"><svg class="tm-svg" role="group" aria-label="Схема родства птиц"><style class="tm-lod"></style><g class="tm-world"></g></svg>'+
+ '<button type="button" class="tm-full-btn" data-tm-full aria-pressed="false" aria-label="Схема на весь экран" title="На весь экран">'+ICON.open+'</button><p class="tm-empty" hidden>Птицы не найдены. Измени поиск или галочки.</p></div>'+
  '<details class="tree-explanation"><summary>Как читать схему</summary><p>Сверху вниз: класс птиц, отряды, у воробьинообразных — подотряды и крупные группы, затем семейства. Семейства одной ветви висят на общем стволе в две колонки. Под каждым семейством перечислены его роды (латынь, курсив) и виды. Цвет и размер рамки показывают ранг: все отряды одного цвета и размера, все семейства тоже, и каждый ранг меньше вышестоящего. У воробьинообразных между отрядом и семейством три ранга: подотряд (Tyranni, Passeri), инфраотряд (Corvides, Passerides) и парвотряд (Sylviida, Muscicapida, Passerida). Мелкие подписи появляются при приближении.</p><p>Кружок у вида показывает прогресс в текущем режиме: серый — новое, голубой — изучаю, жёлтый — повторяю, зелёный — выучено; пустой — нет фото или записи.</p><p>Схема показывает все виды сайта. Галочка «Только Польша» оставляет виды национального списка Польши (категории A и C, вместе с редкими залётами), «Только воробьиные» — отряд воробьинообразных; вместе они дают всех воробьинообразных Польши. Поиск выше тоже действует на схему.</p></details>';
  bind();}
 function render(){
@@ -178,8 +181,32 @@ function render(){
  if(key!==lastKey){lastKey=key;lodCut=null;focus(L.byId.has(focusId)?focusId:L.top.id,true);}else{lodCut=null;apply();panel();}
 }
 
+// ---- full screen ----
+const ICON={open:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>',
+ close:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg>'};
+const fsNow=()=>document.fullscreenElement||document.webkitFullscreenElement||null;
+let native=false;
+const isFull=()=>root.classList.contains('tm-full');
+function setFull(on){if(on===isFull())return;
+ root.classList.toggle('tm-full',on);document.documentElement.classList.toggle('tm-full-page',on);
+ const b=root.querySelector('[data-tm-full]');if(b){b.setAttribute('aria-pressed',String(on));b.setAttribute('aria-label',on?'Свернуть схему':'Схема на весь экран');b.title=on?'Свернуть':'На весь экран';b.innerHTML=on?ICON.close:ICON.open;}
+ if(on){const req=root.requestFullscreen||root.webkitRequestFullscreen;
+  if(req)try{const p=req.call(root);if(p&&p.catch)p.catch(()=>{});}catch(_){}}
+ else if(fsNow()===root){const ex=document.exitFullscreen||document.webkitExitFullscreen;try{const p=ex&&ex.call(document);if(p&&p.catch)p.catch(()=>{});}catch(_){}}
+ if(b)b.focus({preventScroll:true});}
+const onFs=()=>{if(fsNow()===root)native=true;else if(native){native=false;setFull(false);}};
+document.addEventListener('fullscreenchange',onFs);document.addEventListener('webkitfullscreenchange',onFs);
+// Esc closes the covering mode; with an open card the key closes the card first.
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isFull()&&!fsNow()&&!document.querySelector('dialog[open]'))setFull(false);});
+// When the map changes size (full screen, rotation) the same spot stays in the middle.
+let lastBox=null;
+function watchSize(){if(!window.ResizeObserver)return;new ResizeObserver(()=>{const r=svg().getBoundingClientRect();if(!r.width||!r.height)return;
+ if(L&&lastBox&&(r.width!==lastBox.w||r.height!==lastBox.h)){view={...view,x:view.x+(r.width-lastBox.w)/2,y:view.y+(r.height-lastBox.h)/2};apply();}
+ lastBox={w:r.width,h:r.height};}).observe(svg());}
+
 // ---- input ----
-function bind(){const s=svg();
+function bind(){const s=svg();watchSize();
+ root.querySelector('[data-tm-full]').addEventListener('click',()=>setFull(!isFull()));
  const ptr=new Map();let start=null,moved=false;
  const pos=e=>{const r=s.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};};
  s.addEventListener('pointerdown',e=>{cancelAnimationFrame(anim);ptr.set(e.pointerId,pos(e));moved=false;start=snapshot();});
@@ -208,7 +235,7 @@ pageWidth();window.addEventListener('resize',()=>{pageWidth();if(L&&!root.hidden
 window.addEventListener('birdatlas:render',render);
 // On this view the page's Poland chips and filter panel are hidden: the map has its own check boxes.
 const mark=v=>document.body.classList.toggle('map-view',v==='map');
-window.addEventListener('birdatlas:view',e=>{mark(e.detail);if(e.detail==='map'&&dirty)render();});mark(T.view);
-window.BirdMap={get view(){return {...view};},focus:id=>focus(id,true),get focusId(){return focusId;},get filters(){return {...mf};}};
+window.addEventListener('birdatlas:view',e=>{mark(e.detail);if(e.detail!=='map')setFull(false);if(e.detail==='map'&&dirty)render();});mark(T.view);
+window.BirdMap={get view(){return {...view};},get isFull(){return isFull();},setFull:on=>setFull(on!==false),focus:id=>focus(id,true),get focusId(){return focusId;},get filters(){return {...mf};}};
 if(T.view==='map')render();
 })();

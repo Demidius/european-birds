@@ -39,3 +39,14 @@ body.map-view #treeFilters .tf-quick,body.map-view #filterToggle,body.map-view #
 /* Four view tabs fit a narrow phone (rpg.css loads later, hence the id). */
 @media(max-width:420px){#boards.board-views{gap:6px}#boards.board-views button{flex:1 1 0;min-width:0;font-size:21px;padding:6px 4px}.tm-tools{gap:4px}.tm-tools button{padding:6px 8px;font-size:20px}}
 @media(max-width:360px){.tm-tools{flex-wrap:wrap}}
+/* Full screen: the corner button turns the section into a window-sized map (the browser's full screen where allowed). */
+.tm-full-btn{position:absolute;top:8px;right:8px;z-index:2;width:44px;height:44px;min-height:44px;display:grid;place-items:center;padding:0;background:#13241ae0;border:1px solid #4b7356;color:var(--ink)}
+.tm-full-btn:hover{border-color:var(--gold)}
+.tm-full-btn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#treeMap.tree-map.tm-full{position:fixed;inset:0;z-index:1000;width:auto;height:auto;margin:0;display:flex;flex-direction:column;overflow:hidden;border:0!important;box-shadow:none;background:var(--panel);
+ padding:calc(env(safe-area-inset-top,0px) + 8px) calc(env(safe-area-inset-right,0px) + 10px) calc(env(safe-area-inset-bottom,0px) + 10px) calc(env(safe-area-inset-left,0px) + 10px)}
+#treeMap.tm-full>.tree-heading,#treeMap.tm-full>.tm-legend,#treeMap.tm-full>.tree-explanation{display:none}
+#treeMap.tm-full .tm-bar{margin:0 0 8px;flex:none}#treeMap.tm-full .tm-filters{margin:0 0 8px;flex:none}
+#treeMap.tm-full .tm-view{flex:1 1 auto;height:auto;min-height:0}
+#treeMap.tm-full .tm-focus strong{font-size:24px}
+html.tm-full-page,html.tm-full-page body{overflow:hidden}
