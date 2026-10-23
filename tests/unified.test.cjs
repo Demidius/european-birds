@@ -6,8 +6,8 @@ w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogE
 for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','app.js','study-tree.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
 const d=w.document,go=id=>d.querySelector('[data-tree-go="'+id+'"]').click(),total=()=>Number(d.querySelector('.drill-total').textContent.split(' ')[0]),find=q=>{const s=d.getElementById('treeSearch');s.value=q;s.dispatchEvent(new w.Event('input'));};
 return {w,d,go,total,find,close:()=>w.close()};}
-test('Typical Polish species are the default scope for every view and learning; filters survive reload',()=>{
- const {w,d,total,find,close}=fixture(undefined,null);let saved;
+test('Typical Polish filters scope every view and learning; saved filters survive reload',()=>{
+ const {w,d,total,find,close}=fixture(undefined,{typicalPoland:true,onlyPoland:true});let saved;
  try{
   const typical=w.BIRD_DATA.filter(w.BirdTaxonomy.isTypical),ids=typical.map(b=>b.id);
   assert.equal(typical.length,285);assert.equal(total(),285);
@@ -113,3 +113,32 @@ go('Passeriformes');assert.equal(d.querySelector('[data-tree-go="Remizidae"] .dr
 go('Aves');go('Anseriformes');assert.match(d.querySelector('.drill-only').textContent,/Утиные/);assert.ok([...d.querySelectorAll('.drill-section')].some(e=>/Anas/.test(e.textContent)));assert.ok(d.querySelector('[data-tree-species]'));
 assert.equal(d.querySelector('[data-tree-back]').disabled,false);go('Aves');assert.equal(d.querySelector('[data-tree-back]').disabled,true);assert.ok(d.querySelector('.drill-row[data-tree-go="Anseriformes"]'));
 }finally{close()}});
+
+test('The unfiltered tree includes every scheme species; restoring the full collection preserves progress',()=>{
+ const {w,d,total,find,close}=fixture(undefined,null);
+ try{
+  w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));
+  w.eval(fs.readFileSync(path.join(__dirname,'../tree-map.js'),'utf8'));
+  const ids=[...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort();
+  assert.equal(total(),713);assert.equal(new Set(ids).size,713);
+  assert.deepEqual(ids,[...w.BIRD_DATA].map(b=>b.id).sort());
+  d.getElementById('mapView').click();
+  assert.deepEqual([...d.querySelectorAll('[data-map-sp]')].map(e=>e.dataset.mapSp).sort(),ids);
+  d.querySelector('[data-tm-close]').click();
+  assert.equal(d.querySelectorAll('.bird-tile').length,713);
+  d.getElementById('boardView').click();assert.equal(d.querySelectorAll('.sb-bar i').length,713);d.getElementById('treeView').click();
+  w.BirdAtlas.study(['great-tit'],'Test');
+  d.querySelector('#cardBody [data-act="flip"]').click();d.querySelector('#cardBody [data-grade="good"]').click();d.getElementById('closeCard').click();
+  const progress=w.localStorage.getItem('europeanBirds:v1:progress:guest');
+  assert.ok(progress);
+  d.getElementById('typicalPoland').checked=true;d.getElementById('typicalPoland').dispatchEvent(new w.Event('change'));
+  find('Paridae');assert.ok(total()<713);assert.equal(d.getElementById('showAllSpecies').hidden,false);
+  d.getElementById('showAllSpecies').click();
+  assert.equal(total(),713);assert.equal(d.getElementById('treeSearch').value,'');
+  assert.equal(w.localStorage.getItem('europeanBirds:v1:progress:guest'),progress);
+  assert.equal(w.BirdAtlas.state('great-tit').reps,1);
+  assert.equal(JSON.parse(w.localStorage.getItem('europeanBirds:filters')).typicalPoland,false);
+  d.querySelector('[data-mode="audio"]').click();
+  assert.equal(Number(d.getElementById('newCount').textContent),w.BIRD_DATA.filter(b=>b.audio.length).length);
+ }finally{close();}
+});

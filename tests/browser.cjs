@@ -218,12 +218,13 @@ try{
  const lead=await page.evaluate(()=>({views:document.querySelector('.board-views').getBoundingClientRect().top,search:document.getElementById('treeSearch').getBoundingClientRect().top}));
  assert.ok(lead.views>=0&&lead.views<40&&lead.search>0&&lead.search<200,'#treeBoard shows the view switch and the search: '+JSON.stringify(lead));
  await page.screenshot({path:path.join(out,'tree-anchor-390.png')});
- // A new visitor starts with regular Polish species; compact controls keep the board in reach.
+ // A new visitor starts with every species from the scheme; compact controls keep the board in reach.
  const polish=await browser.newPage();polish.on('pageerror',e=>errors.push(e.message));
  await polish.route(/^https?:\/\/(?!127\.0\.0\.1[:/])/,r=>r.abort());
  await polish.goto(base+'/study.html?offline=1');await polish.waitForSelector('.drill-row');
- assert.equal(await polish.locator('#typicalPoland').isChecked(),true);
- assert.equal(await polish.locator('#newCount').innerText(),'285');
+ assert.equal(await polish.locator('#typicalPoland').isChecked(),false);
+ assert.equal(await polish.locator('#newCount').innerText(),'713');
+ await polish.locator('#typicalPoland').check();
  for(const width of [320,390,760,1440]){
   await polish.setViewportSize({width,height:844});await polish.evaluate(()=>document.fonts.ready);
   const lead=await polish.locator('.board-views').evaluate(e=>e.getBoundingClientRect().top+scrollY);
@@ -239,6 +240,10 @@ try{
  await polish.locator('#treeSearch').fill('');await polish.locator('#typicalPoland').uncheck();
  assert.equal(await polish.locator('#newCount').innerText(),'471');await polish.reload();
  assert.equal(await polish.locator('#typicalPoland').isChecked(),false);assert.equal(await polish.locator('#newCount').innerText(),'471');
+ await polish.locator('#showAllSpecies').click();
+ assert.equal(await polish.locator('#newCount').innerText(),'713');
+ await polish.locator('#treeView').click();
+ for(const width of [390,1440]){await polish.setViewportSize({width,height:844});await polish.locator('.board-views').scrollIntoViewIfNeeded();await polish.screenshot({path:path.join(out,'all-species-'+width+'.png')});}
  await polish.close();
  assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board, zoomable map and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
