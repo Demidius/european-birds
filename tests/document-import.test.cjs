@@ -41,7 +41,6 @@ test('Species from the Polish list appear across views with Wikipedia photos and
   d.querySelector('[data-grade="good"]').click();d.getElementById('closeCard').click();assert.equal(w.BirdAtlas.state('Ciconia_ciconia').level,2);
   find('');d.getElementById('onlyPoland').checked=false;change('onlyPoland');
   assert.equal(d.querySelectorAll('.bird-tile').length,713);assert.equal(d.getElementById('newCount').textContent,'712');
-  d.getElementById('boardView').click();assert.equal(d.querySelectorAll('#speciesBoard .sb-bar i').length,713);assert.equal(d.querySelectorAll('#speciesBoard .sb-bar i.na').length,0);
   find('Lagopus lagopus');assert.equal(d.querySelectorAll('.bird-tile').length,1);
   d.getElementById('onlyPoland').checked=true;change('onlyPoland');assert.equal(d.querySelectorAll('.bird-tile').length,0);
   find('');assert.equal(d.querySelectorAll('.bird-tile').length,471);

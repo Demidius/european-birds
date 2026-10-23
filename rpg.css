@@ -147,7 +147,7 @@ dialog::backdrop{background:#08080cc2}
 .legend span{white-space:nowrap}
 .board-views{margin-top:14px;margin-bottom:10px}
 .board-views button{min-height:44px;padding:6px 16px;font-size:25px}
-.tf-quick{margin-top:8px;display:flex}
+.tf-quick{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
 .tf-quick .tf-chip{min-height:44px;align-items:center}
 .catalog-controls{display:flex;justify-content:flex-end}
 @media(max-width:1050px) and (min-width:761px){

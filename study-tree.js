@@ -36,6 +36,7 @@ function syncFilters(){
  // Vagrants only matter outside Poland: inside, the national list decides.
  $('includeVagrants').disabled=$('onlyPoland').checked;
  if(count){count.hidden=!on.length;count.textContent=on.length||'';}
+ $('showAllSpecies').hidden=!on.length&&!$('treeSearch').value.trim();
  const extra=on.filter(label=>label!==FILTER_LABELS.typicalPoland);
  if(summary){summary.hidden=!extra.length||(panel&&!panel.hidden);summary.innerHTML=extra.length?'<span>'+extra.map(esc).join(' · ')+'</span><button type="button" data-filter-reset>Сбросить</button>':'';}
 }
@@ -121,17 +122,17 @@ function go(id){currentId=id;history.pushState({...(history.state||{}),tree:id,d
 function anchorOffset(){const v=document.querySelector('.board-views'),t=$('treeBoard');if(!v||t.hidden)return;document.documentElement.style.setProperty('--board-lead',Math.max(0,Math.round(t.getBoundingClientRect().top-v.getBoundingClientRect().top+8))+'px');}
 function render(){const ctx=A.context();
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
- $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Дополнительные отряды теперь включают виды из списка Польши; их европейский состав остаётся неполным. Новые виды пока без фото.</p><p>Полоса под ветвью: зелёный — выучено, золотой — повторяю, голубой — изучаю. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
+ $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Дополнительные отряды теперь включают виды из списка Польши; их европейский состав остаётся неполным. Фотографии есть у всех видов коллекции.</p><p>Полоса под ветвью: зелёный — выучено, золотой — повторяю, голубой — изучаю. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
  // The breadcrumbs end on the open level; the cut-off start fades out.
  const c=$('treeBoard').querySelector('.drill-crumbs');if(c){c.scrollLeft=c.scrollWidth;fade(c);}
  anchorOffset();
 }
-const VIEWS={tree:['treeView','treeBoard'],board:['boardView','speciesBoard'],map:['mapView','treeMap'],catalog:['catalogView','catalogSection']},VIEW_KEY='europeanBirds:view';
+const VIEWS={tree:['treeView','treeBoard'],map:['mapView','treeMap'],catalog:['catalogView','catalogSection']},VIEW_KEY='europeanBirds:view';
 function setView(next,remember){if(!VIEWS[next]||!$(VIEWS[next][1]))next='tree';view=next;for(const [k,[btn,sec]] of Object.entries(VIEWS)){if($(sec))$(sec).hidden=k!==view;if($(btn))$(btn).setAttribute('aria-pressed',String(k===view));}
  if(remember)try{localStorage.setItem(VIEW_KEY,view);}catch(e){}window.dispatchEvent(new CustomEvent('birdatlas:view',{detail:view}));anchorOffset();}
-// Shared with species-board.js: the filtered taxonomy and the species row of the tree.
+// Shared tree helpers for the diagram.
 window.BirdTree={filtered:()=>filteredTree,speciesRow,nameOf,thumbs:THUMBS,get view(){return view;}};
-document.addEventListener('click',e=>{const v=e.target.closest('#treeView,#boardView,#mapView,#catalogView');if(v)setView({treeView:'tree',boardView:'board',mapView:'map',catalogView:'catalog'}[v.id],true);const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=byBird.get(test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
+document.addEventListener('click',e=>{const v=e.target.closest('#treeView,#mapView,#catalogView');if(v)setView({treeView:'tree',mapView:'map',catalogView:'catalog'}[v.id],true);const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=byBird.get(test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
 window.addEventListener('birdatlas:render',render);
 
 history.replaceState({...(history.state||{}),tree:currentId},'');
@@ -144,6 +145,7 @@ for(const id of ['treeSearch',...FILTER_IDS])$(id).addEventListener(id==='treeSe
 });
 document.addEventListener('click',e=>{
  const toggle=e.target.closest('#filterToggle');if(toggle){const panel=$('filterPanel'),open=panel.hidden;panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));syncFilters();anchorOffset();}
+ if(e.target.closest('[data-tree-all]')){$('treeSearch').value='';FILTER_IDS.forEach(id=>$(id).checked=id==='includeVagrants');saveFilters();applyFilters();go(taxonomy.id);}
  if(e.target.closest('[data-filter-reset]')){FILTER_IDS.forEach(id=>$(id).checked=id==='includeVagrants');saveFilters();applyFilters();}
  const branch=e.target.closest('[data-test-branch]');if(branch){e.preventDefault();const n=nodes.get(branch.dataset.testBranch);A.study(branches.get(branch.dataset.testBranch),n&&n.id!==taxonomy.id?nameOf(n):$('treeSearch').value.trim()?'Найдено':'Все птицы');}
  const to=e.target.closest('[data-tree-go]');if(to&&!to.hasAttribute('aria-current')){const id=to.dataset.treeGo;if($('treeSearch').value){$('treeSearch').value='';applyFilters();}go(id);}
