@@ -50,3 +50,45 @@
 .fc-answer .bird-names dd{font-size:20px;line-height:1.3;font-weight:600}
 @media(max-width:760px){.fc-answer>h3{grid-template-columns:56px minmax(0,1fr)}}
 @media(max-width:560px){.fc-answer>h3,.fc-answer .bird-names dd{font-size:18px}}
+/* Manual progress: status (не знаю / изучаю / знаю) and a 0–10 level set by the learner. */
+.pc{display:grid;gap:8px;margin:0 0 10px}
+.pc-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.pc-s{font:600 24px/1.1 var(--ui);min-height:48px;padding:6px 4px;background:var(--panel2);border:2px solid var(--line);color:var(--muted)}
+.pc-s[aria-pressed=true]{color:#0F0F1B;border-color:#000}
+.pc-s.unknown[aria-pressed=true]{background:#B9BDCF}
+.pc-s.learning[aria-pressed=true]{background:var(--learn)}
+.pc-s.known[aria-pressed=true]{background:var(--master)}
+.pc-level{display:grid;grid-template-columns:44px minmax(0,1fr) 44px auto;align-items:center;gap:6px}
+.pc-step{min-height:44px;font:600 28px/1 var(--ui);padding:0;background:var(--panel2)}
+.pc-meter{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;height:44px}
+.pc-cell{padding:0;min-width:0;border:0;background:var(--none);box-shadow:none;height:100%;background-clip:content-box;padding:12px 0}
+.pc-cell.on{background-color:var(--gold)}
+.pc-cell:focus-visible{outline-offset:1px}
+.pc-num{font:600 22px/1 var(--ui);color:var(--muted);min-width:46px;text-align:right}.pc-num b{color:var(--gold);font-size:28px}
+.pc-title{font:600 24px/1.1 var(--ui)!important;margin:18px 0 8px;color:var(--ink)!important}
+.fc-nav{margin-top:0}
+.fc-choose{display:grid;gap:10px;margin:16px 0 4px}
+.fc-choose .action{min-height:56px;flex-direction:row;align-items:center;justify-content:space-between;padding:8px 14px;font:600 26px/1.1 var(--ui)}
+.fc-choose .action strong{font-size:30px}
+.fc-list li b.st-learning{color:var(--learn)}.fc-list li b.st-known{color:var(--master)}
+@media(max-width:360px){.pc-s{font-size:21px}.pc-level{grid-template-columns:40px minmax(0,1fr) 40px auto;gap:4px}.pc-num{min-width:40px}}
+.fc-actions .fc-show{position:static;inset:auto;width:100%;min-height:52px}
+/* Three study buttons: изучаемое (pink), известное (green), новый вид (cyan). Selectors outrank rpg.css, which loads later. */
+.study-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+.action.known{background:var(--green);border-color:#000;color:#0F0F1B;box-shadow:0 4px 0 #0B5E48}
+.fc-choose .action.review{background:var(--pink);border-color:#000;color:#fff;box-shadow:0 4px 0 #6B1F31}
+.fc-choose .action.learn{background:var(--cyan);border-color:#000;color:#0F0F1B;box-shadow:0 4px 0 #1F5A6B}
+.study-actions .action>span:last-child{font-size:22px;line-height:1.05;white-space:normal}
+.legend-level{color:var(--muted)}
+@media(max-width:760px){
+ main .study-hub{gap:8px}
+ .study-hub .study-panel{row-gap:6px}
+ .study-panel .language-row{grid-column:1/-1;grid-row:2}
+ .study-panel .language-row select{min-height:40px}
+ .study-panel .study-actions{grid-column:1/-1;grid-row:3;gap:6px}
+ .study-actions .action{min-height:50px;padding:5px 7px;justify-content:space-between}
+ .study-actions .action>span:last-child{font-size:19px}
+ .study-actions .action strong{font-size:24px}
+ .legend .legend-level{display:none}
+}
+@media(max-width:360px){.study-actions .action>span:last-child{font-size:17px}.study-actions .action strong{font-size:21px}}

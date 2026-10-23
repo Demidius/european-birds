@@ -1,21 +1,20 @@
 // Add this block INSIDE match /databases/{database}/documents in EXISTING rules.
 // Do not replace your English site's rules with this fragment.
+// Progress is set by hand: status (unknown / learning / known), level 0-10 and how often the species was shown.
 match /profiles/{uid}/birdProgress/{cardId} {
   allow read: if request.auth != null;
   allow create, update: if request.auth != null
     && request.auth.uid == uid
-    && cardId.matches('^[a-z0-9-]+__(photo|audio|names-(en|latin|pl))$')
-    && request.resource.data.keys().hasAll(['level','interval','ease','due','reps','lapses','updatedAt'])
-    && request.resource.data.keys().hasOnly(['level','interval','ease','due','reps','lapses','updatedAt'])
+    && cardId.matches('^[a-z0-9-]+__(photo|audio|photo-(en|latin|pl)|audio-(en|latin|pl)|names-(ru|en|latin|pl))$')
+    && request.resource.data.keys().hasAll(['status','level','seen','today','day','lastSeen','updatedAt'])
+    && request.resource.data.keys().hasOnly(['status','level','seen','today','day','lastSeen','updatedAt'])
+    && request.resource.data.status in ['unknown','learning','known']
     && request.resource.data.level is int
     && request.resource.data.level >= 0 && request.resource.data.level <= 10
-    && request.resource.data.interval is number
-    && request.resource.data.interval >= 0 && request.resource.data.interval <= 365
-    && request.resource.data.ease is number
-    && request.resource.data.ease >= 1.3 && request.resource.data.ease <= 3.5
-    && request.resource.data.due is number && request.resource.data.due >= 0
-    && request.resource.data.reps is int && request.resource.data.reps >= 0
-    && request.resource.data.lapses is int && request.resource.data.lapses >= 0
+    && request.resource.data.seen is int && request.resource.data.seen >= 0
+    && request.resource.data.today is int && request.resource.data.today >= 0
+    && request.resource.data.day is int && request.resource.data.day >= 0
+    && request.resource.data.lastSeen is number && request.resource.data.lastSeen >= 0
     && request.resource.data.updatedAt is number && request.resource.data.updatedAt >= 0;
   allow delete: if request.auth != null && request.auth.uid == uid;
 }

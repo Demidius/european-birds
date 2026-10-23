@@ -46,8 +46,8 @@ function applyFilters(){
 }
 
 let view='tree';
-const label=s=>({new:'Новое знакомство',mastered:'Выучено',review:'Повторяю',learning:'Изучаю'}[C.status(s)]);
-const tone=C.status;
+const label=s=>C.LABELS[C.status(s)];
+const tone=C.tone;
 const nameOf=n=>n.ru&&n.ru!==n.latin?n.ru:n.latin;
 const POLAND=()=>window.BIRD_REGIONS?.poland?.species||{};
 // The Latin name stays gold; its Russian reading is quieter so the name itself is easy to scan.
@@ -59,10 +59,10 @@ const thumbOf=src=>THUMBS&&/^assets\/(photos|bird-photos)\/[^/]+\.(jpe?g|png|web
 function photoHTML(photo){if(!photo)return '<span>нет фото</span>';const t=thumbOf(photo.src);return '<img src="'+esc(t)+'"'+(t!==photo.src?' data-full="'+esc(photo.src)+'" onerror="this.onerror=null;this.src=this.dataset.full"':'')+' alt="" width="80" height="80" loading="lazy" decoding="async">';}
 // Progress of a branch: only species that can be studied in the current mode count.
 const summary=A.summary;
-function progressHTML(sum){if(!sum.n||!(sum.mastered+sum.review+sum.learning))return '';const seg=(k,cls)=>sum[k]?'<i class="'+cls+'" style="width:'+(sum[k]/sum.n*100).toFixed(2)+'%"></i>':'';
- return '<span class="drill-prog" role="img" aria-label="Выучено '+sum.mastered+' из '+sum.n+', повторяю '+sum.review+', изучаю '+sum.learning+'">'+seg('mastered','mastered')+seg('review','review')+seg('learning','learning')+'</span>';}
-const status=sum=>sum.status;
-function statsText(sum){return [['mastered','выучено'],['review','повторяю'],['learning','изучаю']].filter(([k])=>sum[k]).map(([k,t])=>' · '+t+' '+sum[k]).join('');}
+function progressHTML(sum){if(!sum.n||!(sum.known+sum.learning))return '';const seg=(k,cls)=>sum[k]?'<i class="'+cls+'" style="width:'+(sum[k]/sum.n*100).toFixed(2)+'%"></i>':'';
+ return '<span class="drill-prog" role="img" aria-label="Знаю '+sum.known+' из '+sum.n+', изучаю '+sum.learning+'">'+seg('known','mastered')+seg('learning','learning')+'</span>';}
+const status=sum=>({unknown:'new',learning:'learning',known:'mastered'})[sum.status];
+function statsText(sum){return [['known','знаю'],['learning','изучаю']].filter(([k])=>sum[k]).map(([k,t])=>' · '+t+' '+sum[k]).join('');}
 // A branch is shown with a clear photo of a familiar bird: the study collection's own photos first,
 // then species that breed in Poland, then regular visitors.
 const covers=new Map();
@@ -122,7 +122,7 @@ function go(id){currentId=id;history.pushState({...(history.state||{}),tree:id,d
 function anchorOffset(){const v=document.querySelector('.board-views'),t=$('treeBoard');if(!v||t.hidden)return;document.documentElement.style.setProperty('--board-lead',Math.max(0,Math.round(t.getBoundingClientRect().top-v.getBoundingClientRect().top+8))+'px');}
 function render(){const ctx=A.context();
  const langName={ru:'русский',en:'английский',latin:'латынь',pl:'польский'}[ctx.language];branches.clear();
- $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Дополнительные отряды теперь включают виды из списка Польши; их европейский состав остаётся неполным. Фотографии есть у всех видов коллекции.</p><p>Полоса под ветвью: зелёный — выучено, золотой — повторяю, голубой — изучаю. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
+ $('treeBoard').innerHTML='<div class="tree-head"><h2 id="treeTitle">Дерево птиц</h2><span class="tree-mode">'+({photo:'По фото',audio:'По голосу',names:'Названия'}[ctx.mode])+' · '+langName+'</span></div><div class="unified-tree drill">'+drillHTML()+'</div><details class="tree-explanation"><summary>Как читать дерево</summary><p>Дерево открывается по уровням: отряд, семейство, виды. Нажми на ветвь, чтобы спуститься, на птицу — чтобы открыть её карточку. «Учить» в верхней строке запускает карточки по всей открытой ветви, «Учить» у вида — по одной птице.</p><p>Роды показаны подзаголовками, крупные группы воробьинообразных — разделами. Порядок соседних ветвей не обозначает степень родства. Показаны воробьинообразные Европы и дополнительные отряды из учебной коллекции. Дополнительные отряды теперь включают виды из списка Польши; их европейский состав остаётся неполным. Фотографии есть у всех видов коллекции.</p><p>Полоса под ветвью: зелёный — знаю, голубой — изучаю. Шкала у вида — уровень 0–10, который ставишь ты сам. Прогресс общий для дерева и тестов, отдельно для каждого режима и языка. Записи голосов доступны только для видов с добавленным аудио.</p><p>Таксономия: AviList v2025b; европейский состав: Avibase. Статусы Польши: Komisja Faunistyczna и видовые очерки Ptaki.info. Авторы и лицензии фотографий доступны в карточках.</p></details>';
  // The breadcrumbs end on the open level; the cut-off start fades out.
  const c=$('treeBoard').querySelector('.drill-crumbs');if(c){c.scrollLeft=c.scrollWidth;fade(c);}
  anchorOffset();
