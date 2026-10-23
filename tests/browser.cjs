@@ -153,23 +153,13 @@ try{
   await page.locator('#closeCard').click();
  }
 
- // Species board: group columns, genus cards; one column at a time on phones, side by side on desktop.
- for(const width of [320,390,760,1440]){
-  await page.setViewportSize({width,height:844});await page.locator('#boardView').click();assert.equal(await page.locator('#speciesBoard').isVisible(),true);assert.equal(await page.locator('#treeBoard').isHidden(),true);
-  await page.evaluate(()=>document.fonts.ready);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+1,'Board overflow at '+width);
-  const sb=await page.locator('#speciesBoard').boundingBox(),cw=await page.evaluate(()=>document.documentElement.clientWidth);assert.ok(Math.abs(sb.x)<=1&&Math.abs(sb.width-cw)<=1,'board spans the screen at '+width+': '+sb.x+' '+sb.width);
-  const cols=await page.locator('.sb-col').evaluateAll(c=>c.filter(x=>x.getBoundingClientRect().height>0).map(x=>Math.round(x.getBoundingClientRect().top)));
-  if(width<=760){assert.equal(cols.length,1,'one group per screen at '+width);const before=await page.locator('.sb-col.on h3').innerText();await page.locator('.sb-col.on [data-sb-step="1"]').click();assert.notEqual(await page.locator('.sb-col.on h3').innerText(),before);await page.locator('.sb-col.on [data-sb-step="-1"]').click();}
-  else{assert.ok(cols.length>=2&&new Set(cols).size===1,'groups stand side by side at '+width);assert.ok(await page.locator('.sb-scroll').evaluate(e=>e.scrollWidth>e.clientWidth),'columns scroll sideways at '+width);}
-  await page.locator('[data-sb-col="Sylviida"]').click();const card=await page.locator('[data-sb-genus="Parus"]').boundingBox(),btn=await page.locator('[data-sb-study="Parus"]').boundingBox();
-  assert.ok(btn.height>=44&&btn.x+btn.width<=card.x+card.width+1,'genus study button fits and is tappable at '+width);
-  if(width===390||width===1440){await page.locator('.sb-jump').evaluate(e=>e.scrollIntoView({block:'start'}));await page.screenshot({path:path.join(out,'board-'+width+'.png')});}
- }
- await page.setViewportSize({width:390,height:844});
- await page.locator('[data-sb-toggle="Cyanistes"]').click();assert.equal(await page.locator('[data-sb-genus="Cyanistes"] .drill-species').count(),3);
- const open=await page.locator('[data-sb-genus="Cyanistes"]').boundingBox(),row=await page.locator('[data-sb-genus="Cyanistes"] [data-tree-test="blue-tit"]').boundingBox();assert.ok(row.x+row.width<=open.x+open.width+1,'species rows fit inside the genus card');
- await page.locator('[data-sb-study="Cyanistes"]').click();assert.equal(await page.locator('#cardDialog').evaluate(d=>d.open),true);assert.match(await page.locator('#sessionCount').innerText(),/Лазоревки/);await page.locator('#closeCard').click();
- await page.locator('#treeView').click();assert.equal(await page.locator('#speciesBoard').isHidden(),true);
+ // A previously selected board falls back to the tree without losing progress.
+ const savedProgress=await page.evaluate(()=>localStorage.getItem('europeanBirds:v1:progress:guest'));
+ await page.evaluate(()=>localStorage.setItem('europeanBirds:view','board'));
+ await page.reload();await page.waitForSelector('.drill-row');
+ assert.equal(await page.locator('#boardView,#speciesBoard').count(),0);
+ assert.equal(await page.locator('#treeBoard').isVisible(),true);
+ assert.equal(await page.evaluate(()=>localStorage.getItem('europeanBirds:v1:progress:guest')),savedProgress);
 
  // Zoomable diagram: fits every width, drags, pinches, wheel-zooms; a tap zooms into a branch or opens a species.
  for(const width of [320,390,760,1440]){
@@ -245,6 +235,6 @@ try{
  await polish.locator('#treeView').click();
  for(const width of [390,1440]){await polish.setViewportSize({width,height:844});await polish.locator('.board-views').scrollIntoViewIfNeeded();await polish.screenshot({path:path.join(out,'all-species-'+width+'.png')});}
  await polish.close();
- assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, species board, zoomable map and layouts at 320-1440px passed');
+ assert.deepEqual(errors,[]);console.log('BROWSER: drill-down tree, history, filters, species cards, Anki sessions, catalog, removed-board fallback, zoomable map and layouts at 320-1440px passed');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

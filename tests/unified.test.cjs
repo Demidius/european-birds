@@ -15,12 +15,9 @@ test('Typical Polish filters scope every view and learning; saved filters surviv
   assert.equal(d.getElementById('newCount').textContent,'285');assert.equal(d.querySelectorAll('.bird-tile').length,285);
   assert.deepEqual([...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort(),[...ids].sort());
   assert.ok(ids.includes('great-tit'));assert.ok(ids.includes('mallard'));assert.ok(!typical.some(b=>b.latin==='Vireo olivaceus'));
-  w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));d.getElementById('boardView').click();
-  assert.equal(d.querySelectorAll('.sb-bar i').length,285);
   const change=id=>d.getElementById(id).dispatchEvent(new w.Event('change'));
   d.getElementById('polandWinter').checked=true;change('polandWinter');
   const winter=typical.filter(b=>w.BirdTaxonomy.region(b).seasons.winter);
-  assert.equal(total(),winter.length);assert.equal(d.querySelectorAll('.sb-bar i').length,winter.length);
   assert.equal(d.querySelectorAll('.bird-tile').length,winter.length);
   find('Paridae');assert.equal(d.querySelectorAll('.bird-tile').length,w.BirdTaxonomy.leaves(w.BirdTree.filtered()).length);
   find('');d.getElementById('polandWinter').checked=false;change('polandWinter');
@@ -117,7 +114,6 @@ assert.equal(d.querySelector('[data-tree-back]').disabled,false);go('Aves');asse
 test('The unfiltered tree includes every scheme species; restoring the full collection preserves progress',()=>{
  const {w,d,total,find,close}=fixture(undefined,null);
  try{
-  w.eval(fs.readFileSync(path.join(__dirname,'../species-board.js'),'utf8'));
   w.eval(fs.readFileSync(path.join(__dirname,'../tree-map.js'),'utf8'));
   const ids=[...w.BirdTaxonomy.leaves(w.BirdTree.filtered())].sort();
   assert.equal(total(),713);assert.equal(new Set(ids).size,713);
@@ -126,7 +122,6 @@ test('The unfiltered tree includes every scheme species; restoring the full coll
   assert.deepEqual([...d.querySelectorAll('[data-map-sp]')].map(e=>e.dataset.mapSp).sort(),ids);
   d.querySelector('[data-tm-close]').click();
   assert.equal(d.querySelectorAll('.bird-tile').length,713);
-  d.getElementById('boardView').click();assert.equal(d.querySelectorAll('.sb-bar i').length,713);d.getElementById('treeView').click();
   w.BirdAtlas.study(['great-tit'],'Test');
   d.querySelector('#cardBody [data-act="flip"]').click();d.querySelector('#cardBody [data-grade="good"]').click();d.getElementById('closeCard').click();
   const progress=w.localStorage.getItem('europeanBirds:v1:progress:guest');

@@ -127,12 +127,12 @@ function render(){const ctx=A.context();
  const c=$('treeBoard').querySelector('.drill-crumbs');if(c){c.scrollLeft=c.scrollWidth;fade(c);}
  anchorOffset();
 }
-const VIEWS={tree:['treeView','treeBoard'],board:['boardView','speciesBoard'],map:['mapView','treeMap'],catalog:['catalogView','catalogSection']},VIEW_KEY='europeanBirds:view';
+const VIEWS={tree:['treeView','treeBoard'],map:['mapView','treeMap'],catalog:['catalogView','catalogSection']},VIEW_KEY='europeanBirds:view';
 function setView(next,remember){if(!VIEWS[next]||!$(VIEWS[next][1]))next='tree';view=next;for(const [k,[btn,sec]] of Object.entries(VIEWS)){if($(sec))$(sec).hidden=k!==view;if($(btn))$(btn).setAttribute('aria-pressed',String(k===view));}
  if(remember)try{localStorage.setItem(VIEW_KEY,view);}catch(e){}window.dispatchEvent(new CustomEvent('birdatlas:view',{detail:view}));anchorOffset();}
-// Shared with species-board.js: the filtered taxonomy and the species row of the tree.
+// Shared tree helpers for the diagram.
 window.BirdTree={filtered:()=>filteredTree,speciesRow,nameOf,thumbs:THUMBS,get view(){return view;}};
-document.addEventListener('click',e=>{const v=e.target.closest('#treeView,#boardView,#mapView,#catalogView');if(v)setView({treeView:'tree',boardView:'board',mapView:'map',catalogView:'catalog'}[v.id],true);const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=byBird.get(test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
+document.addEventListener('click',e=>{const v=e.target.closest('#treeView,#mapView,#catalogView');if(v)setView({treeView:'tree',mapView:'map',catalogView:'catalog'}[v.id],true);const detail=e.target.closest('[data-tree-detail]');if(detail)A.detail(detail.dataset.treeDetail);const test=e.target.closest('[data-tree-test]');if(test){const b=byBird.get(test.dataset.treeTest);A.study([test.dataset.treeTest],b?b.ru:'');}});
 window.addEventListener('birdatlas:render',render);
 
 history.replaceState({...(history.state||{}),tree:currentId},'');

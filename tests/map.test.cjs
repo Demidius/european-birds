@@ -6,7 +6,7 @@ function fixture(){
  w.localStorage.setItem('europeanBirds:filters',JSON.stringify({typicalPoland:false,onlyPoland:false}));
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
  w.Element.prototype.scrollIntoView=function(){};w.Element.prototype.scrollTo=function(){};
- for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','species-board.js','tree-map.js'])w.eval(read(f));
+ for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','tree-map.js'])w.eval(read(f));
  const M=d.getElementById('treeMap'),$=s=>M.querySelector(s),$$=s=>[...M.querySelectorAll(s)];
  const count=(n,rank)=>(n.rank===rank?1:0)+(n.children||[]).reduce((a,c)=>a+count(c,rank),0);
  return {w,d,M,$,$$,count,close:()=>w.close()};
@@ -76,13 +76,13 @@ test('The map lives only behind the «Схема» button: it opens on the whole
   d.getElementById('mapView').click();$('[data-map="Paridae"] .tm-pill').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));
   $('[data-tm-close]').click();assert.equal(M.hidden,true,'× closes the map');assert.equal(tree.hidden,false);
   d.getElementById('mapView').click();assert.equal(w.BirdMap.focusId,'Paridae','reopening keeps the last place');w.BirdMap.close();
-  d.getElementById('boardView').click();assert.equal(M.hidden,true);assert.equal(d.getElementById('speciesBoard').hidden,false,'other tabs still switch the page');
+  d.getElementById('catalogView').click();assert.equal(M.hidden,true);assert.equal(d.getElementById('catalogSection').hidden,false,'other tabs still switch the page');
  }finally{f.close();}
 });
 test('A page saved on the old map tab opens on the tree',()=>{
  const dom=new JSDOM(fs.readFileSync(path.join(__dirname,'..','study.html'),'utf8'),{url:'https://example.org/?offline=1',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window,d=w.document;
  try{w.localStorage.setItem('europeanBirds:view','map');w.Element.prototype.scrollIntoView=function(){};w.Element.prototype.scrollTo=function(){};
-  for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','species-board.js','tree-map.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
+  for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','app.js','study-tree.js','tree-map.js'])w.eval(fs.readFileSync(path.join(__dirname,'..',f),'utf8'));
   assert.equal(d.getElementById('treeMap').hidden,true);assert.equal(d.getElementById('treeBoard').hidden,false);assert.equal(w.localStorage.getItem('europeanBirds:view'),'tree');
  }finally{w.close();}
 });
