@@ -184,7 +184,9 @@ window.BirdAtlas={
  summary:ids=>C.progress(ids.map(id=>BIRDS.find(b=>b.id===id)).filter(b=>b&&available(b)).map(state)),
  available:id=>available(BIRDS.find(b=>b.id===id)),
  detail:id=>detail(BIRDS.find(b=>b.id===id)),
- study:(ids,title,cat)=>study(ids,title,cat)
+ study:(ids,title,cat)=>study(ids,title,cat),
+ // Status or level of one species in the current mode, set from the tree rows.
+ set:(id,what,value)=>applyControl(id,what,value)
 };
 states=cleanMap(read('progress:guest',{}));$('language').value=language;renderGroups();renderProfiles();render();initCloud();
 })();

@@ -94,3 +94,19 @@
  .drill-study .action strong{font-size:23px}
 }
 @media(max-width:360px){.drill-study .action>span:first-child{font-size:16px}.drill-study .action strong{font-size:20px}}
+/* Status and level on the tree's species rows, on a line of their own under the names. */
+.drill-species .drill-pc{flex:none;display:flex;align-items:center;gap:8px}
+.drill-pc-s{display:flex;gap:4px}
+.drill-pc button{min-height:40px;padding:0 8px;font:600 19px/1 var(--ui);background:var(--panel);border:2px solid var(--line);color:var(--muted);box-shadow:none}
+.drill-pc-s button[aria-pressed=true]{color:#0F0F1B;border-color:#000}
+.drill-pc-s .unknown[aria-pressed=true]{background:#B9BDCF}
+.drill-pc-s .learning[aria-pressed=true]{background:var(--learn)}
+.drill-pc-s .known[aria-pressed=true]{background:var(--master)}
+.drill-pc-l{display:flex;align-items:center;gap:4px}
+.drill-pc-l button{width:40px;padding:0;font-size:24px}
+.drill-pc-l b{min-width:44px;text-align:center;font:600 24px/1 var(--ui);color:var(--gold)}.drill-pc-l small{font-size:15px;color:var(--muted)}
+.drill-species{flex-wrap:wrap}
+.drill-species .drill-open{flex:1 1 0}
+.drill-species .drill-pc{order:3;flex:1 1 100%;justify-content:flex-start;gap:6px}
+.drill-pc-s{flex:1;min-width:0;max-width:380px}.drill-pc-s button{flex:1;min-width:0;padding:0 4px;white-space:nowrap}
+@media(max-width:560px){.drill-pc-s button{padding:0 2px}.drill-pc button{font-size:17px}.drill-pc-l button{width:34px}.drill-pc-l b{min-width:36px;font-size:21px}.drill-pc-l small{font-size:13px}}
