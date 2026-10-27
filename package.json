@@ -5,7 +5,9 @@
   "description": "Expandable European Passeriformes tree with licensed photo cards",
   "scripts": {
     "test": "node --test tests/*.test.cjs && node tests/accounts.cjs",
-    "test:browser": "node tests/browser.cjs"
+    "test:browser": "node tests/browser.cjs",
+    "test:practice": "node --test tests/practice.test.cjs",
+    "test:practice:browser": "node tests/practice-browser.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0",
