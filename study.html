@@ -8,13 +8,13 @@
 <link rel="stylesheet" href="assets/fonts/fonts.css?v=20261014-1">
 <link rel="stylesheet" href="style.css?v=20261015-22">
 <script defer src="scheduler.js?v=20261016-1"></script><script defer src="data-birds.js?v=20261014-1"></script>
-<link rel="stylesheet" href="study-tree.css?v=20261015-21"><link rel="stylesheet" href="study-tree-drill.css?v=20261015-21"><link rel="stylesheet" href="cards.css?v=20261015-12"><link rel="stylesheet" href="tree-map.css?v=20261017-3">
+<link rel="stylesheet" href="study-tree.css?v=20261015-21"><link rel="stylesheet" href="study-tree-drill.css?v=20261015-21"><link rel="stylesheet" href="cards.css?v=20261027-2"><link rel="stylesheet" href="tree-map.css?v=20261017-3">
 <script defer src="data-passerines.js?v=20261015-8"></script><script defer src="data-regions.js?v=20261014-2"></script><script defer src="data-photos.js?v=20261018-w1"></script><script defer src="data-poland-additions.js?v=20261016-1"></script><script defer src="study-data.js?v=20261016-1"></script>
 <link rel="stylesheet" href="biology.css?v=20261015-11"><script defer src="data-biology.js?v=20261015-11"></script><script defer src="biology.js?v=20261015-11"></script>
 <link rel="stylesheet" href="rpg.css?v=20261023-1"><link rel="stylesheet" href="study-tree-fork.css?v=20261017-1">
 <link rel="stylesheet" href="etymology.css?v=20261017-1"><script defer src="etymology.js?v=20261017-1"></script>
 <link rel="stylesheet" href="practice.css?v=20261027-1"><script defer src="practice.js?v=20261027-1"></script>
-<script defer src="firebase-config.js"></script><script defer src="app.js?v=20261027-1"></script><script defer src="study-tree.js?v=20261027-1"></script><script defer src="tree-map.js?v=20261017-4"></script>
+<script defer src="firebase-config.js"></script><script defer src="app.js?v=20261027-2"></script><script defer src="study-tree.js?v=20261027-1"></script><script defer src="tree-map.js?v=20261017-4"></script>
 </head>
 <body>
 <header class="site-header"><a class="brand" href="./" aria-label="Птицы Европы, главная"><span class="brand-icon" aria-hidden="true">◈</span><span><strong>Птицы Европы</strong><small>BIRD ATLAS · УЧИСЬ УЗНАВАТЬ</small></span></a><div class="header-links"><a href="#treeBoard">Дерево и тесты</a><a href="https://demidius.github.io/english-skill-tree/">Английский ↗</a><button id="accountBtn" class="quiet">Войти</button></div></header>
@@ -38,6 +38,7 @@
 <p class="region-hint">Таксономия: AviList v2025b. Ворона Corvus corone включает серую и чёрную формы; прежние названия доступны в поиске. Русские названия недавно выделенных островных зябликов и уточнения названий ласточек и коньков даны как описательные русские подписи. Добавленные из списка Польши виды пока без фото; названия доступны для изучения. Исторические записи категории B видны в общем дереве и скрыты фильтром «Только Польша». Для новых видов гнездование и пролёт указаны только по явным статусам национального списка; зимовка не выводится из пролётного статуса.</p>
 </main><footer><span>Bird Atlas · дерево и тесты</span><button id="creditsBtn" class="quiet">Авторы фото и записей</button><span>Реальные птицы. Реальные голоса.</span></footer>
 <dialog id="cardDialog" class="card-dialog fc-dialog" aria-labelledby="cardTitle"><div class="dialog-top"><span id="sessionCount" class="eyebrow"></span><button class="close" id="closeCard" aria-label="Закрыть карточку">×</button></div><div id="cardBody"></div></dialog>
+<dialog id="photoDialog" aria-label="Фотография на весь экран"><p class="photo-hint">Нажми на фон или Esc, чтобы вернуться</p><button type="button" class="close" id="closePhoto" aria-label="Закрыть фотографию" autofocus>×</button><img id="fullPhoto" alt=""></dialog>
 <dialog id="infoDialog" class="info-dialog"><div class="dialog-top"><h2 id="infoTitle"></h2><button class="close" id="closeInfo" aria-label="Закрыть окно">×</button></div><div id="infoBody"></div></dialog>
 <noscript><p class="notice">Для карточек нужно включить JavaScript.</p></noscript>
 </body></html>
