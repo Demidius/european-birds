@@ -1,0 +1,31 @@
+/* Free practice uses the existing card dialog and the branch's categories. */
+.practice-settings{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:12px;max-width:640px}
+.practice-format{display:flex;gap:4px;padding:4px;background:#1c1c20;border:2px solid #0f0f1b}
+.practice-format button{min-height:40px;padding:6px 16px;font:600 22px/1.1 var(--ui);color:var(--muted);background:transparent;border:2px solid transparent;box-shadow:none}
+.practice-format button[aria-pressed=true]{background:var(--gold);color:#0f0f1b;border-color:#0f0f1b}
+.practice-language{display:flex;align-items:center;gap:8px;font-size:12px}
+.practice-language select{min-height:44px;max-width:180px;font-size:15px;padding:6px 28px 6px 10px}
+.drill-hero .practice-note{max-width:640px;margin:10px 0 0;font:400 12px/1.5 'Manrope',sans-serif;color:inherit}
+.drill-hero .practice-related{opacity:.85;font-size:11px}
+.practice-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.fc-dialog .practice-option{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-height:64px;padding:12px;text-align:left;font:600 16px/1.35 'Manrope',sans-serif;color:var(--ink);background:var(--panel2);border:2px solid var(--line);box-shadow:0 3px 0 #0f0f1b;overflow-wrap:anywhere}
+.practice-option>span[lang]{flex:1;min-width:0}
+.practice-option>span[lang=la]{font-style:italic}
+.practice-option .practice-number{display:grid;place-items:center;width:24px;height:24px;flex:none;border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.fc-dialog .practice-option:hover:not(:disabled){border-color:var(--gold);background:#34333f}
+.fc-dialog .practice-option:disabled{cursor:default;opacity:1}
+.fc-dialog .practice-option.correct{border-color:var(--green);background:#173b32}
+.fc-dialog .practice-option.wrong{border-color:#ff8199;background:#472632}
+.practice-mark{flex-basis:100%;padding-left:34px;font-size:11px}
+.practice-option.correct .practice-mark{color:var(--green)}
+.practice-option.wrong .practice-mark{color:#ffb8c5}
+.practice-feedback{padding:12px 14px;border:2px solid var(--green);background:#173b32;font-size:15px;line-height:1.5;scroll-margin-top:16px}
+.practice-feedback.wrong{border-color:#ff8199;background:#472632}
+.fc-dialog .fc-meta+.fc-title{margin-top:12px}
+@media(max-width:560px){
+ .practice-settings{gap:8px}
+ .practice-language{flex-wrap:wrap}
+ .practice-options{grid-template-columns:1fr;gap:8px;margin:12px 0}
+ .fc-dialog .practice-option{min-height:54px;padding:10px 12px;font-size:15px}
+ .practice-format button{padding:6px 14px}
+}
