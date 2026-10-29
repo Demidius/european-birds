@@ -37,7 +37,8 @@ const types={'.html':'text/html','.js':'application/javascript','.css':'text/css
    await page.locator('[data-answer]:not([data-answer="great-tit"])').first().click();
    assert.match(await page.locator('.practice-feedback').innerText(),/Правильный ответ: Bogatka/);
    assert.equal(await page.locator('.fc-answer > h3').innerText(),'Большая синица');
-   assert.equal(await page.locator('#cardBody .pc, #cardBody [data-act="kopen"]').count(),0);
+   assert.equal(await page.locator('#cardBody [data-pc-level], #cardBody [data-act="kopen"]').count(),0);
+   assert.equal(await page.locator('#cardBody [data-pc-status]').count(),3);
    if(width===1440)await page.screenshot({path:path.join(out,'practice-answer-desktop.png')});
    await page.locator('[data-act="next"]').click();await page.keyboard.press('4');
    assert.equal(await page.locator('.fc-answer').count(),1);await page.keyboard.press('Enter');
