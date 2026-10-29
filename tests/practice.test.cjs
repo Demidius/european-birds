@@ -26,22 +26,63 @@ test('Every species has four unique options in each language, with all closer av
   assert.ok(P.options(w.BIRD_DATA.find(b=>b.id==='great-tit'),'ru').every(b=>/^(Parus|Cyanistes|Periparus|Lophophanes|Poecile) /.test(b.latin)));
  }finally{f.close();}
 });
-test('Correct and wrong choices reveal the card in all languages; clicks and shortcuts never write progress',()=>{
+test('Correct and wrong answers reveal status controls without automatically writing progress',()=>{
  const f=fixture({'great-tit__photo':{status:'learning',level:6,seen:20,updatedAt:10}});try{
   const {w,click,change,current,$,all}=f;
   for(const language of ['pl','latin','ru','en']){
    change('[data-practice-language]',language);assert.equal($('#language').value,language);
    const before=f.storage();w.BirdAtlas.study(['great-tit'],'Синица');
-   assert.equal(all('[data-answer]').length,4);assert.equal($('.fc-answer'),null);const bird=current();
+   assert.equal(all('[data-answer]').length,4);assert.equal($('.fc-answer'),null);assert.equal($('.pc'),null);const bird=current();
    assert.ok(all('[data-answer] span[lang]').every(el=>el.lang===(language==='latin'?'la':language)));
    const wrong=all('[data-answer]').find(button=>button.dataset.answer!==bird.id);wrong.click();
    assert.match($('.practice-feedback').textContent,/Правильный ответ/);assert.ok($('.practice-feedback').textContent.includes(bird[language]));
    assert.equal($('.fc-answer h3').textContent,bird.ru);assert.equal(all('.practice-option.correct').length,1);assert.equal(all('.practice-option.wrong').length,1);
-   assert.ok(all('[data-answer]').every(button=>button.disabled));assert.equal($('.pc, [data-act="kopen"], [data-grade]'),null);
+   assert.ok(all('[data-answer]').every(button=>button.disabled));assert.equal($('[data-pc-level], [data-act="kopen"], [data-grade]'),null);
+   assert.equal(all('[data-pc-status]').length,3);assert.equal($('.pc').dataset.pc,bird.id);
    for(const key of ['1','2','3','4','+','-',' '])w.document.body.dispatchEvent(new w.KeyboardEvent('keydown',{key,bubbles:true}));
    click('[data-act="next"]');click('[data-answer="great-tit"]');assert.match($('.practice-feedback').textContent,/Верно!/);
    click('#closeCard');assert.equal(f.storage(),before,language+' changes saved state');
   }
+ }finally{f.close();}
+});
+test('Manual practice status changes persist only for the current species, mode and language',()=>{
+ const f=fixture({'blue-tit__photo':{status:'known',level:9}});try{
+  const {w,d,click,change,$,all}=f;
+  for(const mode of ['photo','audio','names'])for(const language of ['ru','en','latin','pl']){
+   click('[data-mode="'+mode+'"]');change('[data-practice-language]',language);
+   w.BirdAtlas.set('great-tit','level',6);
+   const before=JSON.parse(w.localStorage.getItem('europeanBirds:v1:progress:guest'));
+   w.BirdAtlas.study(['great-tit'],'Синица');click('[data-answer="great-tit"]');
+   const card=$('.fc-answer'),photo=$('.fc-front'),feedback=$('.practice-feedback').textContent;
+   const key='great-tit__'+(mode==='names'?'names-'+language:mode+(language==='ru'?'':'-'+language));
+   for(const status of ['learning','known','unknown']){
+    const button=$('[data-pc-status="'+status+'"]');button.focus();$('#cardDialog').scrollTop=180;button.click();
+    assert.equal(w.BirdAtlas.state('great-tit').status,status);
+    assert.equal(button.getAttribute('aria-pressed'),'true');assert.equal(all('[data-pc-status][aria-pressed="true"]').length,1);
+    assert.equal(d.activeElement,button);assert.equal($('#cardDialog').scrollTop,180);
+    assert.equal($('.fc-answer'),card);assert.equal($('.fc-front'),photo);assert.equal($('.practice-feedback').textContent,feedback);
+    const saved=JSON.parse(w.localStorage.getItem('europeanBirds:v1:progress:guest'));
+    assert.equal(saved[key].status,status);assert.deepEqual(Object.keys(saved).sort(),Object.keys(before).sort());
+    assert.deepEqual({...saved[key],status:before[key].status,updatedAt:before[key].updatedAt},before[key]);
+    for(const other of Object.keys(before).filter(k=>k!==key))assert.deepEqual(saved[other],before[other]);
+   }
+   click('[data-pc-status="learning"]');click('#closeCard');
+   w.BirdAtlas.study(['great-tit'],'Синица');click('[data-answer="great-tit"]');
+   assert.equal($('[data-pc-status="learning"]').getAttribute('aria-pressed'),'true');click('#closeCard');
+  }
+ }finally{f.close();}
+});
+test('Changing a practice status updates categories and excludes the species from subsequent questions',()=>{
+ const f=fixture();try{
+  const {w,click,current,$}=f,ids=['great-tit','blue-tit'];
+  const countBefore=Number($('#reviewBtn strong').textContent);
+  w.BirdAtlas.study(ids,'Синицы','unknown');const first=current().id;
+  click('[data-answer="'+first+'"]');click('[data-pc-status="learning"]');
+  assert.equal(Number($('#reviewBtn strong').textContent),countBefore+1);
+  click('[data-act="next"]');assert.notEqual(current().id,first);
+  const second=current().id;click('[data-answer="'+second+'"]');click('[data-pc-status="known"]');
+  click('[data-act="next"]');assert.match($('#cardTitle').textContent,/Нет подходящих/);
+  click('[data-act="close"]');w.BirdAtlas.study(ids,'Синицы','learning');assert.equal(current().id,first);
  }finally{f.close();}
 });
 test('Practice cycles without the batch limit, without adjacent repeats, and never calls localStorage writes',()=>{
