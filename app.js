@@ -153,7 +153,6 @@ function renderPractice(){const s=session,b=currentBird(s),P=window.BirdPractice
  $('cardBody').querySelector('.fc-front img')?.addEventListener('error',fail,{once:true});$('cardBody').querySelector('.fc-front audio')?.addEventListener('error',fail,{once:true});
  if(sm!=='names'&&!m)fail();
  $('cardBody').querySelector(s.flipped||s.blocked?'[data-act="next"]':'[data-answer]')?.focus({preventScroll:true});
- if(s.flipped)$('cardBody').querySelector('.practice-feedback')?.scrollIntoView?.({block:'start'});
 }
 function flip(){const s=session;if(!s||s.format==='choices'||s.choose||s.flipped||s.kbox||s.blocked||!currentBird(s))return;s.flipped=true;renderCard();}
 function back(){const s=session;if(!s||s.at<=0)return;s.at--;s.flipped=true;s.kbox=false;s.kres='';s.kdone=null;renderCard();}
