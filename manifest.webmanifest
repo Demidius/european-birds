@@ -1,7 +1,9 @@
 {
   "name": "Птицы Европы · Bird Atlas",
   "short_name": "Bird Atlas",
-  "start_url": "./",
+  "description": "Птицы Европы: узнавай виды по фото и голосу, учи названия и отмечай прогресс.",
+  "id": "./",
+  "start_url": "./study.html#treeBoard",
   "scope": "./",
   "display": "standalone",
   "background_color": "#1C1C20",

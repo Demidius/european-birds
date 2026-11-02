@@ -4,7 +4,9 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1C1C20"><meta name="description" content="Птицы Европы: узнавай виды по фото и голосу, учи названия с интервальным повторением.">
 <title>Дерево и тесты · Птицы Европы</title>
-<link rel="manifest" href="manifest.webmanifest?v=20261023-1"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest?v=20261102-1"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Bird Atlas"><link rel="apple-touch-icon" href="icon-192.png">
+<script defer src="pwa.js?v=20261102-1"></script>
 <link rel="stylesheet" href="assets/fonts/fonts.css?v=20261014-1">
 <link rel="stylesheet" href="style.css?v=20261015-22">
 <script defer src="scheduler.js?v=20261016-1"></script><script defer src="data-birds.js?v=20261014-1"></script>
@@ -17,7 +19,7 @@
 <script defer src="firebase-config.js"></script><script defer src="app.js?v=20261027-1"></script><script defer src="study-tree.js?v=20261027-1"></script><script defer src="tree-map.js?v=20261017-4"></script>
 </head>
 <body>
-<header class="site-header"><a class="brand" href="./" aria-label="Птицы Европы, главная"><span class="brand-icon" aria-hidden="true">◈</span><span><strong>Птицы Европы</strong><small>BIRD ATLAS · УЧИСЬ УЗНАВАТЬ</small></span></a><div class="header-links"><a href="#treeBoard">Дерево и тесты</a><a href="https://demidius.github.io/english-skill-tree/">Английский ↗</a><button id="accountBtn" class="quiet">Войти</button></div></header>
+<header class="site-header"><a class="brand" href="./" aria-label="Птицы Европы, главная"><span class="brand-icon" aria-hidden="true">◈</span><span><strong>Птицы Европы</strong><small>BIRD ATLAS · УЧИСЬ УЗНАВАТЬ</small></span></a><div class="header-links"><a href="#treeBoard">Дерево и тесты</a><a href="https://demidius.github.io/english-skill-tree/">Английский ↗</a><button type="button" id="installAppBtn" class="quiet" hidden>Установить</button><button id="accountBtn" class="quiet">Войти</button></div></header>
 <main>
 <div id="notice" class="notice" role="status">Гость: прогресс сохраняется на этом устройстве.</div>
 <section class="intro" aria-label="О коллекции"><h1>У каждой птицы <span>свои приметы.</span></h1><span class="collection-size"><strong id="speciesCount">713</strong> видов Европы</span></section>
@@ -39,5 +41,6 @@
 </main><footer><span>Bird Atlas · дерево и тесты</span><button id="creditsBtn" class="quiet">Авторы фото и записей</button><span>Реальные птицы. Реальные голоса.</span></footer>
 <dialog id="cardDialog" class="card-dialog fc-dialog" aria-labelledby="cardTitle"><div class="dialog-top"><span id="sessionCount" class="eyebrow"></span><button class="close" id="closeCard" aria-label="Закрыть карточку">×</button></div><div id="cardBody"></div></dialog>
 <dialog id="infoDialog" class="info-dialog"><div class="dialog-top"><h2 id="infoTitle"></h2><button class="close" id="closeInfo" aria-label="Закрыть окно">×</button></div><div id="infoBody"></div></dialog>
+<dialog id="installAppDialog" class="info-dialog" aria-labelledby="installAppTitle"><div class="dialog-top"><h2 id="installAppTitle">Установить Bird Atlas</h2><button type="button" id="closeInstallApp" class="close" aria-label="Закрыть установку">×</button></div><p>На Android открой этот сайт в Chrome, нажми меню ⋮, затем «Добавить на главный экран» и «Установить».</p><p>На iPhone или iPad открой сайт в Safari: «Поделиться» -> «На экран Домой».</p><p>На компьютере нажми значок установки в адресной строке Chrome или Edge.</p><p>Если ссылка открылась внутри другого приложения, сначала выбери «Открыть в браузере». Если доступно только «Создать ярлык», обнови страницу и попробуй ещё раз.</p><p>Английский Skill Tree и Bird Atlas можно установить одновременно, у каждого будет своя иконка.</p></dialog>
 <noscript><p class="notice">Для карточек нужно включить JavaScript.</p></noscript>
 </body></html>
