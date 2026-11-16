@@ -49,13 +49,28 @@ function stopAudio(){document.querySelectorAll('audio').forEach(a=>{a.pause();})
 // The three buttons draw species at random from one status; species shown more often today come up less.
 const CATS={learning:{title:'Изучаемое',head:'ПОВТОРЯЮ ИЗУЧАЕМОЕ'},known:{title:'Известное',head:'ПОВТОРЯЮ ИЗВЕСТНОЕ'},unknown:{title:'Новые виды',head:'НОВЫЙ ВИД'}};
 function pickOne(list){return list.length?list[Math.floor(Math.random()*list.length)]:null;}
+function questionMedia(s, b) {
+ if (s.mode === 'names') return null;
+ if (s.mode === 'audio') {
+  if (!(b.id in s.media)) s.media[b.id] = pickOne(b.audio);
+  return s.media[b.id];
+ }
+ if (!(s.at in s.media)) {
+  const previous = s.lastPhotos.get(b.id);
+  const photos = b.photos.length > 1 ? b.photos.filter(p => p.src !== previous) : b.photos;
+  const photo = pickOne(photos);
+  s.media[s.at] = photo;
+  if (photo) s.lastPhotos.set(b.id, photo.src);
+ }
+ return s.media[s.at];
+}
 function start(cat,bird=null){if(!own()||(bird&&!available(bird)))return;if(bird){openSession({fixed:[bird.id],title:bird.ru});return;}openSession({cat,title:''});}
 // With a status (cat) the cards come straight from that group of the branch; without one a branch first asks which group.
 function study(ids,title,cat){if(!own())return;const set=new Set(ids||[]),pool=BIRDS.filter(b=>set.has(b.id)&&available(b));if(!pool.length)return;
  if(cat&&C.STATUSES.includes(cat)){openSession({ids:pool.map(b=>b.id),cat,title});return;}
  if(pool.length===1){openSession({fixed:[pool[0].id],title});return;}
  if(session)finishSession(false);session=newSession({ids:pool.map(b=>b.id),title,choose:true});openDialog('cardDialog');renderCard();}
-function newSession(o){return {cat:null,ids:null,fixed:null,choose:false,title:'',hist:[],at:-1,shown:0,round:0,media:{},flipped:false,kbox:false,kres:'',kdone:null,kprev:null,blocked:false,mode,language,uid,format,bag:[],choices:[],selected:null,failed:new Set(),...o};}
+function newSession(o){return {cat:null,ids:null,fixed:null,choose:false,title:'',hist:[],at:-1,shown:0,round:0,media:{},lastPhotos:new Map(),flipped:false,kbox:false,kres:'',kdone:null,kprev:null,blocked:false,mode,language,uid,format,bag:[],choices:[],selected:null,failed:new Set(),...o};}
 function openSession(o){if(session)finishSession(false);session=newSession(o);openDialog('cardDialog');if(!advance())renderCard();}
 function sessionPool(s){const set=s.fixed||s.ids;return set?BIRDS.filter(b=>set.includes(b.id)&&available(b,s.mode)):eligible();}
 function catCount(s,cat){return sessionPool(s).filter(b=>C.status(states[key(b,s.mode,s.language)])===cat).length;}
@@ -90,8 +105,7 @@ function renderCard(){const s=session;if(!s)return;stopAudio();
  if(s.kdone){renderKnown();return;}
  const b=currentBird(s);if(!b){renderDone();return;}
  const sm=s.mode,st=C.clean(states[key(b,sm,s.language)]),latinPrompt=sm==='names'&&s.language==='ru',left=s.cat?catCount(s,s.cat):0,today=C.todayCount(st,Date.now());s.blocked=false;
- if(!(b.id in s.media))s.media[b.id]=sm==='photo'?pickOne(b.photos):sm==='audio'?pickOne(b.audio):null;
- const m=s.media[b.id];
+ const m=questionMedia(s,b);
  sessionHead(s);
  let h='<div class="fc-meta"><span>'+(s.cat?'в группе '+left+' '+C.word(left):'один вид')+'</span><span>показано '+s.shown+(today>1?' · этот вид сегодня '+today+'-й раз':'')+'</span></div><div class="fc-bar"><span style="width:'+(s.fixed?100:Math.min(100,Math.round(s.round/batchSize*100)))+'%"></span></div>';
  if(!s.flipped){
@@ -135,8 +149,7 @@ function renderPractice(){const s=session,b=currentBird(s),P=window.BirdPractice
  sessionHead(s,'4 ВАРИАНТА'+(s.cat?' · '+CATS[s.cat].head:''));
  if(!b||s.choices.length!==4){$('cardBody').innerHTML='<h2 id="cardTitle" class="fc-title">'+(s.failed.size?'Нет доступных материалов':'Нет подходящих видов')+'</h2><p class="session-results">'+(s.failed.size?'Фото или записи не загрузились. Закрой тест и попробуй ещё раз, когда связь восстановится.':'В этой категории пока нет видов для выбранного режима и языка. Выбери другую категорию, язык или ветку.')+'</p><button class="reveal" data-act="close">Закрыть</button>';$('cardBody').querySelector('button').focus();return;}
  const sm=s.mode,answer=esc(P.label(b,s.language)),lang=s.language==='latin'?'la':s.language;
- if(!(b.id in s.media))s.media[b.id]=sm==='photo'?pickOne(b.photos):sm==='audio'?pickOne(b.audio):null;
- const m=s.media[b.id];
+ const m=questionMedia(s,b);
  let h='<div class="fc-meta"><span>Вопрос '+s.shown+' · ∞</span><span>Без изменения прогресса</span></div>';
  if(!s.flipped){
   h+='<h2 id="cardTitle" class="fc-title">'+(sm==='names'?'Выбери название':'Кто это?')+'</h2>';
@@ -169,7 +182,7 @@ function checkKnown(){const s=session;if(!s||s.flipped||!s.kbox)return;const b=c
 function undoKnown(){const s=session;if(!s||!s.kdone)return;const b=s.kdone.b;saveState(key(b,s.mode,s.language),{...s.kprev,updatedAt:Date.now()});s.kdone=null;s.kprev=null;render();renderCard();}
 function renderKnown(){const s=session,b=s.kdone.b;sessionHead(s);
   $('cardBody').innerHTML='<div class="kok" role="status"><div class="kok-ico" aria-hidden="true">✓</div><h2 class="kok-t">Засчитано</h2><p>Вид переведён в «Знаю» с уровнем 10.</p></div>'+
-   speciesCard(b,{photo:s.mode==='photo'?s.media[b.id]:b.photos[0],answer:true})+
+   speciesCard(b,{photo:s.mode==='photo'?questionMedia(s,b):b.photos[0],answer:true})+
   '<div class="fc-row"><button type="button" class="quiet" data-act="kundo">Отменить</button><button type="button" class="reveal" data-act="next">Дальше</button></div>';
  $('cardBody').querySelector('[data-act="next"]').focus({preventScroll:true});}
 function renderDone(roundOver=false){const s=session;if(!s)return;s.kdone=null;const now=Date.now(),seenIds=[...new Set(s.hist)],left=s.cat?catCount(s,s.cat):0;sessionHead(s,'ИТОГ');
@@ -253,7 +266,7 @@ $('cardDialog').addEventListener('submit',e=>{if(e.target.id==='knownForm'){e.pr
 $('closeCard').addEventListener('click',()=>{if(session)finishSession();else closeDialog('cardDialog');});$('cardDialog').addEventListener('cancel',()=>{stopAudio();session=null;render();});$('closeInfo').addEventListener('click',()=>{stopAudio();closeDialog('infoDialog');});$('infoDialog').addEventListener('cancel',stopAudio);
 $('profileSelect').addEventListener('change',()=>selectProfile($('profileSelect').value));$('backToMe').addEventListener('click',()=>me&&selectProfile(me.uid));$('accountBtn').addEventListener('click',account);$('settingsBtn').addEventListener('click',settings);
 $('helpBtn').addEventListener('click',()=>info('Как устроено изучение','<p><b>4 варианта</b> — отдельная бесконечная тренировка. Выбери этот формат над категориями в дереве и язык ответов: польский, латынь, русский или английский. После выбора откроется карточка вида. Статус, уровень и история показов не меняются. Вопросы берутся из выбранной категории и ветки с учётом фильтров; близкие варианты — из всей коллекции, сначала из того же рода, затем семейства и более широких групп дерева. Внутри одной группы варианты равноправны: более точное родство дерево не задаёт.</p><p>У каждого вида есть статус и уровень. Их ставишь ты сам — в карточке после ответа или в окне вида из дерева и каталога. Фото, голоса и названия на каждом языке имеют отдельный прогресс.</p><ul><li><b>Не знаю</b> — вид ещё не изучался. Все новые виды начинают отсюда.</li><li><b>Изучаю</b> — вид в работе.</li><li><b>Знаю</b> — вид выучен, его нужно только иногда освежать.</li></ul><p>Уровень 0–10 — твоя оценка, насколько уверенно узнаёшь вид. Он не меняет статус и не меняется сам.</p><p>Три кнопки на дереве птиц берут карточки из открытой ветки и своей группы: «Повторить изучаемое» — из «Изучаю», «Повторить известное» — из «Знаю», «Изучить новый вид» — из «Не знаю». Вид выбирается случайно, но каждый показ сегодня делает его заметно реже: второй показ — в 4 раза, третий — в 9 раз. Виды, которые давно не попадались, выпадают чаще. На верхнем уровне дерева это все виды с учётом фильтров; спустись в отряд или семейство, чтобы повторять только его.</p><ol><li>Посмотри на фото, послушай голос или прочитай название и вспомни вид.</li><li>«Показать ответ» (или пробел): откроются все названия, биотоп и голос.</li><li>Отметь статус (клавиши 1–3) и уровень (−/+), затем «Дальше» (Enter).</li></ol><p>«Я знаю» — впиши латинское название до ответа. Если верно, вид получает статус «Знаю» и уровень 10. «← Назад» возвращает к прошлой карточке. Число карточек в одном круге меняется в настройках каталога.</p>'));
-$('creditsBtn').addEventListener('click',()=>info('Авторы фото и записей','<p>Фотографии и записи получены из Wikimedia Commons, iNaturalist и xeno-canto; источники каждого материала указаны отдельно. Для каждого сохранены автор, ссылка на оригинал и лицензия. Записи и снимки не созданы ИИ.</p><ol class="credits-list">'+BIRDS.flatMap(b=>b.photos.concat(b.audio).map(m=>'<li><strong>'+esc(b.ru)+'</strong> · '+(m.mime.startsWith('audio')?'аудио':'фото')+credit(m)+'</li>')).join('')+'</ol>'));
+$('creditsBtn').addEventListener('click',()=>info('Авторы фото и записей','<p>Фотографии и записи получены из Wikimedia Commons, iNaturalist и xeno-canto; источники каждого материала указаны отдельно. Для каждого сохранены автор, ссылка на оригинал и лицензия. Записи и снимки не созданы ИИ.</p><ol class="credits-list">'+BIRDS.flatMap(b=>b.photos.concat(b.audio).map(m=>'<li><strong>'+esc(b.ru)+'</strong> · '+(m.mime?.startsWith('audio')?'аудио':'фото')+credit(m)+'</li>')).join('')+'</ol>'));
 $('infoDialog').addEventListener('submit',e=>{if(e.target.id==='birdAuth'){e.preventDefault();doAuth(false);}});
 $('infoDialog').addEventListener('click',e=>{const pc=e.target.closest('[data-pc-status],[data-pc-level]');if(pc&&!pc.disabled){const id=pc.closest('[data-pc]').dataset.pc;if(pc.dataset.pcStatus)applyControl(id,'status',pc.dataset.pcStatus);else applyControl(id,'level',Number(pc.dataset.pcLevel));return;}if(e.target.closest('#register'))doAuth(true);if(e.target.closest('#logout'))auth?.signOut().then(()=>closeDialog('infoDialog'));if(e.target.closest('[data-start-bird]')){const b=BIRDS.find(b=>b.id===e.target.closest('[data-start-bird]').dataset.startBird);stopAudio();closeDialog('infoDialog');if(available(b))start(null,b);}
  if(e.target.closest('#saveSettings')){batchSize=Math.max(5,Math.min(50,Number($('batchSize').value)||20));write('settings',{...read('settings',{}),batchSize,testLanguage:language});$('settingsMessage').textContent='Настройки сохранены.';}

@@ -136,3 +136,34 @@ test('Tree details and both study formats share a species card and retain the qu
   }
  }finally{f.close();}
 });
+
+test('Repeated questions alternate photos and the answer and history retain their question photo',()=>{
+ const f=fixture();
+ try {
+  const {w,$,click}=f;
+  const bird=w.BIRD_DATA.find(b=>b.id==='hooded-crow');
+  w.Math.random=()=>0;
+  const questionPhoto=()=>$('.fc-front img').getAttribute('src');
+  const answerPhoto=()=>$('.fc-answer img').getAttribute('src');
+  for(const format of ['choices','cards']){
+   click('[data-study-format="'+format+'"]');
+   w.BirdAtlas.study([bird.id],'Птица','unknown');
+   const firstPhoto=questionPhoto();
+   const reveal=format==='choices'?'[data-answer="'+bird.id+'"]':'[data-act="flip"]';
+   click(reveal);
+   assert.equal(answerPhoto(),firstPhoto);
+   click('[data-act="next"]');
+   const secondPhoto=questionPhoto();
+   assert.notEqual(secondPhoto,firstPhoto);
+   click(reveal);
+   assert.equal(answerPhoto(),secondPhoto);
+   if(format==='cards'){
+    click('[data-act="back"]');
+    assert.equal(answerPhoto(),firstPhoto);
+    click('[data-act="next"]');
+    assert.equal(questionPhoto(),secondPhoto);
+   }
+   click('#closeCard');
+  }
+ }finally{f.close();}
+});

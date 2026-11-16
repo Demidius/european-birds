@@ -63,6 +63,11 @@
   for(const season of ['breeding','passage'])if(row.seasons[season]===true)evidence[season]={url:additions.statusSource,basis:'National list 2026-06-01: '+row.status};
   regions[id]={latin:row.latin,category:row.category,status:row.status,rare:row.rare,seasons:{...row.seasons},evidence};
  }
+ // One additional study photo per species. Keep the primary photo for species previews.
+ for (const bird of birds) {
+  const photo = window.BIRD_EXTRA_PHOTOS?.[bird.treeId];
+  if (photo && !bird.photos.some(existing => existing.src === photo.src)) bird.photos.push(photo);
+ }
  window.BIRD_ID_ALIASES={Corvus_corone:'hooded-crow'};
  const region=n=>regions[n.treeId||n.id];
  const leaves=n=>n.rank==='species'?[n.birdId]:(n.children||[]).flatMap(leaves);

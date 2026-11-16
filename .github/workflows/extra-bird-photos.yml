@@ -1,0 +1,102 @@
+name: Collect additional bird photos
+
+on:
+  push:
+    branches: [extra-bird-photos]
+    paths:
+      - 'tools/collect-extra-bird-photos.py'
+      - '.github/workflows/extra-bird-photos.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extra-bird-photos
+  cancel-in-progress: false
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+    steps:
+      - name: Report run link
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" -f state=pending \
+            -f context=extra-bird-photos -f description='Collecting licensed photographs' \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
+  collect:
+    needs: start
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install Pillow==11.0.0
+      - name: Collect one additional photo per assigned species
+        run: python tools/collect-extra-bird-photos.py collect ${{ matrix.shard }} 4 output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bird-photo-shard-${{ matrix.shard }}
+          path: output/
+          if-no-files-found: error
+
+  save:
+    if: ${{ always() && needs.start.result == 'success' }}
+    needs: [start, collect]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      statuses: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install Pillow==11.0.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bird-photo-shard-*
+          path: collected
+      - name: Verify and aggregate results
+        run: python tools/collect-extra-bird-photos.py merge collected
+      - name: Update both page versions and commit only to this branch
+        run: |
+          v="$(date -u +%Y%m%d)-p${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
+          sed -i -E "s/data-extra-photos\.js\?v=[0-9A-Za-z-]+/data-extra-photos.js?v=${v}/" index.html study.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898208+github-actions[bot]@users.noreply.github.com'
+          git add data-extra-photos.js sources/extra-bird-photos-report.json index.html study.html
+          if [ -d assets/extra-bird-photos ]; then git add assets/extra-bird-photos; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Add extra licensed bird photographs"
+            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+          fi
+      - name: Publish collection status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          state=failure
+          description='Collection job failed'
+          if [ "$JOB_STATUS" = success ]; then
+            added="$(jq -r .added sources/extra-bird-photos-report.json)"
+            total="$(jq -r .species sources/extra-bird-photos-report.json)"
+            description="$added of $total species have an additional photo"
+            if [ "$added" = "$total" ]; then state=success; fi
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" -f state="$state" \
+            -f context=extra-bird-photos -f description="$description" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
