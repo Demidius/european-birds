@@ -5,7 +5,7 @@ function fixture(progress={},filters={typicalPoland:false,onlyPoland:false}){
  w.localStorage.setItem('europeanBirds:v1:progress:guest',JSON.stringify(progress));
  w.localStorage.setItem('europeanBirds:filters',JSON.stringify(filters));
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};w.HTMLMediaElement.prototype.pause=function(){};
- for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','practice.js','app.js','study-tree.js'])w.eval(read(f));
+ for(const f of ['scheduler.js','data-birds.js','data-passerines.js','data-regions.js','data-photos.js','data-poland-additions.js','study-data.js','data-biology.js','biology.js','etymology.js','practice.js','app.js','study-tree.js'])w.eval(read(f));
  const $=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{assert.ok($(s),s);$(s).click();};
  const change=(s,value)=>{$(s).value=value;$(s).dispatchEvent(new w.Event('change',{bubbles:true}));};
  const current=()=>{const img=$('.fc-front img'),audio=$('.fc-front audio'),prompt=$('.fc-prompt');return w.BIRD_DATA.find(b=>img?b.photos.some(p=>p.src===img.getAttribute('src')):audio?b.audio.some(p=>p.src===audio.getAttribute('src')):b.ru===prompt?.textContent||b.latin===prompt?.textContent);};
@@ -95,5 +95,44 @@ test('Format settings persist and switching back retains normal card and manual 
   w.BirdAtlas.study(['great-tit'],'Синица');assert.equal($('[data-answer]'),null);click('[data-act="flip"]');assert.ok($('.pc'));click('[data-pc-status="learning"]');
   assert.equal(w.BirdAtlas.state('great-tit').status,'learning');click('#closeCard');
   assert.equal(JSON.parse(w.localStorage.getItem('europeanBirds:v1:settings')).testFormat,'cards');
+ }finally{f.close();}
+});
+
+test('Tree details and both study formats share a species card and retain the quiz photo',()=>{
+ const f=fixture();
+ try {
+  const {w,$,all,click}=f;
+  const bird=w.BIRD_DATA.find(b=>b.id==='hooded-crow');
+  w.BirdAtlas.detail(bird.id);
+  const detail=$('#infoBody .species-card').innerHTML;
+  assert.ok($('#infoBody .species-taxonomy').textContent.includes('Corvidae'));
+  assert.ok($('#infoBody .species-poland').textContent.includes('Гнездится'));
+  assert.ok($('#infoBody .biology-recording audio'));
+  click('#closeInfo');
+
+  for(const format of ['choices','cards']){
+   click('[data-study-format="'+format+'"]');
+   for(const mode of ['photo','audio','names']){
+    click('[data-mode="'+mode+'"]');
+    w.Math.random=()=>0;
+    w.BirdAtlas.study([bird.id],'Птица');
+    click(format==='choices'?'[data-answer="'+bird.id+'"]':'[data-act="flip"]');
+    const card=$('#cardBody .species-card');
+    const copy=card.cloneNode(true);
+    copy.querySelector('#cardTitle').removeAttribute('id');
+    assert.equal(copy.innerHTML,detail,format+' '+mode);
+    click('#closeCard');
+   }
+
+   click('[data-mode="photo"]');
+   w.Math.random=()=>0.99;
+   w.BirdAtlas.study([bird.id],'Птица');
+   const photo=$('.fc-front img').getAttribute('src');
+   assert.equal(photo,bird.photos[1].src);
+   click(format==='choices'?'[data-answer="'+bird.id+'"]':'[data-act="flip"]');
+   assert.equal(all('#cardBody img').length,1);
+   assert.equal($('#cardBody .species-card img').getAttribute('src'),photo);
+   click('#closeCard');
+  }
  }finally{f.close();}
 });
