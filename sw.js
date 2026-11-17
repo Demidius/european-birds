@@ -1,11 +1,11 @@
 // Only Bird Atlas files and caches belong to this worker. Other apps share this origin.
 const CACHE_PREFIX = 'bird-atlas-shell-';
-const CACHE = CACHE_PREFIX + 'v3';
+const CACHE = CACHE_PREFIX + 'v4';
 const BASE = new URL(self.registration.scope);
 const SHELL = [
   './', 'index.html', 'study.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png',
   'pwa.js', 'scheduler.js', 'data-birds.js', 'data-passerines.js', 'data-regions.js',
-  'data-photos.js', 'data-poland-additions.js', 'data-extra-photos.js', 'data-wikipedia-cards.js', 'study-data.js', 'data-biology.js',
+  'data-photos.js', 'data-poland-additions.js', 'data-extra-photos.js', 'data-range-maps.js', 'data-wikipedia-cards.js', 'study-data.js', 'data-biology.js',
   'biology.js', 'etymology.js', 'practice.js', 'firebase-config.js', 'app.js', 'study-tree.js', 'tree-map.js',
   'style.css', 'study-tree.css', 'study-tree-drill.css', 'cards.css', 'tree-map.css',
   'biology.css', 'rpg.css', 'study-tree-fork.css', 'etymology.css', 'practice.css',
