@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-11-17",
+  "species": 713,
+  "counts": {
+    "article": 713,
+    "photo": 713,
+    "nest": 218
+  },
+  "differentNames": [
+    {
+      "id": "Troglodytes_troglodytes",
+      "catalogue": "Troglodytes troglodytes",
+      "wikipedia": "Nannus troglodytes",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1383339431"
+    },
+    {
+      "id": "Emberiza_sahari",
+      "catalogue": "Emberiza sahari",
+      "wikipedia": "Fringillaria sahari",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381870950"
+    },
+    {
+      "id": "Emberiza_striolata",
+      "catalogue": "Emberiza striolata",
+      "wikipedia": "Fringillaria striolata",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1385816733"
+    },
+    {
+      "id": "Emberiza_pallasi",
+      "catalogue": "Emberiza pallasi",
+      "wikipedia": "Schoeniclus pallasi",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381761570"
+    },
+    {
+      "id": "Emberiza_schoeniclus",
+      "catalogue": "Emberiza schoeniclus",
+      "wikipedia": "Schoeniclus schoeniclus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1383433354"
+    },
+    {
+      "id": "Emberiza_chrysophrys",
+      "catalogue": "Emberiza chrysophrys",
+      "wikipedia": "Schoeniclus chrysophrys",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381765906"
+    },
+    {
+      "id": "Emberiza_rutila",
+      "catalogue": "Emberiza rutila",
+      "wikipedia": "Schoeniclus rutilus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381783342"
+    },
+    {
+      "id": "Emberiza_aureola",
+      "catalogue": "Emberiza aureola",
+      "wikipedia": "Schoeniclus aureolus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381783468"
+    },
+    {
+      "id": "Emberiza_pusilla",
+      "catalogue": "Emberiza pusilla",
+      "wikipedia": "Schoeniclus pusillus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381784615"
+    },
+    {
+      "id": "Emberiza_rustica",
+      "catalogue": "Emberiza rustica",
+      "wikipedia": "Schoeniclus rusticus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381797180"
+    },
+    {
+      "id": "Emberiza_spodocephala",
+      "catalogue": "Emberiza spodocephala",
+      "wikipedia": "Schoeniclus spodocephalus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381801898"
+    },
+    {
+      "id": "Emberiza_melanocephala",
+      "catalogue": "Emberiza melanocephala",
+      "wikipedia": "Melophus melanocephalus",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381896647"
+    },
+    {
+      "id": "Emberiza_bruniceps",
+      "catalogue": "Emberiza bruniceps",
+      "wikipedia": "Melophus bruniceps",
+      "article": "https://en.wikipedia.org/w/index.php?oldid=1381898068"
+    }
+  ],
+  "missingArticle": [],
+  "missingPortrait": []
+}
