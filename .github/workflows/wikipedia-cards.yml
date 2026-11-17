@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: wikipedia-cards-extra-bird-photos
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   cards:

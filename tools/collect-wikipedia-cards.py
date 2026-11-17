@@ -31,11 +31,25 @@ DEST = Path('assets/wikipedia-cards')
 BINOMIAL = re.compile(r'[A-Z][a-zë-]+ [a-zë-]+')
 FILE = re.compile(r'\.(?:jpe?g|png|webp|tiff?)$', re.I)
 NON_PORTRAIT = re.compile(r'\b(?:range|distribution|map|karte|egg|eggs|skeleton|skull|illustration|specimen|stamp|sonogram|museum|nest)\b', re.I)
-NEST = re.compile(r'\b(?:nests?|nido|nid|gniazd\w*|гн[её]зд\w*|vogelnest|nistmulde|nestbau)\b', re.I)
+NEST = re.compile(r'\b(?:nests?|nido|nid|gni[ae][zź]d\w*|гн[её]зд\w*|vogelnest|nistmulde|nestbau)\b', re.I)
 BOX_ONLY = re.compile(r'nest.?box|bird.?house|nistkasten|budk[aię]|скворечник', re.I)
 IN_NEST = re.compile(r'\b(?:in|on|inside|feeding|chicks?|young|eggs?|incubat\w*|sitting|в гнезде|на гнезде|w gnieździe|auf dem nest)\b', re.I)
 BOX_CONTENTS = re.compile(r'\b(?:inside|nestlings?|chicks?|eggs?|nesting|incubating|птенц\w+|яйц\w+|wysiaduje|pisklęta|jaja|brütet|jungvögel)\b', re.I)
-EXCLUDE_NEST = re.compile(r'(?:nesting material|nest predation|nest parasite|nest distribution|nesting colonies|nesting boxes|nest box installation|nest habitat|nest-site|nest site|сбор материала)', re.I)
+EXCLUDE_NEST = re.compile(
+    r'(?:(?:collecting|gathering|carrying) (?:mud|grass|material|twigs)|nest(?:ing)? material|'
+    r'nest(?:ing)? (?:site|habitat|grounds|range|season|distribution|colonies)|nesting boxes|'
+    r'nest[- ]box installation|parasite|\btick\b|hyalomma|\bflea\b|\bmite\b|predation|'
+    r'(?:next to|near|away from|out of|leaving|just left) (?:the |their |a |its |her |his )?nest|'
+    r'мест[аох]+ гнезд|сбор материала|покинувш|после вылета|opuszczeniu gniazda|poza gniazdo|wydaliny)',
+    re.I,
+)
+NEST_CONTENTS = re.compile(
+    r'(?:chicks?|young|eggs?|nestlings?)\b.{0,40}\b(?:in|inside) (?:the |a )?nest|'
+    r'nest (?:of .{0,20} )?with (?:chicks?|young|eggs?|nestlings?)|'
+    r'гнезд\w* с (?:птенц\w*|яйц\w*|выводком)|(?:im|auf dem) nest|gniazdo z (?:jajami|pisklętami)',
+    re.I,
+)
+ART = re.compile(r'\b(?:drawings?|illustrations?|paintings?|lithographs?|engraving|aquarelle|watercolou?r|grönvold|naumann|gould|lilford)\b', re.I)
 PHOTO_MIME = {'image/jpeg', 'image/png', 'image/webp', 'image/tiff'}
 LOCK = threading.Lock()
 request_slots = {}
@@ -148,9 +162,9 @@ def inspect(page, lang):
             return
         caption = plain(description)
         label = re.sub('[_-]', ' ', name + ' ' + caption)
-        if not NEST.search(label) or EXCLUDE_NEST.search(label) or BOX_ONLY.search(label) and not BOX_CONTENTS.search(caption):
+        if not NEST.search(label) or EXCLUDE_NEST.search(label) or ART.search(label) or BOX_ONLY.search(label) and not BOX_CONTENTS.search(caption):
             return
-        score = 3 * bool(NEST.search(caption)) + 2 * bool(NEST.search(name)) + bool(IN_NEST.search(caption))
+        score = 5 * bool(NEST_CONTENTS.search(caption)) + 3 * bool(NEST.search(caption)) + 2 * bool(NEST.search(name)) + bool(IN_NEST.search(caption))
         nests[name] = max(nests.get(name, 0), score)
 
     for template in parsed.filter_templates(recursive=False):
@@ -191,7 +205,7 @@ def inspect(page, lang):
 
 def commons_files(api, names):
     data = api.api('commons.wikimedia.org', action='query', titles='|'.join('File:' + x for x in names),
-                   prop='imageinfo', iiprop='url|size|mime|extmetadata', iiextmetadatafilter='Artist|Credit|LicenseShortName|LicenseUrl|NonFree',
+                   prop='imageinfo', iiprop='url|size|mime|extmetadata', iiextmetadatafilter='Artist|Credit|LicenseShortName|LicenseUrl|NonFree|Categories',
                    iiurlwidth=800, redirects=1)
     query = data.get('query', {})
     aliases = {norm(r['from']).casefold(): norm(r['to']).casefold()
@@ -203,6 +217,8 @@ def commons_files(api, names):
         info = page['imageinfo'][0]
         meta = info.get('extmetadata', {})
         license_name = WIKI['text'](meta, 'LicenseShortName')
+        if ART.search(page['title']) or ART.search(WIKI['text'](meta, 'Categories').replace('_', ' ')):
+            continue
         if not WIKI['FREE'].fullmatch(license_name) or WIKI['text'](meta, 'NonFree').lower() == 'true':
             continue
         if info.get('mime') not in PHOTO_MIME or min(info['width'], info['height']) < 250:
@@ -348,6 +364,8 @@ def main(cache):
             source = articles[identity][0]
             portraits, nests = wanted[identity]
             portrait = common_media(api, portraits, bird, identity, 'portrait', metadata)
+            if portrait:
+                nests = [(title, page) for title, page in nests if metadata.get(title, {}).get('source') != portrait['source']]
             nest = common_media(api, nests, bird, identity, 'nest', metadata)
             item = {k: source[k] for k in ('latin', 'article', 'lang', 'title')}
             if portrait:
