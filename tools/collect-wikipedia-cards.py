@@ -3,10 +3,13 @@
 From the repository root, with Pillow and mwparserfromhell installed:
 python tools/collect-wikipedia-cards.py /path/to/request-cache
 """
+import base64
+import gzip
 import hashlib
 import json
 import re
 import runpy
+import shutil
 import sys
 import threading
 import time
@@ -337,62 +340,107 @@ def common_media(api, candidates, bird, identity, role, metadata):
     return None
 
 
+def write_cards(birds, records):
+    counts = Counter(field for entry in records.values() for field in ('article', 'photo', 'nest') if field in entry)
+    missing = defaultdict(list)
+    different = []
+    for bird in birds:
+        identity = bird['treeId']
+        entry = records.get(identity, {})
+        if entry and entry['latin'] != bird['latin']:
+            different.append(dict(id=identity, catalogue=bird['latin'], wikipedia=entry['latin'], article=entry['article']))
+        for field in ('article', 'photo'):
+            if field not in entry:
+                missing[field].append(identity)
+    report = dict(checkedAt=TODAY, species=len(birds), counts=dict(counts), differentNames=different,
+                  missingArticle=missing['article'], missingPortrait=missing['photo'])
+    (ROOT / 'data-wikipedia-cards.js').write_text('// Wikipedia article revisions and freely licensed card photos.\nwindow.BIRD_WIKIPEDIA_CARDS = ' +
+        json.dumps(records, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + ';\n', encoding='utf8')
+    (ROOT / 'sources/wikipedia-cards-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
+    print(json.dumps({k: v for k, v in report.items() if k not in ('differentNames', 'missingArticle', 'missingPortrait')}, ensure_ascii=False), flush=True)
+
+
+def collect_records(api, birds, prepared, metadata, pool):
+    def collect(bird):
+        identity = bird['treeId']
+        if identity not in prepared:
+            return identity, None
+        source, portraits, nests = prepared[identity]
+        entry = dict(source)
+        portrait = common_media(api, portraits, bird, identity, 'portrait', metadata)
+        if portrait:
+            entry['photo'] = portrait
+            nests = [(title, page) for title, page in nests if metadata.get(title, {}).get('source') != portrait['source']]
+        nest = common_media(api, nests, bird, identity, 'nest', metadata)
+        if nest:
+            entry['nest'] = nest
+        return identity, entry
+
+    result = {}
+    for number, (identity, entry) in enumerate(pool.map(collect, birds), 1):
+        if entry:
+            result[identity] = entry
+        if number % 50 == 0:
+            print('processed', number, '/', len(birds), flush=True)
+    write_cards(birds, result)
+
+
 def main(cache):
     api = Wikimedia(cache)
     birds = EXTRA['birds']()
     with ThreadPoolExecutor(max_workers=6) as pool:
         articles = source_options(api, birds, pool)
-        wanted = {}
-        for bird in birds:
-            identity = bird['treeId']
-            options = articles.get(identity, [])
-            lead = [(title, page['article']) for page in options for title in page['portraits']
-                    if not NON_PORTRAIT.search(re.sub('[_-]', ' ', title))]
+        prepared = {}
+        for identity, options in articles.items():
+            if not options:
+                continue
+            source = {k: options[0][k] for k in ('latin', 'article', 'lang', 'title')}
+            portraits = [(title, page['article']) for page in options for title in page['portraits']
+                         if not NON_PORTRAIT.search(re.sub('[_-]', ' ', title))]
             nest = sorted(((score, title, page['article']) for page in options for title, score in page['nests'].items()),
                           key=lambda option: -option[0])
-            wanted[identity] = (lead, [(title, article) for _, title, article in nest])
-        files = {title for roles in wanted.values() for candidates in roles for title, _ in candidates}
+            prepared[identity] = (source, portraits, [(title, article) for _, title, article in nest])
+        files = {title for _, portraits, nests in prepared.values() for candidates in (portraits, nests) for title, _ in candidates}
         metadata = {}
         for group in pool.map(lambda group: commons_files(api, group), batches(sorted(files), 35)):
             metadata.update(group)
         print(len(metadata), 'licensed article files out of', len(files), 'candidates', flush=True)
+        collect_records(api, birds, prepared, metadata, pool)
 
-        def collect(bird):
-            identity = bird['treeId']
-            if not articles.get(identity):
-                return identity, None
-            source = articles[identity][0]
-            portraits, nests = wanted[identity]
-            portrait = common_media(api, portraits, bird, identity, 'portrait', metadata)
-            if portrait:
-                nests = [(title, page) for title, page in nests if metadata.get(title, {}).get('source') != portrait['source']]
-            nest = common_media(api, nests, bird, identity, 'nest', metadata)
-            item = {k: source[k] for k in ('latin', 'article', 'lang', 'title')}
-            if portrait:
-                item['photo'] = portrait
-            if nest:
-                item['nest'] = nest
-            return identity, item
 
-        result, missing, different = {}, defaultdict(list), []
-        for number, ((identity, entry), bird) in enumerate(zip(pool.map(collect, birds), birds), 1):
-            if entry:
-                result[identity] = entry
-                if entry['latin'] != bird['latin']:
-                    different.append(dict(id=identity, catalogue=bird['latin'], wikipedia=entry['latin'], article=entry['article']))
-            for field in ('article', 'photo', 'nest'):
-                if not (entry or {}).get(field):
-                    missing[field].append(identity)
-            if number % 50 == 0:
-                print('processed', number, '/', len(birds), flush=True)
-    counts = Counter(field for item in result.values() for field in ('article', 'photo', 'nest') if field in item)
-    report = dict(checkedAt=TODAY, species=len(birds), counts=dict(counts), differentNames=different,
-                  missingArticle=missing['article'], missingPortrait=missing['photo'])
-    (ROOT / 'data-wikipedia-cards.js').write_text('// Wikipedia article revisions and freely licensed card photos.\nwindow.BIRD_WIKIPEDIA_CARDS = ' +
-                                                json.dumps(result, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + ';\n', encoding='utf8')
-    (ROOT / 'sources/wikipedia-cards-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
-    print(json.dumps({k: v for k, v in report.items() if k not in ('differentNames', 'missingArticle', 'missingPortrait')}, ensure_ascii=False), flush=True)
+def collect_plan(cache, plan_file, shard, count):
+    plan = json.loads(gzip.decompress(base64.b64decode(plan_file.read_bytes())))
+    birds = sorted(EXTRA['birds'](), key=lambda bird: bird['treeId'])[shard::count]
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        collect_records(Wikimedia(cache), birds, plan['species'], plan['files'], pool)
+
+
+def merge_parts(directory):
+    result = {}
+    for part in sorted(directory.glob('*/data-wikipedia-cards.js')):
+        payload = part.read_text(encoding='utf8').split('window.BIRD_WIKIPEDIA_CARDS = ', 1)[1].strip().removesuffix(';')
+        records = json.loads(payload)
+        if result.keys() & records.keys():
+            raise ValueError('Species found in more than one part')
+        result.update(records)
+        for image in (part.parent / DEST).glob('*.webp'):
+            (ROOT / DEST).mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(image, ROOT / DEST / image.name)
+    birds = EXTRA['birds']()
+    if result.keys() != {bird['treeId'] for bird in birds}:
+        raise ValueError('The verified article list is incomplete')
+    for entry in result.values():
+        for m in (entry.get('photo'), entry.get('nest')):
+            if m:
+                with Image.open(ROOT / m['src']) as proof:
+                    proof.verify()
+    write_cards(birds, result)
 
 
 if __name__ == '__main__':
-    main(Path(sys.argv[1]))
+    if sys.argv[1] == 'plan':
+        collect_plan(Path(sys.argv[2]), Path(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]))
+    elif sys.argv[1] == 'merge':
+        merge_parts(Path(sys.argv[2]))
+    else:
+        main(Path(sys.argv[1]))

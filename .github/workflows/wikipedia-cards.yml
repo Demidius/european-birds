@@ -4,53 +4,88 @@ on:
   push:
     branches: [extra-bird-photos]
     paths:
-      - 'tools/collect-wikipedia-cards.py'
-      - '.github/workflows/wikipedia-cards.yml'
+      - 'sources/wikipedia-cards-build.b64'
 
 permissions:
-  contents: write
-  statuses: write
+  contents: read
 
 concurrency:
   group: wikipedia-cards-extra-bird-photos
   cancel-in-progress: true
 
 jobs:
-  cards:
+  start:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    permissions:
+      statuses: write
     steps:
       - name: Report progress
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" -f state=pending \
-            -f context=wikipedia-cards -f description='Checking Wikipedia articles and photos' \
+            -f context=wikipedia-cards -f description='Downloading verified Wikipedia photographs' \
             -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
+  collect:
+    needs: start
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
       - name: Install image tools
         run: python -m pip install Pillow==11.0.0 mwparserfromhell==0.7.2
-      - name: Collect card data
-        run: python -u tools/collect-wikipedia-cards.py "${RUNNER_TEMP}/wikipedia-cards"
+      - name: Collect verified images
+        run: |
+          python -u tools/collect-wikipedia-cards.py plan "${RUNNER_TEMP}/wikipedia-cards" sources/wikipedia-cards-build.b64 ${{ matrix.shard }} 4
+          mkdir -p output/assets
+          cp data-wikipedia-cards.js output/
+          if [ -d assets/wikipedia-cards ]; then cp -r assets/wikipedia-cards output/assets/; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wiki-card-part-${{ matrix.shard }}
+          path: output/
+          if-no-files-found: error
+
+  save:
+    if: ${{ always() && needs.start.result == 'success' }}
+    needs: [start, collect]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      statuses: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image tools
+        run: python -m pip install Pillow==11.0.0 mwparserfromhell==0.7.2
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wiki-card-part-*
+          path: collected
+      - name: Verify combined card data
+        run: python tools/collect-wikipedia-cards.py merge collected
       - name: Verify quiz interactions
         run: |
           npm install --no-package-lock --no-audit --no-fund
           npm run test:practice
-      - name: Commit data to the review branch
+      - name: Commit card data to the review branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898208+github-actions[bot]@users.noreply.github.com'
           git add data-wikipedia-cards.js sources/wikipedia-cards-report.json assets/wikipedia-cards
-          if ! git diff --cached --quiet; then
-            git commit -m "Add Wikipedia portraits, scientific names, and nest photographs"
-            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
-          fi
+          git rm sources/wikipedia-cards-build.b64
+          git commit -m "Add Wikipedia portraits, scientific names, and nest photographs"
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
       - name: Report completion
         if: always()
         env:
