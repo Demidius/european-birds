@@ -1,0 +1,1244 @@
+[
+  {
+    "id": "Lanius_isabellinus",
+    "latin": "Lanius isabellinus",
+    "wikidata": "Q752678",
+    "names": [
+      "Lanius isabellinus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Coloeus_dauuricus",
+    "latin": "Coloeus dauuricus",
+    "wikidata": "Q201461",
+    "names": [
+      "Corvus dauuricus"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Alaudala_heinei",
+    "latin": "Alaudala heinei",
+    "wikidata": "Q110812143",
+    "names": [
+      "Alaudala heinei"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Helopsaltes_fasciolatus",
+    "latin": "Helopsaltes fasciolatus",
+    "wikidata": "Q62168641",
+    "names": [
+      "Helopsaltes fasciolatus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Delichon_lagopodum",
+    "latin": "Delichon lagopodum",
+    "wikidata": "Q55112149",
+    "names": [
+      "Delichon lagopodum"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Cecropis_daurica",
+    "latin": "Cecropis daurica",
+    "wikidata": "Q27075446",
+    "names": [
+      "Cecropis daurica"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_subviridis",
+    "latin": "Phylloscopus subviridis",
+    "wikidata": "Q2225501",
+    "names": [
+      "Phylloscopus subviridis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_griseolus",
+    "latin": "Phylloscopus griseolus",
+    "wikidata": "Q3239209",
+    "names": [
+      "Phylloscopus griseolus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_neglectus",
+    "latin": "Phylloscopus neglectus",
+    "wikidata": "Q1586847",
+    "names": [
+      "Phylloscopus neglectus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_umbrovirens",
+    "latin": "Phylloscopus umbrovirens",
+    "wikidata": "Q3049745",
+    "names": [
+      "Phylloscopus umbrovirens"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_plumbeitarsus",
+    "latin": "Phylloscopus plumbeitarsus",
+    "wikidata": "Q10912038",
+    "names": [
+      "Phylloscopus plumbeitarsus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phylloscopus_magnirostris",
+    "latin": "Phylloscopus magnirostris",
+    "wikidata": "Q3726316",
+    "names": [
+      "Phylloscopus magnirostris"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_hortensis",
+    "latin": "Curruca hortensis",
+    "wikidata": "Q110257498",
+    "names": [
+      "Curruca hortensis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_crassirostris",
+    "latin": "Curruca crassirostris",
+    "wikidata": "Q110257499",
+    "names": [
+      "Curruca crassirostris"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_nana",
+    "latin": "Curruca nana",
+    "wikidata": "Q110257494",
+    "names": [
+      "Curruca nana"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_deserti",
+    "latin": "Curruca deserti",
+    "wikidata": "Q110257493",
+    "names": [
+      "Curruca deserti"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_deserticola",
+    "latin": "Curruca deserticola",
+    "wikidata": "Q110257525",
+    "names": [
+      "Curruca deserticola"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_mystacea",
+    "latin": "Curruca mystacea",
+    "wikidata": "Q110257505",
+    "names": [
+      "Curruca mystacea"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_conspicillata",
+    "latin": "Curruca conspicillata",
+    "wikidata": "Q110257518",
+    "names": [
+      "Curruca conspicillata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_sarda",
+    "latin": "Curruca sarda",
+    "wikidata": "Q110257519",
+    "names": [
+      "Curruca sarda"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_undata",
+    "latin": "Curruca undata",
+    "wikidata": "Q110257524",
+    "names": [
+      "Curruca undata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_ruppeli",
+    "latin": "Curruca ruppeli",
+    "wikidata": "Q110257515",
+    "names": [
+      "Curruca ruppeli"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_melanothorax",
+    "latin": "Curruca melanothorax",
+    "wikidata": "Q110257506",
+    "names": [
+      "Curruca melanothorax"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_subalpina",
+    "latin": "Curruca subalpina",
+    "wikidata": "Q110257513",
+    "names": [
+      "Curruca subalpina"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_iberiae",
+    "latin": "Curruca iberiae",
+    "wikidata": "Q99573734",
+    "names": [
+      "Curruca iberiae"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Curruca_cantillans",
+    "latin": "Curruca cantillans",
+    "wikidata": "Q110257508",
+    "names": [
+      "Curruca cantillans"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Sitta_neumayer",
+    "latin": "Sitta neumayer",
+    "wikidata": "Q749701",
+    "names": [
+      "Sitta neumayer"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Agropsar_sturninus",
+    "latin": "Agropsar sturninus",
+    "wikidata": "Q890912",
+    "names": [
+      "Agropsar sturninus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Acridotheres_cristatellus",
+    "latin": "Acridotheres cristatellus",
+    "wikidata": "Q715819",
+    "names": [
+      "Acridotheres cristatellus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Zoothera_aurea",
+    "latin": "Zoothera aurea",
+    "wikidata": "Q949662",
+    "names": [
+      "Zoothera aurea"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Zoothera_dauma",
+    "latin": "Zoothera dauma",
+    "wikidata": "Q695723",
+    "names": [
+      "Zoothera dauma"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Geokichla_sibirica",
+    "latin": "Geokichla sibirica",
+    "wikidata": "Q258964",
+    "names": [
+      "Geokichla sibirica"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_ruficollis",
+    "latin": "Turdus ruficollis",
+    "wikidata": "Q220985",
+    "names": [
+      "Turdus ruficollis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_atrogularis",
+    "latin": "Turdus atrogularis",
+    "wikidata": "Q80780",
+    "names": [
+      "Turdus atrogularis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_naumanni",
+    "latin": "Turdus naumanni",
+    "wikidata": "Q843175",
+    "names": [
+      "Turdus naumanni"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_eunomus",
+    "latin": "Turdus eunomus",
+    "wikidata": "Q1591651",
+    "names": [
+      "Turdus eunomus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_unicolor",
+    "latin": "Turdus unicolor",
+    "wikidata": "Q1585735",
+    "names": [
+      "Turdus unicolor"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Turdus_obscurus",
+    "latin": "Turdus obscurus",
+    "wikidata": "Q1591663",
+    "names": [
+      "Turdus obscurus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Muscicapa_sibirica",
+    "latin": "Muscicapa sibirica",
+    "wikidata": "Q73578",
+    "names": [
+      "Muscicapa sibirica"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Muscicapa_dauurica",
+    "latin": "Muscicapa dauurica",
+    "wikidata": "Q27075642",
+    "names": [
+      "Muscicapa dauurica"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Irania_gutturalis",
+    "latin": "Irania gutturalis",
+    "wikidata": "Q557745",
+    "names": [
+      "Irania gutturalis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Larvivora_cyane",
+    "latin": "Larvivora cyane",
+    "wikidata": "Q27075670",
+    "names": [
+      "Larvivora cyane"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Larvivora_sibilans",
+    "latin": "Larvivora sibilans",
+    "wikidata": "Q1192214",
+    "names": [
+      "Larvivora sibilans"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ficedula_albicilla",
+    "latin": "Ficedula albicilla",
+    "wikidata": "Q2784761",
+    "names": [
+      "Ficedula albicilla"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ficedula_speculigera",
+    "latin": "Ficedula speculigera",
+    "wikidata": "Q2225944",
+    "names": [
+      "Ficedula speculigera"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ficedula_semitorquata",
+    "latin": "Ficedula semitorquata",
+    "wikidata": "Q1591580",
+    "names": [
+      "Ficedula semitorquata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phoenicurus_erythronotus",
+    "latin": "Phoenicurus erythronotus",
+    "wikidata": "Q796489",
+    "names": [
+      "Phoenicurus erythronotus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phoenicurus_fuliginosus",
+    "latin": "Phoenicurus fuliginosus",
+    "wikidata": "Q27075686",
+    "names": [
+      "Phoenicurus fuliginosus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phoenicurus_erythrogastrus",
+    "latin": "Phoenicurus erythrogastrus",
+    "wikidata": "Q796484",
+    "names": [
+      "Phoenicurus erythrogastrus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phoenicurus_moussieri",
+    "latin": "Phoenicurus moussieri",
+    "wikidata": "Q774012",
+    "names": [
+      "Phoenicurus moussieri"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Saxicola_caprata",
+    "latin": "Saxicola caprata",
+    "wikidata": "Q864893",
+    "names": [
+      "Saxicola caprata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Saxicola_maurus",
+    "latin": "Saxicola maurus",
+    "wikidata": "Q1589281",
+    "names": [
+      "Saxicola maurus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Saxicola_torquatus",
+    "latin": "Saxicola torquatus",
+    "wikidata": "Q1315689",
+    "names": [
+      "Saxicola torquatus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Saxicola_dacotiae",
+    "latin": "Saxicola dacotiae",
+    "wikidata": "Q1587242",
+    "names": [
+      "Saxicola dacotiae"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Saxicola_rubicola",
+    "latin": "Saxicola rubicola",
+    "wikidata": "Q838665",
+    "names": [
+      "Saxicola rubicola"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_melanoleuca",
+    "latin": "Oenanthe melanoleuca",
+    "wikidata": "Q85758401",
+    "names": [
+      "Oenanthe melanoleuca"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_cypriaca",
+    "latin": "Oenanthe cypriaca",
+    "wikidata": "Q646917",
+    "names": [
+      "Oenanthe cypriaca"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_seebohmi",
+    "latin": "Oenanthe seebohmi",
+    "wikidata": "Q31872926",
+    "names": [
+      "Oenanthe seebohmi"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_isabellina",
+    "latin": "Oenanthe isabellina",
+    "wikidata": "Q747686",
+    "names": [
+      "Oenanthe isabellina"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_moesta",
+    "latin": "Oenanthe moesta",
+    "wikidata": "Q1584260",
+    "names": [
+      "Oenanthe moesta"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_picata",
+    "latin": "Oenanthe picata",
+    "wikidata": "Q2668319",
+    "names": [
+      "Oenanthe picata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_finschii",
+    "latin": "Oenanthe finschii",
+    "wikidata": "Q769093",
+    "names": [
+      "Oenanthe finschii"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_xanthoprymna",
+    "latin": "Oenanthe xanthoprymna",
+    "wikidata": "Q1303323",
+    "names": [
+      "Oenanthe xanthoprymna"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Oenanthe_leucopyga",
+    "latin": "Oenanthe leucopyga",
+    "wikidata": "Q912081",
+    "names": [
+      "Oenanthe leucopyga"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Petronia_petronia",
+    "latin": "Petronia petronia",
+    "wikidata": "Q736313",
+    "names": [
+      "Petronia petronia"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Carpospiza_brachydactyla",
+    "latin": "Carpospiza brachydactyla",
+    "wikidata": "Q1318638",
+    "names": [
+      "Carpospiza brachydactyla"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Passer_moabiticus",
+    "latin": "Passer moabiticus",
+    "wikidata": "Q1318437",
+    "names": [
+      "Passer moabiticus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Prunella_ocularis",
+    "latin": "Prunella ocularis",
+    "wikidata": "Q1049121",
+    "names": [
+      "Prunella ocularis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ploceus_melanocephalus",
+    "latin": "Ploceus melanocephalus",
+    "wikidata": "Q998572",
+    "names": [
+      "Ploceus melanocephalus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Euplectes_afer",
+    "latin": "Euplectes afer",
+    "wikidata": "Q1300963",
+    "names": [
+      "Euplectes afer"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Estrilda_melpoda",
+    "latin": "Estrilda melpoda",
+    "wikidata": "Q1084995",
+    "names": [
+      "Estrilda melpoda"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Amandava_amandava",
+    "latin": "Amandava amandava",
+    "wikidata": "Q73741",
+    "names": [
+      "Amandava amandava"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_godlewskii",
+    "latin": "Anthus godlewskii",
+    "wikidata": "Q973164",
+    "names": [
+      "Anthus godlewskii"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_berthelotii",
+    "latin": "Anthus berthelotii",
+    "wikidata": "Q1445158",
+    "names": [
+      "Anthus berthelotii"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_similis",
+    "latin": "Anthus similis",
+    "wikidata": "Q1590302",
+    "names": [
+      "Anthus similis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_rufulus",
+    "latin": "Anthus rufulus",
+    "wikidata": "Q1590538",
+    "names": [
+      "Anthus rufulus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_gustavi",
+    "latin": "Anthus gustavi",
+    "wikidata": "Q837757",
+    "names": [
+      "Anthus gustavi"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anthus_hodgsoni",
+    "latin": "Anthus hodgsoni",
+    "wikidata": "Q726873",
+    "names": [
+      "Anthus hodgsoni"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Fringilla_teydea",
+    "latin": "Fringilla teydea",
+    "wikidata": "Q847168",
+    "names": [
+      "Fringilla teydea"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Fringilla_polatzeki",
+    "latin": "Fringilla polatzeki",
+    "wikidata": "Q22704092",
+    "names": [
+      "Fringilla polatzeki"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Fringilla_spodiogenys",
+    "latin": "Fringilla spodiogenys",
+    "wikidata": "Q120964666",
+    "names": [
+      "Fringilla spodiogenys"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Fringilla_moreletti",
+    "latin": "Fringilla moreletti",
+    "wikidata": "Q27635278",
+    "names": [
+      "Fringilla coelebs moreletti"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Fringilla_maderensis",
+    "latin": "Fringilla maderensis",
+    "wikidata": "Q40995958",
+    "names": [
+      "Fringilla maderensis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Fringilla_canariensis",
+    "latin": "Fringilla canariensis",
+    "wikidata": "Q120964621",
+    "names": [
+      "Fringilla canariensis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Carpodacus_rubicilla",
+    "latin": "Carpodacus rubicilla",
+    "wikidata": "Q819706",
+    "names": [
+      "Carpodacus rubicilla"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Carpodacus_roseus",
+    "latin": "Carpodacus roseus",
+    "wikidata": "Q592362",
+    "names": [
+      "Carpodacus roseus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Pyrrhula_murina",
+    "latin": "Pyrrhula murina",
+    "wikidata": "Q786784",
+    "names": [
+      "Pyrrhula murina"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Rhodospiza_obsoleta",
+    "latin": "Rhodospiza obsoleta",
+    "wikidata": "Q900715",
+    "names": [
+      "Rhodospiza obsoleta"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Acanthis_flammea",
+    "latin": "Acanthis flammea",
+    "wikidata": "Q2822501",
+    "names": [
+      "Acanthis"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Loxia_pytyopsittacus",
+    "latin": "Loxia pytyopsittacus",
+    "wikidata": "Q645055",
+    "names": [
+      "Loxia pytyopsittacus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Loxia_scotica",
+    "latin": "Loxia scotica",
+    "wikidata": "Q1143180",
+    "names": [
+      "Loxia scotica"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Carduelis_citrinella",
+    "latin": "Carduelis citrinella",
+    "wikidata": "Q206550",
+    "names": [
+      "Carduelis citrinella"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Carduelis_corsicana",
+    "latin": "Carduelis corsicana",
+    "wikidata": "Q1299974",
+    "names": [
+      "Carduelis corsicana"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Serinus_canaria",
+    "latin": "Serinus canaria",
+    "wikidata": "Q192524",
+    "names": [
+      "Serinus canaria"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Serinus_pusillus",
+    "latin": "Serinus pusillus",
+    "wikidata": "Q621833",
+    "names": [
+      "Serinus pusillus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_sahari",
+    "latin": "Emberiza sahari",
+    "wikidata": "Q2742585",
+    "names": [
+      "Emberiza sahari"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_striolata",
+    "latin": "Emberiza striolata",
+    "wikidata": "Q1193031",
+    "names": [
+      "Emberiza striolata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_pallasi",
+    "latin": "Emberiza pallasi",
+    "wikidata": "Q1314178",
+    "names": [
+      "Emberiza pallasi"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_chrysophrys",
+    "latin": "Emberiza chrysophrys",
+    "wikidata": "Q589548",
+    "names": [
+      "Emberiza chrysophrys"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_rutila",
+    "latin": "Emberiza rutila",
+    "wikidata": "Q427182",
+    "names": [
+      "Emberiza rutila"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_spodocephala",
+    "latin": "Emberiza spodocephala",
+    "wikidata": "Q1190674",
+    "names": [
+      "Emberiza spodocephala"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_fucata",
+    "latin": "Emberiza fucata",
+    "wikidata": "Q1586230",
+    "names": [
+      "Emberiza fucata"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_buchanani",
+    "latin": "Emberiza buchanani",
+    "wikidata": "Q648313",
+    "names": [
+      "Emberiza buchanani"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_cineracea",
+    "latin": "Emberiza cineracea",
+    "wikidata": "Q265701",
+    "names": [
+      "Emberiza cineracea"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_leucocephalos",
+    "latin": "Emberiza leucocephalos",
+    "wikidata": "Q221423",
+    "names": [
+      "Emberiza leucocephalos"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anser_serrirostris",
+    "latin": "Anser serrirostris",
+    "wikidata": "Q673280",
+    "names": [
+      "Anser serrirostris"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Melanitta_stejnegeri",
+    "latin": "Melanitta stejnegeri",
+    "wikidata": "Q55111784",
+    "names": [
+      "Melanitta stejnegeri"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Phoenicopterus_roseus",
+    "latin": "Phoenicopterus roseus",
+    "wikidata": "Q179863",
+    "names": [
+      "Phoenicopterus roseus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Antigone_canadensis",
+    "latin": "Antigone canadensis",
+    "wikidata": "Q503804",
+    "names": [
+      "Grus canadensis"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Grus_virgo",
+    "latin": "Grus virgo",
+    "wikidata": "Q191683",
+    "names": [
+      "Anthropoides virgo"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Eudromias_morinellus",
+    "latin": "Eudromias morinellus",
+    "wikidata": "Q202504",
+    "names": [
+      "Charadrius morinellus"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Thinornis_dubius",
+    "latin": "Thinornis dubius",
+    "wikidata": "Q18851",
+    "names": [
+      "Charadrius dubius"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Vanellus_spinosus",
+    "latin": "Vanellus spinosus",
+    "wikidata": "Q749126",
+    "names": [
+      "Vanellus spinosus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Vanellus_leucurus",
+    "latin": "Vanellus leucurus",
+    "wikidata": "Q827245",
+    "names": [
+      "Vanellus leucurus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anarhynchus_asiaticus",
+    "latin": "Anarhynchus asiaticus",
+    "wikidata": "Q752485",
+    "names": [
+      "Anarhynchus asiaticus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anarhynchus_atrifrons",
+    "latin": "Anarhynchus atrifrons",
+    "wikidata": "Q114843683",
+    "names": [
+      "Anarhynchus atrifrons"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Anarhynchus_leschenaultii",
+    "latin": "Anarhynchus leschenaultii",
+    "wikidata": "Q18857",
+    "names": [
+      "Charadrius leschenaultii"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Anarhynchus_alexandrinus",
+    "latin": "Anarhynchus alexandrinus",
+    "wikidata": "Q18855",
+    "names": [
+      "Charadrius alexandrinus"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Tringa_glareola",
+    "latin": "Tringa glareola",
+    "wikidata": "Q18837",
+    "names": [
+      "Tringa glareola"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Calidris_tenuirostris",
+    "latin": "Calidris tenuirostris",
+    "wikidata": "Q18876",
+    "names": [
+      "Calidris tenuirostris"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ichthyaetus_audouinii",
+    "latin": "Ichthyaetus audouinii",
+    "wikidata": "Q519583",
+    "names": [
+      "Ichthyaetus audouinii"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Apus_pallidus",
+    "latin": "Apus pallidus",
+    "wikidata": "Q165923",
+    "names": [
+      "Apus pallidus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Tachyspiza_brevipes",
+    "latin": "Tachyspiza brevipes",
+    "wikidata": "Q114338",
+    "names": [
+      "Accipiter brevipes"
+    ],
+    "reason": "taxon mismatch"
+  },
+  {
+    "id": "Haliaeetus_leucoryphus",
+    "latin": "Haliaeetus leucoryphus",
+    "wikidata": "Q271462",
+    "names": [
+      "Haliaeetus leucoryphus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Ceryle_rudis",
+    "latin": "Ceryle rudis",
+    "wikidata": "Q320043",
+    "names": [
+      "Ceryle rudis"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Emberiza_bruniceps",
+    "latin": "Emberiza bruniceps",
+    "wikidata": "Q547159",
+    "names": [
+      "Emberiza bruniceps"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Eremophila_bilopha",
+    "latin": "Eremophila bilopha",
+    "wikidata": "Q1193299",
+    "names": [
+      "Eremophila bilopha"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Acrocephalus_palustris",
+    "latin": "Acrocephalus palustris",
+    "wikidata": "Q210422",
+    "names": [
+      "Acrocephalus palustris"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Acrocephalus_stentoreus",
+    "latin": "Acrocephalus stentoreus",
+    "wikidata": "Q74100",
+    "names": [
+      "Acrocephalus stentoreus"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Leiothrix_lutea",
+    "latin": "Leiothrix lutea",
+    "wikidata": "Q589245",
+    "names": [
+      "Leiothrix lutea"
+    ],
+    "reason": "no map"
+  },
+  {
+    "id": "Corvus_corax",
+    "latin": "Corvus corax",
+    "reason": "missing usable image or license",
+    "file": "Corvus corax map.jpg"
+  },
+  {
+    "id": "Branta_canadensis",
+    "latin": "Branta canadensis",
+    "reason": "missing usable image or license",
+    "file": "Branta canadensis map.png"
+  },
+  {
+    "id": "Grus_grus",
+    "latin": "Grus grus",
+    "reason": "missing usable image or license",
+    "file": "Verbreitungskarte des Kranichs.png"
+  },
+  {
+    "id": "Caprimulgus_europaeus",
+    "latin": "Caprimulgus europaeus",
+    "reason": "missing usable image or license",
+    "file": "Caprimulgus europaeus distr.png"
+  },
+  {
+    "id": "Apus_apus",
+    "latin": "Apus apus",
+    "reason": "missing usable image or license",
+    "file": "Apus apus distribution map.png"
+  },
+  {
+    "id": "Surnia_ulula",
+    "latin": "Surnia ulula",
+    "reason": "missing usable image or license",
+    "file": "Surnia ulula distr with national borders.png"
+  },
+  {
+    "id": "Otus_scops",
+    "latin": "Otus scops",
+    "reason": "missing usable image or license",
+    "file": "Otus scops distr.png"
+  },
+  {
+    "id": "Asio_otus",
+    "latin": "Asio otus",
+    "reason": "missing usable image or license",
+    "file": "Asio otus distribution map.png"
+  },
+  {
+    "id": "Bubo_scandiacus",
+    "latin": "Bubo scandiacus",
+    "reason": "missing usable image or license",
+    "file": "Cypron-Range Bubo scandiacus.svg"
+  },
+  {
+    "id": "Bubo_bubo",
+    "latin": "Bubo bubo",
+    "reason": "missing usable image or license",
+    "file": "Bubo bubo distribution map.png"
+  },
+  {
+    "id": "Aquila_chrysaetos",
+    "latin": "Aquila chrysaetos",
+    "reason": "missing usable image or license",
+    "file": "Cypron-Range Aquila chrysaetos.svg"
+  },
+  {
+    "id": "Morus_bassanus",
+    "latin": "Morus bassanus",
+    "reason": "missing usable image or license",
+    "file": "Basstölpel (Sula bassana) world.png"
+  }
+]

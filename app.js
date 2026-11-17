@@ -238,6 +238,8 @@ function speciesCard(b, {questionPhoto = null, answer = false} = {}) {
  const photo = wiki?.photo || questionPhoto || b.photos[0];
  const original = questionPhoto && questionPhoto.src !== photo?.src ?
   '<details class="species-question-photo"><summary>Фото из вопроса</summary>'+speciesPhoto(questionPhoto, b.ru, true)+'</details>' : '';
+ const range = window.BIRD_RANGE_MAPS?.[b.treeId];
+ const rangeSection = '<section class="species-range"><h3>Ареал</h3>' + (range ? speciesPhoto(range, 'Карта ареала: '+b.ru, true) + '<p class="media-credit">Условные обозначения и дата карты — в источнике.</p>' : '<p>Карта пока не найдена.</p>') + '</section>';
  const nest = wiki?.nest ? '<section class="species-nest"><h3>Гнездо</h3>'+speciesPhoto(wiki.nest, 'Гнездо: '+b.ru, true)+'</section>' : '';
  const reference = wiki?.article ? '<p class="species-reference"><a href="'+esc(wiki.article)+'" target="_blank" rel="noopener">Научное название в Википедии</a>'+
   (wiki.latin !== b.latin ? ' · AviList: <i lang="la">'+esc(b.latin)+'</i>' : '')+'</p>' : '';
@@ -250,7 +252,7 @@ function speciesCard(b, {questionPhoto = null, answer = false} = {}) {
  }
  return '<article class="species-card'+(answer ? ' fc-answer' : '')+'" data-species="'+esc(b.id)+'">'+speciesPhoto(photo, b.ru)+
   '<h3 class="species-name"'+(answer ? ' id="cardTitle"' : '')+' lang="ru">'+esc(b.ru)+'</h3>'+names(b)+reference+original+
-  taxonomy+tip+nest+polandDetails(b)+(biology || '')+(window.BirdEtymology?.render({latin:scientificName(b)}) || '')+'</article>';
+  taxonomy+tip+nest+rangeSection+polandDetails(b)+(biology || '')+(window.BirdEtymology?.render({latin:scientificName(b)}) || '')+'</article>';
 }
 function info(title,html,hideTitle=false){$('infoTitle').textContent=title;$('infoTitle').classList.toggle('sr-only',hideTitle);$('infoBody').innerHTML=html;openDialog('infoDialog');}
 function detail(b){info(b.ru,speciesCard(b)+(own()?'<h3 class="pc-title">Мой прогресс · '+({photo:'по фото',audio:'по голосу',names:'названия'}[mode])+'</h3>'+progressControls(b,state(b)):'')+'<div class="detail-actions">'+(own()?'<button class="quiet" data-start-bird="'+esc(b.id)+'"'+(!available(b)?' disabled':'')+'>Учить в этом режиме</button>':'<p>Доступен только просмотр чужого прогресса.</p>')+'</div>',true);}
