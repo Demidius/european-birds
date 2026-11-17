@@ -67,6 +67,14 @@
  for (const bird of birds) {
   const photo = window.BIRD_EXTRA_PHOTOS?.[bird.treeId];
   if (photo && !bird.photos.some(existing => existing.src === photo.src)) bird.photos.push(photo);
+  const wikiCard = window.BIRD_WIKIPEDIA_CARDS?.[bird.treeId];
+  if (!wikiCard) continue;
+  bird.wikiCard = wikiCard;
+  if (wikiCard.latin && wikiCard.latin !== bird.latin) {
+   bird.aliases = [...new Set([...aliasesOf(bird), wikiCard.latin])];
+   const node = treeNodes.get(bird.treeId);
+   if (node) node.aliases = bird.aliases;
+  }
  }
  window.BIRD_ID_ALIASES={Corvus_corone:'hooded-crow'};
  const region=n=>regions[n.treeId||n.id];

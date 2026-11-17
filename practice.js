@@ -13,7 +13,7 @@ function proximity(a,b){
  let i=0;while(i<left.length&&left[i]===right[i])i++;
  return i;
 }
-const label=(bird,language)=>String(bird[language]||'').trim();
+const label=(bird,language)=>String((language==='latin' ? bird.wikiCard?.latin || bird.latin : bird[language]) || '').trim();
 const nameKey=(bird,language)=>label(bird,language).normalize('NFC').toLocaleLowerCase();
 function options(bird,language,random=Math.random){
  if(!label(bird,language))return [];

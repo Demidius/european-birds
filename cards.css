@@ -10,6 +10,11 @@
 .species-card audio{width:100%}
 .species-taxonomy{color:var(--muted);font-size:13px}
 #infoTitle.sr-only+.close{margin-inline-start:auto}
+.species-wiki-link,.species-reference{font-size:12px}
+.species-reference{margin:6px 0 0}
+.species-question-photo{margin:12px 0}
+.species-question-photo summary{cursor:pointer}
+.species-question-photo .species-photo{margin-top:8px}
 .fc-level{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:16px 0 12px;font-size:11px;color:var(--muted)}
 .fc-meter{display:flex;gap:2px}.fc-meter i{width:12px;height:5px;background:var(--none)}.fc-meter i.on{background:var(--green)}
 .fc-actions{position:relative}

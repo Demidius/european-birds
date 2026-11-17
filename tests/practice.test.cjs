@@ -167,3 +167,33 @@ test('Repeated questions alternate photos and the answer and history retain thei
   }
  }finally{f.close();}
 });
+
+test('Wikipedia supplies the portrait, scientific name and nest; the answer retains the quiz photo',()=>{
+ const f=fixture();
+ try {
+  const {w,$,click}=f;
+  const bird=w.BIRD_DATA.find(b=>b.id==='blue-tit');
+  const wiki='https://en.wikipedia.org/wiki/Eurasian_blue_tit';
+  bird.wikiCard={
+   latin:'Parus caeruleus',article:wiki,
+   photo:{...bird.photos[0],src:'wikipedia-portrait.webp',article:wiki},
+   nest:{...bird.photos[0],src:'wikipedia-nest.webp',article:wiki}
+  };
+  assert.equal(w.BirdPractice.label(bird,'latin'),'Parus caeruleus');
+
+  w.BirdAtlas.detail(bird.id);
+  assert.equal($('#infoBody .species-photo img').getAttribute('src'),bird.wikiCard.photo.src);
+  assert.equal($('#infoBody .species-nest img').getAttribute('src'),bird.wikiCard.nest.src);
+  assert.match($('#infoBody .name-latin').textContent,/Parus caeruleus/);
+  assert.equal($('#infoBody .species-reference a').getAttribute('href'),wiki);
+  click('#closeInfo');
+
+  w.BirdAtlas.study([bird.id],'Птица');
+  const questionPhoto=$('.fc-front img').getAttribute('src');
+  click('[data-answer="'+bird.id+'"]');
+  assert.equal($('#cardBody .species-photo img').getAttribute('src'),bird.wikiCard.photo.src);
+  assert.equal($('#cardBody .species-question-photo img').getAttribute('src'),questionPhoto);
+  assert.equal($('#cardBody .species-nest img').getAttribute('src'),bird.wikiCard.nest.src);
+  click('#closeCard');
+ }finally{f.close();}
+});

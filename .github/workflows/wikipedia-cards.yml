@@ -1,0 +1,64 @@
+name: Build Wikipedia species cards
+
+on:
+  push:
+    branches: [extra-bird-photos]
+    paths:
+      - 'tools/collect-wikipedia-cards.py'
+      - '.github/workflows/wikipedia-cards.yml'
+
+permissions:
+  contents: write
+  statuses: write
+
+concurrency:
+  group: wikipedia-cards-extra-bird-photos
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Report progress
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" -f state=pending \
+            -f context=wikipedia-cards -f description='Checking Wikipedia articles and photos' \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install image tools
+        run: python -m pip install Pillow==11.0.0 mwparserfromhell==0.7.2
+      - name: Collect card data
+        run: python -u tools/collect-wikipedia-cards.py "${RUNNER_TEMP}/wikipedia-cards"
+      - name: Verify quiz interactions
+        run: |
+          npm install --no-package-lock --no-audit --no-fund
+          npm run test:practice
+      - name: Commit data to the review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898208+github-actions[bot]@users.noreply.github.com'
+          git add data-wikipedia-cards.js sources/wikipedia-cards-report.json assets/wikipedia-cards
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Wikipedia portraits, scientific names, and nest photographs"
+            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+          fi
+      - name: Report completion
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          state=failure
+          if [ "$JOB_STATUS" = success ]; then state=success; fi
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" -f state="$state" \
+            -f context=wikipedia-cards -f description="Wikipedia cards: $state" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
