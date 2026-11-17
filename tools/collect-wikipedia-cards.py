@@ -390,6 +390,7 @@ def main(cache):
     birds = EXTRA['birds']()
     with ThreadPoolExecutor(max_workers=6) as pool:
         articles = source_options(api, birds, pool)
+        reviewed = json.loads((ROOT / 'sources/wikipedia-nests-reviewed.json').read_text(encoding='utf8'))
         prepared = {}
         for identity, options in articles.items():
             if not options:
@@ -399,6 +400,9 @@ def main(cache):
                          if not NON_PORTRAIT.search(re.sub('[_-]', ' ', title))]
             nest = sorted(((score, title, page['article']) for page in options for title, score in page['nests'].items()),
                           key=lambda option: -option[0])
+            if identity in reviewed:
+                preferred = reviewed[identity]
+                nest = [candidate for candidate in nest if candidate[1] == preferred]
             prepared[identity] = (source, portraits, [(title, article) for _, title, article in nest])
         files = {title for _, portraits, nests in prepared.values() for candidates in (portraits, nests) for title, _ in candidates}
         metadata = {}
