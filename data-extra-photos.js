@@ -17499,32 +17499,6 @@ window.BIRD_EXTRA_PHOTOS = {
     "taxonName": "Turdus eunomus",
     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/175359477/large.jpg"
   },
-  "Turdus_iliacus": {
-    "author": "(c) JW., some rights reserved (CC BY-SA)",
-    "checkedAt": "2026-11-16",
-    "communityTaxonId": 12749,
-    "dimensions": {
-      "height": 467,
-      "width": 960
-    },
-    "identificationName": "Turdus iliacus",
-    "identificationRank": "species",
-    "license": "CC BY-SA",
-    "licenseCode": "cc-by-sa",
-    "licenseUrl": "https://www.inaturalist.org/photos/263657295",
-    "mime": "image/jpeg",
-    "modified": "Размер уменьшен, файл перекодирован в JPEG.",
-    "observationId": 152709916,
-    "photoId": 263657295,
-    "photoPage": "https://www.inaturalist.org/photos/263657295",
-    "provider": "iNaturalist",
-    "qualityGrade": "research",
-    "source": "https://www.inaturalist.org/observations/152709916",
-    "src": "assets/extra-bird-photos/Turdus_iliacus.jpg",
-    "taxonId": 12749,
-    "taxonName": "Turdus iliacus",
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/263657295/large.jpg"
-  },
   "Turdus_merula": {
     "author": "(c) Alexis Tinker-Tsavalas, some rights reserved (CC BY)",
     "checkedAt": "2026-11-16",

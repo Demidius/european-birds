@@ -31,6 +31,8 @@ INA = 'https://api.inaturalist.org/v1/observations'
 TODAY = date.today().isoformat()
 BINOMIAL = re.compile(r'^[A-Z][a-z]+ [a-z][a-z-]+$')
 NON_PHOTO = re.compile(r'\b(eggs?|nest|map|range|distribution|illustration|drawing|painting|stamp|museum|specimen|skull|skeleton|plate|sighting|collage|montage|sound|song|sonogram)\b', re.I)
+# A replacement needs visual review before it is added.
+MANUAL_REVIEW_SPECIES = {'Turdus_iliacus'}
 LOCK = threading.Lock()
 next_inat_request = 0.0
 
@@ -253,7 +255,7 @@ def collect_one(bird, output):
 def collect(shard, total, output):
     (output / DEST).mkdir(parents=True, exist_ok=True)
     existing = read_manifest()
-    todo = [b for b in sorted(birds(), key=lambda b: b['treeId']) if b['treeId'] not in existing][shard::total]
+    todo = [b for b in sorted(birds(), key=lambda b: b['treeId']) if b['treeId'] not in existing and b['treeId'] not in MANUAL_REVIEW_SPECIES][shard::total]
     photos, missing = {}, []
 
     def run(bird):

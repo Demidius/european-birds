@@ -1,6 +1,6 @@
 // Only Bird Atlas files and caches belong to this worker. Other apps share this origin.
 const CACHE_PREFIX = 'bird-atlas-shell-';
-const CACHE = CACHE_PREFIX + 'v3';
+const CACHE = CACHE_PREFIX + 'v4';
 const BASE = new URL(self.registration.scope);
 const SHELL = [
   './', 'index.html', 'study.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png',
