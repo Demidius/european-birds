@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10101b">
+  <meta name="description" content="Справочник горячих клавиш игровой клавиатуры: WASD, подсветка, мультимедиа и игровые профили.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Клавиатура">
+  <title>Горячие клавиши - справочник</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <style>
+    :root{color-scheme:dark;--bg:#0c0d16;--surface:#171928;--surface2:#1e2032;--line:#303249;--text:#f7f7fc;--muted:#aaacc0;--strong:#ffffff;--accent:#ad9aff;--accent2:#82d2fa;--focus:#dfc1ff;--shadow:0 12px 36px #0005;--chip:#292a3f}
+    :root[data-theme="light"]{color-scheme:light;--bg:#f5f5fb;--surface:#fff;--surface2:#f0eff8;--line:#dcdbea;--text:#23213a;--muted:#66657d;--strong:#161426;--accent:#5e46bd;--accent2:#217aa4;--focus:#5138bd;--shadow:0 9px 26px #1c1a4514;--chip:#efebfa}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    button,input,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}a{color:var(--accent2)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    .wrap{max-width:980px;margin:0 auto;padding:0 19px}.top{padding:20px 0 13px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.035em;font-size:13px}.logo{width:34px;height:34px;border:1px solid #b5a2ff50;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#3e3272,#1b314a);color:#fff}.logo svg{width:20px;height:20px}.top-actions{display:flex;gap:8px}.iconbtn{background:var(--surface);border:1px solid var(--line);border-radius:12px;min-width:40px;height:40px;color:var(--text);display:grid;place-items:center}
+    .hero{position:relative;overflow:hidden;border:1px solid #7770b85e;border-radius:25px;background:radial-gradient(ellipse 65% 95% at 95% -5%,#7155cb55,transparent),linear-gradient(130deg,#25213e,#111722 85%);padding:25px 22px 23px;box-shadow:var(--shadow);color:#fff}
+    .eyebrow{text-transform:uppercase;color:#c9baff;font-weight:780;font-size:10px;letter-spacing:.17em}.hero h1{font-size:clamp(26px,6.8vw,39px);line-height:1.1;letter-spacing:-.035em;margin:13px 0 9px;max-width:500px}.hero p{color:#c8c7d7;margin:0;max-width:540px}.keyline{display:flex;align-items:center;gap:8px;margin:24px 0 10px;flex-wrap:wrap}.keyline .plus{font-size:20px;color:#c1b5e4}.hero kbd{font-size:28px;width:75px;height:68px;border-radius:14px;box-shadow:inset 0 -5px 0 #0005,0 0 20px #a188e52c;border:1px solid #ac92e8;background:linear-gradient(145deg,#66548a,#3e335c);display:grid;place-items:center;font-weight:800}.hero kbd:last-child{background:linear-gradient(145deg,#c78b9a,#8d5775)}.hero .hero-tip{display:flex;align-items:flex-start;gap:9px;color:#f2eafe;font-size:13px;padding-top:10px}.hero .pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#8decc6;box-shadow:0 0 12px #8decc6;flex:none;margin-top:6px}
+    .meta{font-size:12px;color:var(--muted);padding:13px 1px 6px}.toolbar{margin:21px 0 12px;display:flex;align-items:center;gap:10px}.search{position:relative;flex:1}.search svg{position:absolute;width:18px;height:18px;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}.search input{width:100%;height:49px;padding:0 14px 0 43px;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:14px;outline:0;font-size:15px}.search input:focus{border-color:var(--accent)}.search input::placeholder{color:var(--muted)}.favtoggle{height:49px;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);white-space:nowrap;font-weight:700}.favtoggle.active{background:var(--chip);border-color:var(--accent);color:var(--accent)}
+    .filters{display:flex;gap:8px;overflow-x:auto;padding:3px 0 13px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{padding:9px 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap;font-weight:730;font-size:13px}.filter.active{background:var(--chip);color:var(--accent);border-color:var(--accent)}
+    .resultsline{display:flex;justify-content:space-between;align-items:center;margin:9px 0 14px;color:var(--muted);font-size:12px}.resultsline strong{color:var(--text)}.collection{margin:0 0 24px}.sectiontitle{display:flex;align-items:center;gap:10px;margin:23px 2px 12px}.sectiontitle h2{font-size:17px;margin:0;letter-spacing:-.02em}.sectiontitle .count{font-size:11px;background:var(--surface2);color:var(--muted);border-radius:30px;padding:3px 8px}
+    .cards{display:grid;grid-template-columns:1fr;gap:9px}.shortcut{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:13px 14px 14px;display:grid;grid-template-columns:1fr auto;gap:8px 10px;box-shadow:0 2px 3px #00000008}.shortcut .name{font-weight:750;font-size:15px;line-height:1.35;margin:0}.shortcut .description{color:var(--muted);font-size:12px;margin:4px 0 0;line-height:1.45}.shortcut .combination{display:flex;align-items:center;gap:5px;flex-wrap:wrap;grid-column:1 / -1;margin-top:4px}.shortcut kbd{display:inline-block;font-family:inherit;font-weight:780;font-size:13px;background:var(--surface2);border:1px solid var(--line);border-bottom-width:3px;border-radius:8px;padding:5px 10px;min-width:34px;text-align:center;color:var(--text)}.shortcut .plus{font-size:11px;color:var(--muted)}.star{width:37px;height:37px;border-radius:12px;background:transparent;border:1px solid var(--line);color:var(--muted);font-size:21px;line-height:1}.star.saved{color:#f6c369;border-color:#b88e445f;background:#d39f3020}.empty{padding:35px 18px;border:1px dashed var(--line);border-radius:16px;color:var(--muted);text-align:center}.empty b{color:var(--text)}
+    .howto,.note{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;margin:24px 0}.howto h2,.note h2{margin:0 0 13px;font-size:18px}.steps{margin:0;padding-left:25px}.steps li{padding:6px 0 7px 5px}.steps strong{color:var(--accent)}.howto p,.note p{color:var(--muted);font-size:13px;margin:10px 0 0}.install{background:linear-gradient(115deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:22px 0}.install h2{font-size:17px;margin:0 0 8px}.install p{color:var(--muted);font-size:13px;margin:0}.install .chain{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-weight:730;font-size:12px;margin:12px 0}.install .chain span{background:var(--chip);padding:7px 9px;border-radius:8px}.foot{font-size:12px;color:var(--muted);line-height:1.6;padding:0 0 max(35px,env(safe-area-inset-bottom));margin-top:22px}.foot a{color:var(--accent2)}.footerline{height:1px;background:var(--line);margin-bottom:16px}.hidden{display:none!important}.bottomnav{display:none}
+    @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}.shortcut{min-height:129px}.hero{padding:32px}.hero h1{max-width:700px}.wrap{padding:0 28px}}
+    @media(min-width:900px){.cards{grid-template-columns:1fr 1fr 1fr}.hero{padding:38px}.shortcut .name{font-size:14px}}
+    @media(prefers-reduced-motion:no-preference){.shortcut,.filter,.star,.iconbtn{transition:background .18s,border-color .18s,transform .18s}.shortcut:hover{border-color:#9584c970;transform:translateY(-1px)}}
+    @media print{.toolbar,.filters,.star,.top-actions,.install{display:none!important}body{background:#fff;color:#111}.hero{color:#111;background:#eee;box-shadow:none}.hero p,.eyebrow,.hero .hero-tip{color:#111}.shortcut{break-inside:avoid}.cards{grid-template-columns:1fr 1fr}.shortcut,.howto,.note{border-color:#bbb}.meta{color:#444}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M6 8h1m3 0h1m3 0h1m3 0h0M6 12h1m3 0h1m3 0h1m3 0h0M7 16h10"/></svg></div>
+        <span>KEYBOARD / GUIDE</span>
+      </div>
+      <div class="top-actions"><button class="iconbtn" id="themeBtn" aria-label="Переключить тему" title="Светлая или тёмная тема">◐</button></div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="eyebrow">Быстрая помощь</div>
+        <h1 id="heroTitle">Стрелки и WASD поменялись местами?</h1>
+        <p>Верни обычное управление одной комбинацией.</p>
+        <div class="keyline" aria-label="Fn плюс W"><kbd>Fn</kbd><span class="plus">+</span><kbd>W</kbd></div>
+        <div class="hero-tip"><span class="pulse"></span><span>Нажми одновременно. Повторное нажатие снова поменяет клавиши местами.</span></div>
+      </section>
+      <div class="meta">Справочник по инструкции TECKNET EMK01707. Модель по фотографии пока не подтверждена.</div>
+
+      <div class="toolbar" role="search">
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="search" type="search" placeholder="Найти клавишу или действие..." autocomplete="off" aria-label="Поиск сочетания клавиш">
+        </label>
+        <button id="favBtn" class="favtoggle" aria-pressed="false">☆ Избранное</button>
+      </div>
+      <nav class="filters" aria-label="Категории">
+        <button class="filter active" data-filter="all" aria-pressed="true">Все</button>
+        <button class="filter" data-filter="system" aria-pressed="false">Управление</button>
+        <button class="filter" data-filter="light" aria-pressed="false">Подсветка</button>
+        <button class="filter" data-filter="media" aria-pressed="false">Мультимедиа</button>
+        <button class="filter" data-filter="games" aria-pressed="false">Игровые</button>
+      </nav>
+      <div class="resultsline"><span id="resultsCount" role="status" aria-live="polite"></span><span>☆ - сохранить сочетание</span></div>
+      <div id="list"></div>
+      <section class="howto" aria-labelledby="customTitle">
+        <h2 id="customTitle">Как настроить свою подсветку</h2>
+        <ol class="steps">
+          <li><strong>Fn + 9</strong> или <strong>Fn + 0</strong> - выбери один из двух профилей.</li>
+          <li><strong>Fn + Home</strong> - включи режим записи. Индикатор начнёт мигать.</li>
+          <li>Нажимай нужные клавиши для включения или выключения их подсветки.</li>
+          <li><strong>Fn + End</strong> - сохрани получившийся рисунок.</li>
+        </ol>
+        <p>Профили настраивают только подсветку, а не назначение клавиш.</p>
+      </section>
+      <section class="install" aria-labelledby="installTitle">
+        <h2 id="installTitle">Ярлык на главном экране Android</h2>
+        <p>Открой этот сайт в Chrome, затем:</p>
+        <div class="chain"><span>Меню ⋮</span> <b>›</b> <span>Добавить на главный экран</span> <b>›</b> <span>Установить / Создать ярлык</span></div>
+        <p>После первого открытия онлайн справочник может работать и без подключения, если браузер поддерживает офлайн-кэширование.</p>
+      </section>
+      <section class="note" aria-labelledby="noteTitle">
+        <h2 id="noteTitle">Важно про модель</h2>
+        <p>Сочетания взяты из руководства TECKNET EMK01707 (104/105 клавиш). Внешне клавиатура на фото похожа, но для точного определения нужна маркировка на нижней стороне. На другой модели некоторые комбинации могут отличаться.</p>
+        <p><a href="https://manuals.plus/m/a9c7c3764a25f401204c50fa006d0f0391ba4fa044724c55f85110d09ec42138" target="_blank" rel="noopener noreferrer">Открыть исходную инструкцию</a></p>
+      </section>
+    </main>
+    <footer class="foot"><div class="footerline"></div>Личный справочник горячих клавиш. Данные сверены с руководством TECKNET EMK01707. Избранное и тема сохраняются на этом устройстве.</footer>
+  </div>
+  <script>
+    (function () {
+      'use strict';
+      var groups = [
+        {id:'system',name:'Управление'},
+        {id:'light',name:'Подсветка'},
+        {id:'media',name:'Мультимедиа'},
+        {id:'games',name:'Игровые профили'}
+      ];
+      // id, section, keys, title, description
+      var shortcuts = [
+        ['wasd','system','Fn + W','Поменять WASD и стрелки','Повторное нажатие возвращает обычное управление.'],
+        ['win','system','Fn + Win','Блокировка клавиши Windows','Также блокирует клавишу меню; повторное нажатие снимает блокировку.'],
+        ['keyboard','system','Fn + F12','Заблокировать клавиатуру','Защита от случайных нажатий.'],
+        ['modes','light','Fn + Ins','Эффекты подсветки','Переключение между 15 эффектами.'],
+        ['steady','light','Fn + PgUp','Постоянная подсветка','Сброс настроек LED и возврат к постоянному свечению.'],
+        ['brightplus','light','Fn + ↑','Яркость больше','Увеличивает яркость LED.'],
+        ['brightminus','light','Fn + ↓','Яркость меньше','Уменьшает яркость LED.'],
+        ['slow','light','Fn + ←','Медленнее анимация','Снижает скорость динамических эффектов.'],
+        ['fast','light','Fn + →','Быстрее анимация','Увеличивает скорость динамических эффектов.'],
+        ['f1','media','Fn + F1','Этот компьютер','Открывает компьютер / файловый менеджер.'],
+        ['f2','media','Fn + F2','Поиск','Открывает поиск.'],
+        ['f3','media','Fn + F3','Калькулятор','Запускает калькулятор.'],
+        ['f4','media','Fn + F4','Медиаплеер','Открывает музыкальный проигрыватель (CD).'],
+        ['f5','media','Fn + F5','Предыдущий трек','Переключиться к предыдущему треку.'],
+        ['f6','media','Fn + F6','Следующий трек','Переключиться к следующему треку.'],
+        ['f7','media','Fn + F7','Воспроизведение / пауза','Управление проигрыванием.'],
+        ['f8','media','Fn + F8','Остановить воспроизведение','Остановка медиаплеера.'],
+        ['f9','media','Fn + F9','Выключить звук','Переключение беззвучного режима.'],
+        ['f10','media','Fn + F10','Тише','Уменьшает громкость.'],
+        ['f11','media','Fn + F11','Громче','Увеличивает громкость.'],
+        ['g1','games','Fn + 1','FPS','Подсветка WASD, стрелок и Esc.'],
+        ['g2','games','Fn + 2','CrossFire','Подсветка клавиш для шутера CrossFire.'],
+        ['g3','games','Fn + 3','Call of Duty','Игровой рисунок подсветки COD.'],
+        ['g4','games','Fn + 4','RTS','Подсветка клавиш для стратегий.'],
+        ['g5','games','Fn + 5','League of Legends','Подсветка клавиш для MOBA.'],
+        ['g6','games','Fn + 6','Гонки','Подсветка для автогонок.'],
+        ['g7','games','Fn + 7','NBA','Подсветка для баскетбольных игр.'],
+        ['g8','games','Fn + 8','Дополнительный шаблон','Подсветка 1-6, QWER, D, F, B.'],
+        ['g9','games','Fn + 9','Свой профиль № 1','Выбор первого пользовательского профиля подсветки.'],
+        ['g0','games','Fn + 0','Свой профиль № 2','Выбор второго пользовательского профиля подсветки.'],
+        ['rec','games','Fn + Home','Начать запись подсветки','Работает после выбора профиля Fn + 9 или Fn + 0.'],
+        ['save','games','Fn + End','Сохранить подсветку','Завершить запись выбранного профиля.']
+      ];
+      var filter = 'all', favoritesOnly = false, searchText = '';
+      function read(key, fallback){try {var s = localStorage.getItem(key);return s===null?fallback:JSON.parse(s);}catch(e){return fallback;}}
+      function store(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch(e){}}
+      var stars=read('kbd-guide-favorites',[]);
+      if(!Array.isArray(stars))stars=[];
+      var theme=read('kbd-guide-theme','dark');
+      if(theme==='light')document.documentElement.setAttribute('data-theme','light');
+      var search=document.getElementById('search');
+      var list=document.getElementById('list');
+      function keycap(text){
+        return text.split(' + ').map(function(k){return '<kbd>'+k+'</kbd>';}).join('<span class="plus" aria-hidden="true">+</span>');
+      }
+      function render(){
+        var q=searchText.toLocaleLowerCase('ru');
+        var visible=shortcuts.filter(function(s){
+          var group=groups.find(function(g){return g.id===s[1]});
+          return (filter==='all'||filter===s[1])&&(!favoritesOnly||stars.indexOf(s[0])!==-1)&&(!q||(s[2]+' '+s[3]+' '+s[4]+' '+group.name).toLocaleLowerCase('ru').indexOf(q)!==-1);
+        });
+        document.getElementById('resultsCount').innerHTML='<strong>'+visible.length+'</strong> сочетаний';
+        list.innerHTML='';
+        if(!visible.length){list.innerHTML='<div class="empty"><b>Ничего не найдено</b><div>Попробуй другой запрос или сними фильтр.</div></div>';return;}
+        groups.forEach(function(g){
+          var arr=visible.filter(function(s){return s[1]===g.id});
+          if(!arr.length)return;
+          var section=document.createElement('section');
+          section.className='collection';
+          var heading=document.createElement('div');
+          heading.className='sectiontitle';
+          heading.innerHTML='<h2>'+g.name+'</h2><span class="count">'+arr.length+'</span>';
+          var cards=document.createElement('div');
+          cards.className='cards';
+          arr.forEach(function(s){
+            var saved=stars.indexOf(s[0])!==-1;
+            var item=document.createElement('article');
+            item.className='shortcut';
+            item.innerHTML='<div><h3 class="name">'+s[3]+'</h3><p class="description">'+s[4]+'</p></div>'+
+              '<button class="star'+(saved?' saved':'')+'" aria-label="'+(saved?'Удалить из избранного: ':'Добавить в избранное: ')+s[3]+'" aria-pressed="'+saved+'">'+(saved?'★':'☆')+'</button>'+
+              '<div class="combination" aria-label="'+s[2]+'">'+keycap(s[2])+'</div>';
+            item.querySelector('.star').addEventListener('click',function(){
+              if(saved)stars=stars.filter(function(id){return id!==s[0]});else stars.push(s[0]);
+              store('kbd-guide-favorites',stars);render();
+            });
+            cards.appendChild(item);
+          });
+          section.appendChild(heading);section.appendChild(cards);list.appendChild(section);
+        });
+      }
+      search.addEventListener('input',function(){searchText=search.value.trim();render();});
+      Array.from(document.querySelectorAll('.filter')).forEach(function(btn){
+        btn.addEventListener('click',function(){
+          filter=btn.getAttribute('data-filter');
+          Array.from(document.querySelectorAll('.filter')).forEach(function(b){
+            var active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));
+          });render();
+        });
+      });
+      document.getElementById('favBtn').addEventListener('click',function(){
+        favoritesOnly=!favoritesOnly;this.classList.toggle('active',favoritesOnly);
+        this.setAttribute('aria-pressed',String(favoritesOnly));
+        this.textContent=(favoritesOnly?'★':'☆')+' Избранное';render();
+      });
+      document.getElementById('themeBtn').addEventListener('click',function(){
+        theme=theme==='dark'?'light':'dark';
+        document.documentElement.setAttribute('data-theme',theme);
+        store('kbd-guide-theme',theme);
+      });
+      if('serviceWorker' in navigator && location.protocol==='https:'){
+        window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});
+      }
+      render();
+    })();
+  </script>
+</body>
+</html>
